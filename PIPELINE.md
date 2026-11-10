@@ -4,8 +4,10 @@ Una ejecución = UN video. Cada tarea programada empieza en una sesión nueva y 
 este repositorio. Trabaja en español. Usa una lista de tareas (TaskCreate) con estos pasos para que Johan vea el avance.
 
 ## Reglas que no se rompen
-1. **Nunca programes ni publiques nada sin un "sí" explícito de Johan en esta sesión**, después de enseñarle el video,
-   el texto, la fecha/hora y las redes. Una aprobación vale solo para ese video.
+1. **Publicación automática (decisión de Johan, 2026-11-10):** cuando el video pasa TODAS las revisiones, se programa
+   en Metricool sin preguntar y después se le avisa. Si alguna revisión falla o hay dudas sobre un dato, NO se programa:
+   se le envía como propuesta y se espera su respuesta. La hora de publicación debe dejar ≥2 h desde el aviso, para que
+   pueda cancelarla en el planificador de Metricool si quiere.
 2. Datos verificados: cada cifra o fecha del guion se comprueba con WebSearch en al menos 2 fuentes fiables.
    Si un dato no se puede confirmar, se quita.
 3. Nada de símbolos nazis, logos de marcas ni caras de personas reales reconocibles en las animaciones.
@@ -75,21 +77,25 @@ bash ../../eng/go.sh $PWD NOMBRE DUR       # debe terminar en "VIDEO OK"
 ```
 Saca una hoja de fotogramas del MP4 final (ffmpeg tile) y revísala. Portada: un JPG 1080×1920 del cuadro más fuerte.
 
-## Paso 6 — Alojar y proponer
+## Paso 6 — Alojar y programar
 1. `bash eng/publicar_media.sh videos/<carpeta>/NOMBRE.mp4 videos/<carpeta>/portada.jpg` → URLs públicas.
-2. Hora propuesta: `getBestTimeToPostByNetwork` (Instagram) para hoy/mañana; nunca en el pasado; separa ≥5 h de otro video.
-3. Prepara el texto: 1–2 frases con gancho + pregunta + 3–5 hashtags; título de YouTube ≤ 70 caracteres.
-4. Guarda `datos/pendientes.json` (carpeta, URLs, texto, título, fecha, redes) y haz commit + push de la carpeta del video
-   (sin el MP4 ni los .wav: ya están ignorados) a `main`.
-5. `SendUserFile` con el MP4 y `SendUserMessage` con: tema y por qué, **texto**, **título de YouTube**, **fecha y hora**,
-   **redes** (Instagram Reel, TikTok, YouTube Short, Facebook Reel de la página) y la pregunta: "¿Lo programo así? Responde sí, o dime qué cambio".
-   Envía también un `PushNotification` corto.
+   Comprueba con `curl -r 0-1000 -o /dev/null -w "%{http_code}"` que la URL del MP4 responde 200/206.
+2. Hora: `getBestTimeToPostByNetwork` (Instagram) para hoy/mañana; nunca en el pasado; ≥2 h desde ahora; ≥5 h de otro video
+   ya programado (míralo con `getScheduledPosts`).
+3. Texto: 1–2 frases con gancho + pregunta + 3–5 hashtags; título de YouTube y Facebook ≤ 70 caracteres.
+4. `createScheduledPost` (blogId 7523723) con providers instagram + tiktok + youtube + facebook, media [URL del MP4],
+   `videoThumbnailUrl` = URL de la portada solo si aplica, `instagramData` {type: "REEL", isAiGenerated: true},
+   `tiktokData` {isAigc: true, title}, `facebookData` {type: "REEL", title}, `youtubeData` {title, type: "short",
+   privacy: "public", madeForKids: false, isAiGeneratedContent: true}, `publicationDate` con zona America/New_York.
+   Si una red da error, reinténtalo una vez solo para esa red; si sigue fallando, avisa a Johan cuál falló.
+5. Actualiza `datos/temas.json` (tema, fecha, plannerUrl), marca la idea en `datos/ideas.md` con [x] y la fecha,
+   commit + push de la carpeta del video (sin MP4 ni .wav) y de `datos/` a `main`.
 
-## Paso 7 — Tras la respuesta de Johan
-- "Sí" → `createScheduledPost` (blogId 7523723) con providers instagram + tiktok + youtube + facebook, media [URL del MP4],
-  `videoThumbnailUrl` = URL de la portada solo si aplica, `instagramData` {type: "REEL", isAiGenerated: true},
-  `tiktokData` {isAigc: true, title}, `facebookData` {type: "REEL", title}, `youtubeData` {title, type: "short", privacy: "public", madeForKids: false,
-  isAiGeneratedContent: true}, `publicationDate` con zona America/New_York. Confirma con el plannerUrl.
-  Luego añade el tema a `datos/temas.json`, marca la idea en `datos/ideas.md`, vacía `pendientes.json`, commit + push.
-- Cambios → aplícalos, vuelve a renderizar y vuelve al Paso 6.
-- "No" → no programes nada; deja nota en `pendientes.json`.
+## Paso 7 — Avisar a Johan
+`SendUserFile` con el MP4 y `SendUserMessage` con: tema y por qué se eligió, texto publicado, título, **fecha y hora
+programadas**, redes (Instagram Reel, TikTok, YouTube Short, Facebook Reel de la página) y el enlace `plannerUrl` de
+Metricool, diciendo que puede cancelarlo ahí antes de esa hora. Envía también un `PushNotification` corto.
+Si Johan responde pidiendo cambios o cancelar, hazlo (updateScheduledPost o vuelve a renderizar) y confírmalo.
+
+## Si el video NO pasó las revisiones
+No programes. Guarda `datos/pendientes.json`, envía el MP4 y explica qué falló y qué propones; espera su respuesta.
