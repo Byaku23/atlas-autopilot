@@ -35,6 +35,8 @@ Si en `pendientes.json` hay un video esperando aprobación de una ejecución ant
 - Elige el tema: por defecto la primera idea libre de `datos/ideas.md`, salvo que los datos sugieran algo mejor.
   No repitas un tema de `temas.json` (sí continuaciones explícitas). Alterna la fórmula respecto al último video.
   Fórmulas ganadoras: ANIMALES+HISTORIA (compartidos), DEBATE/RANKING (comentarios), MAPA+CAUSAS (guardados).
+- Reserva la idea en cuanto la elijas: márcala `[~] reservada AAAA-MM-DD` en `datos/ideas.md`, commit + push
+  (así la otra ejecución del día no elige la misma). Antes de elegir, haz `git pull` para ver las reservas.
 
 ## Paso 2 — Guion
 - Carpeta: `videos/AAAA-MM-DD_slug/` (fecha de hoy). Escribe `guion.md` con: tema, fórmula, guion y fuentes.
@@ -48,7 +50,8 @@ Si en `pendientes.json` hay un video esperando aprobación de una ejecución ant
 2. Espera con `creative_get_flow_run_status` hasta `all_completed`. Descarga el audio:
    `curl -sS -o videos/<carpeta>/voz.mp3 "<content_url>"` (requiere que el dominio elevenlabsusercontent.com esté permitido).
 3. `creative_transcribe_audio` con `connect_from=[node_id de la voz]` y el mismo flow_id, modelo `eleven_scribe_v1`.
-   Espera con `creative_get_flow_run_status`; guarda la lista `words` en `videos/<carpeta>/palabras.json` y ejecuta
+   Espera con `creative_get_flow_run_status`; descarga `transcripts[0].words_download_url` con curl a
+   `videos/<carpeta>/palabras.json` (o guarda tú la lista `words`) y ejecuta
    `python3 eng/palabras.py videos/<carpeta>/palabras.json videos/<carpeta>` → `script.txt` + `st.txt`.
 4. DUR = duración de voz.mp3 (ffprobe) + 1.2 s, redondeado a 1/30.
 
