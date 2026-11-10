@@ -130,6 +130,18 @@
    "fecha": "2026-11-10",
    "tema": "Animales que fueron a la guerra (Aníbal, Cher Ami, Stubby, Wojtek)",
    "vistas_ig": 0
+  },
+  {
+   "fecha": "2026-11-10",
+   "tema": "Animales que fueron a la guerra (Aníbal, Cher Ami, Stubby, Wojtek)",
+   "programado": "2026-11-10T10:00:00-05:00",
+   "redes": [
+    "instagram",
+    "tiktok",
+    "youtube",
+    "facebook"
+   ],
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=5687370521769493221"
   }
  ]
 }
