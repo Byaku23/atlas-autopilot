@@ -6,7 +6,7 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - MAPA + CADENA DE CAUSAS → lo más guardado (1ª Guerra Mundial 29k, 403 guardados).
 - Ciencia/curiosidad genérica y deportes rinden ~1.5k: úsalos poco y siempre con un ángulo de las tres fórmulas.
 
-- [~] reservada 2026-11-10 Los generales que olvidamos: España y América (Gran Capitán, Blas de Lezo, Bazán, Bolívar, San Martín) — el público lo pidió en comentarios. DEBATE.
+- [~] reservada 2026-11-10 (guion listo en videos/2026-11-10_generales_olvidados, falta voz: sin créditos ElevenLabs) Los generales que olvidamos: España y América (Gran Capitán, Blas de Lezo, Bazán, Bolívar, San Martín) — el público lo pidió en comentarios. DEBATE.
 - [ ] Hachiko: el perro que esperó 9 años. ANIMALES.
 - [ ] ¿Por qué los perros mueven la cola? (continuación del viral). ANIMALES.
 - [ ] ¿Por qué los gatos ronronean? ANIMALES.
