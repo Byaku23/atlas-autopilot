@@ -15,7 +15,7 @@ este repositorio. Trabaja en español. Usa una lista de tareas (TaskCreate) con 
 
 ## Datos fijos
 - Metricool: brandId/blogId `7523723`, zona horaria America/New_York. Redes: Instagram (cuenta Atlas del saber,
-  antes @zoelara__), TikTok (antes @larazoe__), YouTube (canal UC_jviohrsCwGW1CXN9a7Q6A).
+  antes @zoelara__), TikTok (antes @larazoe__), YouTube (canal UC_jviohrsCwGW1CXN9a7Q6A), Facebook (solo la PÁGINA de Atlas del saber, id 901061146421888; nunca el perfil personal).
 - Voz: ElevenLabs "Hache Voz Comercial LATAM", voice_id `7wYVohVK7cr2fX4431vj`, modelo `eleven_multilingual_v2`.
 - Formato: vertical 720×1280, 30 fps, 60–100 s de voz (150–240 palabras).
 
@@ -82,13 +82,13 @@ Saca una hoja de fotogramas del MP4 final (ffmpeg tile) y revísala. Portada: un
 4. Guarda `datos/pendientes.json` (carpeta, URLs, texto, título, fecha, redes) y haz commit + push de la carpeta del video
    (sin el MP4 ni los .wav: ya están ignorados) a `main`.
 5. `SendUserFile` con el MP4 y `SendUserMessage` con: tema y por qué, **texto**, **título de YouTube**, **fecha y hora**,
-   **redes** (Instagram Reel, TikTok, YouTube Short) y la pregunta: "¿Lo programo así? Responde sí, o dime qué cambio".
+   **redes** (Instagram Reel, TikTok, YouTube Short, Facebook Reel de la página) y la pregunta: "¿Lo programo así? Responde sí, o dime qué cambio".
    Envía también un `PushNotification` corto.
 
 ## Paso 7 — Tras la respuesta de Johan
-- "Sí" → `createScheduledPost` (blogId 7523723) con providers instagram + tiktok + youtube, media [URL del MP4],
+- "Sí" → `createScheduledPost` (blogId 7523723) con providers instagram + tiktok + youtube + facebook, media [URL del MP4],
   `videoThumbnailUrl` = URL de la portada solo si aplica, `instagramData` {type: "REEL", isAiGenerated: true},
-  `tiktokData` {isAigc: true, title}, `youtubeData` {title, type: "short", privacy: "public", madeForKids: false,
+  `tiktokData` {isAigc: true, title}, `facebookData` {type: "REEL", title}, `youtubeData` {title, type: "short", privacy: "public", madeForKids: false,
   isAiGeneratedContent: true}, `publicationDate` con zona America/New_York. Confirma con el plannerUrl.
   Luego añade el tema a `datos/temas.json`, marca la idea en `datos/ideas.md`, vacía `pendientes.json`, commit + push.
 - Cambios → aplícalos, vuelve a renderizar y vuelve al Paso 6.
