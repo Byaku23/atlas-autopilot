@@ -10,7 +10,7 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [ ] Hachiko: el perro que esperó 9 años. ANIMALES.
 - [ ] ¿Por qué los perros mueven la cola? (continuación del viral). ANIMALES.
 - [ ] ¿Por qué los gatos ronronean? ANIMALES.
-- [ ] Animales que fueron a la guerra (paloma Cher Ami, elefantes de Aníbal, perros mensajeros). ANIMALES + GUERRA.
+- [~] reservada 2026-11-10 Animales que fueron a la guerra (paloma Cher Ami, elefantes de Aníbal, perros mensajeros). ANIMALES + GUERRA.
 - [ ] ¿Quién fue el PEOR general de la historia? (la Gran Guerra del Emú, 1932). DEBATE.
 - [ ] ¿Cuál fue el imperio más PODEROSO? (grande ≠ poderoso). DEBATE + MAPA.
 - [ ] ¿Cómo empezó la Segunda Guerra Mundial? en mapa. MAPA.
