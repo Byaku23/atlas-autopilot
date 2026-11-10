@@ -1,0 +1,8 @@
+*.mp4
+*.wav
+*.mp3
+*.png
+fr/
+__pycache__/
+*.log
+!ejemplos/**/*.png
