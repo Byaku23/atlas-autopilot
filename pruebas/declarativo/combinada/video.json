@@ -1,0 +1,414 @@
+{
+ "esquema": 1,
+ "titulo": "Prueba de combinación simultánea",
+ "duracion": 7.5,
+ "tema": {
+  "acento": "#ffb547",
+  "fuego": "#ff9a4a"
+ },
+ "recursos": [
+  "ejemplos/v01_perros/assets.js"
+ ],
+ "eventos": {
+  "anos": {
+   "palabra": "años",
+   "golpe": 0.5
+  },
+  "error": {
+   "palabra": "error",
+   "golpe": 0.3
+  },
+  "inteligente": {
+   "palabra": "inteligente"
+  },
+  "darle": {
+   "palabra": "darle"
+  },
+  "lobo": {
+   "palabra": "lobo",
+   "golpe": 1.0
+  }
+ },
+ "escenas": [
+  {
+   "id": "gancho",
+   "camara": {
+    "claves": [
+     {
+      "t": 0,
+      "x": 198,
+      "y": 382,
+      "z": 1.5
+     },
+     {
+      "t": "@darle",
+      "x": 190,
+      "y": 375,
+      "z": 1.25
+     }
+    ],
+    "capas": [
+     {
+      "sigue": "carne",
+      "retraso": 0.22,
+      "desde": "@darle",
+      "mezcla": 0.35,
+      "curva": "eo",
+      "z": 1.5,
+      "zDur": 0.9
+     },
+     {
+      "mira": [
+       {
+        "de": "lobo.x",
+        "mas": -43.05
+       },
+       {
+        "claves": [
+         {
+          "t": "@lobo+0.3",
+          "v": 397.9
+         },
+         {
+          "t": "@lobo+0.6",
+          "v": 401.575,
+          "curva": "eo"
+         }
+        ]
+       }
+      ],
+      "desde": "@lobo-0.1",
+      "mezcla": 0.5,
+      "curva": "eio",
+      "z": 2.3
+     }
+    ]
+   },
+   "mundo": [
+    {
+     "usa": "cielo"
+    },
+    {
+     "usa": "colinas",
+     "y": 455,
+     "color": "#0b1322",
+     "altura": 22,
+     "frec": 0.009,
+     "fase": 1
+    },
+    {
+     "usa": "colinas",
+     "y": 470,
+     "color": "#0f1a2c",
+     "altura": 12,
+     "frec": 0.021,
+     "fase": 3
+    },
+    {
+     "usa": "rect",
+     "x": -500,
+     "y": 440,
+     "ancho": 1600,
+     "alto": 500,
+     "color": "#15223a"
+    },
+    {
+     "usa": "degradado",
+     "y0": 440,
+     "y1": 520,
+     "color0": "#1c2c48",
+     "color1": "#0d1626",
+     "x0": -500,
+     "ancho": 1600
+    },
+    {
+     "usa": "luzFuego",
+     "x": 142,
+     "y": 430,
+     "radio": 190
+    },
+    {
+     "usa": "resplandor",
+     "x": 260,
+     "y": 420,
+     "radio": 90,
+     "visible": {
+      "desde": "@lobo"
+     },
+     "color": {
+      "color": "#ff8c32",
+      "alfa": {
+       "claves": [
+        {
+         "t": "@lobo",
+         "v": 0
+        },
+        {
+         "t": "@lobo+0.45",
+         "v": 0.3,
+         "curva": "eo"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "usa": "fogata",
+     "x": 142,
+     "y": 438,
+     "escala": 0.8
+    },
+    {
+     "usa": "chispasFuego",
+     "x": 142,
+     "y": 400
+    },
+    {
+     "usa": "humano",
+     "x": 100,
+     "y": 440,
+     "borde": "$fuego",
+     "brazo": {
+      "claves": [
+       {
+        "t": "@darle-0.25",
+        "v": 0.35
+       },
+       {
+        "t": "@darle",
+        "v": -2.4,
+        "curva": "eo"
+       },
+       {
+        "t": "@darle+0.22",
+        "v": -0.2,
+        "curva": "eo"
+       }
+      ]
+     }
+    },
+    {
+     "usa": "bestia",
+     "id": "lobo",
+     "y": {
+      "suma": [
+       442,
+       {
+        "rebote": {
+         "en": "@lobo",
+         "amp": -14,
+         "k": 16,
+         "d": 5
+        }
+       },
+       {
+        "onda": {
+         "amp": 1.2,
+         "frec": 6
+        }
+       }
+      ]
+     },
+     "escala": {
+      "claves": [
+       {
+        "t": "@lobo",
+        "v": 1.05
+       },
+       {
+        "t": "@lobo+0.5",
+        "v": 1.3,
+        "curva": "eb"
+       }
+      ]
+     },
+     "voltear": true,
+     "ojo": "rgba(255,215,110,.95)",
+     "x": {
+      "claves": [
+       {
+        "t": "@lobo",
+        "v": 302
+       },
+       {
+        "t": "@lobo+0.35",
+        "v": 284,
+        "curva": "eo"
+       }
+      ]
+     },
+     "color": {
+      "claves": [
+       {
+        "t": "@lobo",
+        "v": "#04060a"
+       },
+       {
+        "t": "@lobo+0.45",
+        "v": "#140d08",
+        "curva": "eo"
+       }
+      ]
+     },
+     "borde": {
+      "color": "$fuego",
+      "alfa": {
+       "claves": [
+        {
+         "t": "@lobo",
+         "v": 0
+        },
+        {
+         "t": "@lobo+0.45",
+         "v": 0.9,
+         "curva": "eo"
+        }
+       ]
+      }
+     },
+     "paso": {
+      "rampa": {
+       "desde": "@lobo",
+       "hasta": "@lobo+0.7",
+       "vel": 15
+      }
+     },
+     "cabeza": {
+      "claves": [
+       {
+        "t": "@lobo+0.55",
+        "v": 0
+       },
+       {
+        "t": "@lobo+0.9",
+        "v": 0.35,
+        "curva": "eo"
+       }
+      ]
+     },
+     "morph": {
+      "claves": [
+       {
+        "t": "@lobo+0.6",
+        "v": 0
+       },
+       {
+        "t": "@lobo+1.6",
+        "v": 1,
+        "curva": "eio"
+       }
+      ]
+     },
+     "cola": 0.3,
+     "reloj": {
+      "rampa": {
+       "desde": 0,
+       "vel": 1
+      }
+     }
+    },
+    {
+     "usa": "carne",
+     "id": "carne",
+     "visible": {
+      "desde": "@darle+0.05"
+     },
+     "trayecto": {
+      "arco": {
+       "de": [
+        118,
+        374
+       ],
+       "a": [
+        226,
+        433
+       ],
+       "inicio": "@darle+0.05",
+       "dur": 0.8,
+       "altura": 110
+      }
+     },
+     "rot": {
+      "rampa": {
+       "desde": "@darle",
+       "hasta": "@lobo-0.05",
+       "vel": 10,
+       "luego": 7.5
+      }
+     }
+    },
+    {
+     "usa": "chispas",
+     "x": 226,
+     "y": 432,
+     "en": "@lobo",
+     "n": 14,
+     "color": "#ffd27a",
+     "vel": 110,
+     "vida": 0.6,
+     "gravedad": 200
+    },
+    {
+     "usa": "nieve",
+     "n": 50,
+     "semilla": 4,
+     "alfa": 0.5,
+     "vel": 18
+    }
+   ],
+   "pantalla": [
+    {
+     "usa": "onda",
+     "x": 180,
+     "y": 330,
+     "en": "@lobo",
+     "color": "rgba(255,200,120,.8)",
+     "radio": 150,
+     "grosor": 3,
+     "dur": 0.6
+    },
+    {
+     "usa": "texto",
+     "texto": "HACE 15.000 AÑOS",
+     "x": 180,
+     "y": 96,
+     "tam": 31,
+     "color": "#fff",
+     "en": -0.6,
+     "contorno": "rgba(0,0,0,.55)",
+     "grosor": 6,
+     "sale": 2.05,
+     "resalta": [
+      1
+     ],
+     "colorResalta": "$acento"
+    },
+    {
+     "usa": "texto",
+     "texto": "EL ERROR MÁS",
+     "x": 180,
+     "y": 82,
+     "tam": 25,
+     "color": "#fff",
+     "en": "@error-0.06",
+     "contorno": "rgba(0,0,0,.55)",
+     "grosor": 5,
+     "sale": "@darle+0.15"
+    },
+    {
+     "usa": "texto",
+     "texto": "INTELIGENTE",
+     "x": 180,
+     "y": 118,
+     "tam": 40,
+     "color": "$acento",
+     "en": "@inteligente-0.04",
+     "contorno": "rgba(40,15,0,.7)",
+     "grosor": 6,
+     "sale": "@darle+0.2",
+     "sombra": "rgba(255,160,50,.7)"
+    }
+   ]
+  }
+ ]
+}
