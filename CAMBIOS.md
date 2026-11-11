@@ -40,3 +40,11 @@ Johan autorizó usar Fable 5.2 solo para arquitectura y diseño del sistema (bib
 - Las 3 tareas programadas siguen con Sonnet/Haiku (su modelo es un ajuste propio de cada tarea; no se tocó). Producción de videos: Sonnet; tareas sencillas: Haiku. Fable no se usa en renders, scripts ni rutina.
 - Sin Usage Credits de pago (Johan lo tiene apagado; captura 2026-11-11). Si Fable no está disponible dentro del plan, se detiene y se avisa.
 - Pasada la fecha: cualquier sesión debe volver a Sonnet y no usar Fable sin una nueva autorización expresa.
+
+# Arquitectura declarativa JSON: probada y descartada (2026-11-11)
+
+Decisión de Johan: no seguir con el formato JSON; conservar solo la biblioteca. Las escenas siguen en JavaScript.
+- Medido en la escena 0 de v01_perros: JS 2.054 caracteres; JSON etapa 1 2.832; JSON etapa 2 fiel 1.632 (el objetivo era ≤1.200); JS + biblioteca 1.843 con 0 cuadros distintos. En la escena 9 el JSON ocupaba más que el JS (1.512 frente a 1.209).
+- Queda: `catalogo/biblioteca.js` (`llanuraNoche`, `hoguera`), opcional, se carga desde `index.html`. Referencias en `CLAUDE.md` y `PIPELINE.md`.
+- Retirado: intérprete, compilador, registro y pruebas JSON. Siguen en el historial de git (commit `4706d38`) por si hicieran falta.
+- No se tocó `eng/`, `producir.sh`, los videos, las tareas programadas ni la publicación. Revertir: quitar `catalogo/biblioteca.js` y las líneas añadidas en `CLAUDE.md` y `PIPELINE.md`.

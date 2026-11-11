@@ -68,6 +68,7 @@ Si en `pendientes.json` hay un video esperando aprobación de una ejecución ant
   elementos que empujan/activan a otros, texto con máscara.
 - Parte de un video terminado: `bash eng/nuevo_video.sh <slug> [base]` y mira `catalogo/CATALOGO_FIRMAS.md` (piezas con parámetros; copia solo la función que uses) y `catalogo/DUPLICADOS.md` (no mezcles piezas con el mismo nombre);
   para paleta y texto usa `tema()` de `catalogo/tema.js` (instrucciones en ese archivo; añade su `<script>` en `index.html` tras `core.js`);
+  para llanura nocturna u hoguera usa `llanuraNoche(t,o)` / `hoguera(x,y,escala,t,o)` de `catalogo/biblioteca.js` (su `<script>` va tras `assets.js`);
   escribe tú `index.html`, `ev.py`, `assets.js`, `scenes.js` y `audio.py` (modifica, no reescribas desde cero). ≥2 rondas de revisión visual.
 - Revísalo tú: `python3 eng/sheet_t.py $PWD/videos/<carpeta>/index.html $PWD/videos/<carpeta>/rev.png t1 … t12`
   (cuadro 0, cada escena, cada transición) y mira la imagen con Read. Devuelve correcciones concretas hasta que esté bien:

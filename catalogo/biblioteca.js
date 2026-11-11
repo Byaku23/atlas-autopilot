@@ -1,6 +1,7 @@
-// biblioteca.js — fondos y conjuntos predefinidos, hechos SOLO con piezas que ya existen en los assets.js.
-// Se carga después de los recursos del video. Cada función declara qué piezas necesita (lo comprueba compilar.py).
-// Parámetros con nombre en español para que el registro automático los ofrezca tal cual.
+// biblioteca.js — fondos y conjuntos ya montados, hechos SOLO con piezas que existen en los assets.js (no dibuja nada nuevo).
+// Uso: añade en index.html, después de assets.js:   <script src="../../catalogo/biblioteca.js"></script>
+// y copia a tu assets.js las piezas que cada función indica en «requiere» (de ejemplos/v01_perros/assets.js).
+// Medido en la escena 0 de v01_perros: 10 % menos de código de escena y 0 cuadros de diferencia.
 
 // Llanura nocturna con cielo estrellado, colinas y suelo (fondo de 4 escenas de v01_perros).  requiere: sky, hills
 // o: suelo (y del horizonte), brillo (estrellas 0..1), colinas (0, 1 o 2 filas), x0 y ancho (extensión del suelo),

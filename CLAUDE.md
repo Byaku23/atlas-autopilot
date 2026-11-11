@@ -22,6 +22,7 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
 - Resultados largos de herramientas/subagentes: pide o guarda resúmenes; lee solo los archivos necesarios (para cambiar una escena, solo esa escena).
 - Reutiliza: `eng/nuevo_video.sh` (parte de un video terminado), `eng/CATALOGO.md` (piezas ya dibujadas), `eng/producir.sh` (render con caché).
 - **Motor definitivo: Canvas 2D** (decisión de Johan 2026-11-11; Remotion probado y descartado, `pruebas/remotion/` es solo referencia). Prioridad: velocidad de render y pocos tokens.
-- Antes de dibujar algo, lee `catalogo/CATALOGO_FIRMAS.md` (piezas con parámetros) y `catalogo/DUPLICADOS.md`; copia solo la función que necesites. Paleta/texto por tema: `catalogo/tema.js`.
+- Antes de dibujar algo, lee `catalogo/CATALOGO_FIRMAS.md` (piezas con parámetros) y `catalogo/DUPLICADOS.md`; copia solo la función que necesites. Paleta/texto por tema: `catalogo/tema.js`. Fondos y conjuntos ya montados (`llanuraNoche`, `hoguera`): `catalogo/biblioteca.js`.
+- **Escenas siempre en JavaScript** (`scenes.js`). El formato declarativo JSON se probó y se descartó (decisión de Johan 2026-11-11, ver `CAMBIOS.md`); no lo propongas de nuevo salvo petición.
 - Cada video termina con un informe breve (`eng/informe.py`, Paso 8 de PIPELINE.md).
 - Registro de cambios y cómo revertirlos: `CAMBIOS.md`.
