@@ -7,7 +7,7 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - Ciencia/curiosidad genérica y deportes rinden ~1.5k: úsalos poco y siempre con un ángulo de las tres fórmulas.
 
 - [x] 2026-11-11 (programado 12:00 NY) PRIORIDAD — RETOMAR: guion ya verificado en videos/2026-11-10_generales_olvidados/guion.md (créditos de ElevenLabs recargados el 2026-11-10); empieza en el Paso 3 con ese guion. Los generales que olvidamos: España y América (Gran Capitán, Blas de Lezo, Bazán, Bolívar, San Martín) — el público lo pidió en comentarios. DEBATE.
-- [~] reservada 2026-11-11 (tarde) Hachiko: el perro que esperó 9 años. ANIMALES.
+- [x] 2026-11-11 (programado 18:00 NY) Hachiko: el perro que esperó 9 años. ANIMALES.
 - [ ] ¿Por qué los perros mueven la cola? (continuación del viral). ANIMALES.
 - [ ] ¿Por qué los gatos ronronean? ANIMALES.
 - [x] 2026-11-10 Animales que fueron a la guerra (paloma Cher Ami, elefantes de Aníbal, perros mensajeros). ANIMALES + GUERRA.
