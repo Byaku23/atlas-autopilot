@@ -8,6 +8,7 @@ D=$(cd "$1" && pwd); NAME=$2; ENG=$(cd "$(dirname "$0")" && pwd); RAP=0; FOR=0
 for a in "$@"; do [ "$a" = "--rapido" ] && RAP=1; [ "$a" = "--forzar" ] && FOR=1; done
 LOG="$D/producir.log"; : > "$LOG"
 [ -f "$D/voz.mp3" ] || { echo "FALTA voz.mp3 (haz la etapa de voz)"; exit 3; }
+mv=$(python3 "$ENG/cache.py" "$D" voz); case "$mv" in *"cambió"*) echo "VOZ DESACTUALIZADA ($mv): el texto/voz/modelo cambió; regenera la voz (ElevenLabs) o revierte el cambio"; exit 4;; esac
 [ -f "$D/ev.json" ] || { echo "FALTA ev.json (ejecuta ev.py)"; exit 3; }
 DUR=$(python3 -c "
 import subprocess,math

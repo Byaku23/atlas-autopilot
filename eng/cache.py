@@ -87,8 +87,13 @@ def main():
     d, etapa = os.path.abspath(a[0]), a[1]
     params = dict(x.split('=', 1) for x in a[2:] if '=' in x and not x.startswith('--'))
     if etapa == 'estado':
+        previo = False
         for e in ETAPAS:
-            ok, m = decidir(d, e, params); print(('REUSAR ' if ok else 'HACER   ') + e + ': ' + m)
+            pe = params or cargar(d).get(e, {}).get('params', {})  # sin parámetros: usa los de la última vez
+            ok, m = decidir(d, e, pe)
+            if ok and previo: ok, m = False, 'una etapa anterior se rehará'
+            previo = previo or not ok
+            print(('REUSAR ' if ok else 'HACER   ') + e + ': ' + m)
         return
     if etapa not in ETAPAS: print('etapa desconocida'); sys.exit(2)
     if '--marcar' in a:

@@ -16,3 +16,10 @@ Las tres tareas programadas no se tocaron: solo leen `main`, por eso el trabajo 
 - `CLAUDE.md` (reglas de modelos/consumo), `PIPELINE.md` (pasos 3, 4, 5, 6.4, 8), `.gitignore` (voz.mp3 ya se versiona; así no se paga dos veces la voz).
 ## Sin cambios
 - Motor (`eng/core.js`, render, sfx, voice.sh, mix.sh, go.sh), integraciones (Metricool, vidIQ, GitHub, ElevenLabs), tareas programadas.
+
+## Verificaciones hechas (2026-11-10, con copia de animales_guerra y voz de relleno; sin ElevenLabs ni publicación)
+- Subagente Haiku: su registro muestra `claude-haiku-5-5` en las 4 respuestas (no heredó Sonnet/Opus).
+- Render completo de prueba: 5 min, VERIFICADO (h264 720x1280 30 fps, 76.6 s, audio, −15.5 dB).
+- 2ª pasada: 0,8 s, las 3 etapas saltadas. Cambiar scenes.js → solo render; audio.py → rehace audio; texto de voz → bloquea y exige regenerar voz.
+- `--rapido`: 4 s en vez de 5 min.
+- Antiduplicados: detecta misma carpeta, título casi igual y video ya publicado (animales_guerra).
