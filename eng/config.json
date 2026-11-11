@@ -1,0 +1,5 @@
+{
+ "voz": {"voice_id": "7wYVohVK7cr2fX4431vj", "modelo": "eleven_multilingual_v2", "transcripcion": "eleven_scribe_v1"},
+ "video": {"ancho": 720, "alto": 1280, "fps": 30, "crf": 19},
+ "nota": "Cualquier cambio aquí invalida la caché de las etapas que dependen de ello (ver eng/cache.py)."
+}

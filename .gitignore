@@ -6,3 +6,7 @@ fr/
 __pycache__/
 *.log
 !ejemplos/**/*.png
+!videos/**/voz.mp3
+.cache.json
+voz_silencio_prueba.mp3
+videos/_prueba_cache/
