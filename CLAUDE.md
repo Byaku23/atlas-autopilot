@@ -11,3 +11,15 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
   y se avisa a Johan con el enlace para cancelarlo. Si algo no pasa las revisiones, se le propone y se espera su respuesta.
 - Este proyecto es solo de videos para redes; no toques nada de otros proyectos de Johan.
 - Habla con Johan en español, claro y breve.
+
+## Reglas de consumo y modelos (obligatorias, decididas por Johan 2026-11-10)
+- **Sonnet** coordina todo: guion, escenas, animación, integración, errores comunes, supervisión y publicación.
+- **Subagentes: solo si un script directo no basta**, máximo 2 a la vez, y SIEMPRE con `model: "haiku"` escrito explícito
+  (verificado: hereda Haiku de verdad). Solo para tareas mecánicas: ordenar archivos, textos/hashtags, revisar formatos,
+  ejecutar scripts existentes, comprobar publicaciones. Nunca omitir el parámetro `model`.
+- **Opus: nunca automático.** Si Sonnet falla 2 veces en algo, para y pide autorización explícita a Johan. **Fable: prohibido** en este proyecto.
+- No uses créditos de pago adicionales. No repitas operaciones fallidas más de 2 veces. No lances varios agentes para el mismo problema.
+- Resultados largos de herramientas/subagentes: pide o guarda resúmenes; lee solo los archivos necesarios (para cambiar una escena, solo esa escena).
+- Reutiliza: `eng/nuevo_video.sh` (parte de un video terminado), `eng/CATALOGO.md` (piezas ya dibujadas), `eng/producir.sh` (render con caché).
+- Cada video termina con un informe breve (`eng/informe.py`, Paso 8 de PIPELINE.md).
+- Registro de cambios y cómo revertirlos: `CAMBIOS.md`.

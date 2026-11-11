@@ -11,8 +11,9 @@ este repositorio. Trabaja en español. Usa una lista de tareas (TaskCreate) con 
 2. Datos verificados: cada cifra o fecha del guion se comprueba con WebSearch en al menos 2 fuentes fiables.
    Si un dato no se puede confirmar, se quita.
 3. Nada de símbolos nazis, logos de marcas ni caras de personas reales reconocibles en las animaciones.
-4. Delegar lo simple: el código de escenas y tareas mecánicas pueden ir a un subagente (model "sonnet");
-   tú revisas lo que entrega y lo devuelves con correcciones concretas hasta que esté pulido.
+4. Modelos y consumo (ver CLAUDE.md): tú (Sonnet) haces el trabajo creativo y de código; prioriza SCRIPTS (`eng/producir.sh`,
+   `eng/verificar.sh`, `eng/antiduplicados.py`) antes que subagentes. Si hace falta un subagente: `model: "haiku"` explícito,
+   máx. 2, tarea mecánica; revisa lo que entrega y devuélvelo hasta que esté pulido. Opus/Fable: prohibidos sin permiso de Johan.
 5. Si un paso falla y no se puede arreglar en 2 intentos, para, explica a Johan qué falló (SendUserMessage) y no sigas.
 
 ## Datos fijos
@@ -47,6 +48,10 @@ Si en `pendientes.json` hay un video esperando aprobación de una ejecución ant
 - Escribe los números con letras como se dicen ("quince mil años") para que la voz los lea bien.
 
 ## Paso 3 — Voz y tiempos por palabra
+0. **Caché de voz (no gastar ElevenLabs de más):** guarda el texto limpio en `videos/<carpeta>/voz_texto.txt` y ejecuta
+   `python3 eng/cache.py videos/<carpeta> voz`. Si dice REUSAR (voz.mp3 y palabras.json existen y el texto/voz/modelo no cambiaron),
+   NO llames a ElevenLabs. Tras generar: `python3 eng/cache.py videos/<carpeta> voz --marcar`. Haz commit de voz.mp3 y palabras.json
+   (así sobreviven si la sesión se corta).
 1. `creative_create_flow` → `creative_generate_speech` (prompt = guion limpio, voice_id y modelo de arriba,
    generations_count 1, flow_id del paso anterior).
 2. Espera con `creative_get_flow_run_status` hasta `all_completed`. Descarga el audio:
@@ -61,21 +66,23 @@ Si en `pendientes.json` hay un video esperando aprobación de una ejecución ant
 - Escribe `STORYBOARD.md` (como `ejemplos/v02_gatos/STORYBOARD.md`): primer cuadro impactante, 6–9 escenas con QUÉ pasa
   y en QUÉ palabra, paleta propia (distinta del último video), transiciones (≥5 tipos, ≥2 morph, ≥1 dive), cámara que sigue,
   elementos que empujan/activan a otros, texto con máscara.
-- Encarga `index.html`, `ev.py`, `assets.js`, `scenes.js` y `audio.py` a un subagente (Agent, model "sonnet") con:
-  ruta de la carpeta, STORYBOARD.md, eng/GUIDE.md y los ejemplos como referencia. Debe hacer ≥2 rondas de revisión visual.
+- Parte de un video terminado: `bash eng/nuevo_video.sh <slug> [base]` y mira `eng/CATALOGO.md` para reutilizar piezas;
+  escribe tú `index.html`, `ev.py`, `assets.js`, `scenes.js` y `audio.py` (modifica, no reescribas desde cero). ≥2 rondas de revisión visual.
 - Revísalo tú: `python3 eng/sheet_t.py $PWD/videos/<carpeta>/index.html $PWD/videos/<carpeta>/rev.png t1 … t12`
   (cuadro 0, cada escena, cada transición) y mira la imagen con Read. Devuelve correcciones concretas hasta que esté bien:
   nada cortado ni encimado, nada tapado por subtítulos (y 530–600), contraste, textos con tildes.
 
-## Paso 5 — Sonido y render (desde videos/<carpeta>)
+## Paso 5 — Sonido y render (UN comando, con caché)
 ```
-python3 audio.py
-bash ../../eng/voice.sh $PWD DUR
-bash ../../eng/mix.sh $PWD DUR NOMBRE
-python3 ../../eng/onset.py . ev1 ev2 …     # 8–10 eventos clave: todos OK
-bash ../../eng/go.sh $PWD NOMBRE DUR       # debe terminar en "VIDEO OK"
+python3 videos/<carpeta>/ev.py                              # genera ev.json si cambió el guion/escenas
+bash eng/producir.sh videos/<carpeta> NOMBRE --rapido       # audio + hoja de 12 cuadros rev.png: revísala con Read
+python3 eng/onset.py videos/<carpeta> ev1 ev2 …             # 8–10 eventos clave: todos OK
+bash eng/producir.sh videos/<carpeta> NOMBRE                # render final SOLO de lo que cambió; termina en PRODUCIDO
 ```
-Saca una hoja de fotogramas del MP4 final (ffmpeg tile) y revísala. Portada: un JPG 1080×1920 del cuadro más fuerte.
+La caché (`eng/cache.py`) compara el contenido de guion, voz, escenas, audio, motor y configuración: si algo cambió, rehace esa
+etapa y las siguientes; si no, la salta. No uses `--forzar` salvo sospecha fundada. Nunca repitas un render completo sin mirar
+antes `python3 eng/cache.py videos/<carpeta> estado`. `eng/verificar.sh` (incluido) comprueba formato, duración, audio y volumen.
+Saca una hoja de fotogramas del MP4 final y revísala. Portada: un JPG 1080×1920 del cuadro más fuerte.
 
 ## Paso 6 — Alojar y programar
 1. `bash eng/publicar_media.sh videos/<carpeta>/NOMBRE.mp4 videos/<carpeta>/portada.jpg` → URLs públicas.
@@ -83,8 +90,11 @@ Saca una hoja de fotogramas del MP4 final (ffmpeg tile) y revísala. Portada: un
 2. Hora: `getBestTimeToPostByNetwork` (Instagram) para hoy/mañana; nunca en el pasado; ≥2 h desde ahora; ≥5 h de otro video
    ya programado (míralo con `getScheduledPosts`).
 3. Texto: 1–2 frases con gancho + pregunta + 3–5 hashtags; título de YouTube y Facebook ≤ 70 caracteres.
-4. ANTES de programar, `getScheduledPosts` (hoy–mañana, extendedRange true): si ya existe una publicación con el mismo
-   video o tema, NO programes otra (evita duplicados). Luego `createScheduledPost` (blogId 7523723) con providers instagram + tiktok + youtube + facebook, media [URL del MP4],
+4. **ANTIDUPLICADOS (obligatorio, en este orden):**
+   a) `getScheduledPosts` (ayer–pasado mañana, extendedRange true): si ya hay una publicación (programada o publicada) con el mismo video o tema, NO programes.
+   b) `python3 eng/antiduplicados.py reservar videos/<carpeta> --titulo "<título>"` → debe decir RESERVADO (si dice DUPLICADO, para).
+   c) `createScheduledPost`; si funciona: `python3 eng/antiduplicados.py confirmar videos/<carpeta> --planner <plannerUrl> --fecha <ISO>`;
+      si falla del todo: `... liberar videos/<carpeta>`. Luego `createScheduledPost` (blogId 7523723) con providers instagram + tiktok + youtube + facebook, media [URL del MP4],
    `videoThumbnailUrl` = URL de la portada solo si aplica, `instagramData` {type: "REEL", isAiGenerated: true},
    `tiktokData` {isAigc: true, title}, `facebookData` {type: "REEL", title}, `youtubeData` {title, type: "short",
    privacy: "public", madeForKids: false, isAiGeneratedContent: true}, `publicationDate` con zona America/New_York.
@@ -97,6 +107,11 @@ Saca una hoja de fotogramas del MP4 final (ffmpeg tile) y revísala. Portada: un
 programadas**, redes (Instagram Reel, TikTok, YouTube Short, Facebook Reel de la página) y el enlace `plannerUrl` de
 Metricool, diciendo que puede cancelarlo ahí antes de esa hora. Envía también un `PushNotification` corto.
 Si Johan responde pidiendo cambios o cancelar, hazlo (updateScheduledPost o vuelve a renderizar) y confírmalo.
+
+## Paso 8 — Informe (breve)
+`python3 eng/informe.py videos/<carpeta> --modelo "..." --subagentes "..." --regen "..." --consumo "..." --publicado "..."`
+(modelo principal; subagentes y modelos; regeneraciones innecesarias; consumo si se conoce; publicaciones). Se guarda en `datos/informes.md`
+y se resume en el mensaje final a Johan. Commit + push.
 
 ## Si el video NO pasó las revisiones
 No programes. Guarda `datos/pendientes.json`, envía el MP4 y explica qué falló y qué propones; espera su respuesta.
