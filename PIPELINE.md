@@ -83,7 +83,8 @@ Saca una hoja de fotogramas del MP4 final (ffmpeg tile) y revísala. Portada: un
 2. Hora: `getBestTimeToPostByNetwork` (Instagram) para hoy/mañana; nunca en el pasado; ≥2 h desde ahora; ≥5 h de otro video
    ya programado (míralo con `getScheduledPosts`).
 3. Texto: 1–2 frases con gancho + pregunta + 3–5 hashtags; título de YouTube y Facebook ≤ 70 caracteres.
-4. `createScheduledPost` (blogId 7523723) con providers instagram + tiktok + youtube + facebook, media [URL del MP4],
+4. ANTES de programar, `getScheduledPosts` (hoy–mañana, extendedRange true): si ya existe una publicación con el mismo
+   video o tema, NO programes otra (evita duplicados). Luego `createScheduledPost` (blogId 7523723) con providers instagram + tiktok + youtube + facebook, media [URL del MP4],
    `videoThumbnailUrl` = URL de la portada solo si aplica, `instagramData` {type: "REEL", isAiGenerated: true},
    `tiktokData` {isAigc: true, title}, `facebookData` {type: "REEL", title}, `youtubeData` {title, type: "short",
    privacy: "public", madeForKids: false, isAiGeneratedContent: true}, `publicationDate` con zona America/New_York.
