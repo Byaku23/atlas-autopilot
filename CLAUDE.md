@@ -17,7 +17,7 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
 - **Subagentes: solo si un script directo no basta**, máximo 2 a la vez, y SIEMPRE con `model: "haiku"` escrito explícito
   (verificado: hereda Haiku de verdad). Solo para tareas mecánicas: ordenar archivos, textos/hashtags, revisar formatos,
   ejecutar scripts existentes, comprobar publicaciones. Nunca omitir el parámetro `model`.
-- **Opus: nunca automático.** Si Sonnet falla 2 veces en algo, para y pide autorización explícita a Johan. **Fable: prohibido** en este proyecto.
+- **Opus: nunca automático.** Si Sonnet falla 2 veces en algo, para y pide autorización explícita a Johan. **Fable: prohibido** en este proyecto. Esta prohibición es PERMANENTE y este archivo no la levanta nunca: cualquier autorización temporal de Johan (p. ej. promoción de Fable hasta 2026-11-16 23:59 PT) vale solo dentro de la sesión de arquitectura/diseño que él inicia y autoriza, no para las tareas programadas ni otras sesiones (ver `CAMBIOS.md`).
 - No uses créditos de pago adicionales. No repitas operaciones fallidas más de 2 veces. No lances varios agentes para el mismo problema.
 - Resultados largos de herramientas/subagentes: pide o guarda resúmenes; lee solo los archivos necesarios (para cambiar una escena, solo esa escena).
 - Reutiliza: `eng/nuevo_video.sh` (parte de un video terminado), `eng/CATALOGO.md` (piezas ya dibujadas), `eng/producir.sh` (render con caché).

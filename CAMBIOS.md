@@ -32,3 +32,11 @@ Solo se añadieron archivos nuevos y 3 líneas de documentación; no se tocó `e
 - `catalogo/generar.py` → `catalogo/CATALOGO_FIRMAS.md` (piezas con parámetros) y `catalogo/DUPLICADOS.md`. Se regenera con `python3 catalogo/generar.py` (Paso 8).
 - `catalogo/tema.js` — `tema({acc,ink,sw,bg0,bg1})`: paleta y texto con contorno por parámetros (opcional, se carga desde `index.html`).
 - `CLAUDE.md` y `PIPELINE.md`: referencias al catálogo y a `tema.js`.
+
+# Autorización temporal de Fable 5.2 (2026-11-11)
+
+Johan autorizó usar Fable 5.2 solo para arquitectura y diseño del sistema (biblioteca reutilizable, sistema declarativo JSON, intérprete de escenas), mientras la promoción esté incluida en su plan, hasta **2026-11-16 23:59 PT (= 2026-11-17 07:59 UTC)**.
+- **Cómo se aplica de verdad:** el modelo se elige por sesión (ajuste de la sesión o parámetro `model` de un subagente), no por lo que diga este archivo; una fecha escrita aquí no cambia ni caduca nada técnicamente. Por eso la prohibición de `CLAUDE.md` sigue PERMANENTE y la autorización se dio solo dentro de la sesión de diseño que Johan inició (cambio de modelo hecho a petición suya en esa sesión). Al cerrarse la sesión o pasar la fecha, no queda nada activo.
+- Las 3 tareas programadas siguen con Sonnet/Haiku (su modelo es un ajuste propio de cada tarea; no se tocó). Producción de videos: Sonnet; tareas sencillas: Haiku. Fable no se usa en renders, scripts ni rutina.
+- Sin Usage Credits de pago (Johan lo tiene apagado; captura 2026-11-11). Si Fable no está disponible dentro del plan, se detiene y se avisa.
+- Pasada la fecha: cualquier sesión debe volver a Sonnet y no usar Fable sin una nueva autorización expresa.
