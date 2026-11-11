@@ -66,7 +66,8 @@ Si en `pendientes.json` hay un video esperando aprobación de una ejecución ant
 - Escribe `STORYBOARD.md` (como `ejemplos/v02_gatos/STORYBOARD.md`): primer cuadro impactante, 6–9 escenas con QUÉ pasa
   y en QUÉ palabra, paleta propia (distinta del último video), transiciones (≥5 tipos, ≥2 morph, ≥1 dive), cámara que sigue,
   elementos que empujan/activan a otros, texto con máscara.
-- Parte de un video terminado: `bash eng/nuevo_video.sh <slug> [base]` y mira `eng/CATALOGO.md` para reutilizar piezas;
+- Parte de un video terminado: `bash eng/nuevo_video.sh <slug> [base]` y mira `catalogo/CATALOGO_FIRMAS.md` (piezas con parámetros; copia solo la función que uses) y `catalogo/DUPLICADOS.md` (no mezcles piezas con el mismo nombre);
+  para paleta y texto usa `tema()` de `catalogo/tema.js` (instrucciones en ese archivo; añade su `<script>` en `index.html` tras `core.js`);
   escribe tú `index.html`, `ev.py`, `assets.js`, `scenes.js` y `audio.py` (modifica, no reescribas desde cero). ≥2 rondas de revisión visual.
 - Revísalo tú: `python3 eng/sheet_t.py $PWD/videos/<carpeta>/index.html $PWD/videos/<carpeta>/rev.png t1 … t12`
   (cuadro 0, cada escena, cada transición) y mira la imagen con Read. Devuelve correcciones concretas hasta que esté bien:
@@ -111,7 +112,7 @@ Si Johan responde pidiendo cambios o cancelar, hazlo (updateScheduledPost o vuel
 ## Paso 8 — Informe (breve)
 `python3 eng/informe.py videos/<carpeta> --modelo "..." --subagentes "..." --regen "..." --consumo "..." --publicado "..."`
 (modelo principal; subagentes y modelos; regeneraciones innecesarias; consumo si se conoce; publicaciones). Se guarda en `datos/informes.md`
-y se resume en el mensaje final a Johan. Commit + push.
+y se resume en el mensaje final a Johan. Antes del commit: `python3 catalogo/generar.py` (actualiza el catálogo de piezas). Commit + push.
 
 ## Si el video NO pasó las revisiones
 No programes. Guarda `datos/pendientes.json`, envía el MP4 y explica qué falló y qué propones; espera su respuesta.

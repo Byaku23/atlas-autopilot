@@ -21,5 +21,7 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
 - No uses créditos de pago adicionales. No repitas operaciones fallidas más de 2 veces. No lances varios agentes para el mismo problema.
 - Resultados largos de herramientas/subagentes: pide o guarda resúmenes; lee solo los archivos necesarios (para cambiar una escena, solo esa escena).
 - Reutiliza: `eng/nuevo_video.sh` (parte de un video terminado), `eng/CATALOGO.md` (piezas ya dibujadas), `eng/producir.sh` (render con caché).
+- **Motor definitivo: Canvas 2D** (decisión de Johan 2026-11-11; Remotion probado y descartado, `pruebas/remotion/` es solo referencia). Prioridad: velocidad de render y pocos tokens.
+- Antes de dibujar algo, lee `catalogo/CATALOGO_FIRMAS.md` (piezas con parámetros) y `catalogo/DUPLICADOS.md`; copia solo la función que necesites. Paleta/texto por tema: `catalogo/tema.js`.
 - Cada video termina con un informe breve (`eng/informe.py`, Paso 8 de PIPELINE.md).
 - Registro de cambios y cómo revertirlos: `CAMBIOS.md`.
