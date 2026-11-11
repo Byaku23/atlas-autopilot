@@ -1,23 +1,21 @@
-import sys; sys.path.insert(0,'../eng')
+import sys; sys.path.insert(0,'../../eng')
 from words import *
-DUR=89.3
-T=[0,6.45,15.62,29.0,35.88,47.4,51.42,59.45,70.45,79.45,84.52,DUR]
+DUR=78.5333
+T=[0,5.0,14.83,21.54,30.59,41.76,55.99,63.68,71.47,DUR]
 RAW={
-'h_anos':(wt('años'),.5),'h_err':(wt('error'),.3),'h_int':(wt('inteligente'),0),'h_dar':(wt('darle'),0),'h_lobo':(wt('lobo'),1.0),
-'s1_perro':(wt('perro'),.3),'s1_prim':(wt('primer'),0),'s1_dom':(wt('domesticamos'),.8),'s1_agr':(wt('agricultura'),.5),'s1_ciu':(wt('ciudades'),.5),'s1_esc':(wt('escritura'),.6),
-'s2_adn':(wt('ADN'),.5),'s2_ing':(wt('Inglaterra'),.4),'s2_tur':(wt('Turquía'),.4),'s2_hum':(wt('humanos'),0),'s2_14':(wt('catorce'),.5),'s2_16':(wt('dieciséis'),.6),'s2_edad':(wt('Edad'),0),'s2_hielo':(wt('Hielo'),.8),
-'s3_q':(wt('pasó'),.6),'s3_nadie':(wt('Nadie'),0),'s3_cert':(wt('certeza'),0),'s3_teo':(wt('teoría'),.3),'s3_no':(wt('no',after=34),0),'s3_nues':(wt('nuestra'),.8),
-'s4_tranq':(wt('tranquilos'),0),'s4_camp':(wt('campamentos'),0),'s4_rest':(wt('restos',after=39),.3),'s4_mied':(wt('miedosos'),0),'s4_huian':(wt('huían'),.4),'s4_mans':(wt('mansos'),0),'s4_mejor':(wt('mejor'),0),'s4_cach':(wt('cachorros'),.4),
-'s5_gen':(wt('Generación'),0),'s5_gen2':(wt('generación',after=48),0),'s5_lobo':(wt('lobo',after=49),0),'s5_perro':(wt('perro',after=50),.8),
-'s6_gan':(wt('ganamos'),.4),'s6_pel':(wt('peligro'),.6),'s6_caz':(wt('cazar'),.5),'s6_cal':(wt('calor'),.3),'s6_hel':(wt('heladas'),0),
-'s7_yac':(wt('yacimiento'),0),'s7_tur':(wt('Turquía',after=60),.3),'s7_ent':(wt('enterrados'),.4),'s7_pes':(wt('pescado'),.3),'s7_pers':(wt('personas'),.4),'s7_herr':(wt('herramientas'),.6),'s7_fam':(wt('familia'),.6),
-'s8_hoy':(wt('Hoy'),0),'s8_sen':(wt('señalas'),0),'s8_dedo':(wt('dedo'),.3),'s8_chimp':(wt('chimpancés'),.3),'s8_bien':(wt('bien'),0),'s8_emo':(wt('emociones'),0),'s8_mir':(wt('mirarnos'),.4),
-'s9_mil':(wt('miles'),0),'s9_comp':(wt('compañero'),.4),'s9_el':(wt('él',after=82),0),'s9_nos':(wt('nosotros',after=83),1.0),
-'c_cual':(wt('Cuál'),0),'c_perro':(wt('perro',after=85),.3),'c_com':(wt('Cuéntamelo'),.4),
+'h_casi':(wt('casi'),0),'h_diez':(wt('diez'),.6),'h_hombre':(wt('hombre'),0),'h_nunca':(wt('nunca'),.2),'h_volver':(wt('volver'),.3),
+'s1_nom':(wt('Hachikō',after=5),.4),'s1_akita':(wt('akita'),.3),'s1_nac':(wt('nacido'),0),'s1_1923':(wt('veintitrés'),.5),'s1_prof':(wt('profesor',after=11),0),'s1_ueno':(wt('Ueno'),.3),'s1_tokio':(wt('Tokio'),.3),
+'s2_man':(wt('mañana'),0),'s2_acomp':(wt('acompañaba'),0),'s2_shib':(wt('Shibuya',after=17),.3),'s2_tarde':(wt('tarde',after=19),0),'s2_esp':(wt('esperarlo'),.3),
+'s3_mayo':(wt('mayo'),.3),'s3_25':(wt('veinticinco'),.5),'s3_mur':(wt('murió',after=24),.9),'s3_esa':(wt('Esa'),0),'s3_tren':(wt('tren'),.4),'s3_el':(wt('él',after=29),0),'s3_bajo':(wt('bajó'),.9),
+'s4_sig':(wt('siguió'),0),'s4_poc':(wt('Pocos'),0),'s4_dia':(wt('día',after=35),0),'s4_sig2':(wt('siguiente',after=36.3),0),'s4_casi':(wt('Casi',after=37),0),'s4_nueve':(wt('nueve'),.5),'s4_meses':(wt('meses'),.5),
+'s5_dos':(wt('dos',after=43.3),0),'s5_per':(wt('periódico'),0),'s5_jap':(wt('Japón',after=46),.4),'s5_amor':(wt('enamoró'),0),'s5_cuatro':(wt('cuatro',after=50),.4),'s5_est':(wt('estatua',after=51.5),.5),'s5_estuvo':(wt('estuvo'),0),'s5_inau':(wt('inauguración'),.5),
+'s6_mur':(wt('Murió',after=55),.5),'s6_ocho':(wt('ocho',after=56),0),'s6_marzo':(wt('marzo'),0),'s6_cinco':(wt('cinco',after=59),.5),'s6_calle':(wt('calle'),0),'s6_once':(wt('once'),.6),
+'s7_est':(wt('estatua',after=63.5),0),'s7_fund':(wt('fundió'),.8),'s7_gue':(wt('guerra'),.5),'s7_48':(wt('ocho',after=68),.5),'s7_pus':(wt('pusieron'),.4),'s7_hoy':(wt('hoy'),0),
+'c_era':(wt('Era',after=71),0),'c_leal':(wt('lealtad'),.3),'c_dejar':(wt('dejar'),0),'c_com':(wt('Comenta'),.4),
 }
-TRS=[None,{'type':'dive','x':180,'y':320,'z':9,'dur':.5},{'type':'morph','a':[100,201,97,101,17],'col':'#141c30','dur':.55},{'type':'ink','x':180,'y':330,'col':'#dfeefc','dur':.4},
-     {'type':'dive','x':180,'y':300,'z':9},{'type':'push','dir':'left'},{'type':'morph','a':[110,265,140,130,22],'col':'#ffb547','dur':.5},{'type':'push','dir':'up'},
-     {'type':'iris','x':180,'y':300,'col':'#ff6b5a'},{'type':'dive','x':180,'y':280,'z':10},{'type':'morph','a':[139,312,30,30,15],'col':'#ffd27a'}]
+TRS=[None,{'type':'dive','x':180,'y':284,'z':9,'dur':.5},{'type':'push','dir':'left'},{'type':'ink','x':180,'y':330,'col':'#ff7a50','dur':.45},
+     {'type':'fog'},{'type':'morph','a':[90,200,180,150,18],'col':'#f4ead2','dur':.55},{'type':'dip','col':'#05081a'},
+     {'type':'morph','a':[110,250,140,100,16],'col':'#ffd27a','dur':.55},{'type':'iris','x':180,'y':330,'col':'#ffd27a'}]
 if __name__=='__main__':
     E,T2=build(T,RAW,TRS,DUR)
-    for k in sorted(E,key=lambda k:E[k]): print('%-10s %.3f'%(k,E[k]),end=' | ')
+    for k in sorted(E,key=lambda k:E[k]): print('%s %.2f'%(k,E[k]),end=' | ')
