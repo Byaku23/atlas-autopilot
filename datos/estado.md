@@ -1,25 +1,17 @@
-# Estado del proyecto Atlas del saber (traspaso a un chat nuevo) — 2026-11-10
-(Karpio Brand y La Casa de Alofoke van en otro chat; no tocar aquí.)
+# Estado del proyecto de shorts (actualizado 2026-11-10 noche) — léelo al empezar un chat nuevo
 
-## Sistema en marcha
-- 3 tareas programadas (zona America/New_York, modelo Sonnet): video mañana 8:43, video tarde 13:44, comentarios YouTube 18:43.
-  Las del 10-nov fallaron por límite de uso (antes de pasarlas a Sonnet). **Primera comprobación real: 11-nov 8:43.**
-  Si vuelven a fallar por límite: pasar a 1 video/día o revisar plan (decisión de Johan). Opus/Fable: prohibidos sin su permiso.
-- Publicación automática en IG Reel, TikTok, YouTube Short y Facebook Reel (solo página). Aviso a Johan con enlace para cancelar.
-- ElevenLabs: Johan recargó 110k créditos el 10-nov. Voz Hache. No regenerar voz si eng/cache.py voz dice REUSAR.
-- Optimización de consumo aplicada y probada (ver CAMBIOS.md). Informe tras cada video en datos/informes.md.
+## Sistema
+- Producción automática: 3 tareas programadas (Sonnet) — "Atlas video mañana" 8:43, "Atlas video tarde" 13:44, "Atlas comentarios" 18:43 (hora de Nueva York). Todas siguen CLAUDE.md/PIPELINE.md/COMENTARIOS.md de este repositorio.
+- Reglas de modelos/consumo en CLAUDE.md; registro de cambios y cómo revertir en CAMBIOS.md (punto seguro: commit d92c7e2).
+- Las 3 últimas ejecuciones fallaron por límite de uso (antes de pasar a Sonnet). Pendiente: comprobar el 2026-11-11 si la de las 8:43 ya produce. Si vuelve a fallar: bajar a 1 video/día o revisar el plan (no usar créditos de pago).
 
-## Pendiente
-- Video "Los generales que olvidamos": guion verificado en videos/2026-11-10_generales_olvidados/guion.md, voz pendiente. Prioridad del próximo run de mañana.
-- Johan ya borró el video duplicado de los animales (10-nov).
-- Rama vieja `setup-test` en GitHub: Johan puede borrarla (yo no puedo).
-- Ideas: datos/ideas.md (10 nuevas: animales+historia, debate, mapa; generales marcadas PRIORIDAD).
-- Johan no ha contestado si quiere que se escriban los 10 guiones de golpe.
+## Pendientes de los shorts
+1. Video "Los generales que olvidamos" (videos/2026-11-10_generales_olvidados): guion verificado con fuentes, idea reservada; falta voz, escenas, render y publicación. Lo retoma la ejecución de la mañana.
+2. Ideas nuevas (animales+historia, debate, mapa) en datos/ideas.md; los "generales" tienen prioridad.
+3. Comentarios: YouTube se responde con la tarea de las 18:43 (Johan aprueba antes de publicar). Instagram/TikTok/Facebook: manuales, Johan manda capturas. Las respuestas deben sonar naturales, no a IA.
+4. Johan ya borró la copia duplicada del video de los animales (2026-11-10). Hay un registro anti-duplicados en datos/publicados.json.
+5. Opcional: borrar en GitHub la rama sobrante `setup-test`.
+6. Primera ejecución con la nueva arquitectura: revisar que el informe (datos/informes.md) salga y que la caché/antiduplicados funcionen en la nube; confirmar que el permiso de internet (elevenlabsusercontent.com, raw.githubusercontent.com) sigue activo.
 
-## Comentarios
-- YouTube (solo canal UC_jviohrsCwGW1CXN9a7Q6A, nunca Byaku): ciclo diario en COMENTARIOS.md; respuestas naturales, no de IA; solo se publican las que Johan aprueba.
-- IG/TikTok/Facebook: manual, Johan manda capturas en el chat de comentarios.
-
-## Datos útiles
-- Fórmulas ganadoras: ANIMALES+HISTORIA (compartidos), DEBATE/RANKING (comentarios), MAPA+CAUSAS (guardados).
-- El de los generales fue el que más comentarios tuvo; "El mejor general de la historia" ~56k vistas IG; "Cómo empezó la Primera Guerra Mundial" ~29k.
+## Datos fijos
+Metricool brandId 7523723; canal YouTube UC_jviohrsCwGW1CXN9a7Q6A (nunca el canal Byaku); Facebook solo la página (901061146421888); voz Hache 7wYVohVK7cr2fX4431vj. Otros proyectos de Johan (juego, Karpio, Alofoke) NO se tocan aquí.
