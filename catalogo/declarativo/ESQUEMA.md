@@ -70,3 +70,37 @@ El intérprete no usa azar ni reloj: cada cuadro depende solo de `t` y de los da
 ## Qué valida `compilar.py` (sin IA)
 Versión del esquema; claves desconocidas (con sugerencia); piezas, parámetros y opciones del registro; parámetros obligatorios; tipos y rangos; curvas; colores del tema; existencia de recursos, scripts y funciones `js`; eventos usados pero no declarados; palabras que no están en la narración; orden de escenas; eventos fuera de la duración; ids repetidos; referencias `de`/`sigue` a capas o propiedades inexistentes.
 No valida todavía: textos que se salen del margen (hace falta medir fuentes), ni que una pieza quede fuera de cámara.
+
+---
+
+# Esquema v2 (etapa 2) — añade al v1; un archivo v1 sigue funcionando igual
+
+`"esquema": 2`. Todo lo del v1 sigue valiendo. Novedades:
+
+**Tiempos.** `"@palabra"` sin declarar = la primera vez que la narración dice esa palabra (`"@lobo"`, `"@años+0.3"`). Solo hay que declarar en `eventos` lo que necesite `despues`, `n`, `fin` o un tiempo fijo. `"golpes": {"lobo": 1}` = fuerza del golpe en esa palabra o evento.
+
+**Nombres de capa.** Una pieza que aparece una sola vez en la escena se llama como ella (`"carne"`, `"humano"`); `id` solo hace falta si hay varias o para darle otro nombre (`"id": "lobo"`).
+
+**Registro automático.** Las piezas disponibles se leen de los `.js` del video (`registro.py`): cualquier función de dibujo se puede usar por su nombre y parámetros originales (`{"usa": "sack", "s": 0.7}`). `piezas.json` añade nombres en español, anclas y gestos, y el compilador avisa si deja de coincidir con el código.
+
+**Biblioteca** (`biblioteca.js`): `llanuraNoche` (suelo, brillo, colinas, x0, ancho, tierra, tierra2, lejos, cerca) y `hoguera` (x, y, escala, radio, chispas, semilla, desfase). Solo valen si el video trae las piezas que usan.
+
+**Estilos.** `tema.estilos = {"destacado": {"color": "$acento", …}}` y en la capa `"estilo": "destacado"`: parámetros con nombre, para cualquier pieza. `texto` toma por defecto `x` 180, color blanco, contorno `$tinta` y resalte `$acento`.
+
+**Valor `cambia`.** `{"cambia": [a, b], "en": "@lobo", "dur": 0.45, "curva": "eo"}` (números o colores).
+
+**Anclas.** Un punto puede ser `[x, y]`, `"capa"` o `"capa.ancla"` (`"lobo.ojo"`, `"humano.mano"`); se calcula con la escala, el volteo y los gestos de la capa. Vale en `camara.capas[].mira` / `sigue`, en `desde` / `a` de las acciones y en `"sobre"` (capa pegada a un ancla). No tiene en cuenta `rot`.
+
+**Acciones** (`"acciones": [...]` en la escena; todas llevan `en`):
+
+| acción | parámetros | qué hace |
+|---|---|---|
+| `{"lanzar": objeto}` | `quien`, `desde`, `a`, `dur` 0.8, `altura` 80, `suelta` 0.05, `giro` {vel 10, hasta, reposo} | gesto «lanzar» de `quien`; el objeto vuela en arco desde su mano (o `desde`) hasta `a`, girando |
+| `{"reaccionar": actor}` | `gesto` (por defecto el primero de la pieza), `intensidad` | aplica un gesto de `piezas.json`; arranca desde el valor que tuviera |
+| `{"entrar": actor}` | `desde` (dirección o [dx, dy]), `dur` 0.35, `pasos`, `sombra` (color) + `luz`, `aparece` | llega a su posición; si sabe andar, da pasos; puede salir de la sombra o aparecer |
+| `{"salir": actor}` | `hacia`, `dur` 0.5, `pasos`, `desvanece` | se va y deja de dibujarse |
+| `{"desplazar": actor}` | `a` (punto) o `por` [dx, dy], `dur` 0.6, `altura`, `pasos` | se mueve; los desplazamientos se encadenan |
+
+Qué puede hacer cada pieza lo dice `piezas.json` (`gestos`, `andar`, `tinte`, `giro`, `anclas`); el compilador rechaza lo que una pieza no sabe hacer.
+
+**Límites conocidos (v2):** no valida que un texto quepa en pantalla; las anclas ignoran `rot` y la pose sentada del gato; los valores por defecto de los gestos salen de v01_perros; el audio sigue aparte.

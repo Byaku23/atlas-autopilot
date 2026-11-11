@@ -1,0 +1,30 @@
+{
+ "esquema": 2,
+ "duracion": 6,
+ "tema": {"acento": "#ffb547", "fuego": "#ff9a4a", "tinta": "rgba(0,0,0,.55)"},
+ "recursos": ["ejemplos/v01_perros/assets.js"],
+ "eventos": {"tira": {"t": 1.6, "golpe": 0.4}, "come": {"t": 2.6}, "sevan": {"t": 4.2}},
+ "escenas": [
+  {
+   "camara": {"claves": [{"t": 0, "x": 200, "y": 400, "z": 1.3}],
+              "capas": [{"mira": "perro.hocico", "desde": "@come", "mezcla": 0.5, "z": 2}]},
+   "mundo": [
+    {"usa": "llanuraNoche", "suelo": 450, "colinas": 1, "brillo": 0.6, "tierra": "#2a2038"},
+    {"usa": "hoguera", "x": 60, "y": 448, "escala": 0.6, "radio": 150, "chispas": 8},
+    {"usa": "humano", "x": 120, "y": 450, "borde": "$fuego"},
+    {"usa": "bestia", "id": "perro", "x": 280, "y": 452, "morph": 1, "voltear": true, "color": "#1a120c", "borde": "$fuego", "ojo": "rgba(255,215,110,.95)", "cola": 0.3},
+    {"usa": "hueso"}
+   ],
+   "acciones": [
+    {"entrar": "perro", "en": 0.3, "desde": "derecha", "dur": 1},
+    {"lanzar": "hueso", "quien": "humano", "en": "@tira", "a": "perro.hocico", "altura": 60, "dur": 0.6},
+    {"reaccionar": "perro", "en": "@come"},
+    {"salir": "hueso", "en": "@sevan", "hacia": "derecha", "dur": 1},
+    {"salir": "perro", "en": "@sevan", "hacia": "derecha", "dur": 1}
+   ],
+   "pantalla": [
+    {"usa": "texto", "texto": "OTRO OBJETO, OTRO FONDO", "y": 110, "tam": 20, "en": 0.3}
+   ]
+  }
+ ]
+}

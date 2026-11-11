@@ -148,7 +148,7 @@ class Val:
         idc = L.get('id') or s.auto.get((k, L['usa']))
         req = list(r.get('req', [])) + ([a for a, d in (r.get('def2') or {}).items() if not str(d).startswith('$')] if s.v == 1 else [])
         for a in req:
-            if a not in L and not (a in ('x', 'y') and ('trayecto' in L or 'sobre' in L or (k, idc) in s.lanzados)): s.e(ruta, f'a «{L["usa"]}» le falta «{a}»')
+            if a not in L and not (a in ('x', 'y') and ('trayecto' in L or 'sobre' in L or (k, idc) in s.lanzados)) and not (a == r.get('giro') and (k, idc) in s.lanzados): s.e(ruta, f'a «{L["usa"]}» le falta «{a}»')
         if 'sobre' in L: s.punto(L['sobre'], ruta + '.sobre', k)
         if 'id' not in L and idc: s.ids[(k, idc)] = set(args) | set(opts); s.pieza[(k, idc)] = (L, r)
         for n in args + opts + ['t']:

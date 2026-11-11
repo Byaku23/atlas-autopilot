@@ -1,0 +1,38 @@
+{
+ "esquema": 2,
+ "duracion": 84.52,
+ "tema": {"acento": "#ffb547", "fuego": "#ff9a4a", "tinta": "rgba(0,0,0,.6)",
+          "estilos": {"destacado": {"color": "$acento", "contorno": "rgba(40,15,0,.7)"}}},
+ "recursos": ["ejemplos/v01_perros/assets.js"],
+ "scripts": ["negro.js"],
+ "eventos": {"el": {"palabra": "él", "despues": 82}, "nos": {"palabra": "nosotros", "despues": 83, "golpe": 1}},
+ "golpes": {"compañero": 0.4},
+ "escenas": [
+  {"js": "negro"},
+  {
+   "inicio": 79.45, "transicion": {"type": "dive", "x": 180, "y": 280, "z": 10},
+   "camara": {"claves": [{"t": "@escena", "x": 175, "y": 380, "z": 2.3}, {"t": "@compañero", "x": 178, "y": 385, "z": 1.6},
+                         {"t": "@nos", "x": 182, "y": 388, "z": 1.45}, {"t": 84.52, "x": 182, "y": 388, "z": 1.75}]},
+   "mundo": [
+    {"usa": "llanuraNoche", "colinas": 1},
+    {"usa": "hoguera", "x": 180, "y": 440, "escala": 0.75, "radio": 200, "desfase": 0.5, "chispas": 16, "semilla": 3},
+    {"usa": "humano", "x": 118, "y": 442, "borde": "$fuego", "brazo": {"cambia": [0.9, -0.35], "en": "@nos-0.5", "dur": 0.5}},
+    {"usa": "bestia", "id": "perro", "x": 236, "y": 444, "morph": 1, "voltear": true, "color": "#05070c", "borde": "rgba(255,170,90,.9)",
+     "cola": {"cambia": [0.08, 0.3], "en": "@el", "dur": 0.2}},
+    {"usa": "estallido", "x": 166, "y": 398, "en": "@nos", "colores": ["#ffd27a", "#fff", "#ffb547"], "n": 26, "vel": 120, "vida": 0.9, "tam": 2.2},
+    {"usa": "resplandor", "x": 166, "y": 398, "radio": {"cambia": [0, 40], "en": "@nos", "dur": 0.3}, "color": "rgba(255,210,120,.9)"},
+    {"usa": "nieve", "n": 40, "semilla": 4, "alfa": 0.4, "vel": 14}
+   ],
+   "acciones": [
+    {"reaccionar": "perro", "en": "@el", "gesto": "alerta", "intensidad": 0.5},
+    {"reaccionar": "perro", "en": "@nos-0.3", "gesto": "agachar", "intensidad": 0.714}
+   ],
+   "pantalla": [
+    {"usa": "texto", "texto": "ELEGIMOS", "y": 96, "tam": 30, "en": "@miles+0.6", "sale": "@el-0.15", "grosor": 5},
+    {"usa": "texto", "texto": "UN COMPAÑERO", "y": 132, "tam": 30, "estilo": "destacado", "en": "@compañero-0.05", "sale": "@el-0.1", "grosor": 5},
+    {"usa": "texto", "texto": "Y ÉL NOS ELIGIÓ", "y": 96, "tam": 28, "en": "@el-0.05", "grosor": 5},
+    {"usa": "texto", "texto": "A NOSOTROS", "y": 132, "tam": 34, "estilo": "destacado", "en": "@nos-0.05", "grosor": 6, "sombra": "rgba(255,170,60,.8)"}
+   ]
+  }
+ ]
+}
