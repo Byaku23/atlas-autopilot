@@ -3,7 +3,9 @@
 ## Mismo nombre en varios videos (chocan si se mezclan en un mismo assets.js)
 - `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
 - `humSkel`: v01_perros:75 (x,y,s,rv,c='#efe6cf'); v02_gatos:101 (x,y,s,rv,t=0) — FIRMAS DISTINTAS
+- `medal`: 2026-11-10_animales_guerra:180 (x,y,s,rot=0); 2026-11-10_generales_olvidados:54 (x,y,r,n,t0,t,o={}) — FIRMAS DISTINTAS
 - `pin`: v01_perros:61 (x,y,t,ts,col,lbl); 2026-11-10_animales_guerra:179 (x,y,t,ts,col,sz=1) — FIRMAS DISTINTAS
+- `waves`: 2026-11-10_animales_guerra:192 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3); 2026-11-10_generales_olvidados:52 (y0,t,col,amp=4,x0=-40,x1=400,fr=.05,ph=0) — FIRMAS DISTINTAS
 
 ## Piezas distintas que hacen casi lo mismo (candidatas a unificar)
 - `pin(x,y,t,ts,col,lbl)` v01_perros:61 / `pinDrop(x,y,t,ts,col,lbl,tg)` v02_gatos:145

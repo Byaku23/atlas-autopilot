@@ -54,6 +54,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `sparksUp(x,y,t,n=14,seed=1)` · v01_perros:34 · usos 3
 - `waveArcs(x,y,t,ts,col,n=3,gap=.12,R0=60,dir=0,spread=.9,lw=3)` · v02_gatos:89 · usos 4
 - `waves(x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3)` · 2026-11-10_animales_guerra:192 · usos 2 — aro de olor / sonido
+- `waves(y0,t,col,amp=4,x0=-40,x1=400,fr=.05,ph=0)` · 2026-11-10_generales_olvidados:52 · usos 6
 - `zzz(x,y,t,k=0)` · 2026-11-10_animales_guerra:193 · usos 1
 
 ## Mapas y marcadores
@@ -64,8 +65,10 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `pinDrop(x,y,t,ts,col,lbl,tg)` · v02_gatos:145 · usos 1
 
 ## Iconos y objetos
+- `bar(x,y,w,h,col,r=6)` · 2026-11-10_generales_olvidados:55 · usos 1
 - `beastPts(m,ph=0,wag=0,t=0)` · v01_perros:7 · usos 1
 - `bez(p0,p1,p2,p3,n=10)` · 2026-11-10_animales_guerra:17 · usos 1
+- `bigHat(x,y,s,col,rim,kind)` · 2026-11-10_generales_olvidados:28 · usos 3 — sombrero grande de silueta (bicornio) para el gancho
 - `bowl(x,y,s,fill,t=0)` · v02_gatos:85 · usos 2
 - `brain(x,y,s,t,lit,o={}) {rim}` · v02_gatos:94 · usos 1
 - `brainPath()` · v02_gatos:93 · usos 2
@@ -81,20 +84,26 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `dovecote(x,y,s,sh)` · 2026-11-10_animales_guerra:167 · usos 1 — palomar
 - `el(cx,cy,rx,ry,rot=0)` · 2026-11-10_animales_guerra:11 · usos 40
 - `emblem(x,y,r,rot=0)` · 2026-11-10_animales_guerra:135 · usos 1 — emblema circular: oso con proyectil (crema sobre rojo) — r en unidades de mundo
+- `fig(x,y,s,o={}) {arm,col,fall,flip,hat,patch,peg,ph,rifle,rim,stiff}` · 2026-11-10_generales_olvidados:6 · usos 7 — figura genérica sin cara. o: col, rim, hat('bic'|'helm'|'tri'|'crest'|'cap'|'none'), ph (paso), flip, arm (ángulo brazo), rifle, fall (0..1), peg, patch, stiff
 - `glyph(k,x,y,s,col)` · v02_gatos:130 · usos 1 — glifos
 - `handPoint(x,y,s,c='#f2b48a')` · v01_perros:79 · usos 2 — mano señalando (estilo plano)
 - `heart(x,y,s,col,o={}) {glow,lw,st}` · v02_gatos:8 · usos 12
 - `helix(cx,y0,y1,t,amp=46,col1='#ffb547',col2='#7fd4ff')` · v01_perros:53 · usos 1 — doble hélice de ADN
+- `horse(x,y,s,o={}) {col,fall,flip,ph,rider,rim}` · 2026-11-10_generales_olvidados:31 · usos 1
 - `inkParts(paths,fill,rim,lw=2.4)` · 2026-11-10_animales_guerra:8 · usos 13 — paths: funciones que construyen un path. Se dibuja primero el borde (rim) de todas y luego el relleno => silueta unida con contorno de luz
 - `limb(x0,y0,x1,y1,w0,w1)` · 2026-11-10_animales_guerra:13 · usos 29
 - `meat(x,y,s,r)` · v01_perros:41 · usos 2
 - `medal(x,y,s,rot=0)` · 2026-11-10_animales_guerra:180 · usos 1
+- `medal(x,y,r,n,t0,t,o={}) {fill}` · 2026-11-10_generales_olvidados:54 · usos 1
+- `mount(x,y,w,h,col,snow,t=0)` · 2026-11-10_generales_olvidados:53 · usos 3
 - `pawPrint(x,y,s,col,rot=0)` · v02_gatos:84 · usos 1 — varios
 - `pf(pts)` · 2026-11-10_animales_guerra:12 · usos 12
 - `posterCard(kind,cx,cy,w,h,lit,t,o={}) {door,rot,sc}` · 2026-11-10_animales_guerra:139 · usos 2 — carta/tarjeta-cartel: (cx,cy) centro en el mundo, w x h. kind: elefante|paloma|perro|oso. lit 0..1
+- `qmark(x,y,s,t,k)` · 2026-11-10_generales_olvidados:56 · usos 1
 - `rib(pts,w0,w1)` · 2026-11-10_animales_guerra:16 · usos 1 — cinta con grosor variable a lo largo de una polilínea (trompa, cola...)
 - `sack(x,y,s,rot,fill=1)` · v02_gatos:151 · usos 2
 - `shell(x,y,s,gl=0)` · 2026-11-10_animales_guerra:38 · usos 4 — proyectil de artillería (centrado, apunta a +x)
+- `ship(x,y,s,o={}) {col,flag,flip,k,rim,sail,t}` · 2026-11-10_generales_olvidados:43 · usos 3
 - `STAMP(s,x,y,sz,t,t0,o={})` · 2026-11-10_animales_guerra:5 · usos 12
 - `tablet(x,y,s,c)` · v01_perros:51 · usos 1
 - `thick(C,w)` · v01_perros:43 · usos 1 — signo de interrogación (contorno grueso) y cabeza de lobo -> morph
