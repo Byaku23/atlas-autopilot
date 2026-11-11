@@ -1,0 +1,208 @@
+{
+ "esquema": 2,
+ "duracion": 7.5,
+ "tema": {
+  "acento": "#ffb547",
+  "fuego": "#ff9a4a",
+  "tinta": "rgba(0,0,0,.55)",
+  "estilos": {
+   "destacado": {
+    "color": "$acento",
+    "contorno": "rgba(40,15,0,.7)"
+   }
+  }
+ },
+ "recursos": [
+  "ejemplos/v01_perros/assets.js"
+ ],
+ "golpes": {
+  "años": 0.5,
+  "error": 0.3,
+  "lobo": 1
+ },
+ "escenas": [
+  {
+   "camara": {
+    "claves": [
+     {
+      "t": 0,
+      "x": 198,
+      "y": 382,
+      "z": 1.5
+     },
+     {
+      "t": "@darle",
+      "x": 190,
+      "y": 375,
+      "z": 1.25
+     }
+    ],
+    "capas": [
+     {
+      "sigue": "carne",
+      "retraso": 0.22,
+      "desde": "@darle",
+      "mezcla": 0.35,
+      "curva": "eo",
+      "z": 1.5,
+      "zDur": 0.9
+     },
+     {
+      "mira": "lobo.ojo",
+      "desde": "@lobo-0.1",
+      "mezcla": 0.5,
+      "z": 2.3
+     }
+    ]
+   },
+   "mundo": [
+    {
+     "usa": "llanuraNoche"
+    },
+    {
+     "usa": "hoguera",
+     "x": 142,
+     "y": 438,
+     "escala": 0.8
+    },
+    {
+     "usa": "resplandor",
+     "x": 260,
+     "y": 420,
+     "radio": 90,
+     "color": {
+      "color": "#ff8c32",
+      "alfa": {
+       "cambia": [
+        0,
+        0.3
+       ],
+       "en": "@lobo",
+       "dur": 0.45
+      }
+     }
+    },
+    {
+     "usa": "humano",
+     "x": 100,
+     "y": 440,
+     "borde": "$fuego"
+    },
+    {
+     "usa": "bestia",
+     "id": "lobo",
+     "x": 284,
+     "y": 442,
+     "escala": 1.05,
+     "voltear": true,
+     "ojo": "rgba(255,215,110,.95)",
+     "color": "#140d08",
+     "borde": {
+      "color": "$fuego",
+      "alfa": 0.9
+     }
+    },
+    {
+     "usa": "carne"
+    },
+    {
+     "usa": "chispas",
+     "x": 226,
+     "y": 432,
+     "en": "@lobo",
+     "n": 14,
+     "color": "#ffd27a",
+     "vel": 110,
+     "vida": 0.6,
+     "gravedad": 200
+    },
+    {
+     "usa": "nieve",
+     "n": 50,
+     "semilla": 4,
+     "alfa": 0.5,
+     "vel": 18
+    }
+   ],
+   "acciones": [
+    {
+     "lanzar": "carne",
+     "quien": "humano",
+     "en": "@darle",
+     "desde": [
+      118,
+      374
+     ],
+     "a": [
+      226,
+      433
+     ],
+     "altura": 110,
+     "giro": {
+      "hasta": "@lobo-0.05",
+      "reposo": 7.5
+     }
+    },
+    {
+     "entrar": "lobo",
+     "en": "@lobo",
+     "desde": [
+      18,
+      0
+     ],
+     "pasos": 0.7,
+     "sombra": "#04060a",
+     "luz": 0.45
+    },
+    {
+     "reaccionar": "lobo",
+     "en": "@lobo+0.55"
+    }
+   ],
+   "pantalla": [
+    {
+     "usa": "onda",
+     "x": 180,
+     "y": 330,
+     "en": "@lobo",
+     "color": "rgba(255,200,120,.8)",
+     "radio": 150,
+     "grosor": 3,
+     "dur": 0.6
+    },
+    {
+     "usa": "texto",
+     "texto": "HACE 15.000 AÑOS",
+     "y": 96,
+     "tam": 31,
+     "en": -0.6,
+     "sale": 2.05,
+     "grosor": 6,
+     "resalta": [
+      1
+     ]
+    },
+    {
+     "usa": "texto",
+     "texto": "EL ERROR MÁS",
+     "y": 82,
+     "tam": 25,
+     "en": "@error-0.06",
+     "sale": "@darle+0.15",
+     "grosor": 5
+    },
+    {
+     "usa": "texto",
+     "texto": "INTELIGENTE",
+     "y": 118,
+     "tam": 40,
+     "estilo": "destacado",
+     "en": "@inteligente-0.04",
+     "sale": "@darle+0.2",
+     "grosor": 6,
+     "sombra": "rgba(255,160,50,.7)"
+    }
+   ]
+  }
+ ]
+}
