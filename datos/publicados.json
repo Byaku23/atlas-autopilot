@@ -18,6 +18,15 @@
    "ts": "2026-11-11 13:57:59",
    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-4987743026232013260",
    "fecha_programada": "2026-11-11T12:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-11_hachiko",
+   "titulo": "Hachikō: el perro que esperó casi 10 años en la estación",
+   "mp4_sha256": "f2f67022bc41febc31c8c351714e5b6ac09449a0c2bbfab85c8780ca50d8e73f",
+   "estado": "programado",
+   "ts": "2026-11-11 19:01:01",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-6795966038767941968",
+   "fecha_programada": "2026-11-11T18:00:00-05:00"
   }
  ]
 }
