@@ -23,3 +23,12 @@ Las tres tareas programadas no se tocaron: solo leen `main`, por eso el trabajo 
 - 2ª pasada: 0,8 s, las 3 etapas saltadas. Cambiar scenes.js → solo render; audio.py → rehace audio; texto de voz → bloquea y exige regenerar voz.
 - `--rapido`: 4 s en vez de 5 min.
 - Antiduplicados: detecta misma carpeta, título casi igual y video ya publicado (animales_guerra).
+
+# Catálogo reutilizable para Canvas (2026-11-11)
+
+Decisión de Johan: Canvas 2D es el motor definitivo; Remotion probado y descartado (`pruebas/remotion/`, solo referencia, no entra al pipeline).
+Punto de retorno: commit `61d1893` (antes de este cambio). Revertir: `git revert 6132741 b801c66` (o los commits de esta sección) y push.
+Solo se añadieron archivos nuevos y 3 líneas de documentación; no se tocó `eng/`, ni los videos, ni las tareas programadas.
+- `catalogo/generar.py` → `catalogo/CATALOGO_FIRMAS.md` (piezas con parámetros) y `catalogo/DUPLICADOS.md`. Se regenera con `python3 catalogo/generar.py` (Paso 8).
+- `catalogo/tema.js` — `tema({acc,ink,sw,bg0,bg1})`: paleta y texto con contorno por parámetros (opcional, se carga desde `index.html`).
+- `CLAUDE.md` y `PIPELINE.md`: referencias al catálogo y a `tema.js`.
