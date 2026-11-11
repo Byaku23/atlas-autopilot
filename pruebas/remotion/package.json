@@ -1,0 +1,15 @@
+{
+  "name": "atlas-remotion-prueba",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Prueba comparativa aislada (no forma parte del pipeline)",
+  "dependencies": {
+    "@remotion/cli": "4.0.529",
+    "@remotion/motion-blur": "4.0.529",
+    "@types/react": "18.3.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.529",
+    "typescript": "5.5.4"
+  }
+}
