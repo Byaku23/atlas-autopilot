@@ -14,5 +14,5 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [ ] ¿Quién fue el PEOR general de la historia? (la Gran Guerra del Emú, 1932). DEBATE.
 - [ ] ¿Cuál fue el imperio más PODEROSO? (grande ≠ poderoso). DEBATE + MAPA.
 - [ ] ¿Cómo empezó la Segunda Guerra Mundial? en mapa. MAPA.
-- [ ] Escipión vs Aníbal: el duelo que decidió el mundo (Zama). MAPA.
+- [~] reservada 2026-11-12 Escipión vs Aníbal: el duelo que decidió el mundo (Zama). MAPA.
 - [ ] La Guerra Fría en 60 segundos. MAPA.
