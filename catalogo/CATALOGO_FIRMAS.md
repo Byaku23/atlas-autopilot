@@ -9,6 +9,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `bastet(x,y,s,t=0,o={}) {eye}` · v02_gatos:114 · usos 1 — Bastet (perfil, mira a la derecha; centro de la cabeza en 0,0)
 - `bear(x,y,s,o={}) {arms,fill,flip,glow,ph,rim,shell}` · 2026-11-10_animales_guerra:26 · usos 5 — oso de pie. o: ph (paso), shell (0/1), flip, fill, rim, hold (agacha el torso)
 - `beast(x,y,s,m,o={}) {arm,col,eye,flip,head,ph,rim,rot,t,wag}` · v01_perros:12 · usos 11 — o: {ph, wag, t, col, rim, eye, flip, al, head(bajar cabeza)}
+- `beast(x,y,s,m,o={}) {arm,col,eye,flip,head,ph,rim,rot,t,wag}` · 2026-11-12_perros_cola:11 · usos 8 — o: {ph, wag, t, col, rim, eye, flip, al, head(bajar cabeza)}
 - `cartoonDog(x,y,s,o={}) {look,t,wag}` · v01_perros:80 · usos 1 — perro moderno sentado, cabeza que gira (o.look -1..1) y cola
 - `catHead(x,y,s,o={}) {blink,col,eye,eyeS,halo,look,rim,rot,squint}` · v02_gatos:11 · usos 4 — cara de gato (frontal)
 - `catSide(x,y,s,o={}) {ba,col,eye,fa,flip,head,open,ph,pose,rim,rot,rw,sq,stripes,t,tail}` · v02_gatos:27 · usos 7 — o: pose 'walk'|'sit', ph (fase de patas), fa/ba (ángulos fijos de patas delanteras/traseras), tail (ondeo), eye, rim, col, stripes, flip, head (cabeceo), sq (entrecerrar), open
@@ -20,6 +21,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `human(x,y,s,o={}) {arm,bend,col,flip,rim}` · v01_perros:20 · usos 5 — humano agachado (de perfil, mira a la derecha). o.arm: ángulo del brazo; o.col; o.rim
 - `mouse(x,y,s,o={}) {col,flip,ph}` · v02_gatos:58 · usos 2
 - `person(x,y,s,o={}) {arm,bend,bow,flip,hair,shirt,shrug,smile}` · v02_gatos:73 · usos 5 — o: arm (ángulo brazo), arm2, bow (inclinación), shrug (0..1), flip, shirt, hair, smile, ear, hold
+- `person(x,y,s,col='#cfe9f2')` · 2026-11-12_perros_cola:45 · usos 4 — silueta de persona (cabeza y hombros). (x,y)=base
 - `pigeon(x,y,s,o={}) {cap,chest,fill,fl,flap,flip,hurt,legA,noLegs,rim,stand,t,tilt}` · 2026-11-10_animales_guerra:60 · usos 2 — paloma. o: fl (fase de aleteo), flap (amplitud), tilt, flip, fill, rim, stand
 - `soldier(x,y,s,o={}) {arms,crate,fill,flip,lieY,mask,ph,rifle,rim,rot}` · 2026-11-10_animales_guerra:98 · usos 8 — soldado genérico (sin cara, casco redondo). o: ph, rot (tumbado), lieY, mask, arms ('down'|'up'|'carry'), crate, flip, fill, rim, rifle
 - `soldier(x,y,s,o={}) {aim,col,flip,ph,rim}` · 2026-11-12_emu:25 · usos 6 — soldado de perfil (silueta con sombrero de ala ancha levantada). o: flip, aim (0..1 apuntando), ph, col
@@ -69,12 +71,15 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 ## Iconos y objetos
 - `akita(x,y,s,o={}) {al,col,eye,flip,head,rim,shade,tail}` · 2026-11-11_hachiko:7 · usos 11 — akita sentado mirando a la derecha. (0,0)=suelo. o: col, rim, tail(ángulo cola), head(inclinación), flip, al, eye
 - `akitaLie(x,y,s,o={}) {col}` · 2026-11-11_hachiko:25 · usos 1 — akita echado (cabeza sobre las patas)
+- `ballIcon(x,y,s,t)` · 2026-11-12_perros_cola:51 · usos 1
 - `bar(x,y,w,h,col,r=6)` · 2026-11-10_generales_olvidados:55 · usos 1
 - `beastPts(m,ph=0,wag=0,t=0)` · v01_perros:7 · usos 1
+- `beastPts(m,ph=0,wag=0,t=0)` · 2026-11-12_perros_cola:6 · usos 1
 - `bez(p0,p1,p2,p3,n=10)` · 2026-11-10_animales_guerra:17 · usos 1
 - `bez(p0,p1,p2,p3,n=10)` · 2026-11-12_zama:16 · usos 5
 - `bigHat(x,y,s,col,rim,kind)` · 2026-11-10_generales_olvidados:28 · usos 3 — sombrero grande de silueta (bicornio) para el gancho
 - `bowl(x,y,s,fill,t=0)` · v02_gatos:85 · usos 2
+- `bowl(x,y,s)` · 2026-11-12_perros_cola:48 · usos 2
 - `brain(x,y,s,t,lit,o={}) {rim}` · v02_gatos:94 · usos 1
 - `brainPath()` · v02_gatos:93 · usos 2
 - `cage(x,y,door)` · 2026-11-10_animales_guerra:158 · usos 1 — jaula: o.door ángulo de la puerta (0 cerrada)
@@ -90,6 +95,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `crate(x,y,s,rot=0)` · 2026-11-10_animales_guerra:122 · usos 10
 - `crowd(x,y,s,col,ph)` · 2026-11-11_hachiko:39 · usos 2
 - `crown(x,y,s,rot=0)` · v02_gatos:9 · usos 2
+- `dogBack(x,y,s,o={}) {al,bias,flip,gauge,gcol,look}` · 2026-11-12_perros_cola:27 · usos 8
 - `dogTag(x,y,s,r,t,o={})` · v01_perros:90 · usos 1
 - `dovecote(x,y,s,sh)` · 2026-11-10_animales_guerra:167 · usos 1 — palomar
 - `dusk(k)` · 2026-11-11_hachiko:55 · usos 3 — k 0 = mañana, .5 = tarde, 1 = noche
@@ -103,11 +109,13 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `handPoint(x,y,s,c='#f2b48a')` · v01_perros:79 · usos 2 — mano señalando (estilo plano)
 - `heart(x,y,s,col,o={}) {glow,lw,st}` · v02_gatos:8 · usos 12
 - `heart(x,y,s,col,a=1)` · 2026-11-11_hachiko:61 · usos 5
+- `heart(x,y,s,col=CORAL,al=1)` · 2026-11-12_perros_cola:47 · usos 3
 - `helix(cx,y0,y1,t,amp=46,col1='#ffb547',col2='#7fd4ff')` · v01_perros:53 · usos 1 — doble hélice de ADN
 - `helm(x,y,s,o={}) {col,flip}` · 2026-11-12_zama:55 · usos 2 — casco romano (galea) de perfil. o: col, crest
 - `horse(x,y,s,o={}) {col,fall,flip,ph,rider,rim}` · 2026-11-10_generales_olvidados:31 · usos 1
 - `inkParts(paths,fill,rim,lw=2.4)` · 2026-11-10_animales_guerra:8 · usos 13 — paths: funciones que construyen un path. Se dibuja primero el borde (rim) de todas y luego el relleno => silueta unida con contorno de luz
 - `inkParts(paths,fill,rim,lw=2.4)` · 2026-11-12_zama:7 · usos 1 — paths: funciones que construyen un path. Se dibuja primero el borde (rim) de todas y luego el relleno => silueta unida con contorno de luz
+- `lab(t,k=1)` · 2026-11-12_perros_cola:20 · usos 9 — fondo de laboratorio: degradado + cuadrícula tenue + polvo
 - `lamp(x,y,s,t,col='#ffcf7a',a=1)` · 2026-11-11_hachiko:53 · usos 8
 - `landPoly(pts,fill,edge)` · 2026-11-12_zama:71 · usos 3
 - `lewis(x,y,s,o={}) {col,flip}` · 2026-11-12_emu:32 · usos 6 — ametralladora Lewis sobre trípode (apunta a la derecha)
@@ -125,6 +133,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `petals(t,n,col,seed=1,spd=26,a=.9)` · 2026-11-11_hachiko:59 · usos 3
 - `pf(pts)` · 2026-11-10_animales_guerra:12 · usos 12
 - `pf(pts)` · 2026-11-12_zama:11 · usos 2
+- `pill(x,y,w,h,col,s,fg,sz,q=1)` · 2026-11-12_perros_cola:52 · usos 4
 - `posterCard(kind,cx,cy,w,h,lit,t,o={}) {door,rot,sc}` · 2026-11-10_animales_guerra:139 · usos 2 — carta/tarjeta-cartel: (cx,cy) centro en el mundo, w x h. kind: elefante|paloma|perro|oso. lit 0..1
 - `prof(x,y,s,o={}) {arm,col,flip,ph,rim}` · 2026-11-11_hachiko:32 · usos 4 — profesor de perfil caminando a la derecha (siluetas oscuras con sombrero)
 - `qmark(x,y,s,t,k)` · 2026-11-10_generales_olvidados:56 · usos 1
@@ -143,6 +152,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `statueDog(x,y,s,o={}) {col,nodog,pl,sh}` · 2026-11-11_hachiko:67 · usos 3
 - `sun(x,y,r,col='#ffe9b0')` · 2026-11-11_hachiko:57 · usos 4
 - `tablet(x,y,s,c)` · v01_perros:51 · usos 1
+- `tailAng(o) {amp,bias,spd,t}` · 2026-11-12_perros_cola:26 · usos 1 — o: {t, bias, amp, spd, gauge(0..1), gcol, look, al, flip}
 - `TG(s,x,y,sz,b,f,t,t0,o={})` · 2026-11-11_hachiko:5 · usos 14
 - `TG(s,x,y,sz,b,f,t,t0,o={})` · 2026-11-12_emu:5 · usos 15
 - `TG(s,x,y,sz,b,f,t,t0,o={})` · 2026-11-12_zama:5 · usos 24

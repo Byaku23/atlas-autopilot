@@ -3,15 +3,19 @@
 ## Mismo nombre en varios videos (chocan si se mezclan en un mismo assets.js)
 - `TG`: 2026-11-11_hachiko:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_emu:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_zama:5 (s,x,y,sz,b,f,t,t0,o={}) — misma firma
 - `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_emu:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
+- `beast`: v01_perros:12 (x,y,s,m,o={}); 2026-11-12_perros_cola:11 (x,y,s,m,o={}) — misma firma
+- `beastPts`: v01_perros:7 (m,ph=0,wag=0,t=0); 2026-11-12_perros_cola:6 (m,ph=0,wag=0,t=0) — misma firma
 - `bez`: 2026-11-10_animales_guerra:17 (p0,p1,p2,p3,n=10); 2026-11-12_zama:16 (p0,p1,p2,p3,n=10) — misma firma
+- `bowl`: v02_gatos:85 (x,y,s,fill,t=0); 2026-11-12_perros_cola:48 (x,y,s) — FIRMAS DISTINTAS
 - `coin`: 2026-11-12_emu:58 (x,y,r,rot=0); 2026-11-12_zama:66 (x,y,r,rot=0) — misma firma
 - `el`: 2026-11-10_animales_guerra:11 (cx,cy,rx,ry,rot=0); 2026-11-12_zama:10 (cx,cy,rx,ry,rot=0) — misma firma
 - `elephant`: 2026-11-10_animales_guerra:50 (x,y,s,o={}); 2026-11-12_zama:18 (x,y,s,o={}) — misma firma
-- `heart`: v02_gatos:8 (x,y,s,col,o={}); 2026-11-11_hachiko:61 (x,y,s,col,a=1) — FIRMAS DISTINTAS
+- `heart`: v02_gatos:8 (x,y,s,col,o={}); 2026-11-11_hachiko:61 (x,y,s,col,a=1); 2026-11-12_perros_cola:47 (x,y,s,col=CORAL,al=1) — FIRMAS DISTINTAS
 - `humSkel`: v01_perros:75 (x,y,s,rv,c='#efe6cf'); v02_gatos:101 (x,y,s,rv,t=0) — FIRMAS DISTINTAS
 - `inkParts`: 2026-11-10_animales_guerra:8 (paths,fill,rim,lw=2.4); 2026-11-12_zama:7 (paths,fill,rim,lw=2.4) — misma firma
 - `limb`: 2026-11-10_animales_guerra:13 (x0,y0,x1,y1,w0,w1); 2026-11-12_zama:12 (x0,y0,x1,y1,w0,w1) — misma firma
 - `medal`: 2026-11-10_animales_guerra:180 (x,y,s,rot=0); 2026-11-10_generales_olvidados:54 (x,y,r,n,t0,t,o={}) — FIRMAS DISTINTAS
+- `person`: v02_gatos:73 (x,y,s,o={}); 2026-11-12_perros_cola:45 (x,y,s,col='#cfe9f2') — FIRMAS DISTINTAS
 - `pf`: 2026-11-10_animales_guerra:12 (pts); 2026-11-12_zama:11 (pts) — misma firma
 - `pin`: v01_perros:61 (x,y,t,ts,col,lbl); 2026-11-10_animales_guerra:179 (x,y,t,ts,col,sz=1) — FIRMAS DISTINTAS
 - `rib`: 2026-11-10_animales_guerra:16 (pts,w0,w1); 2026-11-12_zama:15 (pts,w0,w1) — misma firma
