@@ -50,8 +50,10 @@
    "slug": "2026-11-12_perros_cola",
    "titulo": "¿Por qué los perros mueven la cola? La ciencia del lado 🐕",
    "mp4_sha256": "7ebf38b072c7048afdc1a6ce23599a47fc517bf07afdee61a3d9e32b4ec7d063",
-   "estado": "reservado",
-   "ts": "2026-11-12 18:56:52"
+   "estado": "programado",
+   "ts": "2026-11-12 18:56:52",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-5839041556122615787",
+   "fecha_programada": "2026-11-13T10:00:00-05:00"
   }
  ]
 }
