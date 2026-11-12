@@ -36,6 +36,13 @@
    "ts": "2026-11-12 13:58:12",
    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=2268474617520408672",
    "fecha_programada": "2026-11-12T12:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-12_emu",
+   "titulo": "La Gran Guerra del Emú: Australia contra 20.000 emús",
+   "mp4_sha256": "25cb483f67d799bea5b1a42ebcaa1a0c275a899239dad69141c5e0d00d5ef7a7",
+   "estado": "reservado",
+   "ts": "2026-11-12 15:47:34"
   }
  ]
 }
