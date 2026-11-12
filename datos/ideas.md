@@ -11,7 +11,7 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [ ] ¿Por qué los perros mueven la cola? (continuación del viral). ANIMALES.
 - [ ] ¿Por qué los gatos ronronean? ANIMALES.
 - [x] 2026-11-10 Animales que fueron a la guerra (paloma Cher Ami, elefantes de Aníbal, perros mensajeros). ANIMALES + GUERRA.
-- [~] reservada 2026-11-12 ¿Quién fue el PEOR general de la historia? (la Gran Guerra del Emú, 1932). DEBATE. (2.5D parallax)
+- [x] 2026-11-12 (programado 18:00 NY) La Gran Guerra del Emú (formato debate, estilo 2.5D con paralaje en Canvas).
 - [ ] ¿Cuál fue el imperio más PODEROSO? (grande ≠ poderoso). DEBATE + MAPA.
 - [ ] ¿Cómo empezó la Segunda Guerra Mundial? en mapa. MAPA.
 - [x] 2026-11-12 (programado 12:00 NY) Escipión vs Aníbal: el duelo que decidió el mundo (Zama). MAPA.

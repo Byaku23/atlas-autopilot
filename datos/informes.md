@@ -19,3 +19,10 @@
 3. Regeneraciones innecesarias: ninguna (voz 1 vez, 1 render final + 1 por ajuste de sonido) (etapas ejecutadas: audio, mezcla, render; reutilizadas por caché: —)
 4. Consumo de tokens/créditos: voz ElevenLabs 1 generación (~1143 créditos)
 5. Publicaciones: IG Reel, TikTok, YouTube Short, FB Reel 2026-11-12 12:00 NY
+
+## 2026-11-12_emu — 2026-11-12 15:47
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (voz 1 vez; 1 render rápido + 1 final) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: voz ElevenLabs 1 generación (~1086 créditos); sin créditos de pago
+5. Publicaciones: IG Reel, TikTok, YouTube Short, FB Reel 2026-11-12 18:00 NY

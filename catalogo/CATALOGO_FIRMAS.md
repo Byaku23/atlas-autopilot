@@ -22,6 +22,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `person(x,y,s,o={}) {arm,bend,bow,flip,hair,shirt,shrug,smile}` · v02_gatos:73 · usos 5 — o: arm (ángulo brazo), arm2, bow (inclinación), shrug (0..1), flip, shirt, hair, smile, ear, hold
 - `pigeon(x,y,s,o={}) {cap,chest,fill,fl,flap,flip,hurt,legA,noLegs,rim,stand,t,tilt}` · 2026-11-10_animales_guerra:60 · usos 2 — paloma. o: fl (fase de aleteo), flap (amplitud), tilt, flip, fill, rim, stand
 - `soldier(x,y,s,o={}) {arms,crate,fill,flip,lieY,mask,ph,rifle,rim,rot}` · 2026-11-10_animales_guerra:98 · usos 8 — soldado genérico (sin cara, casco redondo). o: ph, rot (tumbado), lieY, mask, arms ('down'|'up'|'carry'), crate, flip, fill, rim, rifle
+- `soldier(x,y,s,o={}) {aim,col,flip,ph,rim}` · 2026-11-12_emu:25 · usos 6 — soldado de perfil (silueta con sombrero de ala ancha levantada). o: flip, aim (0..1 apuntando), ph, col
 - `spy(x,y,s,o={}) {flip,lean,ph,tail}` · 2026-11-10_animales_guerra:112 · usos 1 — espía de abrigo y sombrero (sin cara). o: ph, lean, tail (estiramiento del faldón), flip
 
 ## Esqueletos
@@ -84,6 +85,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `chevrons(x,y,s,rot=0)` · 2026-11-10_animales_guerra:187 · usos 1
 - `city(x,y,s,c)` · v01_perros:50 · usos 1
 - `clockIcon(x,y,s,q)` · 2026-11-10_animales_guerra:189 · usos 1 — reloj: ang (0..1 vueltas)
+- `coin(x,y,r,rot=0)` · 2026-11-12_emu:58 · usos 2
 - `coin(x,y,r,rot=0)` · 2026-11-12_zama:66 · usos 1
 - `crate(x,y,s,rot=0)` · 2026-11-10_animales_guerra:122 · usos 10
 - `crowd(x,y,s,col,ph)` · 2026-11-11_hachiko:39 · usos 2
@@ -94,6 +96,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `el(cx,cy,rx,ry,rot=0)` · 2026-11-10_animales_guerra:11 · usos 40
 - `el(cx,cy,rx,ry,rot=0)` · 2026-11-12_zama:10 · usos 7
 - `emblem(x,y,r,rot=0)` · 2026-11-10_animales_guerra:135 · usos 1 — emblema circular: oso con proyectil (crema sobre rojo) — r en unidades de mundo
+- `emu(x,y,s,o={}) {al,col,flip,neck,ph,rim,run,sil}` · 2026-11-12_emu:8 · usos 1 — emú de perfil mirando a la derecha. (0,0)=pies. o: ph (fase de carrera), flip, al, col, rim, sil
 - `fig(x,y,s,o={}) {arm,col,fall,flip,hat,patch,peg,ph,rifle,rim,stiff}` · 2026-11-10_generales_olvidados:6 · usos 7 — figura genérica sin cara. o: col, rim, hat('bic'|'helm'|'tri'|'crest'|'cap'|'none'), ph (paso), flip, arm (ángulo brazo), rifle, fall (0..1), peg, patch, stiff
 - `glyph(k,x,y,s,col)` · v02_gatos:130 · usos 1 — glifos
 - `ground(gy,c0='#1b1030',c1='#0d0820')` · 2026-11-11_hachiko:54 · usos 7
@@ -107,6 +110,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `inkParts(paths,fill,rim,lw=2.4)` · 2026-11-12_zama:7 · usos 1 — paths: funciones que construyen un path. Se dibuja primero el borde (rim) de todas y luego el relleno => silueta unida con contorno de luz
 - `lamp(x,y,s,t,col='#ffcf7a',a=1)` · 2026-11-11_hachiko:53 · usos 8
 - `landPoly(pts,fill,edge)` · 2026-11-12_zama:71 · usos 3
+- `lewis(x,y,s,o={}) {col,flip}` · 2026-11-12_emu:32 · usos 6 — ametralladora Lewis sobre trípode (apunta a la derecha)
 - `limb(x0,y0,x1,y1,w0,w1)` · 2026-11-10_animales_guerra:13 · usos 29
 - `limb(x0,y0,x1,y1,w0,w1)` · 2026-11-12_zama:12 · usos 2
 - `meat(x,y,s,r)` · v01_perros:41 · usos 2
@@ -114,6 +118,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `medal(x,y,r,n,t0,t,o={}) {fill}` · 2026-11-10_generales_olvidados:54 · usos 1
 - `mount(x,y,w,h,col,snow,t=0)` · 2026-11-10_generales_olvidados:53 · usos 3
 - `news(x,y,s,r,t,o={})` · 2026-11-11_hachiko:68 · usos 1
+- `paisaje(c,t,p=.7,o={}) {cerca,cut}` · 2026-11-12_emu:47 · usos 7 — paisaje: cielo, sol, colinas lejanas, mesetas, campos de trigo. c=cámara, p=0..1 (0 mediodía/1 atardecer).
 - `pathArrow(pts,p,col,lw=3.5,dash)` · 2026-11-12_zama:48 · usos 3 — flecha de campaña dibujada progresivamente (p 0..1) sobre una polilínea (bez)
 - `pawPrint(x,y,s,col,rot=0)` · v02_gatos:84 · usos 1 — varios
 - `pergamino()` · 2026-11-12_zama:72 · usos 0
@@ -139,14 +144,19 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `sun(x,y,r,col='#ffe9b0')` · 2026-11-11_hachiko:57 · usos 4
 - `tablet(x,y,s,c)` · v01_perros:51 · usos 1
 - `TG(s,x,y,sz,b,f,t,t0,o={})` · 2026-11-11_hachiko:5 · usos 14
+- `TG(s,x,y,sz,b,f,t,t0,o={})` · 2026-11-12_emu:5 · usos 15
 - `TG(s,x,y,sz,b,f,t,t0,o={})` · 2026-11-12_zama:5 · usos 24
 - `thick(C,w)` · v01_perros:43 · usos 1 — signo de interrogación (contorno grueso) y cabeza de lobo -> morph
 - `topEl(x,y,s,ang,o={}) {al,col,team,tr}` · 2026-11-12_zama:36 · usos 1 — elefante en vista cenital. ang=0 mira hacia abajo (+y)
 - `train(x,gy,col='#d8d2e6')` · 2026-11-11_hachiko:64 · usos 1
+- `trigo(x0,x1,y,h,t,col,n,seed=1,o={}) {cut,lw,sw}` · 2026-11-12_emu:42 · usos 5 — campo de trigo: n espigas desde x0 a x1 sobre el suelo y. h altura, sway. col
+- `trigoFrente(c,t,p=.7,seed=5,n=26,col)` · 2026-11-12_emu:57 · usos 6 — primer plano borroso: espigas altas que pasan rápido (k>1)
 - `truck(x,y,s,o={})` · 2026-11-10_animales_guerra:130 · usos 1
+- `truck(x,y,s,o={}) {col,flip,gun,ph}` · 2026-11-12_emu:36 · usos 2 — camión militar antiguo (mira a la derecha). o: ph (ruedas), gun
 - `TX(s,x,y,sz,col,t,t0,o={})` · v02_gatos:4 · usos 77
 - `TX(s,x,y,sz,col,t,t0,o={})` · 2026-11-10_animales_guerra:4 · usos 11
 - `TX(s,x,y,sz,col,t,t0,o={})` · 2026-11-11_hachiko:4 · usos 18
+- `TX(s,x,y,sz,col,t,t0,o={})` · 2026-11-12_emu:4 · usos 15
 - `TX(s,x,y,sz,col,t,t0,o={})` · 2026-11-12_zama:4 · usos 15
 - `unit(x,y,w,h,col,o={}) {al,dx,dy,edge,rot}` · 2026-11-12_zama:29 · usos 12 — bloque de infantería: rectángulo con borde y filas de escudos. o: al, shake
 - `wheat(x,y,s,c)` · v01_perros:49 · usos 1 — iconos de la línea de tiempo

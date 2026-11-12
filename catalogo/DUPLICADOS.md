@@ -1,9 +1,10 @@
 # Duplicados y piezas casi iguales (generado por catalogo/generar.py)
 
 ## Mismo nombre en varios videos (chocan si se mezclan en un mismo assets.js)
-- `TG`: 2026-11-11_hachiko:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_zama:5 (s,x,y,sz,b,f,t,t0,o={}) — misma firma
-- `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
+- `TG`: 2026-11-11_hachiko:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_emu:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_zama:5 (s,x,y,sz,b,f,t,t0,o={}) — misma firma
+- `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_emu:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
 - `bez`: 2026-11-10_animales_guerra:17 (p0,p1,p2,p3,n=10); 2026-11-12_zama:16 (p0,p1,p2,p3,n=10) — misma firma
+- `coin`: 2026-11-12_emu:58 (x,y,r,rot=0); 2026-11-12_zama:66 (x,y,r,rot=0) — misma firma
 - `el`: 2026-11-10_animales_guerra:11 (cx,cy,rx,ry,rot=0); 2026-11-12_zama:10 (cx,cy,rx,ry,rot=0) — misma firma
 - `elephant`: 2026-11-10_animales_guerra:50 (x,y,s,o={}); 2026-11-12_zama:18 (x,y,s,o={}) — misma firma
 - `heart`: v02_gatos:8 (x,y,s,col,o={}); 2026-11-11_hachiko:61 (x,y,s,col,a=1) — FIRMAS DISTINTAS
@@ -15,6 +16,8 @@
 - `pin`: v01_perros:61 (x,y,t,ts,col,lbl); 2026-11-10_animales_guerra:179 (x,y,t,ts,col,sz=1) — FIRMAS DISTINTAS
 - `rib`: 2026-11-10_animales_guerra:16 (pts,w0,w1); 2026-11-12_zama:15 (pts,w0,w1) — misma firma
 - `ship`: 2026-11-10_generales_olvidados:43 (x,y,s,o={}); 2026-11-12_zama:62 (x,y,s,col,o={}) — FIRMAS DISTINTAS
+- `soldier`: 2026-11-10_animales_guerra:98 (x,y,s,o={}); 2026-11-12_emu:25 (x,y,s,o={}) — misma firma
+- `truck`: 2026-11-10_animales_guerra:130 (x,y,s,o={}); 2026-11-12_emu:36 (x,y,s,o={}) — misma firma
 - `waves`: 2026-11-10_animales_guerra:192 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3); 2026-11-10_generales_olvidados:52 (y0,t,col,amp=4,x0=-40,x1=400,fr=.05,ph=0) — FIRMAS DISTINTAS
 
 ## Piezas distintas que hacen casi lo mismo (candidatas a unificar)
