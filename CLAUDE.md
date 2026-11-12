@@ -33,3 +33,4 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
 - NO pongas pie de fuente en pantalla (Johan no lo quiere); `credito()` existe pero solo se usa si él lo pide.
 - Componente: `pruebas/calidad_visual/lib/fotos.js` (`cargarFoto`, `fotoReal` con marco y Ken Burns, `resaltar`). Ejemplo: `pruebas/calidad_visual/demo_fotos/`.
 - Opcionales aprobados para escenas con personaje: `lib/rig.js`, `lib/mundo.js`, `lib/camara.js` (transición `pan`). No migres escenas existentes.
+- **Video atascado por una imagen (decidido por Johan 2026-11-12):** no esperes dentro de la sesión. Deja el video terminado salvo la imagen en `datos/pendientes.json` con la hora del aviso. Si pasó más de 1 hora y Johan no respondió, haz otro video de un tema SIN imágenes y publícalo en su lugar; el video atascado se programa después, en la hora que tenía asignada el segundo video del día. Si Johan envía la imagen antes, termina el atascado y sigue el orden normal.
