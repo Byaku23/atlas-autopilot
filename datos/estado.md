@@ -15,3 +15,6 @@
 
 ## Datos fijos
 Metricool brandId 7523723; canal YouTube UC_jviohrsCwGW1CXN9a7Q6A (nunca el canal Byaku); Facebook solo la página (901061146421888); voz Hache 7wYVohVK7cr2fX4431vj. Otros proyectos de Johan (juego, Karpio, Alofoke) NO se tocan aquí.
+
+## Opinión de Johan sobre el video del Emú (2026-11-12, estilo 2.5D)
+Le gustó publicarlo, pero lo ve "muy plano y con poco movimiento/animaciones". En los próximos 2.5D: más acción en cada escena (personajes animados, cadenas de acciones, cámara más activa, más profundidad entre capas), no solo siluetas quietas con paralaje.
