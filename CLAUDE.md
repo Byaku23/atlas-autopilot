@@ -29,7 +29,7 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
 
 ## Imágenes reales (decidido por Johan 2026-11-12)
 - Usa fotos reales cuando expliquen algo visualmente o apoyen a un personaje histórico o tema específico; si la imagen no aporta nada, no la pongas.
-- Solo dominio público verificado. Fuente fiable: `www.loc.gov` / `tile.loc.gov` (Library of Congress). Commons puede dar «demasiadas peticiones»; reintenta una vez y, si falla, sigue sin imagen. Guarda autor, año y URL en un .json junto a la imagen.
+- Solo dominio público verificado. Fuente fiable: `www.loc.gov` / `tile.loc.gov` (Library of Congress). Commons puede dar «demasiadas peticiones»; reintenta una vez y, si falla, NO sigas sin imagen ni publiques: avisa a Johan qué imagen necesitas (personaje/tema y para qué escena), deja el video en `datos/pendientes.json` y espera a que él la envíe. Guarda autor, año y URL en un .json junto a la imagen.
 - NO pongas pie de fuente en pantalla (Johan no lo quiere); `credito()` existe pero solo se usa si él lo pide.
 - Componente: `pruebas/calidad_visual/lib/fotos.js` (`cargarFoto`, `fotoReal` con marco y Ken Burns, `resaltar`). Ejemplo: `pruebas/calidad_visual/demo_fotos/`.
 - Opcionales aprobados para escenas con personaje: `lib/rig.js`, `lib/mundo.js`, `lib/camara.js` (transición `pan`). No migres escenas existentes.
