@@ -32,8 +32,10 @@
    "slug": "2026-11-12_zama",
    "titulo": "Zama: así ganó Escipión a Aníbal pese a 80 elefantes",
    "mp4_sha256": "86f201adcad41ff318ab147691dccbb6fcabea51b00bab5178551ad9f5640eed",
-   "estado": "reservado",
-   "ts": "2026-11-12 13:58:12"
+   "estado": "programado",
+   "ts": "2026-11-12 13:58:12",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=2268474617520408672",
+   "fecha_programada": "2026-11-12T12:00:00-05:00"
   }
  ]
 }
