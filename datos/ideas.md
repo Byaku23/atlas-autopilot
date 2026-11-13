@@ -16,3 +16,5 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [ ] ¿Cómo empezó la Segunda Guerra Mundial? en mapa. MAPA.
 - [x] 2026-11-12 (programado 12:00 NY) Escipión vs Aníbal: el duelo que decidió el mundo (Zama). MAPA.
 - [ ] La Guerra Fría en 60 segundos. MAPA.
+
+- [~] reservada 2026-11-13 (tarde, programar 18:00 NY) La raya que firmó España: el paralelo 42 (Tratado Adams-Onís 1819) — frontera California/Oregón. MAPA + CAUSAS (tendencia: @historiassecretastv 853k).
