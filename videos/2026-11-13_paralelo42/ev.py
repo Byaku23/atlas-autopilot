@@ -1,19 +1,18 @@
 import sys; sys.path.insert(0,'../../eng')
 from words import *
-DUR=80.0333
-T=[0,5.9,17.9,37.04,47.54,54.9,64.16,72.3,DUR]
+DUR=86.5
+T=[0,6.86,18.12,29.02,44.96,58.72,74.2,DUR]
 RAW={
-'a_ocho':(wt('ochenta'),.3),'a_elef':(wt('elefantes'),0),'a_perd':(wt('perdió'),.9),'a_como':(wt('posible'),0),
-'b_200':(wt('doscientos'),.5),'b_cris':(wt('Cristo'),0),'b_ani':(wt('Aníbal',after=8.5),.3),'b_terr':(wt('aterrorizado'),.4),'b_esc':(wt('Escipión',after=12),.3),'b_afr':(wt('África'),.4),'b_volv':(wt('volver'),.3),'b_cart':(wt('Cartago'),.4),
-'z_zama':(wt('Zama'),.7),'z_lanz':(wt('lanzó'),0),'z_elef':(wt('elefantes',after=20),.4),'z_esp':(wt('esperaba'),0),'z_pas':(wt('pasillos'),.4),'z_trom':(wt('trompetas'),0),'z_asus':(wt('asustaron'),.5),'z_huec':(wt('huecos'),0),'z_nadie':(wt('nadie'),0),'z_otras':(wt('Otras'),0),'z_arro':(wt('arrollaron'),.7),
-'m_mas':(wt('Masinisa'),.4),'m_num':(wt('numidia'),.3),'m_ahu':(wt('ahuyentó'),.5),'m_leg':(wt('legiones'),0),'m_romp':(wt('rompieron'),.8),'m_lin':(wt('líneas'),0),
-'v_guar':(wt('guardaba'),0),'v_vet':(wt('veteranos'),.3),'v_terc':(wt('tercera'),0),'v_cab':(wt('caballería',after=51),0),'v_volv':(wt('volvió'),0),'v_esp':(wt('espalda'),.9),
-'r_20':(wt('veinte'),.3),'r_mur':(wt('murieron'),.8),'r_cart':(wt('Cartago',after=57),0),'r_flota':(wt('flota'),.6),'r_50':(wt('cincuenta'),.4),'r_poder':(wt('poder'),0),'r_roma':(wt('Roma',after=63),.7),
-'e_esc':(wt('Escipión',after=64),0),'e_nom':(wt('nombre'),0),'e_afri':(wt('Africano'),.9),'e_gen':(wt('genio'),0),'e_perd':(wt('perdió',after=68.5),.4),'e_est':(wt('estudiado'),0),'e_truc':(wt('trucos'),.3),
-'c_gen':(wt('general'),0),'c_ani':(wt('Aníbal',after=74),0),'c_esc':(wt('Escipión',after=75),0),'c_com':(wt('Comenta'),.4),
+'s_raya':(wt('raya'),0),'s_trazo':(wt('trazó'),.3),'s_firm':(wt('firmado'),0),'s_esp':(wt('España',after=4),.9),'s_pos':(wt('posible'),.3),
+'f_front':(wt('frontera'),.3),'f_cal':(wt('California'),0),'f_ore':(wt('Oregón',after=8.5),0),'f_par':(wt('paralelo'),.3),'f_nac':(wt('Nació'),0),'f_22':(wt('veintidós'),.6),'f_dic':(wt('diecinueve'),.3),'f_was':(wt('Washington'),.5),
+'p_tro':(wt('tropas'),.5),'p_neg':(wt('negociar'),.3),'p_ada':(wt('Adams'),.4),'p_oni':(wt('Onís'),.4),'p_ced':(wt('cedió'),.5),'p_flo':(wt('Florida',after=28),.8),
+'l_dib':(wt('dibujó'),.3),'l_sab':(wt('Sabine'),.3),'l_roj':(wt('Rojo'),.3),'l_ark':(wt('Arkansas'),.3),'l_par':(wt('paralelo',after=36),.5),'l_rec':(wt('recta',after=38),0),'l_pac':(wt('Pacífico'),.5),'l_ren':(wt('renunció'),.6),'l_ore':(wt('Oregón',after=44),.4),
+'m_1821':(wt('veintiuno'),.7),'m_mex':(wt('México'),.3),'m_ind':(wt('independizó'),.6),'m_raya':(wt('raya',after=51),.3),'m_ant':(wt('antiguo'),.4),'m_est':(wt('estado'),.4),
+'g_giro':(wt('giro'),.6),'g_ocho':(wt('ocho',after=61),.5),'g_top':(wt('topógrafo'),0),'g_sext':(wt('sextante'),.4),'g_nieve':(wt('nieve'),0),'g_mal':(wt('maleza'),.3),'g_hoy':(wt('Hoy',after=66),.5),'g_tec':(wt('tecnología'),0),'g_serp':(wt('serpentea'),.4),'g_norte':(wt('norte',after=71),0),'g_sur':(wt('sur',after=72),0),'g_verd':(wt('verdadero'),.5),
+'c_esp':(wt('España',after=74),0),'c_ced':(wt('cedió',after=75),0),'c_ren':(wt('renunció',after=76),0),'c_pluma':(wt('pluma'),.6),'c_neg':(wt('negocio'),.3),'c_rend':(wt('rendición'),.3),'c_com':(wt('Comenta'),.4),
 }
-TRS=[None,{'type':'morph','a':[60,200,240,180,20],'col':'#e2cf9c','dur':.6},{'type':'dive','x':180,'y':330,'z':9,'dur':.5},{'type':'whip'},
-     {'type':'push','dir':'left'},{'type':'morph','a':[70,230,220,120,16],'col':'#d6402f','dur':.55},{'type':'ink','x':180,'y':300,'col':'#f2b84b','dur':.45},{'type':'iris','x':180,'y':320,'col':'#1b1410'}]
+TRS=[None,{'type':'dive','x':40,'y':262,'z':9,'dur':.5},{'type':'iris','x':236,'y':309,'col':'#0b1626','dur':.5},{'type':'morph','a':[142,199,76,52,8],'col':'#f4ead2','dur':.6},
+     {'type':'push','dir':'left','dur':.5},{'type':'morph','a':[60,240,240,120,16],'col':'#ffd23f','dur':.55},{'type':'flash','dur':.4}]
 if __name__=='__main__':
     E,T2=build(T,RAW,TRS,DUR)
     for k in sorted(E,key=lambda k:E[k]): print('%s %.2f'%(k,E[k]),end=' | ')

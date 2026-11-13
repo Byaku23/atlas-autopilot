@@ -1,194 +1,161 @@
-// ===== Zama — escenas =====
-// S0 GANCHO: elefante enorme + contador 80, el "perdió" lo tacha
-function s0(t,u){bg('#1b1410','#3a2a1c');glow(180,330,170,'rgba(242,184,75,.22)',1);
-  const cnt=80;
-  const sh=wob(t-E.a_perd,9,5)*(t>E.a_perd?1:0);
-  // fila de elefantes pequeños al fondo (el ejército)
-  for(let r=0;r<2;r++)for(let i=0;i<6;i++){const x=40+i*56+(r%2)*20,y=170+r*34;withA(.45*cl((t-.2-i*.05-r*.12)*3),()=>elephant(x,y,.55,{ph:t*5+i,fill:'#0c0907',rim:'#6a5a44'}))}
-  const e=eb(cl((t+.6)/.9));
-  elephant(150+ (1-e)*-160,395,2.35,{ph:t*4,fill:'#0c0907',rim:GOLD});
-  if(t>E.a_perd){const q=eb((t-E.a_perd)/.35);tr(180,300,q,-.12+sh*.02,()=>{ctx.strokeStyle=ROME;ctx.lineWidth=14;ctx.lineCap='round';line(-120,-110,120,110,ROME,14);line(120,-110,-120,110,ROME,14)})}
-  TX('LLEGÓ CON',180,86,24,'#fff',t,-.6);
-  TX(cnt+'',130,150,70,GOLD,t,-.6,{sh:'rgba(242,184,75,.7)'});
-  TX('ELEFANTES',248,152,24,'#fff',t,E.a_elef-.05);
-  slam('Y PERDIÓ',180,468,40,ROME,t,E.a_perd,{stroke:INK,sw:8,sh:'rgba(214,64,47,.7)'});
-  if(t>E.a_como-.4){const q=eb((t-E.a_como+.4)/.4);tr(180,290,q,0,()=>{ctx.fillStyle=SAND;rr(-120,-90,240,180,20);ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=3;ctx.stroke();txt('?',0,8,120,INK,{wt:'900',f:DISP})})}
-  shock(180,300,t,E.a_perd,'rgba(214,64,47,.8)',40,4,.7)}
+// ===== Paralelo 42 — escenas =====
+const sk=(c,x,y)=>toScreen(c,x,y);
+// S0 GANCHO: la línea dorada se traza sobre el mapa y España la sella
+function s0(t,u){sea(t);glow(180,300,190,'rgba(74,168,255,.14)',1);
+  land(MEX,'rgba(63,143,107,.28)','rgba(63,143,107,.6)',1.2);usMap();
+  const p=eo(cl((t+.35)/2.6)),a=P42[0],b=P42[1],x=lerp(a[0],b[0],p);
+  ctx.save();ctx.lineCap='round';line(a[0],a[1],x,a[1],'rgba(255,210,63,.28)',11);line(a[0],a[1],x,a[1],GOLD,3.4);ctx.restore();
+  if(p<.995){quill(x,a[1],.85,-.35+Math.sin(t*22)*.05);sparks(x,a[1],t,t-.01,3,GOLD,40,.3,0)}
+  else shock(b[0],b[1],t,E.s_trazo,'rgba(255,210,63,.9)',22,3,.7);
+  TX('ESTA RAYA',180,92,42,'#fff',t,-.6,{sh:'rgba(255,210,63,.6)'});
+  TX('LA FIRMÓ ESPAÑA',180,140,30,GOLD,t,E.s_firm-.1,{w:330});
+  seal(176,368,38,RED,['ESPAÑA','1819'],t,E.s_esp);
+  shock(176,368,t,E.s_esp,'rgba(229,72,58,.9)',60,4,.8);
+  if(t>E.s_pos-.1){const q=eb((t-E.s_pos+.1)/.4);tr(180,478,q,0,()=>{ctx.fillStyle=CREAM;rr(-120,-26,240,52,26);ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=3;ctx.stroke();txt('¿CÓMO ES POSIBLE?',0,2,20,INK,{wt:'900',f:DISP})})}}
 
-// S1 MAPA DE LA CAMPAÑA: Italia → África
-const ARR_SC=bez([236,340],[240,365],[248,380],[252,394],8);
-const ARR_HA=bez([282,300],[330,330],[330,420],[262,440],14);
-function s1(t,u){bg(SEA,SEA2);
-  for(let i=0;i<6;i++){ctx.strokeStyle='rgba(255,255,255,.06)';ctx.lineWidth=1;ctx.beginPath();for(let x=0;x<=360;x+=12)ctx.lineTo(x,120+i*90+Math.sin(x*.05+t*1.5+i)*4);ctx.stroke()}
-  landPoly(LAND_IT,SAND);landPoly(LAND_SI,SAND);landPoly(LAND_AF,SAND2);
-  // Roma
-  circ(200,150,6,ROME,INK,2);shock(200,150,t,E.b_terr,'rgba(214,64,47,.85)',10,3,.9);shock(200,150,t,E.b_terr+.35,'rgba(214,64,47,.7)',10,2.5,.9);
-  if(t>E.b_terr-.1)TG('ROMA',200,125,11,ROME,'#fff',t,E.b_terr-.1);
-  // Aníbal en el sur de Italia
-  if(t>E.b_ani-.1){const q=spring(t-E.b_ani,12,6);tr(280,298,.5*q,0,()=>{circ(0,0,20,CART,INK,3);elephant(0,16,.55,{fill:'#0c0907',rim:CR,ph:0})})}
-  // Cartago
-  circ(262,396,7,CART,INK,2);if(t>E.b_cart-.15){shock(262,396,t,E.b_cart,'rgba(138,92,208,.9)',10,3,.9);TG('CARTAGO',262,420,11,CART,'#fff',t,E.b_cart-.1)}
-  // flechas
-  pathArrow(ARR_SC,(t-E.b_afr)/.9,ROME,4);
-  pathArrow(ARR_HA,(t-E.b_volv)/1.1,CART,4,[7,5]);
-  // Zama (para el dive)
-  if(t>E.b_cart+.4){const q=eb((t-E.b_cart-.4)/.4);tr(200,455,q,0,()=>{line(-9,-9,9,9,GOLD,5);line(9,-9,-9,9,GOLD,5)});shock(200,455,t,E.b_cart+.45,'rgba(242,184,75,.9)',8,3,.8)}
-  slam('202 a.C.',180,92,50,'#fff',t,E.b_200,{stroke:INK,sw:9,sh:'rgba(242,184,75,.8)'});
-  TG('ANÍBAL AMENAZA ROMA',180,170,12,CART,'#fff',t,E.b_ani+.0,{out:E.b_esc-.1,a:'center'});
-  TG('ESCIPIÓN ATACA ÁFRICA',180,262,12,ROME,'#fff',t,E.b_esc-.05);
-  TG('ANÍBAL VUELVE A DEFENDER',180,540-30,12,CART,'#fff',t,E.b_volv-.05,{out:T[2]-.6})}
+// S1 FRONTERA CALIFORNIA/OREGÓN → fecha → viaja a Washington
+function s1(t,u){
+  const k=n=>E[n]-T[1];
+  const c=camAt(u,[[0,64,262,3.0],[k('f_par')-.4,64,262,3.0],[k('f_nac')-.3,120,262,2.0],[k('f_22')+1.2,200,275,1.6],[k('f_was')-.9,258,292,1.4],[11.2,232,300,1.1]]);
+  world(c,()=>{sea(t);land(MEX,'rgba(63,143,107,.28)','rgba(63,143,107,.6)',1.2);usMap();
+    const a=P42[0],b=P42[1];ctx.save();ctx.lineCap='round';line(a[0],a[1],b[0],b[1],'rgba(255,210,63,.28)',9);line(a[0],a[1],b[0],b[1],GOLD,3);ctx.restore();
+    circ(COAST[0],COAST[1],3.4,CREAM,INK,1.2);shock(COAST[0]+4,COAST[1],t,E.f_front,'rgba(255,210,63,.9)',14,2,.8);
+    if(t>E.f_was-.05){circ(DC[0],DC[1],3.2,RED,CREAM,1.2);shock(DC[0],DC[1],t,E.f_was,'rgba(229,72,58,.95)',24,2.5,.9);shock(DC[0],DC[1],t,E.f_was+.3,'rgba(229,72,58,.8)',24,2,.9)}});
+  const o=sk(c,56,226),cc=sk(c,56,300);
+  if(u<5.2){TX('OREGÓN',o[0],o[1],26,'#fff',t,E.f_ore-.05,{out:E.f_par+1.3});TX('CALIFORNIA',cc[0],cc[1],22,'#fff',t,E.f_cal-.05,{out:E.f_par+1.3})}
+  TG('FRONTERA',180,96,16,GOLD,INK,t,E.f_front-.05,{out:E.f_par-.2});
+  TG('PARALELO 42° NORTE',180,96,16,GOLD,INK,t,E.f_par-.05,{out:E.f_nac});
+  slam('22 FEB 1819',180,128,48,'#fff',t,E.f_22,{stroke:INK,sw:9,sh:'rgba(255,210,63,.8)'});
+  if(t>E.f_was-.05){const d=sk(c,DC[0],DC[1]);TG('WASHINGTON, D. C.',Math.min(d[0],236),d[1]-34,12,RED,'#fff',t,E.f_was-.05)}}
 
-// ---------- campo de batalla ----------
-const BX=i=>180+(i-1.5)*58, BXO=i=>180+(i-1.5)*88;
-const LANES=[92,180,268];
-const ELS=[{ln:0,y0:238,x0:92},{ln:1,y0:238,x0:180},{ln:2,y0:238,x0:268,turn:1},{ln:0,y0:205,x0:92,turn:-1},{ln:1,y0:205,x0:180},{ln:2,y0:205,x0:268}];
-function elPos(e,t){ // devuelve [x,y,ang]
-  const a0=E.z_lanz,aS=E.z_asus;
-  if(t<aS){const p=eio(cl((t-a0)/(aS-a0)));const y=lerp(e.y0,330+ (e.y0>220?0:-32),p);return [e.x0,y,0]}
-  const yS=330+(e.y0>220?0:-32);
-  if(e.turn){const fx=e.turn>0?330:30,fy=200; if(t<E.z_otras)return [e.x0+Math.sin(t*30)*1.2,yS+Math.sin(t*20)*1.6,Math.sin(t*14)*.12];
-    const p=eio(cl((t-E.z_otras)/(E.z_arro-E.z_otras)));const x=lerp(e.x0,fx,p),y=lerp(yS,fy,p);const ang=Math.atan2(fy-yS,fx-e.x0)*(p>0?1:0)-Math.PI/2+Math.PI; return [x,y,ang-Math.PI/2*0+Math.PI/2*0]}
-  const d=ei(cl((t-(E.z_huec-1.6))/3.3));return [e.x0+Math.sin(t*26)*(1-d)*2,lerp(yS,740,d),Math.sin(t*18)*.1*(1-d)]}
-function s2(t,u){bg('#c4a56a','#8d7242');
-  const c=camAt(u,[[0,180,262,1.0],[9,180,275,1.05],[16,180,285,1.06]]);
-  const open=eio(cl((t-E.z_pas)/.8));
-  world(c,()=>{
-    ctx.strokeStyle='rgba(60,40,20,.12)';ctx.lineWidth=1;for(let i=0;i<14;i++){ctx.beginPath();ctx.moveTo(-100,i*60);ctx.lineTo(500,i*60+20);ctx.stroke()}
-    dust(t,26,'rgba(255,240,200,.5)',7,6,1.4,.4);
-    // ejército de Cartago
-    for(let r=0;r<3;r++)for(let i=0;i<6;i++)unit(50+i*52,112+r*20,44,15,CART,{edge:r===2?GOLD:null});
-    unit(30,200,40,22,CART);unit(330,200,40,22,CART);
-    // legiones romanas: 4 columnas de 3 bloques; se abren en pasillos
-    for(let i=0;i<4;i++)for(let j=0;j<3;j++)unit(lerp(BX(i),BXO(i),open),400+j*36,50,28,ROME);
-    // pasillos resaltados
-    if(t>E.z_pas-.1){const a=.35*cl((t-E.z_pas)/.4)*(t<E.z_huec+2?1:.4);LANES.forEach(x=>{ctx.fillStyle='rgba(242,184,75,'+a+')';ctx.fillRect(x-17,372,34,150)})}
-    // elefantes
-    ELS.forEach((e,i)=>{const p=elPos(e,t),jump=t>E.z_asus&&t<E.z_asus+.4?wob(t-E.z_asus,16,6)*3:0;if(t>E.z_lanz-.9)topEl(p[0],p[1]+jump,1,p[2],{tr:Math.sin(t*8+i)*3,al:cl((t-E.z_lanz+.9)*2.5)})});
-    // trompetas romanas
-    for(let k=0;k<3;k++)shock(180,520,t,E.z_trom+k*.28,'rgba(242,184,75,.8)',14,3,1.0);
-    if(t>E.z_trom-.05&&t<E.z_asus+.8){const q=eb((t-E.z_trom)/.3);tr(180,505,q,0,()=>{poly([[-14,-3],[14,-9],[14,9],[-14,3]],GOLD,INK,2);circ(-14,0,4,GOLD,INK,2)})}
-    // choque con caballería cartaginesa
-    [30,330].forEach((x,k)=>{const q=cl((t-E.z_arro-.1)/1.2);if(t>E.z_arro)shatter(x,200,40,22,CART,q,k*9+3)});
-    sparks(30,200,t,E.z_arro+.05,14,GOLD,60,.7,80);sparks(330,200,t,E.z_arro+.05,14,GOLD,60,.7,80);
-    shock(30,200,t,E.z_arro,'rgba(214,64,47,.9)',8,3,.7);shock(330,200,t,E.z_arro,'rgba(214,64,47,.9)',8,3,.7);
+// S2 FLORIDA: tropas, mesa de negociación, firma
+const TROOP=[[246,360],[262,368],[236,372],[252,382],[268,390],[248,400]];
+function s2(t,u){sea(t);
+  const c=camAt(u,[[0,238,352,2.2],[4.9,238,352,2.2],[5.7,240,304,2.0]]);
+  const flip=eio(cl((t-E.p_flo)/.35));
+  world(c,()=>{usMap();land(MEX,'rgba(63,143,107,.28)','rgba(63,143,107,.6)',1.2);
+    land(FLO,mixc(RED,BLUE,flip),LANDE,1.4);
+    TROOP.forEach((q,i)=>{const s=cl((t-E.p_tro-i*.12)/.5);if(s>0)soldier(q[0],lerp(q[1]-50,q[1],eb(s)),.62,BLUE,cl(s*3))});
+    shock(252,382,t,E.p_neg,'rgba(74,168,255,.9)',40,2.5,.8);shock(252,382,t,E.p_neg+.3,'rgba(74,168,255,.7)',40,2,.8);
+    if(t>E.p_flo-.05){shock(252,385,t,E.p_flo,'rgba(74,168,255,.95)',50,3,.9);sparks(252,385,t,E.p_flo,16,GOLD,50,.7,60)}});
+  const f=sk(c,252,382);
+  TG('ESPAÑA',f[0]-70,f[1]+8,12,RED,'#fff',t,T[2]+.3,{out:E.p_flo-.05});
+  if(t>E.p_flo+.1){TG('EE. UU.',f[0]-66,f[1]+8,12,BLUE,'#fff',t,E.p_flo+.1)}
+  TX('TROPAS EN FLORIDA',180,100,26,'#fff',t,E.p_tro-.25,{out:E.p_ada-.35,w:320});
+  // mesa de negociación
+  const pq=eb(cl((t-E.p_ada+.3)/.5));
+  if(pq>.01)tr(180,185,pq,0,()=>{
+    ctx.fillStyle=INK;rr(-170,-117,340,234,20);ctx.fill();ctx.fillStyle=NAV2;rr(-166,-113,332,226,18);ctx.fill();
+    glow(0,-10,150,'rgba(255,210,63,.13)',1);
+    const lean=wob(t-E.p_oni,8,4)*5;
+    person(-100,10+Math.sin(t*3)*1,1.3,BLUE);person(100-lean,10,1.3,RED,{flip:true});
+    ctx.fillStyle='#5a3d26';rr(-140,77,280,16,5);ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=2;ctx.stroke();
+    TG('ADAMS · EE. UU.',-96,-92,11,BLUE,'#fff',t,E.p_ada,{});
+    TG('ONÍS · ESPAÑA',96,-92,11,RED,'#fff',t,E.p_oni,{});
+    // documento
+    const dp=eio(cl((t-E.p_ada-.2)/(E.p_oni-E.p_ada)));const dx=lerp(-60,0,dp);
+    tr(dx,48-wob(t-E.p_ced,10,5)*0,1,0,()=>{ctx.fillStyle=CREAM;rr(-38,-26,76,52,6);ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=2;ctx.stroke();ctx.strokeStyle='rgba(8,17,29,.45)';ctx.lineWidth=1.6;for(let i=0;i<3;i++){ctx.beginPath();ctx.moveTo(-28,-14+i*9);ctx.lineTo(28-i*8,-14+i*9);ctx.stroke()}
+      const sg=cl((t-E.p_ced)/.45);if(sg>0){ctx.strokeStyle=RED;ctx.lineWidth=2.4;ctx.beginPath();for(let i=0;i<=24*sg;i++){const x=-28+i*2.3;ctx.lineTo(x,14+Math.sin(i*.9)*3.4)}ctx.stroke()}});
+    if(t>E.p_ced-.05&&t<E.p_ced+.55)quill(-30+cl((t-E.p_ced)/.45)*52,62,.7,-.2,CREAM);
+    if(t>E.p_ced)sparks(0,40,t,E.p_ced+.35,14,GOLD,50,.6,50);
   });
-  TG('CARTAGO',60,122,10,CART,'#fff',t,E.z_zama+.2,{out:E.z_lanz});
-  TG('ROMA',60,418,10,ROME,'#fff',t,E.z_zama+.4,{out:E.z_lanz});
-  TX('ZAMA',180,92,50,'#fff',t,E.z_zama-.05,{out:E.z_lanz-.15,sh:'rgba(242,184,75,.7)'});
-  TG('¡ELEFANTES AL ATAQUE!',180,92,13,CART,'#fff',t,E.z_lanz-.05,{out:E.z_pas-.15});
-  TG('ESCIPIÓN ABRE PASILLOS',180,92,13,GOLD,INK,t,E.z_pas-.05,{out:E.z_trom-.15});
-  TG('TROMPETAS ROMANAS',180,92,13,GOLD,INK,t,E.z_trom-.05,{out:E.z_huec-.15});
-  TG('PASAN DE LARGO',180,92,13,ROME,'#fff',t,E.z_huec-.05,{out:E.z_otras-.15});
-  TG('OTROS DAN MEDIA VUELTA',180,92,13,CART,'#fff',t,E.z_otras-.05)}
+  if(t>E.p_flo+.1){const q=eb((t-E.p_flo-.1)/.4);tr(180,338,q,0,()=>{ctx.fillStyle=CREAM;rr(-110,-22,220,44,22);ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=3;ctx.stroke();txt('ESPAÑA CEDIÓ FLORIDA',0,2,15,INK,{wt:'900',f:DISP})})}}
 
-// S3 MASINISA Y LAS LEGIONES
-function s3(t,u){bg('#c4a56a','#8d7242');
-  const c=camAt(u,[[0,180,268,1.0],[5,235,268,1.08],[8,180,262,1.04]]);
-  const chg=eio(cl((t-E.m_ahu)/1.1)),flee=ei(cl((t-E.m_ahu-.8)/1.2));
-  const adv=eio(cl((t-E.m_leg)/(E.m_lin-E.m_leg+.5)));
-  const b1=cl((t-E.m_romp-.1)/.9),b2=cl((t-E.m_lin-.1)/.9);
-  world(c,()=>{
-    dust(t,26,'rgba(255,240,200,.5)',9,6,1.4,.4);
-    // líneas cartaginesas
-    for(let i=0;i<6;i++){if(b1<1)unit(50+i*52,236,44,15,CART,{al:b1>0?0:1});shatter(50+i*52,236,44,15,CART,b1,i*7+1);
-      if(b2<1)unit(50+i*52,206,44,15,CART,{al:b2>0?0:1});shatter(50+i*52,206,44,15,CART,b2,i*7+40);
-      unit(50+i*52,150,44,15,CART,{edge:GOLD})}
-    // caballería cartaginesa (derecha) huye
-    unit(lerp(322,430,flee),lerp(250,60,flee),40,22,CART,{rot:flee*.5});
-    // Masinisa y su caballería numidia (dorada) carga desde abajo a la derecha
-    const mx=338,my=lerp(440,262,chg)-flee*10;
-    for(let k=0;k<5;k++)cav(mx-18+(k%2)*14,my+k*7,2,0,GOLD);
-    if(t>E.m_mas)ctx.save(),ctx.globalAlpha=.6*cl(1-chg*1.5),line(338,430,338,300,GOLD,2),ctx.restore();
-    // legiones romanas avanzan
-    for(let i=0;i<6;i++)unit(50+i*52,lerp(360,226,adv),44,22,ROME);
-    for(let i=0;i<6;i++)unit(50+i*52,lerp(388,254,adv),44,22,ROME);
-    // caballería romana (izquierda) espera
-    for(let k=0;k<4;k++)cav(24,330+k*12,1.2,0,ROME);
-    shock(330,262,t,E.m_ahu+.75,'rgba(242,184,75,.9)',8,3,.7);sparks(330,262,t,E.m_ahu+.75,16,GOLD,70,.7,80);
-    shock(180,226,t,E.m_romp+.1,'rgba(214,64,47,.9)',10,3.5,.7);shock(180,200,t,E.m_lin+.1,'rgba(214,64,47,.9)',10,3.5,.7);
-  });
-  TX('MASINISA',180,92,38,GOLD,t,E.m_mas-.05,{out:E.m_ahu-.2,sh:'rgba(242,184,75,.7)'});
-  TG('CABALLERÍA NUMIDIA · ALIADA DE ROMA',180,138,11,GOLD,INK,t,E.m_num-.05,{out:E.m_ahu-.2});
-  TG('¡LOS JINETES HUYEN!',180,92,14,CART,'#fff',t,E.m_ahu+.55,{out:E.m_leg-.1});
-  TX('LAS LEGIONES AVANZAN',180,92,22,'#fff',t,E.m_leg-.05,{out:E.m_romp-.35});
-  TG('1ª LÍNEA ROTA',180,92,15,ROME,'#fff',t,E.m_romp,{out:E.m_lin-.2});
-  slam('2ª LÍNEA ROTA',180,92,28,ROME,t,E.m_lin,{stroke:INK,sw:6})}
+// S3 LA LÍNEA DEL TRATADO: ríos → paralelo 42 → Pacífico; España renuncia a Oregón
+function s3(t,u){sea(t);
+  const k=n=>E[n]-T[3];
+  const c=camAt(u,[[0,200,320,1.15],[k('l_dib')+1.5,200,320,1.15],[k('l_sab')-.4,150,345,1.9],[k('l_ark')-.3,140,300,1.7],[k('l_par')-.3,115,262,2.0],[k('l_rec')-.2,100,262,2.0],[k('l_pac')-.3,60,262,2.4],[k('l_ren')-.2,100,225,1.6],[k('l_ore')+.3,170,260,1.2]]);
+  world(c,()=>{usMap();land(MEX,'rgba(63,143,107,.28)','rgba(63,143,107,.6)',1.2);
+    ctx.save();ctx.setLineDash([5,5]);ctx.lineWidth=1.4;ctx.strokeStyle='rgba(255,255,255,'+(.45*cl((t-E.l_dib)/.4)*(1-cl((t-E.l_sab)/.5)))+')';RIV.forEach(r=>{ctx.beginPath();r.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.stroke()});ctx.restore();
+    pathArrow(RIV[0],(t-E.l_sab+.05)/.55,BLUE,3);
+    pathArrow(RIV[1],(t-E.l_roj+.05)/.5,BLUE,3);
+    pathArrow(RIV[2],(t-E.l_ark+.05)/1.2,BLUE,3);
+    pathArrow(RIV[3],(t-E.l_par+.35)/.7,GOLD,3.4);
+    pathArrow(RIV[4],(t-E.l_rec+.2)/1.9,GOLD,4.2);
+    if(t>E.l_ren-.1){const a=cl((t-E.l_ren)/.4);ctx.save();ctx.globalAlpha=.4*a;land(OREGC,RED,RED,2);ctx.restore();shock(70,200,t,E.l_ren,'rgba(229,72,58,.9)',60,3,.8)}
+    shock(RIV[4][1][0],RIV[4][1][1],t,E.l_pac,'rgba(255,210,63,.95)',24,3,.8)});
+  const L=(txtS,wx,wy,t0,col,out)=>{const q=sk(c,wx,wy);TG(txtS,q[0],q[1],12,col,'#fff',t,t0,{out:out})};
+  TX('LA LÍNEA DEL TRATADO',180,96,26,'#fff',t,E.l_dib-.15,{out:E.l_sab-.3,w:320});
+  L('RÍO SABINE',PJ(-94,31)[0]+4,PJ(-94,31)[1],E.l_sab-.05,BLUE,E.l_ark+1);
+  L('RÍO ROJO',PJ(-97,33.9)[0],PJ(-97,33.9)[1]+12,E.l_roj-.05,BLUE,E.l_ark+1);
+  L('RÍO ARKANSAS',PJ(-103,38)[0],PJ(-103,38)[1]-14,E.l_ark-.05,BLUE,E.l_par+.6);
+  TG('PARALELO 42° N',180,96,15,GOLD,INK,t,E.l_par-.05,{out:E.l_rec-.2});
+  TG('RECTA HASTA EL PACÍFICO',180,96,14,GOLD,INK,t,E.l_rec-.1,{out:E.l_ren-.2});
+  // tarjeta (origen del morph)
+  if(t>E.l_ore-.05){const q=eb((t-E.l_ore+.05)/.35);tr(180,290,q,0,()=>{ctx.fillStyle=CREAM;rr(-120,-60,240,120,16);ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=3.5;ctx.stroke();txt('ESPAÑA RENUNCIA',0,-14,22,RED,{wt:'900',f:DISP});txt('A OREGÓN',0,22,34,INK,{wt:'900',f:DISP})})}}
 
-// S4 LA TERCERA LÍNEA Y LA CABALLERÍA POR LA ESPALDA
-const RPATH=bez([22,330],[-30,250],[-30,40],[60,40],10).concat(bez([60,40],[110,44],[150,40],[180,52],6).slice(1));
-function pathAt(pts,p){const f=cl(p)*(pts.length-1),i=Math.min(pts.length-2,Math.floor(f)),q=f-i;return [lerp(pts[i][0],pts[i+1][0],q),lerp(pts[i][1],pts[i+1][1],q),Math.atan2(pts[i+1][0]-pts[i][0],-(pts[i+1][1]-pts[i][1]))]}
-function s4(t,u){bg('#c4a56a','#8d7242');
-  const pr=cl((t-E.v_volv)/(E.v_esp-E.v_volv+.1));
-  const f=follow(tt=>{const p=pathAt(RPATH,cl((tt-E.v_volv)/(E.v_esp-E.v_volv+.1)));return [t<E.v_volv?180:p[0]+60,t<E.v_volv?260:p[1]+120]},t,.3);
-  const c=t<E.v_volv-.3?camAt(u,[[0,180,260,1.0],[3,180,200,1.1]]):{x:lerp(180,f[0],eo((t-E.v_volv+.3)/.6)),y:lerp(200,f[1],eo((t-E.v_volv+.3)/.6)),z:lerp(1.1,1.35,eo((t-E.v_volv+.3)/.8)),r:0};
-  const hit=cl((t-E.v_esp)/1.0);
-  world(c,()=>{
-    dust(t,26,'rgba(255,240,200,.5)',11,6,1.4,.4);
-    for(let i=0;i<6;i++){unit(50+i*52,100,44,18,CART,{edge:GOLD,al:hit>0?0:1});shatter(50+i*52,100,44,18,CART,hit,i*5+2)}
-    // restos de las líneas rotas
-    for(let i=0;i<6;i++){ctx.save();ctx.globalAlpha=.25;ctx.fillStyle=CART;ctx.fillRect(50+i*52-18,238,36,5);ctx.fillRect(50+i*52-18,208,36,5);ctx.restore()}
-    for(let i=0;i<6;i++)unit(50+i*52,200,44,22,ROME);
-    // ruta de la caballería romana
-    ctx.save();ctx.globalAlpha=.55*cl((t-E.v_cab)/.4);pathArrow(RPATH,1,ROME,3,[5,6]);ctx.restore();
-    const n=5;for(let k=0;k<n;k++){const p=pathAt(RPATH,pr-k*.012);if(t>E.v_cab-.2)cav(p[0]+(k%2)*5,p[1],1.5,p[2],ROME)}
-    shock(180,100,t,E.v_esp,'rgba(214,64,47,.9)',10,4,.8);sparks(180,100,t,E.v_esp,26,GOLD,90,.8,90);
-  });
-  TX('SUS MEJORES VETERANOS',180,92,22,GOLD,t,E.v_guar-.05,{out:E.v_terc-.1,w:320});
-  TG('3ª LÍNEA · ÚLTIMA RESERVA',180,140,12,CART,'#fff',t,E.v_terc-.1,{out:E.v_cab-.1});
-  TG('LA CABALLERÍA ROMANA DA LA VUELTA',180,92,12,ROME,'#fff',t,E.v_cab-.05,{out:E.v_esp-.15});
-  slam('POR LA ESPALDA',180,92,34,ROME,t,E.v_esp,{stroke:INK,sw:7,sh:'rgba(214,64,47,.7)'})}
+// S4 1821 → México → la raya sigue → más antiguo de Oregón
+function s4(t,u){sea(t);
+  const mp=eb(cl((t-E.m_mex)/.5));
+  world({x:180,y:300,z:1.0,r:0},()=>{usMap();
+    ctx.save();ctx.globalAlpha=.28+.72*mp;land(MEX,mixc('#2d5a85',MXC,mp),mixc(LANDE,'#9be7bf',mp),1.6);ctx.restore();
+    const gl=.5+.5*Math.sin((t-E.m_raya)*7),on=t>E.m_raya?1:0;
+    ctx.save();ctx.lineCap='round';line(P42[0][0],P42[0][1],P42[1][0],P42[1][1],'rgba(255,210,63,'+(.25+.3*gl*on)+')',9+7*on);line(P42[0][0],P42[0][1],P42[1][0],P42[1][1],GOLD,3.4+1.4*on*gl);ctx.restore();
+    if(t>E.m_ant){const a=cl((t-E.m_ant)/.4);ctx.save();ctx.globalAlpha=.7*a;land(ORE,GOLD,CREAM,2);ctx.restore();shock(36,240,t,E.m_ant,'rgba(255,210,63,.95)',44,3,.8)}
+    if(t>E.m_mex-.05){shock(150,400,t,E.m_mex,'rgba(63,143,107,.95)',80,3,.9);sparks(150,410,t,E.m_ind,30,'#9be7bf',110,.9,80);}});
+  TX('ENTRA EN VIGOR',180,92,28,'#fff',t,T[4]+.1,{out:E.m_1821-.25,w:320});
+  slam('1821',180,112,66,GOLD,t,E.m_1821,{stroke:INK,sw:10,sh:'rgba(255,210,63,.8)'});
+  if(t>E.m_mex-.05)TG('MÉXICO SE INDEPENDIZA',180,470,13,MXC,'#fff',t,E.m_mex-.05,{out:E.m_raya-.2});
+  TX('LA RAYA SIGUIÓ AHÍ',180,168,22,'#fff',t,E.m_raya-.1,{out:E.m_ant-.9,w:320});
+  TG('LÍMITE TERRESTRE MÁS ANTIGUO DE OREGÓN',180,470,13,GOLD,INK,t,E.m_ant-1.4,{w:330});
+  if(t>E.m_ant+1.2){const q=eb((t-E.m_ant-1.2)/.35);tr(180,300,q,0,()=>{ctx.fillStyle=GOLD;rr(-120,-60,240,120,16);ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=3.5;ctx.stroke();txt('ANTES DE SER',0,-14,22,INK,{wt:'900',f:DISP});txt('ESTADO',0,24,38,RED,{wt:'900',f:DISP})})}}
 
-// S5 EL PRECIO: muertos, flota, indemnización
-function s5(t,u){bg('#1b1410','#3a2a1c');
-  const n=Math.round(countV(0,20000,t,E.r_20,1.5));
-  const gA=cl(1-(t-E.r_flota+.3)/.4); // fase A se va
-  if(gA>0)withA(gA,()=>{
-    for(let r=0;r<6;r++)for(let i=0;i<14;i++){const k=r*14+i,alive=1-cl((n/20000-k/84)*8);ctx.globalAlpha=gA*(.25+.75*alive)*cl((t-E.r_20+.2)*4);ctx.fillStyle=CART;ctx.fillRect(48+i*17,256+r*17,12,12);ctx.globalAlpha=1}
-    TX(fmtN(n),180,168,66,'#fff',t,E.r_20-.1,{sh:'rgba(138,92,208,.8)'});
-    TG('CARTAGINESES MUERTOS',180,212,14,CART,'#fff',t,E.r_mur-.3)});
-  // flota
-  if(t>E.r_flota-.4){const out=cl((t-E.r_cart-2.7)/.3);withA(1-out,()=>{
-    for(let i=0;i<5;i++){const s=cl((t-E.r_flota-.2-i*.15)/1.0),x=48+i*66,y=250+Math.sin(t*2+i)*3+ei(s)*60;ship(x,y,1.5,CART,{tilt:s*.5*(i%2?1:-1),al:1-cl((s-.55)*2.2)});if(s>.3)sparks(x,y,t,E.r_flota+.1+i*.15,5,GOLD,30,.5,60)}
-    ctx.fillStyle='rgba(44,93,107,.9)';ctx.beginPath();ctx.moveTo(0,330);for(let x=0;x<=360;x+=10)ctx.lineTo(x,318+Math.sin(x*.05+t*3)*5);ctx.lineTo(360,400);ctx.lineTo(0,400);ctx.fill();
-    TX('CASI TODA SU FLOTA',180,150,24,'#fff',t,E.r_flota-.4,{w:300})})}
-  // indemnización 50 años
-  if(t>E.r_50-.2){const k=cl((t-E.r_50)/1.6);
-    for(let i=0;i<8;i++){const ph=(t*.7+i/8)%1;coin(lerp(60,300,ph),230-Math.sin(ph*Math.PI)*60,7,t*8+i)}
-    circ(50,262,22,CART,INK,3);circ(310,262,22,ROME,INK,3);
-    TX(Math.round(countV(0,50,t,E.r_50,1.5))+' AÑOS',180,380,52,GOLD,t,E.r_50-.1,{sh:'rgba(242,184,75,.7)'});
-    TG('DE PAGOS A ROMA',180,430,14,GOLD,INK,t,E.r_50+.5)}
-  if(t>E.r_poder-.1){const q=eb((t-E.r_poder-.1)/.4);tr(180,480,q,-.05,()=>{ctx.fillStyle=ROME;rr(-100,-26,200,52,10);ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=3;ctx.stroke();txt('CARTAGO BAJO ROMA',0,2,17,'#fff',{wt:'900'})})}}
+// S5 EL TOPÓGRAFO (1868) y el giro: la frontera real serpentea
+function s5(t,u){
+  const wp=eio(cl((t-(E.g_hoy-.25))/.45));
+  if(wp<1){bg('#0a1020','#203656');stars(t,40,5,.5);
+    const sx=lerp(40,420,cl((t-E.g_giro)/(E.g_hoy-E.g_giro)));
+    const c={x:sx+60,y:320,z:1.0,r:0};const cx=clamp=>0;
+    world(c,()=>{mount(330,170,1.1,'#27446f',sx*.5,1400);mount(410,150,2.3,'#183056',sx*.8,1400);
+      ctx.fillStyle='#091526';ctx.fillRect(-100,500,1600,300);
+      for(let m=0;m<8;m++){const mx=100+m*60;if(sx>mx){const q=eb(cl((sx-mx)/20));tr(mx,498,q,0,()=>{line(0,0,0,-16,CREAM,2.4);circ(0,-18,3.2,GOLD,INK,1)})}}
+      if(t>E.g_mal-.05){for(let b=0;b<22;b++){const bx=60+b*34;ctx.fillStyle='#0f2a22';ctx.beginPath();ctx.arc(bx,504,8+R(b)*6,Math.PI,TAU);ctx.fill()}}
+      surveyor(sx,462,2.4,t*9,'#c9b88a');
+      if(t>E.g_sext-.1){const q=eb((t-E.g_sext+.1)/.35);sextant(sx+58,392,1.5*q,-.2+Math.sin(t*3)*.08)}});
+    dust(t,t>E.g_nieve?90:20,'rgba(255,255,255,.85)',3,t>E.g_nieve?60:14,1.7,.8);
+    TX('Y HAY UN GIRO',180,92,30,GOLD,t,T[5]+.02,{out:E.g_ocho-.25,w:320});
+    slam('1868',180,112,64,'#fff',t,E.g_ocho,{stroke:INK,sw:10,sh:'rgba(255,210,63,.8)'});
+    TG('TOPÓGRAFO',180,190,13,GOLD,INK,t,E.g_top-.05,{out:E.g_sext-.1});
+    TG('SEXTANTE',180,190,13,GOLD,INK,t,E.g_sext-.05,{out:E.g_nieve-.1});
+    TG('NIEVE',110,190,13,BLUE,'#fff',t,E.g_nieve-.05);
+    TG('MALEZA',250,190,13,MXC,'#fff',t,E.g_mal-.05);
+  }
+  if(wp>0){ctx.save();ctx.beginPath();ctx.rect(0,0,360*wp,640);ctx.clip();
+    sea(t);
+    const am=26*eo(cl((t-E.g_serp)/1.3));
+    ctx.save();ctx.setLineDash([9,6]);ctx.lineCap='round';line(14,300,346,300,'rgba(255,210,63,.95)',3);ctx.restore();
+    ctx.save();ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle=INK;ctx.lineWidth=8;ctx.beginPath();for(let x=14;x<=346;x+=4){const y=300+am*Math.sin(x*.045+t*1.2)*Math.sin(x*.012+1);x===14?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.stroke();
+    ctx.strokeStyle='#fff';ctx.lineWidth=4;ctx.stroke();ctx.restore();
+    TX('HOY, CON TECNOLOGÍA',180,92,22,'#fff',t,E.g_hoy-.15,{out:E.g_serp-.35,w:330});TX('MODERNA',180,124,26,GOLD,t,E.g_tec,{out:E.g_serp-.35});
+    TX('LA FRONTERA REAL',180,92,26,'#fff',t,E.g_serp-.2,{w:330});TX('SERPENTEA',180,130,38,GOLD,t,E.g_serp+.05,{sh:'rgba(255,210,63,.6)'});
+    if(t>E.g_norte-.05){const q=eb((t-E.g_norte+.05)/.3);tr(235,235,q,0,()=>{poly([[0,-22],[14,0],[5,0],[5,20],[-5,20],[-5,0],[-14,0]],BLUE,INK,2)});TG('NORTE',235,205,11,BLUE,'#fff',t,E.g_norte)}
+    if(t>E.g_sur-.05){const q=eb((t-E.g_sur+.05)/.3);tr(125,365,q,0,()=>{poly([[0,22],[14,0],[5,0],[5,-20],[-5,-20],[-5,0],[-14,0]],RED,INK,2)});TG('SUR',125,398,11,RED,'#fff',t,E.g_sur)}
+    TG('PARALELO VERDADERO',100,452,12,GOLD,INK,t,E.g_verd-.05);TG('FRONTERA REAL',262,452,12,CREAM,INK,t,E.g_verd+.15);
+    ctx.restore()}}
 
-// S6 ESCIPIÓN AFRICANO + GENIO VS GENIO
-function s6(t,u){bg('#1b1410','#3a2a1c');glow(180,250,160,'rgba(214,64,47,.28)',1);
-  const sw=eio(cl((t-E.e_gen+.3)/.8));
-  const hx=lerp(180,250,sw),hs=lerp(2.1,1.35,sw),hy=lerp(270,300,sw);
-  glow(hx,hy,190,'rgba(242,184,75,.30)',1);
-  // laurel
-  withA(1-sw,()=>{for(let i=0;i<14;i++){const a=Math.PI*.75+i*.2,r=78;ctx.save();ctx.translate(180+Math.cos(a)*r,hy+Math.sin(a)*r*.2*0+40-Math.sin(a)*0+ -10);ctx.restore()}
-    ctx.strokeStyle=GOLD;ctx.lineWidth=4;ctx.beginPath();ctx.arc(180,hy+4,76,Math.PI*.55,Math.PI*1.45);ctx.stroke();ctx.beginPath();ctx.arc(180,hy+4,76,-Math.PI*.45,Math.PI*.45);ctx.stroke();
-    for(let i=0;i<7;i++){const a=Math.PI*.6+i*.12,x1=180-Math.cos(a-Math.PI*.1)*0;circ(180-Math.sin(i*.45+.2)*76-4,hy-60+i*20,6,GOLD,INK,1.4);circ(180+Math.sin(i*.45+.2)*76+4,hy-60+i*20,6,GOLD,INK,1.4)}});
-  helm(hx,hy,hs*(1+.05*wob(t-E.e_esc,9,5)),{});
-  if(sw>0){const fall=eb(cl((t-E.e_perd)/.5));tr(110,hy+8,1.0,fall*-.9,()=>{circ(0,0,38,CART,INK,3);elephant(0,28,.95,{fill:'#0c0907',rim:CR,ph:0})});
-    TG('ANÍBAL',110,hy+62,13,CART,'#fff',t,E.e_gen,{});TG('ESCIPIÓN',250,hy+62,13,ROME,'#fff',t,E.e_gen+.1,{});
-    if(t>E.e_est-.1){scroll(250,hy-80,60,lerp(10,70,1),cl((t-E.e_est+.1)/.5))}
-    if(t>E.e_truc){sparks(250,hy-80,t,E.e_truc,18,GOLD,60,.8,40);shock(250,hy-80,t,E.e_truc,'rgba(242,184,75,.9)',10,3,.7)}}
-  TX('ESCIPIÓN',180,92,40,'#fff',t,E.e_esc-.05,{out:E.e_nom-.15});
-  TX('RECIBIÓ UN NOMBRE NUEVO',180,150,20,GOLD,t,E.e_nom-.1,{out:E.e_afri-.1,w:300});
-  slam('AFRICANO',180,455,44,GOLD,t,E.e_afri,{stroke:INK,sw:9,sh:'rgba(242,184,75,.8)',al:t<E.e_gen-.2?1:0});
-  if(t<E.e_gen-.2)shock(180,455,t,E.e_afri,'rgba(242,184,75,.9)',20,4,.8);
-  TX('UN GENIO PERDIÓ',180,92,26,'#fff',t,E.e_gen-.05,{w:320});
-  TG('CONTRA OTRO QUE ESTUDIÓ SUS TRUCOS',180,455,12,GOLD,INK,t,E.e_est-.1)}
-
-// S7 CIERRE: debate
-function s7(t,u){bg('#1b1410','#3a2a1c');
-  ctx.fillStyle='rgba(138,92,208,.25)';ctx.fillRect(0,0,180,640);ctx.fillStyle='rgba(214,64,47,.25)';ctx.fillRect(180,0,180,640);
-  const a=eb(cl((t-E.c_gen-.1)/.5)),b=eb(cl((t-E.c_gen-.4)/.5));
-  tr(90,300,a,0,()=>{circ(0,0,62,CART,INK,3);elephant(0,48,1.4,{fill:'#0c0907',rim:CR,ph:0})});
-  tr(270,300,b,0,()=>{circ(0,0,62,ROME,INK,3);helm(0,2,1.05,{col:GOLD})});
-  const va=.5+.3*Math.sin(t*1.6),vb=1-va;
-  if(t>E.c_ani){ctx.fillStyle=CART;rr(34,400,112*va*1.6,14,7);ctx.fill();ctx.fillStyle=ROME;rr(214,400,112*vb*1.6,14,7);ctx.fill()}
-  TG('ANÍBAL',90,390-40,15,CART,'#fff',t,E.c_ani-.05);TG('ESCIPIÓN',270,390-40,15,ROME,'#fff',t,E.c_esc-.05);
-  TX('¿QUIÉN FUE',180,92,30,'#fff',t,E.c_gen-.35);TX('MEJOR GENERAL?',180,138,36,GOLD,t,E.c_gen-.05,{sh:'rgba(242,184,75,.7)'});
-  if(t>E.c_com){const q=eb((t-E.c_com)/.45);tr(180,460,q,0,()=>{ctx.fillStyle='#fff';rr(-100,-26,200,52,26);ctx.fill();txt('COMENTA',10,1,22,INK);ctx.fillStyle=ROME;rr(-90,-14,28,22,6);ctx.fill();poly([[-84,8],[-80,16],[-74,8]],ROME)})}}
-boot([s0,s1,s2,s3,s4,s5,s6,s7],TRS,{cap:{acc:GOLD}});
+// S6 CIERRE: cedió Florida, renunció a Oregón, un trazo de pluma → debate
+function s6(t,u){sea(t);glow(180,300,200,'rgba(74,168,255,.12)',1);
+  const fi=eb(cl((t-E.c_esp)/.45)),oi=eb(cl((t-E.c_esp-.15)/.45));
+  const fo=1-cl((t-E.c_neg+.3)/.4);
+  withA(fo,()=>{
+    const fs=1-cl((t-E.c_ced-.25)/.5)*0,op=t>E.c_ced?cl(1-(t-E.c_ced-1.5)/1):1;
+    tr(95,205,fi*2.0,0,()=>{ctx.save();ctx.translate(-252,-383);land(FLO,RED,CREAM,1.4);ctx.restore()});
+    tr(265,205,oi*2.2,0,()=>{ctx.save();ctx.translate(-36,-244);land(ORE,RED,CREAM,1.4);ctx.restore()});
+    TG('FLORIDA',95,290,13,RED,'#fff',t,E.c_esp+.1);TG('OREGÓN',265,290,13,RED,'#fff',t,E.c_esp+.25);
+    if(t>E.c_ced){const q=eb((t-E.c_ced)/.3);tr(95,200,q,-.2,()=>{ctx.fillStyle='rgba(8,17,29,.85)';rr(-52,-13,104,26,6);ctx.fill();txt('CEDIÓ',0,1,18,GOLD,{wt:'900',f:DISP})});shock(95,200,t,E.c_ced,'rgba(255,210,63,.9)',50,3,.8)}
+    if(t>E.c_ren){const q=eb((t-E.c_ren)/.3);tr(265,200,q,.2,()=>{ctx.fillStyle='rgba(8,17,29,.85)';rr(-62,-13,124,26,6);ctx.fill();txt('RENUNCIÓ',0,1,18,GOLD,{wt:'900',f:DISP})});shock(265,200,t,E.c_ren,'rgba(255,210,63,.9)',50,3,.8)}
+    // trazo de pluma
+    const sg=cl((t-E.c_pluma)/.9);
+    if(sg>0){ctx.save();ctx.lineCap='round';ctx.lineJoin='round';const pts=[];for(let i=0;i<=60*sg;i++){const x=40+i*4.6,y=380+Math.sin(i*.34)*20*Math.sin(i*.05+.4)-i*.2;pts.push([x,y])}
+      ctx.strokeStyle='rgba(255,210,63,.3)';ctx.lineWidth=10;ctx.beginPath();pts.forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.stroke();
+      ctx.strokeStyle=CREAM;ctx.lineWidth=3.2;ctx.stroke();ctx.restore();
+      const e=pts[pts.length-1];if(sg<1)quill(e[0],e[1],.9,-.25)}
+    if(t>E.c_pluma)sparks(300,360,t,E.c_pluma+.8,16,GOLD,60,.7,40)});
+  TX('CON UN TRAZO DE PLUMA',180,92,24,'#fff',t,E.c_pluma-.5,{w:330,out:E.c_neg-.35});
+  TX('¿QUÉ FUE?',180,92,40,GOLD,t,E.c_neg-.3,{sh:'rgba(255,210,63,.6)'});
+  const b1=eb(cl((t-E.c_neg+.1)/.45)),b2=eb(cl((t-E.c_rend+.1)/.45));
+  tr(94,260,b1,0,()=>{ctx.fillStyle=INK;rr(-79,-52,158,104,20);ctx.fill();ctx.fillStyle=BLUE;rr(-75,-48,150,96,18);ctx.fill();txt('BUEN',0,-14,28,'#fff',{wt:'900',f:DISP});txt('NEGOCIO',0,22,28,'#fff',{wt:'900',f:DISP})});
+  tr(266,260,b2,0,()=>{ctx.fillStyle=INK;rr(-79,-52,158,104,20);ctx.fill();ctx.fillStyle=RED;rr(-75,-48,150,96,18);ctx.fill();txt('RENDICIÓN',0,-14,22,'#fff',{wt:'900',f:DISP});txt('DISFRAZADA',0,22,22,'#fff',{wt:'900',f:DISP})});
+  if(t>E.c_rend){const va=.5+.3*Math.sin(t*1.7);ctx.fillStyle=BLUE;rr(30,350,150*va*1.15,16,8);ctx.fill();ctx.fillStyle=RED;rr(330-150*(1-va)*1.15,350,150*(1-va)*1.15,16,8);ctx.fill()}
+  if(t>E.c_com){const q=eb((t-E.c_com)/.45);tr(180,440,q,0,()=>{ctx.fillStyle='#fff';rr(-100,-26,200,52,26);ctx.fill();txt('COMENTA',10,1,22,INK);ctx.fillStyle=RED;rr(-90,-14,28,22,6);ctx.fill();poly([[-84,8],[-80,16],[-74,8]],RED)})}}
+boot([s0,s1,s2,s3,s4,s5,s6],TRS,{cap:{acc:GOLD}});
