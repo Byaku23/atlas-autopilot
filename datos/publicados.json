@@ -59,8 +59,10 @@
    "slug": "2026-11-13_paralelo42",
    "titulo": "La raya que firmó España: el paralelo 42 🗺️",
    "mp4_sha256": "dfdba6cf3b2a018f536494af43d5cdf18fe1eba03ad8ef090f38a29b4c80d8d4",
-   "estado": "reservado",
-   "ts": "2026-11-13 19:04:06"
+   "estado": "programado",
+   "ts": "2026-11-13 19:04:06",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-6843018923312526513",
+   "fecha_programada": "2026-11-13T18:00:00-05:00"
   }
  ]
 }
