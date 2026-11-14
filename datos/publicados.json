@@ -68,8 +68,10 @@
    "slug": "2026-11-14_gatos_ronroneo",
    "titulo": "El llanto escondido en el ronroneo de tu gato 🐈",
    "mp4_sha256": "1dbee1fa8b38b4e382aaeacf1ac158f746588239116d938a5b7dd561e7b08a0c",
-   "estado": "reservado",
-   "ts": "2026-11-14 13:59:59"
+   "estado": "programado",
+   "ts": "2026-11-14 13:59:59",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-2799940958146376281",
+   "fecha_programada": "2026-11-14T12:00:00-05:00"
   }
  ]
 }
