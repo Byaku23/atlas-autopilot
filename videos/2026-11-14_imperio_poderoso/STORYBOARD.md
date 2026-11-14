@@ -1,0 +1,27 @@
+# 02 · ¿Por qué nos gustan tanto los gatos?   DUR = 72.4   NOMBRE = 02_por_que_nos_gustan_los_gatos
+Estilo: **neón pop sobre morado oscuro** (feed de redes, iconos con brillo). Fondo '#120a24'→'#2a0f3d'. Neón rosa '#ff4fa3', cian '#3ef2e6', amarillo '#ffe14f', blanco. Gatos como siluetas planas con ojos verdes/amarillos brillantes y contorno neón. CAP.acc = '#3ef2e6'.
+Música: lo-fi/pop juguetón (BPM ~92, acordes mayores con séptima), sube en el clímax de "conquistaron".
+
+## Escenas (T[k] = inicio de la palabra indicada − 0.05)
+S0 GANCHO (0 → "Hace"): Cuadro 0: cara de gato neón enorme mirando a cámara con ojos que brillan + texto "NO TE NECESITA" ya visible (t0 negativo). En "internet": la cámara se aleja (zoom out) y descubre que el gato está DENTRO de la pantalla de un celular; el feed se desplaza solo con muchas tarjetas de gatos y contadores de "♥" subiendo (usa un corazón dibujado, no emoji). En "pertenece": cae una corona sobre el gato (al chocar, el gato parpadea y la corona rebota con wob). Sonidos: notificaciones (notif/ding) en cada tarjeta, meow en el cuadro 0, impact al caer la corona.
+  → Transición a S1: `morph` desde UNA tarjeta del feed (la del centro) que crece y se convierte en el campo antiguo.
+S1 HACE 10.000 AÑOS ("Hace" → "Nadie"): campo de trigo al atardecer (estilo plano), granero de barro. "diez mil años": tag "≈10.000 AÑOS". "grano": sacos vierten grano en el granero (partículas). "ratones": del montón salen ratones (cadena: el grano que cae los hace saltar). "gatos monteses": un gato montés rayado entra de un salto desde la izquierda persiguiendo a los ratones; la CÁMARA sigue el salto (follow).
+  → `push` izquierda.
+S2 SE DOMESTICARON SOLOS ("Nadie" → "En" de "En Chipre"): sello "NADIE" tachando una correa. "solos": el gato se pone la "medalla" él mismo (gracioso). La cámara recorre una aldea de izquierda a derecha siguiendo al gato que persigue a un ratón: panel "cazar" (atrapa al ratón), panel "comida fácil" (se queda junto a un cuenco lleno), panel "dejamos" (un agricultor abre la puerta y se encoge de hombros). Cadena: el ratón corre de panel en panel y el gato detrás.
+  → `dive` dentro del suelo (en un punto del terreno) hacia S3.
+S3 CHIPRE (de "En Chipre" → "Y" de "Y en el antiguo"): mapa del Mediterráneo con la isla de Chipre; pin en "Chipre". La cámara baja bajo tierra a una tumba: esqueleto humano y esqueleto de gato juntos (líneas claras sobre tierra). "quinientos años": etiqueta "≈9.500 AÑOS". "juntos": un corazón une ambos.
+  → `push` arriba (o `whip`) a Egipto.
+S4 EGIPTO ("Y en el antiguo" → "Pero"): arena dorada, pirámide, jeroglíficos de gatos. "sagrados": rayos de luz. "Bastet": se levanta una estatua dorada de una diosa con cabeza de gata (silueta estilizada, de perfil) con slam del nombre "BASTET".
+  → `dive` en el ojo de la estatua.
+S5 EL TRUCO ESTÁ EN TU CEREBRO ("Pero" → "Tienen"): cerebro neón latiendo; "cerebro": se enciende con chispas; la cámara se mete en el cerebro (transición `zoom` o `dive`).
+S6 RASGOS DE BEBÉ ("Tienen" → "Y" de "Y el maullido"): cara de gato a la izquierda y cara de bebé a la derecha (planas, simples). Con cada frase se marcan los mismos rasgos en los dos con anillos neón que se dibujan: "redonda" (contorno de la cara: morph de círculo), "grandes" (ojos se agrandan con spring), "amplia" (barra en la frente). "bebé": aparece la cara del bebé y los anillos saltan del gato al bebé (cadena). "ternura": medidor "TERNURA" se llena al 100% y estallan corazones. "cuidarlos": una mano acaricia al gato.
+  → `morph` desde el medidor de ternura.
+S7 EL MAULLIDO ("Y el maullido" → "Hasta"): dos gatos frente a frente, globos de diálogo vacíos "…" (casi no se maúllan entre ellos). "nosotros": uno se gira hacia un humano y lanza un globo "MIAU" con ondas de sonido (mtext).
+  → `push` izquierda.
+S8 EL RONRONEO ("Hasta" → "No" de "No los domesticamos"): onda sinusoidal suave saliendo del gato (ronroneo). "comida": cuenco vacío. "llanto de un bebé": la onda se TRANSFORMA (morph de la forma de onda) en una onda aguda tipo llanto, icono de bebé llorando. "ignorarlo": la onda llega al oído del humano → el humano llena el cuenco de inmediato (cadena).
+  → `ink` rosa.
+S9 NOS CONQUISTARON ("No los domesticamos" → "Eres"): el gato en un trono con la corona del gancho (callback), humano haciendo reverencia. "conquistaron": bandera con huella clavada (impacto). "sabemos": el humano se encoge de hombros sonriendo. "queremos": corazón gigante.
+  → `morph` desde el corazón.
+S10 CTA ("Eres" → fin): pantalla dividida PERROS (izq.) vs GATOS (der.) con barras de votación que suben y bajan empatadas; "¿PERROS O GATOS?" y botón "COMENTA".
+Eventos sugeridos: wt('necesita'), wt('internet'), wt('pertenece'), wt('diez'), wt('grano'), wt('ratones'), wt('monteses'), wt('Nadie'), wt('solos'), wt('cazar'), wt('fácil'), wt('dejamos'), wt('Chipre'), wt('quinientos'), wt('juntos'), wt('Egipto'), wt('sagrados'), wt('Bastet'), wt('cerebro'), wt('redonda'), wt('grandes'), wt('amplia'), wt('bebé'), wt('ternura'), wt('cuidarlos'), wt('maullido'), wt('nosotros'), wt('ronroneo'), wt('comida'), wt('llanto'), wt('ignorarlo'), wt('conquistaron'), wt('sabemos'), wt('queremos'), wt('Eres'), wt('Comenta').
+Sonidos: meow (varios tonos), purr (largo en S8), babycry en "llanto", notif/ding en el feed, pop y sparkle en las marcas de rasgos, heart en ternura, fanfare/brassSting en "conquistaron".
