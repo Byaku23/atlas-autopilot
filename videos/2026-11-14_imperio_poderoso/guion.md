@@ -14,3 +14,4 @@ Datos de rendimiento: últimos reels ~1–2 mil vistas; vidIQ sin créditos (no 
 - Roma 5 M km² en 117 d.C. (Trajan): Wikipedia "Roman Empire", Wikipedia lista, Panchronia. Mongol ≈ 4,8 veces Roma (24/5).
 - Roma en Occidente ~500 años (27 a.C.–476 d.C.): hecho histórico estándar.
 - Omitido por no tener 2 fuentes independientes (estimaciones de PIB de Maddison, disputadas): cuota del PIB mundial de China/India.
+- Confirmado en revisión final: Imperio romano 27 a.C.–476 d.C. (Britannica ×2: "Roman Empire", "Timeline"); India independiente 15-ago-1947, 27 años después de 1920 (Britannica ×3, UK Parliament).

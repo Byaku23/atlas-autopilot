@@ -1,8 +1,8 @@
 # Duplicados y piezas casi iguales (generado por catalogo/generar.py)
 
 ## Mismo nombre en varios videos (chocan si se mezclan en un mismo assets.js)
-- `TG`: 2026-11-11_hachiko:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_emu:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_zama:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-13_paralelo42:5 (s,x,y,sz,b,f,t,t0,o={}) — misma firma
-- `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_emu:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-13_paralelo42:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_gatos_ronroneo:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
+- `TG`: 2026-11-11_hachiko:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_emu:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_zama:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-13_paralelo42:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-14_imperio_poderoso:5 (s,x,y,sz,b,f,t,t0,o={}) — misma firma
+- `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_emu:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-13_paralelo42:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_gatos_ronroneo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_imperio_poderoso:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
 - `babyFace`: v02_gatos:65 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:65 (x,y,s,o={}) — misma firma
 - `barn`: v02_gatos:148 (x,y,s); 2026-11-14_gatos_ronroneo:148 (x,y,s) — misma firma
 - `bastet`: v02_gatos:114 (x,y,s,t=0,o={}); 2026-11-14_gatos_ronroneo:114 (x,y,s,t=0,o={}) — misma firma
@@ -16,7 +16,7 @@
 - `catSide`: v02_gatos:27 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:27 (x,y,s,o={}) — misma firma
 - `catSkel`: v02_gatos:108 (x,y,s,rv,t=0); 2026-11-14_gatos_ronroneo:108 (x,y,s,rv,t=0) — misma firma
 - `coin`: 2026-11-12_emu:58 (x,y,r,rot=0); 2026-11-12_zama:66 (x,y,r,rot=0) — misma firma
-- `crown`: v02_gatos:9 (x,y,s,rot=0); 2026-11-14_gatos_ronroneo:9 (x,y,s,rot=0) — misma firma
+- `crown`: v02_gatos:9 (x,y,s,rot=0); 2026-11-14_gatos_ronroneo:9 (x,y,s,rot=0); 2026-11-14_imperio_poderoso:34 (x,y,s,col,a) — FIRMAS DISTINTAS
 - `el`: 2026-11-10_animales_guerra:11 (cx,cy,rx,ry,rot=0); 2026-11-12_zama:10 (cx,cy,rx,ry,rot=0) — misma firma
 - `elephant`: 2026-11-10_animales_guerra:50 (x,y,s,o={}); 2026-11-12_zama:18 (x,y,s,o={}) — misma firma
 - `fillRim`: v02_gatos:7 (col,rim,lw=2,blur=10); 2026-11-14_gatos_ronroneo:7 (col,rim,lw=2,blur=10) — misma firma
@@ -25,6 +25,7 @@
 - `heart`: v02_gatos:8 (x,y,s,col,o={}); 2026-11-11_hachiko:61 (x,y,s,col,a=1); 2026-11-12_perros_cola:47 (x,y,s,col=CORAL,al=1); 2026-11-14_gatos_ronroneo:8 (x,y,s,col,o={}) — FIRMAS DISTINTAS
 - `humSkel`: v01_perros:75 (x,y,s,rv,c='#efe6cf'); v02_gatos:101 (x,y,s,rv,t=0); 2026-11-14_gatos_ronroneo:101 (x,y,s,rv,t=0) — FIRMAS DISTINTAS
 - `inkParts`: 2026-11-10_animales_guerra:8 (paths,fill,rim,lw=2.4); 2026-11-12_zama:7 (paths,fill,rim,lw=2.4) — misma firma
+- `land`: 2026-11-13_paralelo42:19 (pts,fill,edge,lw=1.8); 2026-11-14_imperio_poderoso:27 (pts,fill,edge,lw=1.5) — FIRMAS DISTINTAS
 - `limb`: 2026-11-10_animales_guerra:13 (x0,y0,x1,y1,w0,w1); 2026-11-12_zama:12 (x0,y0,x1,y1,w0,w1) — misma firma
 - `mapLand`: v02_gatos:142 (a=1); 2026-11-14_gatos_ronroneo:142 (a=1) — misma firma
 - `medal`: 2026-11-10_animales_guerra:180 (x,y,s,rot=0); 2026-11-10_generales_olvidados:54 (x,y,r,n,t0,t,o={}) — FIRMAS DISTINTAS
@@ -39,7 +40,8 @@
 - `pinDrop`: v02_gatos:145 (x,y,t,ts,col,lbl,tg); 2026-11-14_gatos_ronroneo:145 (x,y,t,ts,col,lbl,tg) — misma firma
 - `rib`: 2026-11-10_animales_guerra:16 (pts,w0,w1); 2026-11-12_zama:15 (pts,w0,w1) — misma firma
 - `sack`: v02_gatos:151 (x,y,s,rot,fill=1); 2026-11-14_gatos_ronroneo:151 (x,y,s,rot,fill=1) — misma firma
-- `ship`: 2026-11-10_generales_olvidados:43 (x,y,s,o={}); 2026-11-12_zama:62 (x,y,s,col,o={}) — FIRMAS DISTINTAS
+- `sea`: 2026-11-13_paralelo42:16 (t); 2026-11-14_imperio_poderoso:26 () — FIRMAS DISTINTAS
+- `ship`: 2026-11-10_generales_olvidados:43 (x,y,s,o={}); 2026-11-12_zama:62 (x,y,s,col,o={}); 2026-11-14_imperio_poderoso:33 (x,y,s,rot) — FIRMAS DISTINTAS
 - `soldier`: 2026-11-10_animales_guerra:98 (x,y,s,o={}); 2026-11-12_emu:25 (x,y,s,o={}); 2026-11-13_paralelo42:29 (x,y,s,col,al) — FIRMAS DISTINTAS
 - `truck`: 2026-11-10_animales_guerra:130 (x,y,s,o={}); 2026-11-12_emu:36 (x,y,s,o={}) — misma firma
 - `waveArcs`: v02_gatos:89 (x,y,t,ts,col,n=3,gap=.12,R0=60,dir=0,spread=.9,lw=3); 2026-11-14_gatos_ronroneo:89 (x,y,t,ts,col,n=3,gap=.12,R0=60,dir=0,spread=.9,lw=3) — misma firma
@@ -57,4 +59,4 @@
 - `TX(s,x,y,sz,col,t,t0,o={})` v02_gatos:4 / `STAMP(s,x,y,sz,t,t0,o={})` 2026-11-10_animales_guerra:5
 
 ## Piezas sin ningún uso en su propio video (escenas ni otras piezas): revisar si sobran
-`crown`(2026-11-14_gatos_ronroneo), `catSide`(2026-11-14_gatos_ronroneo), `mouse`(2026-11-14_gatos_ronroneo), `pawPrint`(2026-11-14_gatos_ronroneo), `brain`(2026-11-14_gatos_ronroneo), `humSkel`(2026-11-14_gatos_ronroneo), `catSkel`(2026-11-14_gatos_ronroneo), `bastet`(2026-11-14_gatos_ronroneo), `glyph`(2026-11-14_gatos_ronroneo), `mapLand`(2026-11-14_gatos_ronroneo), `pinDrop`(2026-11-14_gatos_ronroneo), `wheatRow`(2026-11-14_gatos_ronroneo), `barn`(2026-11-14_gatos_ronroneo)
+`crown`(2026-11-14_gatos_ronroneo), `catSide`(2026-11-14_gatos_ronroneo), `mouse`(2026-11-14_gatos_ronroneo), `pawPrint`(2026-11-14_gatos_ronroneo), `brain`(2026-11-14_gatos_ronroneo), `humSkel`(2026-11-14_gatos_ronroneo), `catSkel`(2026-11-14_gatos_ronroneo), `bastet`(2026-11-14_gatos_ronroneo), `glyph`(2026-11-14_gatos_ronroneo), `mapLand`(2026-11-14_gatos_ronroneo), `pinDrop`(2026-11-14_gatos_ronroneo), `wheatRow`(2026-11-14_gatos_ronroneo), `barn`(2026-11-14_gatos_ronroneo), `infoCard`(2026-11-14_imperio_poderoso)
