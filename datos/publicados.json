@@ -86,8 +86,10 @@
    "slug": "2026-11-15_mundo_mujeres",
    "titulo": "¿Y si solo existieran mujeres? Un mundo sin hombres",
    "mp4_sha256": "88d0b51bd7d46f84e3118b7e78c672a7a5ee13455e330d75f811bbf83831a5c0",
-   "estado": "reservado",
-   "ts": "2026-11-15 17:29:33"
+   "estado": "programado",
+   "ts": "2026-11-15 17:29:33",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-1589325592467848562",
+   "fecha_programada": "2026-11-15T12:45:00-05:00"
   }
  ]
 }
