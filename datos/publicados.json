@@ -95,8 +95,10 @@
    "slug": "2026-11-15_mundo_hombres",
    "titulo": "Un mundo solo de hombres: ¿sobreviviría o sería un desastre?",
    "mp4_sha256": "33772d429c071e8e20ebcf97b1c0037b6b3a64177fc779a1f7ecec00f0d0ac0b",
-   "estado": "reservado",
-   "ts": "2026-11-15 17:33:24"
+   "estado": "programado",
+   "ts": "2026-11-15 17:33:24",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=6735219324500984291",
+   "fecha_programada": "2026-11-15T18:00:00-05:00"
   }
  ]
 }
