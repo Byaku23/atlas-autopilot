@@ -1,5 +1,5 @@
 // Prueba: mapa satelital real de EE. UU. -> zoom a Puerto Rico -> bandera con carita. 10 s, 9:16.
-const TEX = mapaCargar('../tex/blue_marble.jpg', [-182.76, 172.6, 90, -62.97])   // imagen subida por Johan (equirectangular recortada; calibrada con Natural Earth);
+const TEX = mapaCargar('../../../catalogo/mapa/blue_marble.jpg', [-182.76, 172.6, 90, -62.97])   // imagen subida por Johan (equirectangular recortada; calibrada con Natural Earth);
 const PR = [-66.45, 18.22];
 const VIAJE = [[0, -96, 38.5, 7.4], [2.2, -96, 38.5, 7.8, eio], [6.4, PR[0], PR[1] + 1.1, 78, (p) => eio(eio(p))]];   // lon, lat, px/grado
 function s1(t, u) {
