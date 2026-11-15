@@ -9,3 +9,5 @@ Pareja: mundo_hombres (tarde). Hipótesis marcadas como tales; promedios, no ind
 - Mujeres ~40 % menos músculo del tren superior (Janssen et al. 2000, J Appl Physiol; Miller 1993).
 - Muertes laborales EE. UU.: ~92 % hombres (BLS CFOI 2022; NIOSH).
 - Umoja (Kenia, 1990): aldea de mujeres; artesanía y turismo (BBC; Guardian; Wikipedia).
+## Estado
+Renderizado, NO programado: Johan pidió verlo antes (mañana). Título propuesto: "¿Y si solo existieran mujeres? Un mundo sin hombres"

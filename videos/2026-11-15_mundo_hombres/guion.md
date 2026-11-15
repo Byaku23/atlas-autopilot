@@ -6,3 +6,5 @@
 - Brecha en élite de carrera ~10–12 % (J Appl Physiol 2023; Frontiers 2022). Fuerza tren superior: Janssen 2000; Lassek & Gaulin 2009.
 - Muertes laborales EE. UU. ~92 % hombres (BLS CFOI 2022; NIOSH).
 - Woolley et al., Science 2010 (correlación, no causa).
+## Estado
+Renderizado, NO programado: Johan pidió verlo antes (tarde). Título propuesto: "¿Y si solo existieran hombres? Un mundo sin mujeres"

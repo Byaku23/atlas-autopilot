@@ -1,36 +1,33 @@
 import sys; sys.path.insert(0,'../../eng')
 from words import *
-DUR=73.77
-T=[0,5.88,14.16,23.92,27.42,37.60,48.36,55.26,65.06,DUR]
+DUR=107.2
+T=[0,7.57,21.03,36.56,54.4,67.27,81.85,94.64,DUR]
 RAW={
 # S0
-'eng':(wt('engaña'),.3),'llanto':(wt('llanto'),.5),'ron':(wt('ronroneo'),.9),
+'man':(wt('mañana'),.2),'hom':(wt('hombres'),.3),'contra':(wt('contrario'),.6),'hom2':(wt('hombres',after=5),.7),'num':(wt('numeros'),.4),
 # S1
-'sig':(wt('significa'),0),'feliz':(wt('feliz'),.3),'pero':(wt('Pero'),0),'miedo':(wt('miedo'),.6),'duele':(wt('duele'),.8),
+'nueve':(wt('Nueve'),.4),'homic':(wt('homicidio'),0),'hom3':(wt('hombres',after=12),.5),'ocho':(wt('ocho'),.4),'vict':(wt('victimas'),.3),'nadie':(wt('Nadie'),.2),'datos':(wt('datos'),.3),'tranq':(wt('tranquilizan'),.5),
 # S2
-'grav':(wt('gravísimo'),.4),'veinte':(wt('veinticinco'),.5),'prod':(wt('produce'),0),'lar':(wt('laringe'),.4),'gar':(wt('garganta'),0),'vel':(wt('velocidad'),.3),
+'casa':(wt('casa'),.3),'set':(wt('setenta'),.5),'cuid':(wt('cuidados'),.3),'cobrar':(wt('cobrar'),.4),'toc':(wt('Tocaria'),.2),'bebes':(wt('bebes'),.5),'tamp':(wt('tampoco'),.3),'gener':(wt('generaciones'),.6),
 # S3
-'gatitos':(wt('gatitos'),0),'maman':(wt('maman'),.3),'madre':(wt('madre'),0),
+'exp':(wt('experimento'),.3),'athos':(wt('Athos'),.6),'mil46':(wt('cuarenta',after=41),.5),'entran':(wt('entran'),.5),'monjes':(wt('monjes'),.3),'veinte':(wt('veinte'),.3),'hembra':(wt('hembra'),.5),'gatos':(wt('gatos'),.7),'fuera':(wt('fuera'),.4),
 # S4
-'dos9':(wt('nueve'),.3),'karen':(wt('Karen'),0),'suss':(wt('Sussex'),.5),'diez':(wt('diez'),.4),'formas':(wt('formas'),0),'rela':(wt('relajados'),.3),'pid':(wt('pidiendo'),.4),
+'fuerza':(wt('fuerza'),.5),'atl':(wt('atletismo'),.3),'corren':(wt('corren'),.3),'diez2':(wt('diez',after=64),.4),'rapido':(wt('rapido'),.6),
 # S5
-'cinc':(wt('cincuenta'),.5),'urg':(wt('urgente',after=40),.6),'agr':(wt('agradable'),.4),'nunca':(wt('nunca'),.3),'gato5':(wt('gato',after=47),.5),
+'ademas':(wt('Ademas'),0),'nueve2':(wt('nueve',after=68),.5),'obras':(wt('obras'),.3),'minas':(wt('minas'),.3),'tej':(wt('tejados'),.3),'ellos':(wt('ellos',after=78),.5),'mud':(wt('mudanzas'),.4),'exito':(wt('exito'),.8),
 # S6
-'sec':(wt('secreto'),.8),'grave':(wt('grave'),0),'agudo':(wt('agudo'),.4),'llan2':(wt('llanto',after=50),.7),'bebe':(wt('bebé'),0),
+'reun':(wt('reuniones'),.5),'science':(wt('Science'),.5),'mejores':(wt('mejores'),.3),'ellas':(wt('ellas'),.5),'vez':(wt('vez'),.8),
 # S7
-'quit':(wt('quitaron'),.5),'menos':(wt('menos',after=59),0),'urg2':(wt('urgente',after=59),.6),'exag':(wt('exagerarlo'),.5),'func':(wt('funciona'),.8),
-# S8
-'asi':(wt('Así'),0),'quiere':(wt('quiere',after=67),.3),'comida':(wt('comida',after=69),.4),'coment':(wt('Comenta'),.4),'sig2':(wt('Sígueme'),0),
+'sobre':(wt('sobreviviria'),.4),'desastre':(wt('desastre',after=98),.6),'musc':(wt('musculos'),.5),'coment':(wt('Comenta'),.4),'cual':(wt('cual'),.3),'sig':(wt('Sígueme'),0),
 }
 TRS=[None,
- {'type':'dive','x':207,'y':284,'z':9,'dur':.55},
+ {'type':'dive','x':180,'y':262,'z':9,'dur':.55},
  {'type':'push','dir':'left','dur':.45},
- {'type':'morph','a':[40,285,280,190,20],'col':'#2b1a0a','dur':.55},
+ {'type':'morph','a':[40,230,280,140,16],'col':'#0d1b33','dur':.55},
+ {'type':'ink','x':180,'y':300,'col':'#4aa3ff','dur':.45},
  {'type':'whip','dur':.35},
- {'type':'morph','a':[24,150,312,190,18],'col':'#0c2236','dur':.55},
- {'type':'ink','x':180,'y':300,'col':'#ffa23e','dur':.45},
- {'type':'push','dir':'up','dur':.45},
- {'type':'iris','x':190,'y':462,'col':'#102a3d','dur':.5}]
+ {'type':'iris','x':180,'y':330,'col':'#0f2347','dur':.5},
+ {'type':'push','dir':'up','dur':.45}]
 if __name__=='__main__':
     E,T2=build(T,RAW,TRS,DUR)
     for k in sorted(E,key=lambda k:E[k]): print('%-8s %.3f'%(k,E[k]),end=' | ')

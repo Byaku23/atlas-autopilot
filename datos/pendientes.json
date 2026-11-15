@@ -1,3 +1,18 @@
 {
- "pendientes": []
+ "pendientes": [
+  {
+   "carpeta": "videos/2026-11-15_mundo_mujeres",
+   "mp4": "mundo_mujeres.mp4",
+   "motivo": "Pedido de Johan: verlo antes de programar (video de la MAÑANA)",
+   "titulo": "¿Y si solo existieran mujeres? Un mundo sin hombres",
+   "aviso": "2026-11-15"
+  },
+  {
+   "carpeta": "videos/2026-11-15_mundo_hombres",
+   "mp4": "mundo_hombres.mp4",
+   "motivo": "Pedido de Johan: verlo antes de programar (video de la TARDE)",
+   "titulo": "¿Y si solo existieran hombres? Un mundo sin mujeres",
+   "aviso": "2026-11-15"
+  }
+ ]
 }
