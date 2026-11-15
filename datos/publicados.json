@@ -99,6 +99,13 @@
    "ts": "2026-11-15 17:33:24",
    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=6735219324500984291",
    "fecha_programada": "2026-11-15T18:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-15_gansos_roma",
+   "titulo": "Los gansos que salvaron Roma de los galos 🏛️",
+   "mp4_sha256": "5b63110df42cbffc128028f10db2a5c15ed8c4b4ccf3f872f6d6ea5c7f49c266",
+   "estado": "reservado",
+   "ts": "2026-11-15 19:02:54"
   }
  ]
 }
