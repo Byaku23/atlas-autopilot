@@ -1,0 +1,71 @@
+import sys,json; sys.path.insert(0,'../../eng')
+from sfx import *
+J=json.load(open('ev.json')); E=J['E']; T=J['T']; DUR=J['DUR']; TRS=J['TRS']
+init(DUR,E)
+PR=[('Dm',38,[50,53,57,62]),('Bb',46,[58,62,65,70]),('Gm',43,[55,58,62,67]),('A',45,[57,61,64,69])]
+setMusic(96,PR)
+trSfx(TRS,E)
+# S0 gancho: dos flechas
+P(lambda: riser(2.6,200,1400,.3),0.0,.35)
+Pn(stamp,'s_inv',.55); Pn(lambda: boom(1.0,52,.6),'s_inv',.45); Pn(lambda: whoosh(.6),'s_inv',.3)
+Pn(stamp,'s_dos',.9); Pn(lambda: boom(1.6,45,.9),'s_dos',.8); Pn(lambda: downsweep(1.0),'s_dos',.4)
+Pn(pop,'s_mapa',.5); Pn(lambda: ping(880,.8),'s_mapa',.4)
+# S1 Austria
+Pn(lambda: whoosh(.5),'a_mar',.35); Pn(pop,'a_mar',.45)
+Pn(stamp,'a_ocho',.8); Pn(lambda: boom(1.4,50,.8),'a_ocho',.7)
+Pn(lambda: whoosh(.7),'a_ale',.4); Pn(pop,'a_aus',.5); Pn(lambda: ping(660,.8),'a_aus',.4)
+Pn(lambda: boom(1.2,48,.8),'a_que',.7); Pn(lambda: downsweep(.9),'a_que',.4); Pn(lambda: sparkle(.9),'a_que',.25)
+# S2 Múnich
+Pn(stamp,'m_sep',.8); Pn(lambda: boom(1.2,52,.7),'m_sep',.6)
+Pn(lambda: bell(660,2.0),'m_mun',.5); Pn(pop,'m_mun',.5)
+Pn(pop,'m_rei',.5); Pn(lambda: whoosh(.4),'m_rei',.3); Pn(pop,'m_fra',.5); Pn(lambda: whoosh(.4),'m_fra',.3)
+Pn(lambda: scratch(.5),'m_ent',.6); Pn(lambda: whoosh(.9),'m_ent',.45)
+Pn(lambda: boom(1.2,50,.7),'m_sud',.7); Pn(pop,'m_sud',.5); Pn(lambda: stinger(),'m_sud',.35)
+Pn(pop,'m_che',.5); Pn(lambda: ping(523,.8),'m_che',.4)
+# S3 Checoslovaquia
+Pn(lambda: whoosh(.5),'c_mar',.35); Pn(pop,'c_mar',.45)
+Pn(stamp,'c_nue',.8); Pn(lambda: boom(1.4,50,.8),'c_nue',.7)
+Pn(lambda: sub(1.2,45),'c_res',.55); Pn(lambda: whoosh(.8),'c_res',.45); Pn(pop,'c_res',.45)
+Pn(pop,'c_che',.5)
+Pn(lambda: downsweep(1.4),'c_des',.7); Pn(lambda: boom(1.8,42,.9),'c_des',.8); Pn(lambda: hiss(1.0),'c_des',.3)
+# S4 pacto
+Pn(stamp,'p_23',.85); Pn(lambda: boom(1.4,50,.8),'p_23',.7)
+Pn(pop,'p_ale',.5); Pn(lambda: whoosh(.7),'p_ale',.4); Pn(pop,'p_sov',.5); Pn(lambda: whoosh(.7),'p_sov',.4)
+Pn(lambda: paper(.5),'p_pac',.5); Pn(stamp,'p_pac',.7); Pn(lambda: boom(1.0,55,.6),'p_pac',.5)
+Pn(lambda: stinger(),'p_pro',.45); Pn(pop,'p_pro',.5); Pn(lambda: hiss(.9),'p_sec',.35); Pn(pop,'p_sec',.45)
+Pn(lambda: scratch(.6),'p_rep',.7); Pn(lambda: riser(1.2,300,1800,.3),'p_rep',.4,-.3)
+Pn(stamp,'p_pol',.7); Pn(lambda: boom(1.2,50,.7),'p_pol',.6)
+Pn(lambda: boom(1.4,45,.8),'p_dos',.7)
+# S5 invasión
+Pn(stamp,'i_1',.9); Pn(lambda: boom(1.6,45,.9),'i_1',.8); Pn(lambda: downsweep(1.0),'i_1',.4)
+Pn(lambda: whoosh(.8),'i_inv',.5); Pn(lambda: rumble(1.6),'i_inv',.5); Pn(lambda: boom(1.2,48,.8),'i_inv',.7)
+Pn(pop,'i_dia',.5); Pn(lambda: ping(880,.8),'i_dia',.4)
+Pn(pop,'i_rei',.5); Pn(lambda: whoosh(.6),'i_rei',.35); Pn(pop,'i_fra',.5); Pn(lambda: whoosh(.6),'i_fra',.35)
+Pn(stamp,'i_gue',.7); Pn(lambda: boom(1.2,52,.7),'i_gue',.6)
+Pn(lambda: brassSting(),'i_mun',.5); Pn(lambda: boom(2.0,40,1.0),'i_mun',.9); Pn(lambda: downsweep(1.4),'i_mun',.45)
+# S6 soviéticos
+Pn(stamp,'r_17',.85); Pn(lambda: boom(1.4,48,.8),'r_17',.7)
+Pn(pop,'r_sov',.5); Pn(lambda: whoosh(.9),'r_cru',.5); Pn(lambda: rumble(1.4),'r_cru',.45); Pn(lambda: boom(1.0,50,.7),'r_cru',.6)
+Pn(pop,'r_est',.5); Pn(pop,'r_pol',.5)
+Pn(lambda: boom(1.8,40,1.0),'r_apl',.9); Pn(lambda: shatter(.9),'r_apl',.4); Pn(lambda: downsweep(1.2),'r_apl',.45)
+Pn(pop,'r_eje',.5)
+# S7 cierre
+Pn(stamp,'f_cad',.6); Pn(lambda: boom(.9,55,.5),'f_cad',.45)
+Pn(stamp,'f_pas',.65); Pn(lambda: boom(1.0,52,.55),'f_pas',.5)
+Pn(stamp,'f_gra',.7); Pn(lambda: boom(1.1,50,.6),'f_gra',.55)
+Pn(stamp,'f_ant',.9); Pn(lambda: boom(1.6,45,.9),'f_ant',.8)
+Pn(lambda: whoosh(.6),'f_ent',.4); Pn(lambda: ping(660,.9),'f_ent',.45)
+Pn(pop,'f_mun',.6); Pn(lambda: ping(988,.8),'f_mun',.4); Pn(pop,'f_tar',.6); Pn(lambda: bell(523,2.0),'f_tar',.4)
+Pn(notif,'f_com',.8); Pn(pop,'f_com',.7)
+# música
+t1,t2,t3,t4,t5,t6,t7=T[1:8]
+layer_drone(0,t1,.45); layer_pad(0,t1,.3,lpf=1000); layer_drums(0,t1,.2,'light')
+layer_pad(t1,t2,.35,lpf=1300); layer_bass(t1,t2,.22); layer_arp(t1+.5,t2,.22,step=.5)
+layer_pad(t2,t3,.37,lpf=1400); layer_drums(t2,t3,.26,'pop'); layer_bass(t2,t3,.24); bells(t2,t3,.18,seed=3)
+layer_pad(t3,t4,.37,lpf=1200); layer_drone(t3,t4,.35); layer_bass(t3,t4,.22); layer_ost(t3,t4,.18)
+layer_pad(t4,t5,.4,lpf=1500); layer_drums(t4,t5,.3,'march'); layer_bass(t4,t5,.26); layer_arp(t4,t5,.26,step=.5); swell(E['p_rep']-1.2,E['p_pol'],.3,(50,57,62,65))
+layer_pad(t5,t6,.42,lpf=1600); layer_drums(t5,t6,.34,'march'); layer_bass(t5,t6,.28); layer_ost(t5,t6,.25)
+layer_pad(t6,t7,.42,lpf=1500); layer_drums(t6,t7,.34,'tribal'); layer_bass(t6,t7,.28); layer_arp(t6,t7,.26,step=.5)
+layer_pad(t7,DUR,.38,lpf=1700); layer_arp(t7,DUR,.26,step=.5); bells(t7,DUR,.2,seed=14); layer_drums(t7+3,DUR,.22,'pop')
+duck(E['s_dos'],E['s_dos']+.9,.3,.4); duck(E['c_des'],E['c_des']+1.0,.3,.4); duck(E['i_mun'],E['i_mun']+1.0,.3,.4); duck(E['r_apl'],E['r_apl']+1.0,.3,.4)
+save()
