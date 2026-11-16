@@ -122,8 +122,10 @@
    "slug": "2026-11-16_caballo_caligula",
    "titulo": "¿Calígula nombró cónsul a su caballo? El mito de Incitato 🐴",
    "mp4_sha256": "9503876dfcd88a9b8f18a440d13ddf9e53791e25b9a91de1e79cc200779b2d34",
-   "estado": "reservado",
-   "ts": "2026-11-16 18:56:19"
+   "estado": "programado",
+   "ts": "2026-11-16 18:56:19",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=3017913787461943727",
+   "fecha_programada": "2026-11-17T10:00:00-05:00"
   }
  ]
 }
