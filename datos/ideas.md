@@ -20,3 +20,4 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [x] 2026-11-13 (programado 18:00 NY) La raya que firmó España: el paralelo 42 (Tratado Adams-Onís 1819) — frontera California/Oregón. MAPA + CAUSAS (tendencia: @historiassecretastv 853k).
 
 - [x] 2026-11-15 (programado 2026-11-16 18:00 NY) Los gansos que salvaron Roma (Capitolio, 390 a.C.). ANIMALES + HISTORIA con pregunta que divide (¿ganso o Manlio?).
+- [~] reservada 2026-11-16 (tarde) ¿Calígula nombró cónsul a su caballo? Mito Incitato. DEBATE + ANIMALES (programar mar 17 10:00 NY).
