@@ -68,3 +68,10 @@
 3. Regeneraciones innecesarias: ninguna; voz 1 sola vez (caché), render completo 1 vez (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: vidIQ sin créditos (no consultado); ElevenLabs 965 créditos (1 voz)
 5. Publicaciones: IG Reel, TikTok, YouTube Short, Facebook Reel · 2026-11-16 12:00 NY
+
+## 2026-11-16_caballo_caligula — 2026-11-16 18:56
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna; voz 1 vez (78,5 s); 1 render completo (etapas ejecutadas: audio, mezcla, render; reutilizadas por caché: —)
+4. Consumo de tokens/créditos: ElevenLabs ~1186 créditos voz, transcripción 0; vidIQ sin créditos (no usado); sin créditos de pago
+5. Publicaciones: IG Reel, TikTok, YouTube Short, FB Reel · 2026-11-17 10:00 NY
