@@ -9,6 +9,7 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
 - Datos del canal: `datos/temas.json` (publicados), `datos/ideas.md` (banco de ideas), `datos/pendientes.json` (videos que no pasaron revisión y esperan decisión).
 - **Publicación automática:** si el video pasa todas las revisiones se programa en Metricool sin preguntar (≥2 h de margen)
   y se avisa a Johan con el enlace para cancelarlo. Si algo no pasa las revisiones, se le propone y se espera su respuesta.
+- **Banco de reserva (Johan 2026-11-16):** los videos producidos que se desplazan o no se publican NUNCA se borran: van a `datos/banco.md` y se usan cuando falte un video (ver PIPELINE.md).
 - Este proyecto es solo de videos para redes; no toques nada de otros proyectos de Johan.
 - Habla con Johan en español, claro y breve.
 
