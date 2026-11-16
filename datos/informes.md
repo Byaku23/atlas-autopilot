@@ -61,3 +61,10 @@
 3. Regeneraciones innecesarias: 1 re-render por solapes de texto (solo etapa render); voz generada 1 vez (88,5 s) (etapas ejecutadas: render; reutilizadas por caché: audio, mezcla)
 4. Consumo de tokens/créditos: ElevenLabs: ~1.324 créditos voz + ~487 transcripción; vidIQ sin créditos (no se pudo consultar)
 5. Publicaciones: IG Reel, TikTok, YouTube Short, Facebook Reel: 2026-11-16 18:00 NY
+
+## 2026-11-16_inicio_segunda_guerra — 2026-11-16 14:00
+1. Modelo principal: Sonnet 5.5 (todo el trabajo)
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna; voz 1 sola vez (caché), render completo 1 vez (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: vidIQ sin créditos (no consultado); ElevenLabs 965 créditos (1 voz)
+5. Publicaciones: IG Reel, TikTok, YouTube Short, Facebook Reel · 2026-11-16 12:00 NY

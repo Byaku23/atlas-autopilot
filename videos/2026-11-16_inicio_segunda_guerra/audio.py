@@ -19,7 +19,7 @@ Pn(lambda: boom(1.2,48,.8),'a_que',.7); Pn(lambda: downsweep(.9),'a_que',.4); Pn
 Pn(stamp,'m_sep',.8); Pn(lambda: boom(1.2,52,.7),'m_sep',.6)
 Pn(lambda: bell(660,2.0),'m_mun',.5); Pn(pop,'m_mun',.5)
 Pn(pop,'m_rei',.5); Pn(lambda: whoosh(.4),'m_rei',.3); Pn(pop,'m_fra',.5); Pn(lambda: whoosh(.4),'m_fra',.3)
-Pn(lambda: scratch(.5),'m_ent',.6); Pn(lambda: whoosh(.9),'m_ent',.45)
+Pn(lambda: whoosh(.45),'m_ent',.4,-.1)
 Pn(lambda: boom(1.2,50,.7),'m_sud',.7); Pn(pop,'m_sud',.5); Pn(lambda: stinger(),'m_sud',.35)
 Pn(pop,'m_che',.5); Pn(lambda: ping(523,.8),'m_che',.4)
 # S3 Checoslovaquia
@@ -33,7 +33,7 @@ Pn(stamp,'p_23',.85); Pn(lambda: boom(1.4,50,.8),'p_23',.7)
 Pn(pop,'p_ale',.5); Pn(lambda: whoosh(.7),'p_ale',.4); Pn(pop,'p_sov',.5); Pn(lambda: whoosh(.7),'p_sov',.4)
 Pn(lambda: paper(.5),'p_pac',.5); Pn(stamp,'p_pac',.7); Pn(lambda: boom(1.0,55,.6),'p_pac',.5)
 Pn(lambda: stinger(),'p_pro',.45); Pn(pop,'p_pro',.5); Pn(lambda: hiss(.9),'p_sec',.35); Pn(pop,'p_sec',.45)
-Pn(lambda: scratch(.6),'p_rep',.7); Pn(lambda: riser(1.2,300,1800,.3),'p_rep',.4,-.3)
+Pn(lambda: whoosh(.7),'p_rep',.5); Pn(pop,'p_rep',.6); Pn(lambda: riser(1.2,300,1800,.3),'p_rep',.4,-.3)
 Pn(stamp,'p_pol',.7); Pn(lambda: boom(1.2,50,.7),'p_pol',.6)
 Pn(lambda: boom(1.4,45,.8),'p_dos',.7)
 # S5 invasión
@@ -47,7 +47,7 @@ Pn(lambda: brassSting(),'i_mun',.5); Pn(lambda: boom(2.0,40,1.0),'i_mun',.9); Pn
 Pn(stamp,'r_17',.85); Pn(lambda: boom(1.4,48,.8),'r_17',.7)
 Pn(pop,'r_sov',.5); Pn(lambda: whoosh(.9),'r_cru',.5); Pn(lambda: rumble(1.4),'r_cru',.45); Pn(lambda: boom(1.0,50,.7),'r_cru',.6)
 Pn(pop,'r_est',.5); Pn(pop,'r_pol',.5)
-Pn(lambda: boom(1.8,40,1.0),'r_apl',.9); Pn(lambda: shatter(.9),'r_apl',.4); Pn(lambda: downsweep(1.2),'r_apl',.45)
+Pn(lambda: boom(1.8,40,1.0),'r_apl',.9); Pn(lambda: shatter(),'r_apl',.4); Pn(lambda: downsweep(1.2),'r_apl',.45)
 Pn(pop,'r_eje',.5)
 # S7 cierre
 Pn(stamp,'f_cad',.6); Pn(lambda: boom(.9,55,.5),'f_cad',.45)

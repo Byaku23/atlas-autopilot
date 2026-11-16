@@ -39,7 +39,7 @@ function s2(t,u){
     pathArrow([MUN,PJ(12.5,49.5),PJ(14.0,50.0)],nb(E.m_ent,E.m_sud,t),'#aab3c6',4.2)});
   const m=sk(c,MUN[0],MUN[1]);
   slam('SEP 1938',180,110,50,'#fff',t,E.m_sep,{stroke:INK,sw:9,sh:'rgba(255,122,60,.8)'});
-  TG('MÚNICH',Math.min(m[0]-40,150),m[1]+22,13,ACC,INK,t,E.m_mun-.05);
+  TG('MÚNICH',Math.min(m[0]+44,300),m[1]+34,13,ACC,INK,t,E.m_mun-.05);
   // fichas aliadas que entregan
   const r1=eb(nb(E.m_rei-.05,E.m_rei+.35,t)),r2=eb(nb(E.m_fra-.05,E.m_fra+.35,t)),ex=eio(nb(E.m_ent-.1,E.m_ent+.5,t));
   tr(lerp(66,m[0]-78,ex),lerp(190,m[1]-8,ex),r1,0,()=>{ctx.fillStyle=INK;rr(-52,-16,104,32,10);ctx.fill();ctx.fillStyle=ALLY;rr(-49,-13,98,26,8);ctx.fill();txt('R. UNIDO',0,1,15,'#fff',{wt:'900',f:DISP})});
@@ -126,7 +126,7 @@ function s6(t,u){
 
 // S7 CIERRE: cada paso más grande → debate
 function s7(t,u){sea(t);glow(180,300,200,'rgba(217,200,160,.10)',1);
-  const fo=1-.85*nb(E.f_ent-.1,E.f_ent+.35,t);
+  const fo=(1-.85*nb(E.f_ent-.1,E.f_ent+.35,t))*(1-nb(E.f_mun-.15,E.f_mun+.2,t));
   withA(fo,()=>{const st=[['AUSTRIA',E.f_cad,GER,40],['SUDETES',E.f_pas,AUT,78],['CHECOSL.',E.f_gra,CZE,120],['POLONIA',E.f_ant,POL,170]];
     st.forEach((s,i)=>{const q=eb(nb(s[1]-.05,s[1]+.4,t)),x=52+i*86,h=s[3]*q;
       ctx.fillStyle=INK;rr(x-36,470-h-3,72,h+6,8);ctx.fill();ctx.fillStyle=s[2];rr(x-33,470-h,66,h,6);ctx.fill();
