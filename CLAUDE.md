@@ -34,3 +34,7 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
 - Componente: `pruebas/calidad_visual/lib/fotos.js` (`cargarFoto`, `fotoReal` con marco y Ken Burns, `resaltar`). Ejemplo: `pruebas/calidad_visual/demo_fotos/`.
 - Opcionales aprobados para escenas con personaje: `lib/rig.js`, `lib/mundo.js`, `lib/camara.js` (transición `pan`). No migres escenas existentes.
 - **Video atascado por una imagen (decidido por Johan 2026-11-12):** no esperes dentro de la sesión. Deja el video terminado salvo la imagen en `datos/pendientes.json` con la hora del aviso. Si pasó más de 1 hora y Johan no respondió, haz otro video de un tema SIN imágenes y publícalo en su lugar; el video atascado se programa después, en la hora que tenía asignada el segundo video del día. Si Johan envía la imagen antes, termina el atascado y sigue el orden normal.
+
+## Mapas reales en videos de geografía (decidido por Johan 2026-11-15)
+- En todo video de geografía usa por defecto el módulo `catalogo/mapa/` (lee `catalogo/mapa/MAPA.md`): satélite NASA real, bordes Natural Earth, colores semitransparentes por región, cámara con zoom y bandera con carita (`banderaPR` como modelo). Ejemplo: `pruebas/mapa_real/demo/`.
+- Si el mapa no sirve para ese tema, dilo en el informe; no migres videos ya hechos. Para zoom muy cercano la textura (2576 px) se ve suave: pide a Johan una de ≥8000 px.

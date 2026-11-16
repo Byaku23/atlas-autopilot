@@ -63,6 +63,7 @@ Si en `pendientes.json` hay un video esperando aprobación de una ejecución ant
 4. DUR = duración de voz.mp3 (ffprobe) + 1.2 s, redondeado a 1/30.
 
 ## Paso 4 — Dirección y escenas
+- **Videos de geografía:** usa por defecto el mapa real de `catalogo/mapa/` (ver `catalogo/mapa/MAPA.md`) en vez de dibujar mapas a mano.
 - Escribe `STORYBOARD.md` (como `ejemplos/v02_gatos/STORYBOARD.md`): primer cuadro impactante, 6–9 escenas con QUÉ pasa
   y en QUÉ palabra, paleta propia (distinta del último video), transiciones (≥5 tipos, ≥2 morph, ≥1 dive), cámara que sigue,
   elementos que empujan/activan a otros, texto con máscara.
