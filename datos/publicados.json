@@ -135,6 +135,13 @@
    "ts": "2026-11-17 14:01:10",
    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-6542509024794950660",
    "fecha_programada": "2026-11-17T18:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-17_togo_balto",
+   "titulo": "Togo vs Balto: ¿quién fue el verdadero héroe? 🐕",
+   "mp4_sha256": "427c7405f42cfc4cd4e6505650b0250703bd07006d83d4ba425f7b3639363815",
+   "estado": "reservado",
+   "ts": "2026-11-17 19:01:39"
   }
  ]
 }
