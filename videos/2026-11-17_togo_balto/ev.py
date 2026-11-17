@@ -1,22 +1,21 @@
 import sys; sys.path.insert(0,'../../eng')
 from words import *
-DUR=79.7333
-T=[0,5.51,11.85,23.29,27.63,34.33,43.13,55.45,65.96,69.43,DUR]
+DUR=85.6
+T=[0,6.28,16.76,28.9,34.84,46.1,55.5,62.8,73.16,DUR]
 RAW={
-'h_caballo':(wt('caballo'),.2),'h_consul':(wt('cónsul'),.5),'h_cal':(wt('Calígula',after=2.6),.3),'h_nada':(wt('nada'),0),'h_cierto':(wt('cierto'),.7),
-'s1_cal':(wt('Calígula',after=5.5),.3),'s1_emp':(wt('emperador'),0),'s1_37':(wt('treinta'),.2),'s1_41':(wt('cuarenta'),.3),'s1_mur':(wt('Murió'),.4),'s1_ase':(wt('asesinado'),.8),'s1_28':(wt('veintiocho'),.6),
-'s2_cab':(wt('caballo',after=11.8),0),'s2_inc':(wt('Incitato'),.4),'s2_sue':(wt('Suetonio',after=15),0),'s2_est':(wt('establo'),0),'s2_mar':(wt('mármol'),.3),'s2_pes':(wt('pesebre'),0),'s2_mfl':(wt('marfil'),.3),'s2_col':(wt('collar'),0),'s2_pie':(wt('piedras'),.2),'s2_cas':(wt('casa'),.3),'s2_sir':(wt('sirvientes'),.2),
-'s3_dion':(wt('Dión',after=23.3),0),'s3_av':(wt('avena'),0),'s3_hoj':(wt('hojuelas'),.2),'s3_oro':(wt('oro',after=26.8),.5),
-'s4_fam':(wt('famoso'),.3),'s4_cal':(wt('Calígula',after=28.9),0),'s4_plan':(wt('planeaba',after=29.8),.2),'s4_nom':(wt('nombrarlo'),0),'s4_cons':(wt('cónsul',after=30.9),.9),'s4_carg':(wt('cargos'),0),'s4_roma':(wt('Roma',after=33.7),0),
-'s5_ojo':(wt('ojo'),.3),'s5_sue':(wt('Suetonio',after=35.4),0),'s5_dion':(wt('Dión',after=36.5),0),'s5_hic':(wt('hiciera'),.3),'s5_dicen':(wt('Dicen',after=38.7),0),'s5_plan':(wt('planeaba',after=39.5),.3),'s5_dion2':(wt('Dión',after=40.4),0),'s5_nunca':(wt('nunca'),.9),'s5_ocu':(wt('ocurrió'),0),
-'s6_amb':(wt('ambos'),0),'s6_esc':(wt('escribieron'),0),'s6_mucho':(wt('mucho',after=44.8),.2),'s6_mue':(wt('muerte'),.2),'s6_todos':(wt('todos'),0),'s6_odi':(wt('odiaban'),.5),'s6_rec':(wt('recuerdo'),0),'s6_enc':(wt('Enciclopedia'),0),'s6_adm':(wt('admite'),.2),'s6_sep':(wt('separar'),0),'s6_ver':(wt('verdad',after=53),0),'s6_imp':(wt('imposible'),.6),
-'s7_ent':(wt('Entonces'),0),'s7_pas':(wt('pasó'),.3),'s7_alg':(wt('Algunos'),0),'s7_hist':(wt('historiadores'),0),'s7_brom':(wt('broma'),.5),'s7_cruel':(wt('cruel',after=60.3),.4),'s7_sen':(wt('Senado'),.4),'s7_cab':(wt('caballo',after=63),0),'s7_gob':(wt('gobernar'),.3),'s7_val':(wt('valen'),.2),'s7_ust':(wt('ustedes'),.8),
-'s8_otros':(wt('Otros'),0),'s8_rumor':(wt('rumor'),.4),'s8_inv':(wt('inventado'),0),'s8_ene':(wt('enemigos'),.6),
-'c_asi':(wt('Así'),0),'c_preg':(wt('pregunta'),0),'c_cal':(wt('Calígula',after=71.5),.3),'c_loco':(wt('loco'),.5),'c_brom':(wt('bromista'),.5),'c_cruel':(wt('cruel',after=74.5),0),'c_com':(wt('Comenta'),0),'c_sig':(wt('Sígueme'),0),
+'h_perro':(wt('perro'),0),'h_420':(wt('cuatrocientos'),.3),'h_ciudad':(wt('ciudad'),.2),'h_otro':(wt('otro',after=4),.2),'h_est':(wt('estatua',after=5),.9),
+'s1_ene':(wt('Enero'),0),'s1_1925':(wt('veinticinco'),.3),'s1_nome':(wt('Nome'),.3),'s1_dif':(wt('difteria'),.7),'s1_med':(wt('medicina'),0),'s1_lej':(wt('lejísimos'),.4),'s1_trin':(wt('trineo'),.5),
+'s2_20':(wt('Veinte',after=16.7),.3),'s2_150':(wt('cincuenta',after=18.5),.2),'s2_suero':(wt('suero'),0),'s2_mano':(wt('mano',after=21.5),.2),'s2_1085':(wt('Mil',after=22.5),.3),'s2_dias':(wt('días'),.2),'s2_52':(wt('cincuenta',after=26.5),.2),'s2_cero':(wt('cero'),.8),
+'s3_uno':(wt('Uno',after=28.8),0),'s3_togo':(wt('Togo',after=30.3),.4),'s3_doce':(wt('doce'),.3),'s3_lider':(wt('líder'),0),'s3_sepp':(wt('Seppala',after=34),.2),
+'s4_togo':(wt('Togo',after=34.8),.3),'s4_420':(wt('cuatrocientos',after=36.5),.3),'s4_nadie':(wt('nadie'),.5),'s4_cruz':(wt('Cruzaron'),0),'s4_helado':(wt('helado'),.2),'s4_nort':(wt('Norton'),0),'s4_horas':(wt('horas'),.2),'s4_hielo':(wt('hielo',after=44),.3),'s4_romp':(wt('rompió'),1.0),
+'s5_pero':(wt('Pero',after=46),0),'s5_otro':(wt('otro',after=48),.2),'s5_balto':(wt('Balto',after=49),.4),'s5_kaa':(wt('Kaasen'),0),'s5_85':(wt('Ochenta',after=52),.3),'s5_km':(wt('kilómetros',after=53),.2),'s5_nome':(wt('Nome',after=54.5),.6),
+'s6_balto':(wt('Balto',after=55.5),.3),'s6_fam':(wt('famoso'),.4),'s6_pais':(wt('país'),0),'s6_mismo':(wt('mismo'),0),'s6_est':(wt('estatua',after=60),.8),'s6_cp':(wt('Central'),0),'s6_ny':(wt('York'),.2),
+'s7_togo':(wt('Togo',after=62.8),.2),'s7_esp':(wt('esperar'),.4),'s7_est':(wt('estatua',after=64.8),.2),'s7_2001':(wt('uno',after=66.5),.8),'s7_2011':(wt('once'),.3),'s7_time':(wt('Time'),.2),'s7_her':(wt('heroico'),.6),'s7_hist':(wt('historia',after=72),.4),
+'c_asi':(wt('Así',after=73),0),'c_preg':(wt('pregunta'),.3),'c_quien':(wt('quién'),0),'c_togo':(wt('Togo',after=77),.3),'c_mas':(wt('más',after=78.3),.2),'c_balto':(wt('Balto',after=79.3),.3),'c_meta':(wt('meta'),.4),'c_com':(wt('Comenta'),0),'c_sig':(wt('Sígueme'),0),
 }
-TRS=[None,{'type':'whip'},{'type':'dive','x':180,'y':300,'z':9,'dur':.5},
-     {'type':'morph','a':[110,330,140,100,16],'col':'#f1e6c6','dur':.55},{'type':'flash'},{'type':'ink','x':180,'y':300,'col':'#ffd27a','dur':.45},
-     {'type':'push','dir':'up'},{'type':'morph','a':[120,200,120,110,14],'col':'#2a1240','dur':.55},{'type':'iris','x':180,'y':330,'col':'#7a2a8a'},{'type':'zoom'}]
+TRS=[None,{'type':'whip'},{'type':'push','dir':'left'},
+     {'type':'morph','a':[150,285,60,70,16],'col':'#cfeaff','dur':.55},{'type':'flash'},{'type':'dive','x':180,'y':320,'z':9,'dur':.5},
+     {'type':'ink','x':180,'y':330,'col':'#4aa8ff','dur':.45},{'type':'morph','a':[110,380,140,90,14],'col':'#0b2b45','dur':.55},{'type':'iris','x':180,'y':330,'col':'#ff9a3c'}]
 if __name__=='__main__':
     E,T2=build(T,RAW,TRS,DUR)
     for k in sorted(E,key=lambda k:E[k]): print('%s %.2f'%(k,E[k]),end=' | ')
