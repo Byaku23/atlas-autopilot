@@ -15,7 +15,7 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [x] 2026-11-14 (programado 18:00 NY) ¿Cuál fue el imperio más PODEROSO? (grande ≠ poderoso). DEBATE + MAPA.
 - [x] 2026-11-16 (programado 12:00 NY) ¿Cómo empezó la Segunda Guerra Mundial? en mapa. MAPA.
 - [x] 2026-11-12 (programado 12:00 NY) Escipión vs Aníbal: el duelo que decidió el mundo (Zama). MAPA.
-- [~] reservada 2026-11-17 (ejecución mañana) La Guerra Fría en 60 segundos. MAPA.
+- [x] 2026-11-17 (programado 18:00 NY) La Guerra Fría en 60 segundos. MAPA.
 
 - [x] 2026-11-13 (programado 18:00 NY) La raya que firmó España: el paralelo 42 (Tratado Adams-Onís 1819) — frontera California/Oregón. MAPA + CAUSAS (tendencia: @historiassecretastv 853k).
 

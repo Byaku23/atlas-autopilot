@@ -89,10 +89,12 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 ## Iconos y objetos
 - `akita(x,y,s,o={}) {al,col,eye,flip,head,rim,shade,tail}` · 2026-11-11_hachiko:7 · usos 11 — akita sentado mirando a la derecha. (0,0)=suelo. o: col, rim, tail(ángulo cola), head(inclinación), flip, al, eye
 - `akitaLie(x,y,s,o={}) {col}` · 2026-11-11_hachiko:25 · usos 1 — akita echado (cabeza sobre las patas)
+- `anillos(x,y,t,t0,col,n=3,r0=10,r1=120,per=1.6)` · 2026-11-17_guerra_fria:49 · usos 1 — zona de peligro con anillos
 - `badge(x,y,s,n,col,t,ts)` · 2026-11-16_inicio_segunda_guerra:36 · usos 2
 - `balance(x,y,s,tilt,o={}) {l,r}` · 2026-11-15_gansos_roma:83 · usos 1 — balanza. (x,y)=base; tilt (rad, + = baja la derecha); l/r dibujan el contenido de cada plato
 - `ballIcon(x,y,s,t)` · 2026-11-12_perros_cola:51 · usos 1
 - `bar(x,y,w,h,col,r=6)` · 2026-11-10_generales_olvidados:55 · usos 1
+- `base(c,o={}) {dim}` · 2026-11-17_guerra_fria:17 · usos 10
 - `beastPts(m,ph=0,wag=0,t=0)` · v01_perros:7 · usos 1
 - `beastPts(m,ph=0,wag=0,t=0)` · 2026-11-12_perros_cola:6 · usos 1
 - `bez(p0,p1,p2,p3,n=10)` · 2026-11-10_animales_guerra:17 · usos 1
@@ -122,6 +124,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `chevrons(x,y,s,rot=0)` · 2026-11-10_animales_guerra:187 · usos 1
 - `city(x,y,s,c)` · v01_perros:50 · usos 1
 - `city(t,o={}) {fire}` · 2026-11-15_gansos_roma:58 · usos 2 — decorado
+- `ciudad(cx,cy,RR,t,o={}) {fall,gap,people,sp,wall}` · 2026-11-17_guerra_fria:34 · usos 3 — ciudad esquemática partida: sp 0..1 = se separa en azul/rojo, gap = separación, wall 0..1 = muro que sube, fall 0..1 = muro que cae, push = presión de gente
 - `cliff()` · 2026-11-15_gansos_roma:78 · usos 3 — roca con la ladera (cima plana en y=300 para x>=215)
 - `clockIcon(x,y,s,q)` · 2026-11-10_animales_guerra:189 · usos 1 — reloj: ang (0..1 vueltas)
 - `coin(x,y,r,rot=0)` · 2026-11-12_emu:58 · usos 2
@@ -149,9 +152,11 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `fig(x,y,s,o={}) {a,blink,carry,col,face,flip,hair,hat,la,ph,ra,sex,skin,walk}` · 2026-11-15_mundo_hombres:26 · usos 13 — figura humana estilizada (pies en y). o: sex 'f'|'m', col, ph (fase de paso), la/ra (ángulo de brazos, 0 abajo, +adelante), flip, hat, hair, blink, face ('smile'|'o'|'sad'|'mad'), carry, a (alpha)
 - `fig(x,y,s,o={}) {a,blink,carry,col,face,flip,hair,hat,la,ph,ra,sex,skin,walk}` · 2026-11-15_mundo_mujeres:26 · usos 8 — figura humana estilizada (pies en y). o: sex 'f'|'m', col, ph (fase de paso), la/ra (ángulo de brazos, 0 abajo, +adelante), flip, hat, hair, blink, face ('smile'|'o'|'sad'|'mad'), carry, a (alpha)
 - `flame(x,y,s,t)` · 2026-11-15_gansos_roma:10 · usos 2 — elementos sueltos
+- `flecha(pts,p,col,lw=4)` · 2026-11-17_guerra_fria:28 · usos 2 — flecha en pantalla por puntos [x,y], progreso p
 - `floor3d(hy,col0,col1,gcol,t,sp=30,vx=180)` · 2026-11-15_mundo_hombres:8 · usos 1 — suelo en perspectiva con rejilla de neón que avanza
 - `floor3d(hy,col0,col1,gcol,t,sp=30,vx=180)` · 2026-11-15_mundo_mujeres:8 · usos 1 — suelo en perspectiva con rejilla de neón que avanza
 - `gaul(x,y,s,o={}) {al,climb,col,flip,ph,rim,rot,sword}` · 2026-11-15_gansos_roma:43 · usos 6 — guerrero galo (silueta oscura, pelo largo, bigote). o: flip, ph, climb, rot, sword, torch, col, rim, al
+- `ger(c,aw,ae)` · 2026-11-17_guerra_fria:21 · usos 10
 - `glyph(k,x,y,s,col)` · v02_gatos:130 · usos 1 — glifos
 - `glyph(k,x,y,s,col)` · 2026-11-14_gatos_ronroneo:130 · usos 0 — glifos
 - `goldBar(x,y,s)` · 2026-11-15_gansos_roma:91 · usos 1
@@ -193,6 +198,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `moon(x,y,r,t)` · 2026-11-15_gansos_roma:12 · usos 5
 - `mount(x,y,w,h,col,snow,t=0)` · 2026-11-10_generales_olvidados:53 · usos 3
 - `mount(y0,amp,seed,col,dx,w=520)` · 2026-11-13_paralelo42:32 · usos 2
+- `nb(a,b,t)` · 2026-11-17_guerra_fria:6 · usos 25
 - `news(x,y,s,r,t,o={})` · 2026-11-11_hachiko:68 · usos 1
 - `night(t)` · 2026-11-16_caballo_caligula:62 · usos 5
 - `nightHill(t)` · 2026-11-15_gansos_roma:99 · usos 3
@@ -212,6 +218,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `petals(t,n,col,seed=1,spd=26,a=.9)` · 2026-11-11_hachiko:59 · usos 3
 - `pf(pts)` · 2026-11-10_animales_guerra:12 · usos 12
 - `pf(pts)` · 2026-11-12_zama:11 · usos 2
+- `PF(c,names,col,a,o={}) {b,ba,lw}` · 2026-11-17_guerra_fria:12 · usos 16 — países: relleno semitransparente + borde. names=null → todos
 - `picto(x,y,n,k,col,off,t,ts,gap=26,s=1.1)` · 2026-11-15_mundo_hombres:58 · usos 0 — pictograma: n monigotes pequeños en fila, k primeros iluminados
 - `picto(x,y,n,k,col,off,t,ts,gap=26,s=1.1)` · 2026-11-15_mundo_mujeres:58 · usos 0 — pictograma: n monigotes pequeños en fila, k primeros iluminados
 - `pill(x,y,w,h,col,s,fg,sz,q=1)` · 2026-11-12_perros_cola:52 · usos 4
