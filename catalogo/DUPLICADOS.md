@@ -3,14 +3,14 @@
 ## Mismo nombre en varios videos (chocan si se mezclan en un mismo assets.js)
 - `PJ`: 2026-11-13_paralelo42:6 (lo,la); 2026-11-16_inicio_segunda_guerra:6 (lo,la) — misma firma
 - `PL`: 2026-11-13_paralelo42:7 (a); 2026-11-16_inicio_segunda_guerra:7 (a) — misma firma
-- `TG`: 2026-11-11_hachiko:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_emu:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_zama:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-13_paralelo42:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-14_imperio_poderoso:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-15_gansos_roma:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-16_caballo_caligula:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-16_inicio_segunda_guerra:5 (s,x,y,sz,b,f,t,t0,o={}) — misma firma
-- `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_emu:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-13_paralelo42:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_gatos_ronroneo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_imperio_poderoso:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_gansos_roma:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_mundo_hombres:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_mundo_mujeres:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-16_caballo_caligula:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-16_inicio_segunda_guerra:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
+- `TG`: 2026-11-11_hachiko:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_emu:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_zama:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-13_paralelo42:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-14_imperio_poderoso:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-15_gansos_roma:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-16_caballo_caligula:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-16_inicio_segunda_guerra:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-17_togo_balto:5 (s,x,y,sz,b,f,t,t0,o={}) — misma firma
+- `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_emu:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-13_paralelo42:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_gatos_ronroneo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_imperio_poderoso:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_gansos_roma:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_mundo_hombres:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_mundo_mujeres:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-16_caballo_caligula:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-16_inicio_segunda_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-17_togo_balto:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
 - `babyFace`: v02_gatos:65 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:65 (x,y,s,o={}) — misma firma
 - `barn`: v02_gatos:148 (x,y,s); 2026-11-14_gatos_ronroneo:148 (x,y,s) — misma firma
 - `bastet`: v02_gatos:114 (x,y,s,t=0,o={}); 2026-11-14_gatos_ronroneo:114 (x,y,s,t=0,o={}) — misma firma
 - `beast`: v01_perros:12 (x,y,s,m,o={}); 2026-11-12_perros_cola:11 (x,y,s,m,o={}) — misma firma
 - `beastPts`: v01_perros:7 (m,ph=0,wag=0,t=0); 2026-11-12_perros_cola:6 (m,ph=0,wag=0,t=0) — misma firma
-- `bez`: 2026-11-10_animales_guerra:17 (p0,p1,p2,p3,n=10); 2026-11-12_zama:16 (p0,p1,p2,p3,n=10) — misma firma
+- `bez`: 2026-11-10_animales_guerra:17 (p0,p1,p2,p3,n=10); 2026-11-12_zama:16 (p0,p1,p2,p3,n=10); 2026-11-17_togo_balto:16 (p0,p1,p2,p3,n=10) — misma firma
 - `bigNum`: 2026-11-15_mundo_hombres:61 (s,x,y,sz,col,o={}); 2026-11-15_mundo_mujeres:61 (s,x,y,sz,col,o={}) — misma firma
 - `bokeh`: 2026-11-15_mundo_hombres:67 (t,n,col,seed=1,a=.35); 2026-11-15_mundo_mujeres:67 (t,n,col,seed=1,a=.35) — misma firma
 - `bowl`: v02_gatos:85 (x,y,s,fill,t=0); 2026-11-12_perros_cola:48 (x,y,s); 2026-11-14_gatos_ronroneo:85 (x,y,s,fill,t=0); 2026-11-15_gansos_roma:56 (x,y,s,t) — FIRMAS DISTINTAS
@@ -24,23 +24,26 @@
 - `coin`: 2026-11-12_emu:58 (x,y,r,rot=0); 2026-11-12_zama:66 (x,y,r,rot=0) — misma firma
 - `crowd`: 2026-11-11_hachiko:39 (x,y,s,col,ph); 2026-11-15_mundo_hombres:56 (x0,y0,n,gap,s,sex,t,o={}); 2026-11-15_mundo_mujeres:56 (x0,y0,n,gap,s,sex,t,o={}) — FIRMAS DISTINTAS
 - `crown`: v02_gatos:9 (x,y,s,rot=0); 2026-11-14_gatos_ronroneo:9 (x,y,s,rot=0); 2026-11-14_imperio_poderoso:34 (x,y,s,col,a) — FIRMAS DISTINTAS
-- `el`: 2026-11-10_animales_guerra:11 (cx,cy,rx,ry,rot=0); 2026-11-12_zama:10 (cx,cy,rx,ry,rot=0) — misma firma
+- `dog`: 2026-11-10_animales_guerra:80 (x,y,s,o={}); 2026-11-17_togo_balto:17 (x,y,s,o={}) — misma firma
+- `el`: 2026-11-10_animales_guerra:11 (cx,cy,rx,ry,rot=0); 2026-11-12_zama:10 (cx,cy,rx,ry,rot=0); 2026-11-17_togo_balto:10 (cx,cy,rx,ry,rot=0) — misma firma
 - `elephant`: 2026-11-10_animales_guerra:50 (x,y,s,o={}); 2026-11-12_zama:18 (x,y,s,o={}) — misma firma
 - `fig`: 2026-11-10_generales_olvidados:6 (x,y,s,o={}); 2026-11-15_mundo_hombres:26 (x,y,s,o={}); 2026-11-15_mundo_mujeres:26 (x,y,s,o={}) — misma firma
 - `fillRim`: v02_gatos:7 (col,rim,lw=2,blur=10); 2026-11-14_gatos_ronroneo:7 (col,rim,lw=2,blur=10) — misma firma
 - `floatHearts`: v02_gatos:90 (x,y,t,ts,n=10,spd=90,life=1.2,col=PINK,sz=9,spread=1); 2026-11-14_gatos_ronroneo:90 (x,y,t,ts,n=10,spd=90,life=1.2,col=PINK,sz=9,spread=1) — misma firma
 - `floor3d`: 2026-11-15_mundo_hombres:8 (hy,col0,col1,gcol,t,sp=30,vx=180); 2026-11-15_mundo_mujeres:8 (hy,col0,col1,gcol,t,sp=30,vx=180) — misma firma
+- `frost`: v01_perros:63 (t,p); 2026-11-17_togo_balto:78 (t,p) — misma firma
 - `glyph`: v02_gatos:130 (k,x,y,s,col); 2026-11-14_gatos_ronroneo:130 (k,x,y,s,col) — misma firma
 - `hbar`: 2026-11-15_mundo_hombres:63 (x,y,w,h,v,col,lbl,t,ts,sz=11); 2026-11-15_mundo_mujeres:63 (x,y,w,h,v,col,lbl,t,ts,sz=11) — misma firma
 - `heart`: v02_gatos:8 (x,y,s,col,o={}); 2026-11-11_hachiko:61 (x,y,s,col,a=1); 2026-11-12_perros_cola:47 (x,y,s,col=CORAL,al=1); 2026-11-14_gatos_ronroneo:8 (x,y,s,col,o={}) — FIRMAS DISTINTAS
+- `hills`: v01_perros:38 (y,col,amp=18,f=.012,ph=0,x0=-400,x1=1500); 2026-11-17_togo_balto:42 (y,col,amp=18,f=.012,ph=0,x0=-400,x1=1500) — misma firma
 - `horse`: 2026-11-10_generales_olvidados:31 (x,y,s,o={}); 2026-11-16_caballo_caligula:8 (x,y,s,o={}) — misma firma
 - `humSkel`: v01_perros:75 (x,y,s,rv,c='#efe6cf'); v02_gatos:101 (x,y,s,rv,t=0); 2026-11-14_gatos_ronroneo:101 (x,y,s,rv,t=0) — FIRMAS DISTINTAS
-- `inkParts`: 2026-11-10_animales_guerra:8 (paths,fill,rim,lw=2.4); 2026-11-12_zama:7 (paths,fill,rim,lw=2.4) — misma firma
+- `inkParts`: 2026-11-10_animales_guerra:8 (paths,fill,rim,lw=2.4); 2026-11-12_zama:7 (paths,fill,rim,lw=2.4); 2026-11-17_togo_balto:7 (paths,fill,rim,lw=2.4) — misma firma
 - `land`: 2026-11-13_paralelo42:19 (pts,fill,edge,lw=1.8); 2026-11-14_imperio_poderoso:27 (pts,fill,edge,lw=1.5); 2026-11-16_inicio_segunda_guerra:20 (pts,fill,edge,lw=1.4) — FIRMAS DISTINTAS
-- `limb`: 2026-11-10_animales_guerra:13 (x0,y0,x1,y1,w0,w1); 2026-11-12_zama:12 (x0,y0,x1,y1,w0,w1) — misma firma
+- `limb`: 2026-11-10_animales_guerra:13 (x0,y0,x1,y1,w0,w1); 2026-11-12_zama:12 (x0,y0,x1,y1,w0,w1); 2026-11-17_togo_balto:12 (x0,y0,x1,y1,w0,w1) — misma firma
 - `mapLand`: v02_gatos:142 (a=1); 2026-11-14_gatos_ronroneo:142 (a=1) — misma firma
 - `mars`: 2026-11-15_mundo_hombres:24 (x,y,s,col,lw=3); 2026-11-15_mundo_mujeres:24 (x,y,s,col,lw=3) — misma firma
-- `medal`: 2026-11-10_animales_guerra:180 (x,y,s,rot=0); 2026-11-10_generales_olvidados:54 (x,y,r,n,t0,t,o={}) — FIRMAS DISTINTAS
+- `medal`: 2026-11-10_animales_guerra:180 (x,y,s,rot=0); 2026-11-10_generales_olvidados:54 (x,y,r,n,t0,t,o={}); 2026-11-17_togo_balto:34 (x,y,s,rot=0) — FIRMAS DISTINTAS
 - `mount`: 2026-11-10_generales_olvidados:53 (x,y,w,h,col,snow,t=0); 2026-11-13_paralelo42:32 (y0,amp,seed,col,dx,w=520) — FIRMAS DISTINTAS
 - `mouse`: v02_gatos:58 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:58 (x,y,s,o={}) — misma firma
 - `nglow`: v02_gatos:5 (col,lw,blur=12); 2026-11-14_gatos_ronroneo:5 (col,lw,blur=12) — misma firma
@@ -48,24 +51,25 @@
 - `pathArrow`: 2026-11-12_zama:48 (pts,p,col,lw=3.5,dash); 2026-11-13_paralelo42:43 (pts,p,col,lw=3.5,dash); 2026-11-16_inicio_segunda_guerra:30 (pts,p,col,lw=3.5,dash) — misma firma
 - `pawPrint`: v02_gatos:84 (x,y,s,col,rot=0); 2026-11-14_gatos_ronroneo:84 (x,y,s,col,rot=0) — misma firma
 - `person`: v02_gatos:73 (x,y,s,o={}); 2026-11-12_perros_cola:45 (x,y,s,col='#cfe9f2'); 2026-11-13_paralelo42:24 (x,y,s,col,o={}); 2026-11-14_gatos_ronroneo:73 (x,y,s,o={}) — FIRMAS DISTINTAS
-- `pf`: 2026-11-10_animales_guerra:12 (pts); 2026-11-12_zama:11 (pts) — misma firma
+- `pf`: 2026-11-10_animales_guerra:12 (pts); 2026-11-12_zama:11 (pts); 2026-11-17_togo_balto:11 (pts) — misma firma
 - `picto`: 2026-11-15_mundo_hombres:58 (x,y,n,k,col,off,t,ts,gap=26,s=1.1); 2026-11-15_mundo_mujeres:58 (x,y,n,k,col,off,t,ts,gap=26,s=1.1) — misma firma
 - `pin`: v01_perros:61 (x,y,t,ts,col,lbl); 2026-11-10_animales_guerra:179 (x,y,t,ts,col,sz=1) — FIRMAS DISTINTAS
 - `pinDrop`: v02_gatos:145 (x,y,t,ts,col,lbl,tg); 2026-11-14_gatos_ronroneo:145 (x,y,t,ts,col,lbl,tg) — misma firma
 - `pp`: 2026-11-15_mundo_hombres:5 (t,ts,d=.35); 2026-11-15_mundo_mujeres:5 (t,ts,d=.35) — misma firma
-- `rib`: 2026-11-10_animales_guerra:16 (pts,w0,w1); 2026-11-12_zama:15 (pts,w0,w1) — misma firma
+- `rib`: 2026-11-10_animales_guerra:16 (pts,w0,w1); 2026-11-12_zama:15 (pts,w0,w1); 2026-11-17_togo_balto:15 (pts,w0,w1) — misma firma
 - `ring`: 2026-11-15_mundo_hombres:60 (x,y,r,v,col,lw=9); 2026-11-15_mundo_mujeres:60 (x,y,r,v,col,lw=9) — misma firma
 - `sack`: v02_gatos:151 (x,y,s,rot,fill=1); 2026-11-14_gatos_ronroneo:151 (x,y,s,rot,fill=1) — misma firma
 - `sea`: 2026-11-13_paralelo42:16 (t); 2026-11-14_imperio_poderoso:26 (); 2026-11-16_inicio_segunda_guerra:21 (t) — FIRMAS DISTINTAS
 - `shade`: 2026-11-15_mundo_hombres:6 (c,k); 2026-11-15_mundo_mujeres:6 (c,k) — misma firma
 - `ship`: 2026-11-10_generales_olvidados:43 (x,y,s,o={}); 2026-11-12_zama:62 (x,y,s,col,o={}); 2026-11-14_imperio_poderoso:33 (x,y,s,rot) — FIRMAS DISTINTAS
 - `skyline`: 2026-11-11_hachiko:58 (gy,col,seed=1,x0=-200,x1=800); 2026-11-15_mundo_hombres:21 (seed,y,x0,x1,hmin,hmax,col,rim,t,wc); 2026-11-15_mundo_mujeres:21 (seed,y,x0,x1,hmin,hmax,col,rim,t,wc) — FIRMAS DISTINTAS
+- `snowfall`: v01_perros:39 (t,n=70,seed=2,a=.8,spd=24); 2026-11-17_togo_balto:43 (t,n=70,seed=2,a=.8,spd=24) — misma firma
 - `soldier`: 2026-11-10_animales_guerra:98 (x,y,s,o={}); 2026-11-12_emu:25 (x,y,s,o={}); 2026-11-13_paralelo42:29 (x,y,s,col,al) — FIRMAS DISTINTAS
 - `sword`: 2026-11-15_gansos_roma:93 (x,y,s,rot); 2026-11-16_caballo_caligula:63 (x,y,s,rot) — misma firma
 - `truck`: 2026-11-10_animales_guerra:130 (x,y,s,o={}); 2026-11-12_emu:36 (x,y,s,o={}) — misma firma
 - `venus`: 2026-11-15_mundo_hombres:23 (x,y,s,col,lw=3); 2026-11-15_mundo_mujeres:23 (x,y,s,col,lw=3) — misma firma
 - `waveArcs`: v02_gatos:89 (x,y,t,ts,col,n=3,gap=.12,R0=60,dir=0,spread=.9,lw=3); 2026-11-14_gatos_ronroneo:89 (x,y,t,ts,col,n=3,gap=.12,R0=60,dir=0,spread=.9,lw=3) — misma firma
-- `waves`: 2026-11-10_animales_guerra:192 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3); 2026-11-10_generales_olvidados:52 (y0,t,col,amp=4,x0=-40,x1=400,fr=.05,ph=0) — FIRMAS DISTINTAS
+- `waves`: 2026-11-10_animales_guerra:192 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3); 2026-11-10_generales_olvidados:52 (y0,t,col,amp=4,x0=-40,x1=400,fr=.05,ph=0); 2026-11-17_togo_balto:41 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3) — FIRMAS DISTINTAS
 - `wheatRow`: v02_gatos:147 (y,t,col,h=26,x0=-120,x1=620,sp=11,ph=0); 2026-11-14_gatos_ronroneo:147 (y,t,col,h=26,x0=-120,x1=620,sp=11,ph=0) — misma firma
 
 ## Piezas distintas que hacen casi lo mismo (candidatas a unificar)
@@ -79,4 +83,4 @@
 - `TX(s,x,y,sz,col,t,t0,o={})` v02_gatos:4 / `STAMP(s,x,y,sz,t,t0,o={})` 2026-11-10_animales_guerra:5
 
 ## Piezas sin ningún uso en su propio video (escenas ni otras piezas): revisar si sobran
-`crown`(2026-11-14_gatos_ronroneo), `catSide`(2026-11-14_gatos_ronroneo), `mouse`(2026-11-14_gatos_ronroneo), `pawPrint`(2026-11-14_gatos_ronroneo), `brain`(2026-11-14_gatos_ronroneo), `humSkel`(2026-11-14_gatos_ronroneo), `catSkel`(2026-11-14_gatos_ronroneo), `bastet`(2026-11-14_gatos_ronroneo), `glyph`(2026-11-14_gatos_ronroneo), `mapLand`(2026-11-14_gatos_ronroneo), `pinDrop`(2026-11-14_gatos_ronroneo), `wheatRow`(2026-11-14_gatos_ronroneo), `barn`(2026-11-14_gatos_ronroneo), `infoCard`(2026-11-14_imperio_poderoso), `crowd`(2026-11-15_mundo_hombres), `picto`(2026-11-15_mundo_hombres), `crowd`(2026-11-15_mundo_mujeres), `picto`(2026-11-15_mundo_mujeres)
+`crown`(2026-11-14_gatos_ronroneo), `catSide`(2026-11-14_gatos_ronroneo), `mouse`(2026-11-14_gatos_ronroneo), `pawPrint`(2026-11-14_gatos_ronroneo), `brain`(2026-11-14_gatos_ronroneo), `humSkel`(2026-11-14_gatos_ronroneo), `catSkel`(2026-11-14_gatos_ronroneo), `bastet`(2026-11-14_gatos_ronroneo), `glyph`(2026-11-14_gatos_ronroneo), `mapLand`(2026-11-14_gatos_ronroneo), `pinDrop`(2026-11-14_gatos_ronroneo), `wheatRow`(2026-11-14_gatos_ronroneo), `barn`(2026-11-14_gatos_ronroneo), `infoCard`(2026-11-14_imperio_poderoso), `crowd`(2026-11-15_mundo_hombres), `picto`(2026-11-15_mundo_hombres), `crowd`(2026-11-15_mundo_mujeres), `picto`(2026-11-15_mundo_mujeres), `rib`(2026-11-17_togo_balto), `bez`(2026-11-17_togo_balto), `waves`(2026-11-17_togo_balto)
