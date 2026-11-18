@@ -24,6 +24,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [x] 2026-11-17 (programado 2026-11-18 12:00 NY) Togo vs Balto: el perro que corrió 420 km y el que tiene la estatua (Carrera del suero, Nome 1925). ANIMALES + HISTORIA con debate (¿Togo o Balto?).
 - [x] 2026-11-18 (programado 18:00 NY) La primera vuelta al mundo: ¿Magallanes o Elcano? (idea nueva: banco agotado). MAPA + CAUSAS + DEBATE.
 
-- [~] reservada 2026-11-18 (tarde) Termópilas: ¿300 espartanos o 7000 griegos? (mito vs realidad; ¿espartanos o tespios?). DEBATE.
+- [x] 2026-11-18 (programado 2026-11-19 10:00 NY) Termópilas: ¿300 espartanos o 7000 griegos? (mito vs realidad; ¿espartanos o tespios?). DEBATE.
 
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).

@@ -25,7 +25,7 @@
 - `city`: v01_perros:50 (x,y,s,c); 2026-11-15_gansos_roma:58 (t,o={}) — FIRMAS DISTINTAS
 - `coin`: 2026-11-12_emu:58 (x,y,r,rot=0); 2026-11-12_zama:66 (x,y,r,rot=0) — misma firma
 - `crowd`: 2026-11-11_hachiko:39 (x,y,s,col,ph); 2026-11-15_mundo_hombres:56 (x0,y0,n,gap,s,sex,t,o={}); 2026-11-15_mundo_mujeres:56 (x0,y0,n,gap,s,sex,t,o={}) — FIRMAS DISTINTAS
-- `crown`: v02_gatos:9 (x,y,s,rot=0); 2026-11-14_gatos_ronroneo:9 (x,y,s,rot=0); 2026-11-14_imperio_poderoso:34 (x,y,s,col,a) — FIRMAS DISTINTAS
+- `crown`: v02_gatos:9 (x,y,s,rot=0); 2026-11-14_gatos_ronroneo:9 (x,y,s,rot=0); 2026-11-14_imperio_poderoso:34 (x,y,s,col,a); 2026-11-18_termopilas:33 (x,y,s,col) — FIRMAS DISTINTAS
 - `dog`: 2026-11-10_animales_guerra:80 (x,y,s,o={}); 2026-11-17_togo_balto:17 (x,y,s,o={}) — misma firma
 - `el`: 2026-11-10_animales_guerra:11 (cx,cy,rx,ry,rot=0); 2026-11-12_zama:10 (cx,cy,rx,ry,rot=0); 2026-11-17_togo_balto:10 (cx,cy,rx,ry,rot=0) — misma firma
 - `elephant`: 2026-11-10_animales_guerra:50 (x,y,s,o={}); 2026-11-12_zama:18 (x,y,s,o={}) — misma firma
@@ -46,7 +46,7 @@
 - `mapLand`: v02_gatos:142 (a=1); 2026-11-14_gatos_ronroneo:142 (a=1) — misma firma
 - `mars`: 2026-11-15_mundo_hombres:24 (x,y,s,col,lw=3); 2026-11-15_mundo_mujeres:24 (x,y,s,col,lw=3) — misma firma
 - `medal`: 2026-11-10_animales_guerra:180 (x,y,s,rot=0); 2026-11-10_generales_olvidados:54 (x,y,r,n,t0,t,o={}); 2026-11-17_togo_balto:34 (x,y,s,rot=0) — FIRMAS DISTINTAS
-- `mount`: 2026-11-10_generales_olvidados:53 (x,y,w,h,col,snow,t=0); 2026-11-13_paralelo42:32 (y0,amp,seed,col,dx,w=520) — FIRMAS DISTINTAS
+- `mount`: 2026-11-10_generales_olvidados:53 (x,y,w,h,col,snow,t=0); 2026-11-13_paralelo42:32 (y0,amp,seed,col,dx,w=520); 2026-11-18_termopilas:21 (pts,col,rim) — FIRMAS DISTINTAS
 - `mouse`: v02_gatos:58 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:58 (x,y,s,o={}) — misma firma
 - `nb`: 2026-11-17_guerra_fria:6 (a,b,t); 2026-11-18_vuelta_mundo:6 (a,b,t) — misma firma
 - `nglow`: v02_gatos:5 (col,lw,blur=12); 2026-11-14_gatos_ronroneo:5 (col,lw,blur=12) — misma firma
@@ -64,7 +64,7 @@
 - `sack`: v02_gatos:151 (x,y,s,rot,fill=1); 2026-11-14_gatos_ronroneo:151 (x,y,s,rot,fill=1) — misma firma
 - `sea`: 2026-11-13_paralelo42:16 (t); 2026-11-14_imperio_poderoso:26 (); 2026-11-16_inicio_segunda_guerra:21 (t) — FIRMAS DISTINTAS
 - `shade`: 2026-11-15_mundo_hombres:6 (c,k); 2026-11-15_mundo_mujeres:6 (c,k) — misma firma
-- `ship`: 2026-11-10_generales_olvidados:43 (x,y,s,o={}); 2026-11-12_zama:62 (x,y,s,col,o={}); 2026-11-14_imperio_poderoso:33 (x,y,s,rot) — FIRMAS DISTINTAS
+- `ship`: 2026-11-10_generales_olvidados:43 (x,y,s,o={}); 2026-11-12_zama:62 (x,y,s,col,o={}); 2026-11-14_imperio_poderoso:33 (x,y,s,rot); 2026-11-18_termopilas:29 (x,y,s,col,sail,o={}) — FIRMAS DISTINTAS
 - `skyline`: 2026-11-11_hachiko:58 (gy,col,seed=1,x0=-200,x1=800); 2026-11-15_mundo_hombres:21 (seed,y,x0,x1,hmin,hmax,col,rim,t,wc); 2026-11-15_mundo_mujeres:21 (seed,y,x0,x1,hmin,hmax,col,rim,t,wc) — FIRMAS DISTINTAS
 - `snowfall`: v01_perros:39 (t,n=70,seed=2,a=.8,spd=24); 2026-11-17_togo_balto:43 (t,n=70,seed=2,a=.8,spd=24) — misma firma
 - `soldier`: 2026-11-10_animales_guerra:98 (x,y,s,o={}); 2026-11-12_emu:25 (x,y,s,o={}); 2026-11-13_paralelo42:29 (x,y,s,col,al) — FIRMAS DISTINTAS
@@ -72,7 +72,7 @@
 - `truck`: 2026-11-10_animales_guerra:130 (x,y,s,o={}); 2026-11-12_emu:36 (x,y,s,o={}) — misma firma
 - `venus`: 2026-11-15_mundo_hombres:23 (x,y,s,col,lw=3); 2026-11-15_mundo_mujeres:23 (x,y,s,col,lw=3) — misma firma
 - `waveArcs`: v02_gatos:89 (x,y,t,ts,col,n=3,gap=.12,R0=60,dir=0,spread=.9,lw=3); 2026-11-14_gatos_ronroneo:89 (x,y,t,ts,col,n=3,gap=.12,R0=60,dir=0,spread=.9,lw=3) — misma firma
-- `waves`: 2026-11-10_animales_guerra:192 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3); 2026-11-10_generales_olvidados:52 (y0,t,col,amp=4,x0=-40,x1=400,fr=.05,ph=0); 2026-11-17_togo_balto:41 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3) — FIRMAS DISTINTAS
+- `waves`: 2026-11-10_animales_guerra:192 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3); 2026-11-10_generales_olvidados:52 (y0,t,col,amp=4,x0=-40,x1=400,fr=.05,ph=0); 2026-11-17_togo_balto:41 (x,y,t,ts,col,n=3,gap=.14,R0=70,dir=0,spread=.8,lw=3); 2026-11-18_termopilas:20 (y,t,col,amp=4,x0=-100,x1=460,a=.9) — FIRMAS DISTINTAS
 - `wheatRow`: v02_gatos:147 (y,t,col,h=26,x0=-120,x1=620,sp=11,ph=0); 2026-11-14_gatos_ronroneo:147 (y,t,col,h=26,x0=-120,x1=620,sp=11,ph=0) — misma firma
 
 ## Piezas distintas que hacen casi lo mismo (candidatas a unificar)
