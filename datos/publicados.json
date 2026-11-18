@@ -153,6 +153,13 @@
    "ts": "2026-11-18 13:58:46",
    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=5884453730609219463",
    "fecha_programada": "2026-11-18T18:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-18_termopilas",
+   "titulo": "300 espartanos: ¿mito o realidad? Termópilas ⚔️",
+   "mp4_sha256": "c1d0b8dbc7fc2e037a22f80697a556bb8aa6b94af5872736a306cb6d322f5022",
+   "estado": "reservado",
+   "ts": "2026-11-18 19:12:52"
   }
  ]
 }
