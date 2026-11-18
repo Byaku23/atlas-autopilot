@@ -1,182 +1,219 @@
-// ===== La Guerra Fría en mapa — escenas =====
-const BL=[13.4,52.5];                       // Berlín
-const bp=c=>mapaPunto(c,BL[0],BL[1]);
-const CA=[[0,-25,47,4.2]];                  // vista Atlántico (EE. UU. – Europa)
-const CEU=[16,50,11];
-const sl=(s,x,y,sz,col,t,ts,o={})=>slam(s,x,y,sz,col,t,ts,Object.assign({st:INK,sw:Math.max(6,sz*.18),sh:'rgba(255,61,61,.55)'},o));
+// ===== Primera vuelta al mundo — escenas =====
+const SAN=[-6.3,36.8],MAC=[124,10.3],TID=[127.4,0.8];
+const sl=(s,x,y,sz,col,t,ts,o={})=>slam(s,x,y,sz,col,t,ts,Object.assign({st:INK,sw:Math.max(6,sz*.18),sh:'rgba(255,138,61,.55)'},o));
+const P_=(c,p)=>mapaPunto(c,p[0],p[1]);
 
-// S0 GANCHO: Berlín partida por un muro → "mira el mapa" (aleja a Europa)
+// S0 GANCHO: cinco barcos, solo uno lo logró
 function s0(t,u){
-  const c=mapaCam(t,[[0,13.4,52.5,30],[5.2,13.4,52.5,30],[6.5,CEU[0],CEU[1],CEU[2]]]);
+  const c=mapaCam(t,[[0,-26,22,1.7],[5.0,-18,20,2.0],[6,-18,20,2.0]]);
   base(c);
-  const sp=eo(nb(E.s_dos,E.s_dos+.8,t));
-  PF(c,['Germany'],NEU,.18*(1-sp),{b:'rgba(255,255,255,.9)',lw:1.4});ger(c,.38*sp,.38*sp);
-  const [x,y]=bp(c),R_=Math.max(14,c.s*2.1);
-  const sh=at(t,'s_dos')?Math.sin(t*60)*2*Math.exp(-(t-E.s_dos)*9):0;
-  ciudad(x+sh,y,R_,t,{sp,gap:eo(nb(E.s_dos+.15,E.s_dos+.9,t))*7,wall:eo(nb(E.s_dos-.05,E.s_dos+.45,t))});
-  shock(x,y,t,E.s_dos,'rgba(255,255,255,.9)',R_*1.6,4,.7);
-  TX('UN MURO PARTIÓ',180,92,32,'#fff',t,-.6,{w:330});
-  TX('UNA CIUDAD EN DOS',180,134,32,GOLD,t,-.45,{w:340});
-  if(t>1.0)TG('BERLÍN',x,Math.max(y-R_-26,150),Math.max(11,R_*.3),'rgba(7,16,31,.85)','#fff',t,1.0,{out:5.2});
-  sl('GUERRA FRÍA',180,430,44,'#fff',t,E.s_gf);
-  TG('MIRA EL MAPA',180,478,15,GOLD,INK,t,E.s_mapa-.05);
+  PF(c,['Spain','Portugal'],GOLD,.28,{b:'#fff',lw:1});
+  const xs=[62,121,180,239,298],ys=[392,404,380,404,392];
+  for(let i=0;i<5;i++){
+    const tin=-.5+i*.1,k=i===2?1:1;const pop=t<tin?(t<0?1:0):eb(nb(tin,tin+.35,t));
+    // los otros cuatro se hunden en "solo uno"
+    const sink=i===2?0:eo(nb(E.h_uno-.05+i*.06,E.h_uno+.7+i*.06,t));
+    const mv=i===2?eio(nb(E.h_uno+.1,E.h_uno+.9,t)):0;
+    const x=xs[i]+(i===2?0:Math.sin(t*30+i)*3*Math.exp(-(t-E.h_uno)*6)*(t>E.h_uno?1:0)),y=ys[i]+sink*55-mv*0;
+    if(t<0&&i>=0&&false)continue;
+    nao(x,y,2.6*Math.max(.01,i===2?pop*(1+.28*mv):pop),i===2?GOLD:MG,false,t,1-sink);
+    if(sink>.2&&sink<.98)cruz(x,y-8,9,RED,eb(nb(0,.3,sink)));
+  }
+  if(t>E.h_logro){const g=spring(t-E.h_logro,11,6);glow(180,380,70*g,'rgba(255,209,102,.6)',1);shock(180,382,t,E.h_logro,'rgba(255,209,102,.95)',90,4,.8);burst(180,382,t,E.h_logro,[GOLD,'#fff'],26,150,.9,3)}
+  TX('5 BARCOS',180,96,46,'#fff',t,-.6,{w:340});
+  TX('A DAR LA VUELTA AL MUNDO',180,146,21,GOLD,t,-.4,{w:340});
+  if(t>E.h_uno-.1)sl('SOLO 1 LO LOGRÓ',180,230,34,GOLD,t,E.h_uno,{sh:'rgba(255,209,102,.5)'});
+  const fo=1-nb(E.h_mapa+.1,E.h_mapa+.35,t);
+  TG('MIRA EL MAPA',180,478,15,GOLD,INK,t,E.h_mapa-.05);
+  // pin de Sanlúcar (punto de la inmersión)
+  if(t>E.h_mapa+.05)pin(c,SAN[0],SAN[1],MG,t,E.h_mapa+.05,5);
 }
 
-// S1 12 MAR 1947: Estados Unidos promete ayuda; el comunismo del este
+// S1 20 SEP 1519: zarpa de Sanlúcar
 function s1(t,u){
-  const c=mapaCam(t,[[6.5,-26,45,3.4],[15,-33,45,3.5,eio]]);
-  base(c);ger(c,.0,0);
-  const a=eo(nb(E.a_eeuu,E.a_eeuu+.9,t));
-  PF(c,['United States of America'],W_,.5*a,{b:'#fff',lw:1.6});
-  const P=(lo,la)=>mapaPunto(c,lo,la);
-  const ar=[[P(-76,40),P(-45,46),P(-8,46.5)],[P(-76,38),P(-45,37),P(14,40)],[P(-76,41),P(-45,52),P(-6,52)]];
-  ar.forEach((p,i)=>flecha(p,nb(E.a_prom+i*.18,E.a_res+.4+i*.1,t),W_,4));
-  const r=eo(nb(E.a_res,E.a_res+.7,t));PF(c,['France','Italy','United Kingdom','Spain','Greece','Turkey'],'#9cc4ff',.3*r,{ba:.9});
-  const k=eo(nb(E.a_com-.05,E.a_com+.8,t));PF(c,USSR.concat(PACT),EA,.42*k,{b:'#ff9a9a',lw:1.1});
-  if(t>E.a_com)shock(P(30,52)[0],P(30,52)[1],t,E.a_com,'rgba(255,61,61,.95)',90,4,.8);
-  TG('12 MAR 1947',180,96,19,GOLD,INK,t,E.a_doce-.05,{out:14.5});
-  TX('EE. UU. PROMETE AYUDA',180,142,24,'#fff',t,E.a_prom-.05,{w:330,out:E.a_com-.1});
-  const q=P(-100,40);TG('EE. UU.',P(-95,40)[0],P(-95,40)[1],15,W_,'#fff',t,E.a_eeuu-.05);
-  TG('COMUNISMO',P(60,60)[0],P(60,60)[1]+4,15,EA,'#fff',t,E.a_com-.05);
-  if(t>E.a_com+.3)TX('¿HASTA DÓNDE LLEGARÁ?',180,478,17,GOLD,t,E.a_com+.5,{w:330});
+  const c=mapaCam(t,[[5.3,SAN[0],SAN[1],22],[8.0,SAN[0],SAN[1],14],[13.9,SAN[0]-1,SAN[1]-3,12.5]]);
+  base(c);
+  const e=eo(nb(E.a_esp-.1,E.a_esp+.8,t));PF(c,['Spain'],GOLD,.38*e,{b:'#fff',lw:1.6});
+  const h=ruta(c,R_ATL,.075*eo(nb(E.a_zarpa,E.a_zarpa+2.6,t)),MG,3.4);
+  if(h)flota(h,5,1.5,MG,t);else if(t>E.a_flota)for(let i=0;i<5;i++){const [x,y]=P_(c,SAN);nao(x-i*7,y-12-(i%2)*4,1.5,MG,true,t+i)}
+  pin(c,SAN[0],SAN[1],MG,t,5.3,5);
+  TG('20 SEP 1519',180,96,19,GOLD,INK,t,E.a_20-.05,{out:13.3});
+  TX('LA FLOTA DE',180,142,26,'#fff',t,E.a_flota-.1,{w:330,out:E.a_zarpa-.45});
+  TX('MAGALLANES',180,184,36,MG,t,E.a_magal-.1,{w:340,out:E.a_zarpa-.45});
+  TX('ZARPA',180,142,44,'#fff',t,E.a_zarpa-.1,{w:340});
+  const [sx,sy]=P_(c,SAN);TG('SANLÚCAR DE BARRAMEDA',cx_(sx,100,260),Math.max(sy+34,240),12,'rgba(6,18,28,.88)','#fff',t,E.a_sanl-.05);
+  const [ex,ey]=P_(c,[-4,40]);TG('ESPAÑA',cx_(ex),Math.max(ey,120)+12,16,GOLD,INK,t,E.a_esp-.05);
 }
 
-// S2 JUN 1948: bloqueo de Berlín
+// S2 la ruta soñada: islas de las especias, siempre hacia el oeste
 function s2(t,u){
-  const c=mapaCam(t,[[15.0,12.2,52.4,19],[21.1,13.0,52.5,31,eio]]);
-  base(c);ger(c,.42,.42);
-  const [x,y]=bp(c),P=(lo,la)=>mapaPunto(c,lo,la);
-  // disco de Berlín Occidental
-  const rr=Math.max(9,c.s*.42);
-  glow(x,y,rr*2.4,'rgba(47,123,255,.5)',1);circ(x,y,rr,W_,'#fff',2.2);
-  // carreteras desde el oeste
-  const roads=[[P(9.4,52.0),P(11.2,52.2),[x-rr,y-3]],[P(9.4,52.7),P(11.2,52.55),[x-rr,y]],[P(9.6,51.4),P(11.5,52.0),[x-rr*.8,y+rr*.6]]];
-  const cut=eo(nb(E.b_blo,E.b_blo+.7,t));
-  roads.forEach((r,i)=>{ctx.save();ctx.strokeStyle=INK;ctx.lineWidth=5;ctx.lineCap='round';ctx.beginPath();r.forEach((q,j)=>j?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.stroke();
-    ctx.strokeStyle=GOLD;ctx.lineWidth=2.6;ctx.setLineDash([7,5]);ctx.lineDashOffset=-t*12*(1-cut);ctx.stroke();ctx.restore();
-    // barrera roja
-    const m=r[1];if(cut>0){tr(m[0],m[1],cut*(1+.15*Math.sin(t*10)),0,()=>{circ(0,0,10,EA,'#fff',2.4);ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(-5,-5);ctx.lineTo(5,5);ctx.moveTo(5,-5);ctx.lineTo(-5,5);ctx.stroke()})}});
-  const ax=eo(nb(E.b_urss,E.b_urss+.8,t));
-  [[P(17,53.6),P(14.2,52.9)],[P(17,51.3),P(14.2,52.1)],[P(15,52.5),P(13.9,52.5)]].forEach((p,i)=>flecha(p,ax*(i<2?1:.9),EA,3.4));
-  TG('JUN 1948',180,96,19,GOLD,INK,t,E.b_jun-.05,{out:20.6});
-  TX('BLOQUEO',180,142,36,EA,t,E.b_blo-.1,{out:20.6});
-  TG('BERLÍN OCCIDENTAL',x,Math.min(y+rr+34,500),13,'rgba(7,16,31,.88)','#fff',t,E.b_occ-.05);
-  TG('UNIÓN SOVIÉTICA',Math.min(P(18,53.3)[0],268),Math.max(160,P(18,53.3)[1]-28),12,EA,'#fff',t,E.b_urss-.05);
-  if(at(t,'b_blo'))burst(x,y,t,E.b_blo,['#ff3d3d','#fff'],22,120,.7,3);
+  const c=mapaCam(t,[[13.4,-5,10,1.3],[19.0,-5,10,1.3]]);
+  base(c);
+  const [mx,my]=pin(c,TID[0],TID[1],GOLD,t,E.b_esp-.1,6);
+  if(t>E.b_esp){burst(mx,my,t,E.b_esp,[GOLD,'#fff'],22,110,.8,3);shock(mx,my,t,E.b_esp,'rgba(255,209,102,.9)',60,3,.7)}
+  const pw=eio(nb(E.b_oeste-1.1,E.b_oeste+.9,t));
+  ruta(c,R_OESTE,pw,MG,3.2,{dash:[7,5],t});
+  ruta(c,R_OESTE2,pw,MG,3.2,{dash:[7,5],t});
+  pin(c,SAN[0],SAN[1],MG,t,13.4,5);
+  if(t>E.b_oeste-.2){const k=eb(nb(E.b_oeste-.1,E.b_oeste+.4,t));tr(100,330,k,0,()=>{poly([[-26,0],[-4,-16],[-4,-7],[24,-7],[24,7],[-4,7],[-4,16]],MG,INK,3)})}
+  TX('BUSCAN',180,96,24,'#fff',t,E.b_buscan-.1,{w:330,out:E.b_esp+.3});
+  TX('UNA RUTA',180,134,34,'#fff',t,E.b_buscan+.15,{w:340,out:E.b_esp+.3});
+  TX('ISLAS DE LAS',180,100,26,'#fff',t,E.b_esp-.1,{w:330});TX('ESPECIAS',180,142,40,GOLD,t,E.b_esp-.05,{w:340});
+  TG('MOLUCAS',cx_(mx,40,320),my+26,13,'rgba(6,18,28,.88)',GOLD,t,E.b_esp+.2);
+  sl('HACIA EL OESTE',180,430,32,MG,t,E.b_oeste,{sh:'rgba(255,138,61,.6)'});
 }
 
-// S3 4 ABR 1949: nace la OTAN
+// S3 cruzan el Atlántico y bajan por la costa de América del Sur
 function s3(t,u){
-  const c=mapaCam(t,[[21,-33,45,3.5],[27,-28,46,3.9,eio]]);
-  base(c);ger(c,.0,0);
-  const P=(lo,la)=>mapaPunto(c,lo,la);
-  NATO.forEach((n,i)=>{const a=eo(nb(E.n_nace+i*.07,E.n_nace+i*.07+.6,t));PF(c,[n],W_,.52*a,{b:'#fff',lw:1.3})});
-  PF(c,USSR.concat(PACT),EA,.3,{b:'#ff9a9a',lw:1});
-  if(t>E.n_otan){const [px,py]=P(-30,47);shock(px,py,t,E.n_otan,'rgba(47,123,255,.95)',150,5,.9);burst(px,py,t,E.n_otan,['#2f7bff','#fff','#9cc4ff'],26,150,.8,3)}
-  TG('4 ABR 1949',180,96,19,GOLD,INK,t,E.n_4-.05,{out:26.6});
-  sl('OTAN',180,178,60,'#fff',t,E.n_otan,{sh:'rgba(47,123,255,.8)'});
-  TG('BLOQUE DEL OESTE',180,478,16,W_,'#fff',t,E.n_oes-.05);
-  // estrella
-  if(t>E.n_otan){tr(180,255,eb(nb(E.n_otan,E.n_otan+.5,t)),t*.3,()=>{ctx.beginPath();SH.star(0,0,22,9,4,8).forEach((q,i)=>i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]));ctx.closePath();ctx.fillStyle='#fff';ctx.globalAlpha=.9;ctx.fill();ctx.strokeStyle=W_;ctx.lineWidth=3;ctx.stroke()})}
+  const c=mapaCam(t,[[18.5,-28,2,3.0],[22.8,-48,-28,3.5,eio]]);
+  base(c);
+  const p=eio(nb(19.1,22.65,t));
+  const h=ruta(c,R_ATL,p,MG,3.4);
+  pin(c,SAN[0],SAN[1],MG,t,18.5,4);
+  flota(h,5,1.45,MG,t);
+  const a=P_(c,[-28,14]);TG('OCÉANO ATLÁNTICO',cx_(a[0],80,280),a[1],13,'rgba(6,18,28,.88)','#fff',t,E.c_atl-.05,{out:E.c_sur-.2});
+  const b=P_(c,[-62,-10]);TG('AMÉRICA DEL SUR',cx_(b[0],70,290),b[1],14,GOLD,INK,t,E.c_sur-.15);
+  TX('CRUZAN EL',180,100,26,'#fff',t,E.c_cruzan-.1,{w:330,out:E.c_bajan-.5});TX('ATLÁNTICO',180,142,38,MG,t,E.c_atl-.15,{w:340,out:E.c_bajan-.5});
+  TX('BAJAN POR LA COSTA',180,110,26,'#fff',t,E.c_bajan,{w:340});
 }
 
-// S4 14 MAY 1955: el este responde, Pacto de Varsovia
+// S4 un barco naufraga, otro da media vuelta
 function s4(t,u){
-  const c=mapaCam(t,[[27,-5,48,5.0],[33,28,52,5.7,eio]]);
+  const c=mapaCam(t,[[22.2,-60,-40,5.2],[24.9,-60,-42,5.2],[26.0,-40,-8,2.9,eio],[27.5,-40,-8,2.9]]);
   base(c);
-  const P=(lo,la)=>mapaPunto(c,lo,la);
-  PF(c,NATO,W_,.5,{b:'#fff',lw:1.2});ger(c,.5,.0);
-  const r0=eo(nb(E.w_resp-.2,E.w_resp+.7,t));PF(c,USSR,EA,.45*Math.max(.7,r0),{b:'#ff9a9a',lw:1.1});
-  ger(c,.5,.55*r0);
-  PACT.forEach((n,i)=>{const a=eo(nb(E.w_pacto+i*.09,E.w_pacto+i*.09+.55,t));PF(c,[n],EA,.55*a,{b:'#fff',lw:1.4})});
-  if(t>E.w_pacto){const [px,py]=P(25,52);shock(px,py,t,E.w_pacto,'rgba(255,61,61,.95)',130,5,.9);burst(px,py,t,E.w_pacto,['#ff3d3d','#fff','#ffb0b0'],26,150,.8,3)}
-  TG('14 MAY 1955',180,96,19,GOLD,INK,t,E.w_14-.05,{out:32.4});
-  TX('EL ESTE RESPONDE',180,142,26,EA,t,E.w_resp-.1,{w:330,out:E.w_pacto-.1});
-  TX('PACTO DE',180,160,34,'#fff',t,E.w_pacto-.05,{w:330});TX('VARSOVIA',180,200,40,EA,t,E.w_var-.15,{w:330,stroke:INK});
+  const fin=R_ATL[R_ATL.length-1];
+  ruta(c,R_ATL,1,MG,3.2);
+  const [x,y]=P_(c,fin);
+  const nau=eo(nb(E.d_nau-.1,E.d_nau+.9,t)),turn=nb(E.d_media-.1,E.d_media+.4,t);
+  const k=(t>E.d_media+.3)?3:(t>E.d_nau?4:5);
+  if(t<E.d_media+.3)for(let i=0;i<k;i++)nao(x-6+i*6,y-6-(i%2)*5,1.6*Math.max(.3,c.s/5.2*.5+.5),MG,false,t+i);
+  else for(let i=0;i<3;i++)nao(x-6+i*6,y-6-(i%2)*5,1.6*(c.s/5.2*.5+.5)**1,MG,false,t+i);
+  // naufragio
+  if(t>E.d_nau-.1){const sx=x+22,sy=y+nau*24;nao(sx,sy,2.2,'#999',false,t,1-nau*.8);
+    if(nau>.05)for(let i=0;i<6;i++){const q=((t-E.d_nau)*1.4+i*.2)%1;circ(sx-8+i*3.2,sy-q*28,2.2*(1-q),'rgba(200,235,255,'+(.8*(1-q))+')')}
+    if(t>E.d_nau)burst(sx,y,t,E.d_nau,['#9fd3ff','#fff'],18,90,.8,2.6);cruz(sx,y-26,9,RED,eb(nb(E.d_nau+.15,E.d_nau+.5,t)))}
+  // regreso
+  const rp=eio(nb(E.d_media+.3,E.d_regresa+1.0,t));
+  const h=ruta(c,R_VUELTA,rp,RED,3,{dash:[6,5],t});
+  if(h)nao(h[0],h[1]-5,1.7,'#ff9aa5',true,t);
+  const sa=pin(c,SAN[0],SAN[1],MG,t,25.9,4);
+  TX('ALLÍ',180,100,26,'#fff',t,E.d_alli-.1,{w:330,out:E.d_media-.1});
+  TX('UN BARCO NAUFRAGA',180,142,28,RED,t,E.d_nau-.15,{w:340,out:E.d_media-.1});
+  TX('OTRO DA MEDIA',180,100,26,'#fff',t,E.d_media-.1,{w:330});TX('VUELTA',180,142,40,GOLD,t,E.d_media+.05,{w:340});
+  if(t>E.d_regresa-.1)TG('REGRESA A ESPAÑA',cx_(sa[0],90,270),Math.max(sa[1]+34,200),13,RED,'#fff',t,E.d_regresa-.1);
 }
 
-// S5 13 AGO 1961: Berlín se parte con un muro
+// S5 el estrecho de Magallanes y el Pacífico
 function s5(t,u){
-  const c=mapaCam(t,[[32.9,16,50,11],[34.0,BL[0],BL[1],26,eio],[37.8,BL[0],BL[1],30]]);
-  base(c);ger(c,.42,.42);
-  const [x,y]=bp(c),R_=Math.max(16,c.s*2.1);
-  const sp=eo(nb(E.m_parte-.1,E.m_parte+.6,t)),w=eo(nb(E.m_parte+.15,E.m_muro+.35,t));
-  const sh=at(t,'m_muro')?Math.sin(t*55)*2.4*Math.exp(-(t-E.m_muro)*8):0;
-  ciudad(x+sh,y,R_,t,{sp,gap:sp*8,wall:w});
-  if(t>E.m_muro)shock(x,y,t,E.m_muro,'rgba(255,255,255,.9)',R_*1.8,5,.8);
-  TG('13 AGO 1961',180,96,19,GOLD,INK,t,E.m_13-.05,{out:37.5});
-  TX('BERLÍN SE PARTE',180,142,30,'#fff',t,E.m_ber-.1,{w:330,out:37.6});
-  TG('OESTE',x-R_*.55,y-R_-18,13,W_,'#fff',t,E.m_parte+.2);TG('ESTE',x+R_*.55,y-R_-18,13,EA,'#fff',t,E.m_parte+.3);
-  sl('MURO',180,478,44,'#fff',t,E.m_muro);
+  const c=mapaCam(t,[[26.8,-68.5,-52.2,16],[30.3,-72.5,-53,16],[31.7,-90,-44,6,eio],[34.0,-118,-33,3.2,eio]]);
+  base(c);
+  const pe=eio(nb(27.4,30.6,t)),pp=eio(nb(E.e_oce+.1,33.75,t));
+  const h1=ruta(c,R_EST,pe,MG,3.4),h2=ruta(c,R_PAC1,pp,MG,3.4,{});
+  const h=pp>0?h2:h1;flota(h,3,c.s>10?1.6:1.4,MG,t);
+  PF(c,['Chile','Argentina'],GOLD,.0,{ba:.5});
+  const s=P_(c,[-71,-54.3]);if(t>E.e_estr)TG('ESTRECHO DE MAGALLANES',cx_(s[0],90,270),Math.min(s[1]+28,440),12,'rgba(6,18,28,.9)','#fff',t,E.e_estr-.05,{out:E.e_oce+.1});
+  const pc=P_(c,[-125,-14]);
+  if(t>E.e_pac){burst(pc[0],pc[1],t,E.e_pac,[EL,'#fff','#9ff5e8'],26,130,.9,3);shock(pc[0],pc[1],t,E.e_pac,'rgba(46,230,201,.9)',80,4,.8)}
+  TX('PASAN POR UN',180,100,24,'#fff',t,E.e_pasan-.1,{w:330,out:E.e_mag-.1});TX('ESTRECHO',180,142,40,MG,t,E.e_estr-.15,{w:340,out:E.e_mag-.1});
+  TX('QUE LLEVA SU',180,100,24,'#fff',t,E.e_mag-.1,{w:330,out:E.e_oce-.1});TX('NOMBRE',180,142,40,GOLD,t,E.e_mag+.1,{w:340,out:E.e_oce-.1});
+  TX('UN OCÉANO NUEVO',180,100,26,'#fff',t,E.e_oce-.1,{w:340,out:E.e_pac-.1});
+  if(t>E.e_pac-.05)sl('PACÍFICO',180,190,46,EL,t,E.e_pac,{sh:'rgba(46,230,201,.6)'});
 }
 
-// S6 OCT 1962: misiles soviéticos en Cuba
+// S6 27 ABR 1521: Magallanes muere en Mactán (Filipinas)
 function s6(t,u){
-  const c=mapaCam(t,[[37.8,-82,25.5,12],[44.0,-80,25,15.5,eio]]);
+  const c=mapaCam(t,[[33.6,150,10,3.4],[36.4,126,10.5,9],[37.6,MAC[0],MAC[1],22],[42.6,MAC[0],MAC[1],24]]);
   base(c);
-  const P=(lo,la)=>mapaPunto(c,lo,la);
-  PF(c,['United States of America','Mexico','Haiti','Dominican Rep.','Jamaica','Bahamas'],W_,.18,{b:'rgba(255,255,255,.6)',lw:1});
-  const k=eo(nb(E.c_cuba-.1,E.c_cuba+.7,t));PF(c,['Cuba'],EA,.6*k,{b:'#fff',lw:1.8});
-  const [cx,cy]=P(-79.6,21.9);
-  if(t>E.c_mis-.05){anillos(cx,cy,t,E.c_mis,'#ff3d3d',3,10,190,lerp(1.1,2.1,nb(E.c_mundo,E.c_ali+.6,t)));
-    const ms=eo(nb(E.c_mis,E.c_mis+.5,t));tr(cx,cy-18,ms,0,()=>{poly([[0,-18],[5,-6],[5,10],[-5,10],[-5,-6]],'#e9edf5',INK,2);poly([[-5,10],[-10,18],[-5,14]],EA,INK,1.4);poly([[5,10],[10,18],[5,14]],EA,INK,1.4);circ(0,-3,2,INK)})}
-  if(t>E.c_ali-.3){ctx.save();const v=nb(E.c_ali-.3,E.c_ali+.6,t)*.5*(.6+.4*Math.sin(t*9));const g=ctx.createRadialGradient(180,320,120,180,320,420);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(120,0,10,'+v+')');ctx.fillStyle=g;ctx.fillRect(0,0,360,640);ctx.restore()}
-  TG('OCT 1962',180,96,19,GOLD,INK,t,E.c_oct-.05,{out:43.6});
-  TX('MISILES EN CUBA',180,142,32,'#fff',t,E.c_mis-.1,{w:330,out:43.6});
-  TG('CUBA',cx-4,cy+40,15,EA,'#fff',t,E.c_cuba-.05);
-  TG('EE. UU.',P(-90,32)[0],P(-90,32)[1],14,W_,'#fff',t,E.c_cuba+.1);
-  if(t>E.c_mundo)TX('EL MUNDO CONTIENE EL ALIENTO',180,478,18,GOLD,t,E.c_mundo-.05,{w:330});
+  PF(c,['Philippines'],GOLD,.3*eo(nb(E.f_fil-.1,E.f_fil+.7,t)),{b:'#fff',lw:1.4});
+  const h=ruta(c,R_PAC2,eio(nb(34.2,36.7,t)),MG,3.4);
+  const dead=t>E.f_muere;
+  if(h&&!dead)flota(h,3,c.s>8?2:1.6,MG,t);
+  const [mx,my]=P_(c,MAC);
+  if(t>E.f_fil-.1)pin(c,MAC[0],MAC[1],RED,t,E.f_fil-.1,5);
+  // 50 contra 1000
+  const a50=eo(nb(E.f_50-.05,E.f_50+.5,t)),a1k=eo(nb(E.f_mil-.05,E.f_mil+.8,t));
+  if(a50>0){for(let i=0;i<50;i++){const gx=(i%10)*6.5,gy=Math.floor(i/10)*6.5;circ(60+gx,330+gy*1.0+Math.sin(t*5+i)*.6,2.3*a50,MG,INK,.8)}
+    TG('≈ 50',90,372,15,MG,INK,t,E.f_50-.05)}
+  if(a1k>0){const n=Math.floor(1000*a1k);for(let i=0;i<n;i++){const gx=(i%40)*3.6,gy=Math.floor(i/40)*3.6;circ(195+gx,330+gy,1.4,RED)}
+    TG('≈ 1000',262,438,15,RED,'#fff',t,E.f_mil-.05)}
+  if(dead){const sh=Math.sin(t*60)*3*Math.exp(-(t-E.f_muere)*8);cruz(mx+sh,my-30,16,RED,spring(t-E.f_muere,11,6));shock(mx,my,t,E.f_muere,'rgba(255,77,94,.95)',90,5,.8);burst(mx,my,t,E.f_muere,[RED,'#fff',MG],26,150,.9,3)}
+  TG('27 ABR 1521',180,96,19,GOLD,INK,t,E.f_27-.05,{out:42.0});
+  TX('EN FILIPINAS',180,142,32,'#fff',t,E.f_fil-.1,{w:340,out:E.f_muere-.1});
+  if(dead)sl('MUERE MAGALLANES',180,180,30,RED,t,E.f_muere,{sh:'rgba(255,77,94,.6)'});
+  TG('MACTÁN',cx_(mx,40,320),my+26,12,'rgba(6,18,28,.9)','#fff',t,E.f_fil+.2);
 }
 
-// S7 9 NOV 1989: el muro cae
+// S7 Elcano: Índico, África y regreso a Sanlúcar
 function s7(t,u){
-  const c=mapaCam(t,[[44.0,BL[0],BL[1],26],[47.0,BL[0],BL[1],32,eio]]);
-  base(c);ger(c,.42,.42);
-  const [x,y]=bp(c),R_=Math.max(16,c.s*2.1);
-  const pe=eo(nb(44.8,E.f_muro,t)),fall=nb(E.f_cae,E.f_cae+.85,t);
-  const tm=at(t,'f_cae')?0:1;const sh=(t>E.f_muro&&t<E.f_cae)?Math.sin(t*70)*1.6:0;
-  ciudad(x+sh,y,R_,t,{sp:1,gap:8-fall*7,wall:1,fall,people:pe*(1-fall*.3)});
-  if(t>E.f_cae){shock(x,y,t,E.f_cae,'rgba(255,255,255,.95)',R_*2,6,.9);burst(x,y+10,t,E.f_cae,['#d2c9b6','#fff','#ffd23f'],34,170,.9,3.4)}
-  TG('9 NOV 1989',180,96,19,GOLD,INK,t,E.f_9-.05,{out:47.5});
-  TX('LA GENTE EMPUJA',180,142,28,'#fff',t,45.2,{w:330,out:47.2});
-  sl('EL MURO CAE',180,478,36,GOLD,t,E.f_cae,{sh:'rgba(255,210,63,.6)'});
-}
-
-// S8 DIC 1991: la Unión Soviética desaparece del mapa
-function s8(t,u){
-  const c=mapaCam(t,[[48.0,CEU[0],CEU[1],11],[49.4,62,56,3.9,eio],[52,62,56,4.3]]);
-  base(c);ger(c,.0,0);
-  const P=(lo,la)=>mapaPunto(c,lo,la);
-  const d=eo(nb(E.u_des,E.u_des+.9,t));
-  PF(c,USSR,p=>d>.02?mixc(EA,COLS[(USSR.indexOf(p.n)*5)%COLS.length],d):EA,.55,{b:'#fff',lw:1.2});
-  PF(c,PACT.concat(NATO),null,0,{ba:.9});
-  if(t>E.u_des){const [px,py]=P(60,58);shock(px,py,t,E.u_des,'rgba(255,255,255,.95)',150,6,.9);burst(px,py,t,E.u_des,COLS,36,170,.9,3.4)}
-  TG('DIC 1991',180,96,19,GOLD,INK,t,E.u_dic-.05,{out:52.6});
-  const q=P(75,60);TG('URSS',q[0]-25,q[1],20,EA,'#fff',t,E.u_urss-.05,{out:E.u_des+.3});
-  if(t>E.u_des-.05){TX('DESAPARECE',180,478,34,'#fff',t,E.u_des-.1,{w:340})}
-}
-
-// S9 CIERRE: dos bloques, un muro y mucho miedo → ¿quién ganó?
-function s9(t,u){
-  const c=mapaCam(t,[[53.0,18,50,5.2],[62.9,18,50,6.0]]);
+  const c=mapaCam(t,[[42.2,127,6,10],[44.3,110,-6,3.3,eio],[47.2,50,0,2.4,eio],[48.9,-6,24,4.1,eio],[52.5,-6,24,4.1]]);
   base(c);
-  PF(c,NATO,W_,.5,{b:'#fff',lw:1.2});PF(c,USSR.concat(PACT),EA,.5,{b:'#fff',lw:1.2});ger(c,.5,.5);
-  const P=(lo,la)=>mapaPunto(c,lo,la);
-  // muro/cortina en el medio
-  const m=eo(nb(E.z_muro-.1,E.z_muro+.5,t));
-  if(m>0){const [x0,y0]=P(10.8,60),[x1,y1]=P(10.8,40);ctx.save();ctx.strokeStyle=INK;ctx.lineWidth=7;ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x0,lerp(y0,y1,m));ctx.stroke();ctx.strokeStyle=BRK;ctx.lineWidth=3.6;ctx.setLineDash([8,3]);ctx.stroke();ctx.restore()}
-  TG('OESTE',P(0,52)[0],P(0,52)[1],16,W_,'#fff',t,E.z_dos-.05,{out:E.z_quien-.2});TG('ESTE',P(26,52)[0],P(26,52)[1],16,EA,'#fff',t,E.z_blo-.05,{out:E.z_quien-.2});
-  TX('DOS BLOQUES',180,100,30,'#fff',t,E.z_dos-.1,{w:340,out:E.z_miedo-.1});
-  TX('UN MURO',180,142,30,BRK,t,E.z_muro-.1,{w:340,out:E.z_miedo-.1});
-  TX('MUCHO MIEDO',180,190,32,GOLD,t,E.z_miedo-.1,{w:340,out:E.z_quien-.2});
+  const pr=eio(nb(43.9,48.75,t));
+  ruta(c,R_PAC1,0,EL,0);
+  const h=ruta(c,R_EL,pr,EL,3.6);
+  if(h){nao(h[0],h[1]-6,2.1,GOLD,Math.cos(h[2])<0,t)}else{const q=P_(c,MAC);nao(q[0],q[1]-8,2.3,GOLD,false,t)}
+  pin(c,MAC[0],MAC[1],RED,t,42.0,4);
+  
+  const ind=P_(c,[85,-22]);TG('OCÉANO ÍNDICO',cx_(ind[0],80,280),ind[1],13,'rgba(6,18,28,.88)','#fff',t,E.g_ind-.05,{out:E.g_llega});
+  const af=P_(c,[22,2]);TG('ÁFRICA',cx_(af[0],50,300),af[1],15,GOLD,INK,t,E.g_afr-.05,{out:E.g_llega});
+  const sa=pin(c,SAN[0],SAN[1],MG,t,E.g_llega,5);
+  if(t>E.g_sanl){shock(sa[0],sa[1],t,E.g_sanl,'rgba(255,209,102,.95)',90,5,.9);burst(sa[0],sa[1],t,E.g_sanl,[GOLD,'#fff',EL],34,160,.9,3.2);glow(sa[0],sa[1],60,'rgba(255,209,102,.5)',1)}
+  TX('JUAN SEBASTIÁN',180,96,22,'#fff',t,E.g_juan-.1,{w:340,out:E.g_mando-.4});TX('ELCANO',180,138,42,EL,t,E.g_elcano-.15,{w:340,out:E.g_mando-.4});
+  TX('TOMA EL MANDO',180,100,28,'#fff',t,E.g_mando-.1,{w:340,out:E.g_ind-.1});
+  TG('LA VICTORIA',180,142,20,GOLD,INK,t,E.g_vict-.05,{out:E.g_llega-.2});
+  TX('RODEA ÁFRICA',180,100,32,'#fff',t,E.g_afr-.12,{w:340,out:E.g_llega-.1});
+  TG('6 SEP 1522',180,96,19,GOLD,INK,t,E.g_6-.05,{out:51.7});
+  if(t>E.g_llega-.1)TX('LLEGA A SANLÚCAR',180,142,28,'#fff',t,E.g_llega-.1,{w:340,out:51.7});
+}
+
+// S8 más de doscientos hombres → solo dieciocho
+function s8(t,u){
+  TM.bg();
+  stars(t,40,11,.35);
+  const cols=14,rows=15;
+  const keep=[];for(let i=0;i<18;i++)keep.push(Math.floor((i*37+11)%(cols*rows)));
+  const kset=new Set(keep);
+  for(let i=0;i<cols*rows;i++){
+    const gx=i%cols,gy=Math.floor(i/cols),x=40+gx*21.5,y=200+gy*14.5;
+    const ap=eb(nb(E.h2_200-.15+(i%29)*.012,E.h2_200+.35+(i%29)*.012,t));
+    const dies=kset.has(i)?0:eo(nb(E.h2_18-.1+R(i)*.7,E.h2_18+.4+R(i)*.7,t));
+    const keepk=kset.has(i)?eb(nb(E.h2_18,E.h2_18+.5,t)):0;
+    const r=3.4*ap*(1-dies)*(1+.7*keepk);
+    if(r>.1)circ(x,y,r,kset.has(i)&&t>E.h2_18?GOLD:mixc('#7fb4d9','#ff8a3d',dies),INK,.9)
+    if(dies>.05&&dies<.9)circ(x,y-dies*18,1.6*(1-dies),'rgba(255,77,94,'+(1-dies)+')');
+  }
+  if(t>E.h2_18){shock(180,310,t,E.h2_18,'rgba(255,209,102,.9)',160,5,.9);glow(180,310,150,'rgba(255,209,102,.25)',1)}
+  TX('MÁS DE 200',180,100,38,'#fff',t,E.h2_200-.15,{w:340,out:E.h2_18-.2});TX('HOMBRES',180,142,30,MG,t,E.h2_200,{w:340,out:E.h2_18-.2});
+  if(t>E.h2_18-.1){sl('SOLO 18',180,110,56,GOLD,t,E.h2_18,{sh:'rgba(255,209,102,.6)'});TX('VUELVEN',180,172,34,'#fff',t,E.h2_vuel-.1,{w:340})}
+}
+
+// S9 cierre: ¿Magallanes o Elcano?
+function s9(t,u){
+  const c=mapaCam(t,[[55.0,-5,5,1.2],[69.8,-5,5,1.2]]);
+  base(c,{dim:.5});
+  const pm1=nb(55.6,56.9,t),pm2=nb(56.8,57.3,t);
+  ruta(c,R_ATL,eio(nb(55.55,56.2,t)),MG,3);
+  ruta(c,R_EST,eio(nb(56.15,56.35,t)),MG,3);
+  ruta(c,R_PAC1,eio(nb(56.3,56.7,t)),MG,3);
+  ruta(c,R_PAC2,eio(nb(56.7,57.25,t)),MG,3);
+  const mac=P_(c,MAC);
+  if(t>E.z_murio){cruz(mac[0]-6,mac[1]-2,6,RED,spring(t-E.z_murio,11,6));shock(mac[0],mac[1],t,E.z_murio,'rgba(255,77,94,.9)',50,3,.7)}
+  const pe=eio(nb(E.z_elc,E.z_termino+.9,t));
+  const h=ruta(c,R_EL,pe,EL,3.6);
+  if(h&&pe<1)nao(h[0],h[1]-6,1.7,GOLD,Math.cos(h[2])<0,t);
+  if(pe>=1){const sa=P_(c,SAN);burst(sa[0],sa[1],t,E.z_elc+.9+(E.z_termino-E.z_elc),[GOLD,EL,'#fff'],18,100,.8,2.6)}
+  pin(c,SAN[0],SAN[1],MG,t,55.5,4);
+  TX('ABRIÓ EL CAMINO',180,100,30,MG,t,E.z_abrio-.1,{w:340,out:E.z_quien-.2});
+  TX('PERO MURIÓ',180,142,26,'#fff',t,E.z_murio-.1,{w:340,out:E.z_quien-.2});TX('SIN TERMINARLO',180,178,26,RED,t,E.z_term-.1,{w:340,out:E.z_quien-.2});
+  TX('ELCANO LO TERMINÓ',180,240,30,EL,t,E.z_elc-.1,{w:340,out:E.z_quien-.2});
   const q=eo(nb(E.z_quien-.1,E.z_quien+.5,t));
-  if(q>0){ctx.save();ctx.fillStyle='rgba(5,10,20,'+(.62*q)+')';ctx.fillRect(0,0,360,640);ctx.restore()}
-  TX('¿QUIÉN GANÓ',180,200,40,'#fff',t,E.z_quien-.1,{w:340});TX('DE VERDAD?',180,250,40,GOLD,t,E.z_gano-.1,{w:340});
-  if(t>E.z_gano+.4){const a=spring(t-E.z_gano-.4,11,6),b2=spring(t-E.z_gano-.7,11,6);
-    tr(95,340,a,0,()=>{rr(-62,-24,124,48,12);ctx.fillStyle=W_;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.4;ctx.stroke();txt('OESTE',0,1,22,'#fff',{st:INK,sw:4})});
-    tr(265,340,b2,0,()=>{rr(-62,-24,124,48,12);ctx.fillStyle=EA;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.4;ctx.stroke();txt('ESTE',0,1,22,'#fff',{st:INK,sw:4})});
-    txt('VS',180,340,18,GOLD,{st:INK,sw:4,sc:eb(nb(E.z_gano+.9,E.z_gano+1.3,t))})}
+  if(q>0){ctx.save();ctx.fillStyle='rgba(4,12,20,'+(.7*q)+')';ctx.fillRect(0,0,360,640);ctx.restore()}
+  TX('¿QUIÉN MERECE',180,120,38,'#fff',t,E.z_quien-.1,{w:340});TX('EL TÍTULO?',180,166,40,GOLD,t,E.z_merece-.05,{w:340});
+  TX('DE PRIMERO EN DAR LA VUELTA AL MUNDO',180,222,15,'#cfe6f5',t,E.z_prim-.1,{w:300});
+  if(t>E.z_prim+.4){const a=spring(t-E.z_prim-.4,11,6),b2=spring(t-E.z_prim-.7,11,6);
+    tr(92,340,a,0,()=>{rr(-76,-26,152,52,12);ctx.fillStyle=MG;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.4;ctx.stroke();txt('MAGALLANES',0,1,19,'#fff',{st:INK,sw:4})});
+    tr(268,340,b2,0,()=>{rr(-76,-26,152,52,12);ctx.fillStyle=EL;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.4;ctx.stroke();txt('ELCANO',0,1,22,'#fff',{st:INK,sw:4})});
+    txt('VS',180,340,17,GOLD,{st:INK,sw:4,sc:eb(nb(E.z_prim+1.0,E.z_prim+1.4,t))})}
   TG('COMENTA TU RESPUESTA',180,440,16,GOLD,INK,t,E.z_com-.05);
 }
 
-boot([s0,s1,s2,s3,s4,s5,s6,s7,s8,s9],TRS,{cap:{acc:'#ffd23f'}});
+boot([s0,s1,s2,s3,s4,s5,s6,s7,s8,s9],TRS,{cap:{acc:'#ffd166'}});

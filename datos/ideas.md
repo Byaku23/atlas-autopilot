@@ -22,4 +22,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [x] 2026-11-15 (programado 2026-11-16 18:00 NY) Los gansos que salvaron Roma (Capitolio, 390 a.C.). ANIMALES + HISTORIA con pregunta que divide (¿ganso o Manlio?).
 - [x] 2026-11-16 (programado 2026-11-17 10:00 NY) ¿Calígula nombró cónsul a su caballo? Mito Incitato. DEBATE + ANIMALES (programar mar 17 10:00 NY).
 - [x] 2026-11-17 (programado 2026-11-18 12:00 NY) Togo vs Balto: el perro que corrió 420 km y el que tiene la estatua (Carrera del suero, Nome 1925). ANIMALES + HISTORIA con debate (¿Togo o Balto?).
-- [~] reservada 2026-11-18 (mañana) La primera vuelta al mundo: ¿Magallanes o Elcano? (idea nueva: banco agotado). MAPA + CAUSAS + DEBATE.
+- [x] 2026-11-18 (programado 18:00 NY) La primera vuelta al mundo: ¿Magallanes o Elcano? (idea nueva: banco agotado). MAPA + CAUSAS + DEBATE.
+
+- BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
