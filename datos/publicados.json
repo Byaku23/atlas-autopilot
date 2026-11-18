@@ -149,8 +149,10 @@
    "slug": "2026-11-18_vuelta_mundo",
    "titulo": "¿Magallanes o Elcano? La primera vuelta al mundo 🌍",
    "mp4_sha256": "a7944af8d93a097278e501f6dd52db862196e50a1bb0533fdad5bbc7f020b9a5",
-   "estado": "reservado",
-   "ts": "2026-11-18 13:58:46"
+   "estado": "programado",
+   "ts": "2026-11-18 13:58:46",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=5884453730609219463",
+   "fecha_programada": "2026-11-18T18:00:00-05:00"
   }
  ]
 }
