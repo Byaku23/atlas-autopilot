@@ -167,8 +167,10 @@
    "slug": "2026-11-19_pocho_chito",
    "titulo": "Pocho y Chito: el cocodrilo y su amigo 🐊",
    "mp4_sha256": "217e9c5d6bf43c11dc7b3e1eced225e6b808bc675f1862351f9381345e4c5334",
-   "estado": "reservado",
-   "ts": "2026-11-19 13:58:36"
+   "estado": "programado",
+   "ts": "2026-11-19 13:58:36",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-4865703756985973415",
+   "fecha_programada": "2026-11-19T15:00:00-05:00"
   }
  ]
 }
