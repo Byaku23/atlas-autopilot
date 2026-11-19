@@ -28,4 +28,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-19 (programado 15:00 NY) Pocho y Chito: el cocodrilo al que salvó un pescador en Costa Rica (1989-2011). ANIMALES + HISTORIA con debate (¿amistad real o costumbre?).
 
+- [~] reservada 2026-11-19 (tarde): ¿Cómo perdió Bolivia su mar? (Guerra del Pacífico 1879, Tratado 1904, La Haya 2018). MAPA + CAUSAS + DEBATE (tendencia vidIQ: mapas 'cómo perdió X').
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
