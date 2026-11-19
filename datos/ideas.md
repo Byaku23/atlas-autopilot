@@ -26,6 +26,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-18 (programado 2026-11-19 10:00 NY) Termópilas: ¿300 espartanos o 7000 griegos? (mito vs realidad; ¿espartanos o tespios?). DEBATE.
 
-- [~] reservada 2026-11-19 (mañana) Pocho y Chito: el cocodrilo al que salvó un pescador en Costa Rica (1989-2011). ANIMALES + HISTORIA con debate (¿amistad real o costumbre?).
+- [x] 2026-11-19 (programado 15:00 NY) Pocho y Chito: el cocodrilo al que salvó un pescador en Costa Rica (1989-2011). ANIMALES + HISTORIA con debate (¿amistad real o costumbre?).
 
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).

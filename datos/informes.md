@@ -103,3 +103,10 @@
 3. Regeneraciones innecesarias: ninguna; voz 1 vez (87,1 s, ~1287 créditos ElevenLabs); 2 renders (retoque de textos solapados); ElevenLabs falló al conectar al inicio y se reconectó (etapas ejecutadas: render; reutilizadas por caché: audio, mezcla)
 4. Consumo de tokens/créditos: ElevenLabs ~1287 créditos voz, transcripción 0; vidIQ no usado (solo créditos de pago extra); sin pago extra
 5. Publicaciones: IG Reel, TikTok, YouTube Short, FB Reel · 2026-11-19 10:00 NY
+
+## 2026-11-19_pocho_chito — 2026-11-19 13:59
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (1 voz, 1 transcripción, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: ElevenLabs ~1.7k créditos (voz+transcripción)
+5. Publicaciones: IG, TikTok, YouTube, Facebook 2026-11-19 15:00 NY
