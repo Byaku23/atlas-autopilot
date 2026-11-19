@@ -1,7 +1,7 @@
-// ===== Primera vuelta al mundo (Magallanes–Elcano) — recursos. Mapa satélite NASA + Natural Earth. Naranja = Magallanes, turquesa = Elcano =====
-const TM=tema({acc:'#ffd166',ink:'rgba(4,12,20,.92)',sw:4,bg0:'#04101a',bg1:'#0b2233'});
+// ===== Bolivia y su mar — recursos. Mapa satélite NASA + Natural Earth (Sudamérica). Dorado = Bolivia, azul = Chile, rosa = Perú =====
+const TM=tema({acc:'#ffd166',ink:'rgba(4,10,28,.92)',sw:4,bg0:'#050b1c',bg1:'#0f1d3d'});
 const TX=TM.TX,TG=TM.TAG;
-const MG='#ff8a3d',EL='#2ee6c9',GOLD='#ffd166',INK='#06121c',RED='#ff4d5e',CRM='#f3e9d2';
+const BO='#ffd166',GOLD='#ffd166',CL='#4da3ff',PE='#ff8fa3',LIT='#ff9f1c',INK='#06101f',RED='#ff4d5e',CRM='#f3e9d2';
 const TEX=mapaCargar('../../catalogo/mapa/blue_marble.jpg',[-182.76,172.6,90,-62.97]);
 const nb=(a,b,t)=>cl((t-a)/(b-a));
 function PF(c,names,col,a,o={}){ctx.save();ctx.lineJoin='round';const step=c.s>40?1:2;
@@ -26,26 +26,32 @@ function ruta(c,G,p,col,lw=3.2,o={}){p=cl(p);if(p<=0)return null;const L=_cum(G)
   ctx.strokeStyle=INK;ctx.lineWidth=lw+2.6;ctx.globalAlpha=o.a===undefined?1:o.a;ctx.stroke();
   ctx.strokeStyle=col;ctx.lineWidth=lw;if(o.dash){ctx.setLineDash(o.dash);ctx.lineDashOffset=-(o.t||0)*10}ctx.stroke();ctx.restore();
   return [head[0],head[1],ang]}
-// nao (barco) esquemático; flip = mira a la izquierda
-function nao(x,y,sz,col,flip,t,a=1){ctx.save();ctx.globalAlpha*=a;ctx.translate(x,y+Math.sin(t*4+x)*sz*.5);ctx.scale(flip?-sz:sz,sz);ctx.lineJoin='round';
-  ctx.beginPath();ctx.moveTo(-10,0);ctx.lineTo(11,-1);ctx.lineTo(7,6);ctx.lineTo(-7,6);ctx.closePath();ctx.fillStyle='#6b4326';ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=1.3/sz*1.2;ctx.stroke();
-  ctx.strokeStyle=INK;ctx.lineWidth=1.6/sz*1.2;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(0,-17);ctx.stroke();
-  for(const [x0,y0,w,h] of [[-7.5,-15,15,9],[-6.5,-6,13,6]]){ctx.beginPath();ctx.moveTo(x0,y0);ctx.quadraticCurveTo(x0+w/2,y0-2,x0+w,y0);ctx.lineTo(x0+w-1,y0+h);ctx.quadraticCurveTo(x0+w/2,y0+h+2,x0+1,y0+h);ctx.closePath();ctx.fillStyle=CRM;ctx.fill();ctx.stroke();
-    ctx.fillStyle=col;ctx.fillRect(x0+w/2-1.3,y0+1,2.6,h-1)}
-  ctx.restore()}
-// flota de n naos en cola detrás de la punta
-function flota(h,n,sz,col,t,a=1){if(!h)return;const fl=Math.cos(h[2])<0;for(let i=n-1;i>=0;i--){const dx=-Math.cos(h[2])*i*sz*5+Math.sin(h[2])*((i%2)?1:-1)*i*sz*2,dy=-Math.sin(h[2])*i*sz*5-Math.cos(h[2])*((i%2)?1:-1)*i*sz*2;nao(h[0]+dx,h[1]+dy-sz*5,sz,col,fl,t+i,a)}}
 function pin(c,lon,lat,col,t,t0,r=5){if(t<t0)return[0,0];const [x,y]=mapaPunto(c,lon,lat),k=eb(nb(t0,t0+.4,t)),f=((t-t0)*.9)%1;
   ctx.save();ctx.globalAlpha=(1-f)*.8;ctx.strokeStyle=col;ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,y,r*k+f*r*3.2,0,7);ctx.stroke();ctx.restore();circ(x,y,r*k,col,'#fff',1.8);return [x,y]}
 const cx_=(x,a=14,b=346)=>Math.max(a,Math.min(b,x));
 // cruz roja de muerte / error
 function cruz(x,y,s,col,k=1){tr(x,y,k,0,()=>{ctx.lineCap='round';ctx.strokeStyle=INK;ctx.lineWidth=s*.5+3;ctx.beginPath();ctx.moveTo(-s,-s);ctx.lineTo(s,s);ctx.moveTo(s,-s);ctx.lineTo(-s,s);ctx.stroke();ctx.strokeStyle=col;ctx.lineWidth=s*.5;ctx.stroke()})}
-// rutas (lon,lat)
-const R_ATL=sm([[-6.3,36.8],[-16.3,28.3],[-30,12],[-36,-8],[-43.2,-22.9],[-56,-35],[-67.7,-49.3]]);
-const R_EST=sm([[-67.7,-49.3],[-68.3,-52.5],[-71,-53.7],[-73,-53.2],[-75,-52.4]],10);
-const R_PAC1=sm([[-75,-52.4],[-95,-38],[-130,-22],[-170,-8],[-182,-4]]);
-const R_PAC2=sm([[172.6,6],[160,8.5],[145,13.4],[124,10.3]]);
-const R_EL=sm([[124,10.3],[127.4,0.8],[124.5,-9.5],[110,-18],[95,-27],[77.5,-37.8],[60,-37.5],[40,-36],[18.5,-35.5],[10,-30],[3,-18],[-5,-5],[-15,6],[-23.5,16.9],[-20,28],[-12,34],[-6.3,36.8]]);
-const R_VUELTA=sm([[-67.7,-49.3],[-60,-44],[-50,-30],[-40,-10],[-25,15],[-6.3,36.8]]);
-const R_OESTE=sm([[-6.3,36.8],[-40,30],[-120,20],[-182,10]]);
-const R_OESTE2=sm([[172.6,6],[150,4],[127.4,0.8]]);
+
+// coordenadas (lon,lat)
+const LITC=[-70.2,-22.7],LAPAZ=[-68.15,-16.5],ARICA=[-70.3,-18.5],ANTO=[-70.4,-23.65],HAYA=[4.3,52.08];
+// flecha geográfica con progreso p
+function flecha(c,A,B,p,col,lw=4){p=cl(p);if(p<=0)return;const a=mapaPunto(c,A[0],A[1]),b=mapaPunto(c,B[0],B[1]);const x=lerp(a[0],b[0],p),y=lerp(a[1],b[1],p),ang=Math.atan2(b[1]-a[1],b[0]-a[0]);
+  ctx.save();ctx.lineCap='round';ctx.strokeStyle=INK;ctx.lineWidth=lw+3;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(x,y);ctx.stroke();ctx.strokeStyle=col;ctx.lineWidth=lw;ctx.stroke();
+  ctx.translate(x,y);ctx.rotate(ang);ctx.beginPath();ctx.moveTo(10,0);ctx.lineTo(-6,-9);ctx.lineTo(-6,9);ctx.closePath();ctx.fillStyle=col;ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=2;ctx.stroke();ctx.restore()}
+// cristal de salitre (rombo brillante)
+function cristal(x,y,s,col,t,ph=0){const k=1+.12*Math.sin(t*6+ph);ctx.save();ctx.translate(x,y);ctx.scale(s*k,s*k);ctx.beginPath();ctx.moveTo(0,-8);ctx.lineTo(5,0);ctx.lineTo(0,9);ctx.lineTo(-5,0);ctx.closePath();ctx.fillStyle=col;ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=1.3/s;ctx.stroke();ctx.beginPath();ctx.moveTo(0,-8);ctx.lineTo(0,9);ctx.moveTo(-5,0);ctx.lineTo(5,0);ctx.strokeStyle='rgba(255,255,255,.7)';ctx.lineWidth=.8/s;ctx.stroke();ctx.restore()}
+// tribunal (columnas + frontón)
+function tribunal(x,y,s,col,a=1){ctx.save();ctx.globalAlpha*=a;ctx.translate(x,y);ctx.scale(s,s);ctx.lineJoin='round';
+  ctx.beginPath();ctx.moveTo(-34,-14);ctx.lineTo(0,-34);ctx.lineTo(34,-14);ctx.closePath();ctx.fillStyle=col;ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=2.4/s*s;ctx.stroke();
+  for(let i=0;i<4;i++){rr(-28+i*16-3,-12,8,30,2);ctx.fillStyle=CRM;ctx.fill();ctx.stroke()}
+  rr(-36,18,72,8,2);ctx.fillStyle=col;ctx.fill();ctx.stroke();ctx.restore()}
+// martillo de juez; ang 0 = levantado, 1 = golpe
+function martillo(x,y,s,k){ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.rotate(-.9+k*.9);ctx.lineJoin='round';rr(-3,-4,6,40,2);ctx.fillStyle='#8a5a33';ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=2;ctx.stroke();rr(-16,-14,32,14,4);ctx.fillStyle='#b87a45';ctx.fill();ctx.stroke();ctx.restore()}
+// bocadillo con cola hacia abajo
+function bocadillo(x,y,w,h,col,a=1,tail=0){ctx.save();ctx.globalAlpha*=a;rr(x-w/2,y-h/2,w,h,16);ctx.fillStyle=col;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.6;ctx.stroke();
+  ctx.beginPath();ctx.moveTo(x-10+tail,y+h/2-1);ctx.lineTo(x+tail,y+h/2+16);ctx.lineTo(x+10+tail,y+h/2-1);ctx.fillStyle=col;ctx.fill();ctx.restore()}
+// tren simple que mira a la derecha o izquierda
+function tren(x,y,s,flip,t){ctx.save();ctx.translate(x,y);ctx.scale(flip?-s:s,s);ctx.lineJoin='round';
+  for(let i=0;i<2;i++){rr(-24+i*22,-8,20,12,2);ctx.fillStyle=i?CL:'#e8eefc';ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=1.8/s*1.2;ctx.stroke()}
+  rr(18,-12,12,16,2);ctx.fillStyle=RED;ctx.fill();ctx.stroke();for(const wx of [-16,-4,10,24])circ(wx,6,3,INK,'#fff',.8);
+  for(let i=0;i<3;i++){const q=((t*1.6+i*.33)%1);circ(22-q*18,-16-q*14,2+q*3,'rgba(240,240,255,'+(.6*(1-q))+')')}ctx.restore()}

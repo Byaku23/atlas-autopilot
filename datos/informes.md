@@ -110,3 +110,10 @@
 3. Regeneraciones innecesarias: ninguna (1 voz, 1 transcripción, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: ElevenLabs ~1.7k créditos (voz+transcripción)
 5. Publicaciones: IG, TikTok, YouTube, Facebook 2026-11-19 15:00 NY
+
+## 2026-11-19_bolivia_mar — 2026-11-19 18:56
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (voz 1 vez, 1 render) (etapas ejecutadas: audio, mezcla, render; reutilizadas por caché: —)
+4. Consumo de tokens/créditos: 1 voz ElevenLabs (~1111 créditos)
+5. Publicaciones: IG, TikTok, YouTube, Facebook 2026-11-19 20:15 NY

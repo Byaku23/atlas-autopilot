@@ -1,219 +1,223 @@
-// ===== Primera vuelta al mundo — escenas =====
-const SAN=[-6.3,36.8],MAC=[124,10.3],TID=[127.4,0.8];
-const sl=(s,x,y,sz,col,t,ts,o={})=>slam(s,x,y,sz,col,t,ts,Object.assign({st:INK,sw:Math.max(6,sz*.18),sh:'rgba(255,138,61,.55)'},o));
+// ===== ¿Cómo perdió Bolivia su mar? — escenas =====
+const sl=(s,x,y,sz,col,t,ts,o={})=>slam(s,x,y,sz,col,t,ts,Object.assign({st:INK,sw:Math.max(6,sz*.18),sh:'rgba(255,159,28,.5)'},o));
 const P_=(c,p)=>mapaPunto(c,p[0],p[1]);
+const veil=(a)=>{ctx.save();ctx.fillStyle='rgba(4,10,28,'+a+')';ctx.fillRect(0,0,360,640);ctx.restore()};
+// color del litoral según el tiempo: dorado/naranja hasta la ocupación, azul después
+const litCol=(t)=>mixc(LIT,CL,eo(nb(E.c_ocupa,E.c_ocupa+.9,t)));
+function paises(c,t,o={}){ // Bolivia / Perú / Chile con color
+  const a=o.a===undefined?1:o.a;
+  PF(c,['Bolivia'],BO,.38*a*(o.bo===undefined?1:o.bo),{b:'#fff',lw:1.5,ba:.9});
+  PF(c,['Chile'],CL,.3*a*(o.cl===undefined?1:o.cl),{b:'#fff',lw:1.2,ba:.7});
+  PF(c,['Peru'],PE,.3*a*(o.pe===undefined?0:o.pe),{b:'#fff',lw:1.2,ba:.7});
+  PF(c,['Argentina','Brazil','Paraguay','Colombia','Ecuador','Uruguay'],null,0,{ba:.35,lw:.8});
+}
+function litoral(c,t,col,a=.8,lw=2){const pul=.85+.15*Math.sin(t*7);PF(c,['Litoral'],col,a*pul,{b:'#fff',lw,ba:1})}
 
-// S0 GANCHO: cinco barcos, solo uno lo logró
+// S0 GANCHO: Bolivia nació con mar, hoy sin costa
 function s0(t,u){
-  const c=mapaCam(t,[[0,-26,22,1.7],[5.0,-18,20,2.0],[6,-18,20,2.0]]);
+  const z=nb(0,5.3,t);
+  const c=mapaCam(t,[[0,-63,-20,5.2],[5.3,-66,-19,6.8]]);
   base(c);
-  PF(c,['Spain','Portugal'],GOLD,.28,{b:'#fff',lw:1});
-  const xs=[62,121,180,239,298],ys=[392,404,380,404,392];
-  for(let i=0;i<5;i++){
-    const tin=-.5+i*.1,k=i===2?1:1;const pop=t<tin?(t<0?1:0):eb(nb(tin,tin+.35,t));
-    // los otros cuatro se hunden en "solo uno"
-    const sink=i===2?0:eo(nb(E.h_uno-.05+i*.06,E.h_uno+.7+i*.06,t));
-    const mv=i===2?eio(nb(E.h_uno+.1,E.h_uno+.9,t)):0;
-    const x=xs[i]+(i===2?0:Math.sin(t*30+i)*3*Math.exp(-(t-E.h_uno)*6)*(t>E.h_uno?1:0)),y=ys[i]+sink*55-mv*0;
-    if(t<0&&i>=0&&false)continue;
-    nao(x,y,2.6*Math.max(.01,i===2?pop*(1+.28*mv):pop),i===2?GOLD:MG,false,t,1-sink);
-    if(sink>.2&&sink<.98)cruz(x,y-8,9,RED,eb(nb(0,.3,sink)));
-  }
-  if(t>E.h_logro){const g=spring(t-E.h_logro,11,6);glow(180,380,70*g,'rgba(255,209,102,.6)',1);shock(180,382,t,E.h_logro,'rgba(255,209,102,.95)',90,4,.8);burst(180,382,t,E.h_logro,[GOLD,'#fff'],26,150,.9,3)}
-  TX('5 BARCOS',180,96,46,'#fff',t,-.6,{w:340});
-  TX('A DAR LA VUELTA AL MUNDO',180,146,21,GOLD,t,-.4,{w:340});
-  if(t>E.h_uno-.1)sl('SOLO 1 LO LOGRÓ',180,230,34,GOLD,t,E.h_uno,{sh:'rgba(255,209,102,.5)'});
-  const fo=1-nb(E.h_mapa+.1,E.h_mapa+.35,t);
-  TG('MIRA EL MAPA',180,478,15,GOLD,INK,t,E.h_mapa-.05);
-  // pin de Sanlúcar (punto de la inmersión)
-  if(t>E.h_mapa+.05)pin(c,SAN[0],SAN[1],MG,t,E.h_mapa+.05,5);
+  const bp=t<E.h_bol?(t<0?1:eo(nb(-.2,.4,t))):1;
+  paises(c,t,{bo:bp,pe:0});
+  // litoral: brilla desde "mar" y se apaga en "hoy"
+  const on=nb(-.3,.3,t),off=nb(E.h_costa-.1,E.h_costa+.5,t);
+  if(on>0)litoral(c,t,mixc(LIT,CL,eo(off)),.85*on,2+2*(1-off));
+  if(t>E.h_mar&&t<E.h_hoy){const [x,y]=P_(c,LITC);shock(x,y,t,E.h_mar,'rgba(255,159,28,.95)',60,4,.8)}
+  if(t>E.h_costa){const [x,y]=P_(c,LITC);shock(x,y,t,E.h_costa,'rgba(255,77,94,.95)',70,5,.8);burst(x,y,t,E.h_costa,[RED,'#fff',CL],20,110,.8,2.6)}
+  TX('BOLIVIA NACIÓ',180,92,36,'#fff',t,-.6,{w:340,out:E.h_hoy-.6});
+  TX('CON MAR',180,140,52,GOLD,t,-.4,{w:340,out:E.h_hoy-.6});
+  if(t>E.h_hoy-.1){TX('HOY NO TIENE',180,96,30,'#fff',t,E.h_hoy-.1,{w:340});}
+  if(t>E.h_costa-.1)sl('NI UN METRO DE COSTA',180,150,22,RED,t,E.h_costa,{sh:'rgba(255,77,94,.6)'});
+  TG('¿QUÉ PASÓ?',180,442,20,GOLD,INK,t,E.h_paso-.05,{out:E.h_mapa+.7});
+  if(t>E.h_mapa-.05)TG('MIRA EL MAPA',180,478,15,'#fff',INK,t,E.h_mapa-.05);
+  const [px,py]=P_(c,LITC);if(t>E.h_mapa+.05)pin(c,LITC[0],LITC[1],LIT,t,E.h_mapa+.05,5);
 }
 
-// S1 20 SEP 1519: zarpa de Sanlúcar
+// S1 1825: más de 400 km de costa
 function s1(t,u){
-  const c=mapaCam(t,[[5.3,SAN[0],SAN[1],22],[8.0,SAN[0],SAN[1],14],[13.9,SAN[0]-1,SAN[1]-3,12.5]]);
+  const c=mapaCam(t,[[5.3,-66,-19,6.8],[8.8,-67.8,-20.4,16],[13.1,-67.8,-20.4,16.5]]);
   base(c);
-  const e=eo(nb(E.a_esp-.1,E.a_esp+.8,t));PF(c,['Spain'],GOLD,.38*e,{b:'#fff',lw:1.6});
-  const h=ruta(c,R_ATL,.075*eo(nb(E.a_zarpa,E.a_zarpa+2.6,t)),MG,3.4);
-  if(h)flota(h,5,1.5,MG,t);else if(t>E.a_flota)for(let i=0;i<5;i++){const [x,y]=P_(c,SAN);nao(x-i*7,y-12-(i%2)*4,1.5,MG,true,t+i)}
-  pin(c,SAN[0],SAN[1],MG,t,5.3,5);
-  TG('20 SEP 1519',180,96,19,GOLD,INK,t,E.a_20-.05,{out:13.3});
-  TX('LA FLOTA DE',180,142,26,'#fff',t,E.a_flota-.1,{w:330,out:E.a_zarpa-.45});
-  TX('MAGALLANES',180,184,36,MG,t,E.a_magal-.1,{w:340,out:E.a_zarpa-.45});
-  TX('ZARPA',180,142,44,'#fff',t,E.a_zarpa-.1,{w:340});
-  const [sx,sy]=P_(c,SAN);TG('SANLÚCAR DE BARRAMEDA',cx_(sx,100,260),Math.max(sy+34,240),12,'rgba(6,18,28,.88)','#fff',t,E.a_sanl-.05);
-  const [ex,ey]=P_(c,[-4,40]);TG('ESPAÑA',cx_(ex),Math.max(ey,120)+12,16,GOLD,INK,t,E.a_esp-.05);
+  const e=eo(nb(E.a_nace-.1,E.a_nace+.7,t));
+  paises(c,t,{bo:e,pe:0,cl:.5});
+  litoral(c,t,LIT,.85*e,2.2);
+  // regla de costa 400 km
+  const rk=eio(nb(E.a_400-.1,E.a_400+1.3,t));
+  if(rk>0){const A=P_(c,[-70.35,-21.45]),B=P_(c,[-70.35,-24.0]),x=A[0]-16;ctx.save();ctx.strokeStyle=INK;ctx.lineWidth=7;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x,A[1]);ctx.lineTo(x,lerp(A[1],B[1],rk));ctx.stroke();ctx.strokeStyle='#fff';ctx.lineWidth=3.2;ctx.stroke();ctx.restore();
+    circ(x,A[1],4,'#fff',INK,1.5);if(rk>.98)circ(x,B[1],4,'#fff',INK,1.5)}
+  const kx=cx_(P_(c,[-70.4,-22.7])[0]-62,56,300),ky=P_(c,[-70.4,-22.7])[1];
+  if(t>E.a_400-.1){const v=countV(0,400,t,E.a_400,1.2);txt('+'+Math.round(v)+' km',kx,ky-4,28,'#fff',{st:INK,sw:5,sc:eb(nb(E.a_400-.1,E.a_400+.35,t))})}
+  const [pcx,pcy]=P_(c,[-73.5,-23.2]);TG('OCÉANO PACÍFICO',cx_(pcx,70,290),pcy,12,'rgba(6,16,36,.88)','#9fd3ff',t,E.a_pac-.05);
+  TG('1825',180,96,22,GOLD,INK,t,E.a_1825-.05,{out:E.a_400-.5});
+  TX('NACE BOLIVIA',180,142,32,'#fff',t,E.a_nace-.1,{w:340,out:E.a_400-.5});
+  TX('MÁS DE 400 KM',180,100,28,'#fff',t,E.a_400-.15,{w:340});TX('DE COSTA',180,140,36,LIT,t,E.a_km-.05,{w:340});
 }
 
-// S2 la ruta soñada: islas de las especias, siempre hacia el oeste
+// S2 salitre
 function s2(t,u){
-  const c=mapaCam(t,[[13.4,-5,10,1.3],[19.0,-5,10,1.3]]);
-  base(c);
-  const [mx,my]=pin(c,TID[0],TID[1],GOLD,t,E.b_esp-.1,6);
-  if(t>E.b_esp){burst(mx,my,t,E.b_esp,[GOLD,'#fff'],22,110,.8,3);shock(mx,my,t,E.b_esp,'rgba(255,209,102,.9)',60,3,.7)}
-  const pw=eio(nb(E.b_oeste-1.1,E.b_oeste+.9,t));
-  ruta(c,R_OESTE,pw,MG,3.2,{dash:[7,5],t});
-  ruta(c,R_OESTE2,pw,MG,3.2,{dash:[7,5],t});
-  pin(c,SAN[0],SAN[1],MG,t,13.4,5);
-  if(t>E.b_oeste-.2){const k=eb(nb(E.b_oeste-.1,E.b_oeste+.4,t));tr(100,330,k,0,()=>{poly([[-26,0],[-4,-16],[-4,-7],[24,-7],[24,7],[-4,7],[-4,16]],MG,INK,3)})}
-  TX('BUSCAN',180,96,24,'#fff',t,E.b_buscan-.1,{w:330,out:E.b_esp+.3});
-  TX('UNA RUTA',180,134,34,'#fff',t,E.b_buscan+.15,{w:340,out:E.b_esp+.3});
-  TX('ISLAS DE LAS',180,100,26,'#fff',t,E.b_esp-.1,{w:330});TX('ESPECIAS',180,142,40,GOLD,t,E.b_esp-.05,{w:340});
-  TG('MOLUCAS',cx_(mx,40,320),my+26,13,'rgba(6,18,28,.88)',GOLD,t,E.b_esp+.2);
-  sl('HACIA EL OESTE',180,430,32,MG,t,E.b_oeste,{sh:'rgba(255,138,61,.6)'});
+  const c=mapaCam(t,[[12.9,-67.8,-20.4,16.5],[14.6,-69.6,-22.7,28],[17.2,-69.6,-22.7,30]]);
+  base(c,{dim:.28});
+  PF(c,['Chile'],CL,.12,{b:'#fff',lw:1,ba:.5});
+  litoral(c,t,LIT,.55,2.4);
+  // cristales dentro del litoral
+  const a=nb(E.b_sal-.1,E.b_sal+.9,t),oro=eo(nb(E.b_oro-.1,E.b_oro+.5,t));
+  for(let i=0;i<26;i++){const lon=-70.1+R(i*3+1)*.75,lat=-23.3+R(i*3+2)*1.7,[x,y]=P_(c,[lon,lat]);if(y<150||y>500)continue;
+    const k=eb(nb(E.b_sal-.1+i*.03,E.b_sal+.4+i*.03,t));if(k<=0)continue;
+    cristal(x,y,1.5*k,mixc('#dff3ff',GOLD,oro),t,i)}
+  if(t>E.b_sal){const [x,y]=P_(c,LITC);burst(x,y,t,E.b_sal,['#dff3ff','#fff'],24,120,.9,2.6)}
+  if(t>E.b_oro){const [x,y]=P_(c,LITC);shock(x,y,t,E.b_oro,'rgba(255,209,102,.95)',90,5,.9);burst(x,y,t,E.b_oro,[GOLD,'#fff'],30,160,1,3);glow(x,y,70*spring(t-E.b_oro,11,6),'rgba(255,209,102,.45)',1)}
+  TG('LITORAL BOLIVIANO',180,446,13,'rgba(6,16,36,.9)',LIT,t,13.6,{out:E.b_oro+.6});
+  TX('EN ESA COSTA',180,96,26,'#fff',t,13.05,{w:330,out:E.b_sal-.1});
+  TX('HABÍA',180,140,28,'#fff',t,13.55,{w:330,out:E.b_sal-.1});
+  sl('SALITRE',180,120,50,'#dff3ff',t,E.b_sal,{sh:'rgba(159,211,255,.6)'});
+  TX('UN MINERAL QUE',180,180,24,'#fff',t,E.b_min-.1,{w:340,out:E.b_oro-.15});
+  if(t>E.b_oro-.05)TX('VALÍA ORO',180,184,40,GOLD,t,E.b_oro-.05,{w:340});
 }
 
-// S3 cruzan el Atlántico y bajan por la costa de América del Sur
+// S3 1879: Guerra del Pacífico
 function s3(t,u){
-  const c=mapaCam(t,[[18.5,-28,2,3.0],[22.8,-48,-28,3.5,eio]]);
+  const c=mapaCam(t,[[17.0,-69.6,-22.7,30],[19.4,-68,-20,8.2,eio],[27.5,-68,-20,8.2]]);
   base(c);
-  const p=eio(nb(19.1,22.65,t));
-  const h=ruta(c,R_ATL,p,MG,3.4);
-  pin(c,SAN[0],SAN[1],MG,t,18.5,4);
-  flota(h,5,1.45,MG,t);
-  const a=P_(c,[-28,14]);TG('OCÉANO ATLÁNTICO',cx_(a[0],80,280),a[1],13,'rgba(6,18,28,.88)','#fff',t,E.c_atl-.05,{out:E.c_sur-.2});
-  const b=P_(c,[-62,-10]);TG('AMÉRICA DEL SUR',cx_(b[0],70,290),b[1],14,GOLD,INK,t,E.c_sur-.15);
-  TX('CRUZAN EL',180,100,26,'#fff',t,E.c_cruzan-.1,{w:330,out:E.c_bajan-.5});TX('ATLÁNTICO',180,142,38,MG,t,E.c_atl-.15,{w:340,out:E.c_bajan-.5});
-  TX('BAJAN POR LA COSTA',180,110,26,'#fff',t,E.c_bajan,{w:340});
+  const pc=eo(nb(E.c_chile-.1,E.c_chile+.6,t)),pb=eo(nb(E.c_bol-.1,E.c_bol+.5,t)),pp=eo(nb(E.c_peru-.1,E.c_peru+.5,t));
+  PF(c,['Chile'],CL,.38*pc,{b:'#fff',lw:1.3,ba:.8});
+  PF(c,['Bolivia'],BO,.4,{b:'#fff',lw:1.5,ba:.9});
+  PF(c,['Peru'],PE,.38*pp,{b:'#fff',lw:1.3,ba:.8});
+  litoral(c,t,litCol(t),.85,2.2);
+  // flecha chilena que invade el litoral
+  const fa=eio(nb(E.c_ocupa-.2,E.c_ocupa+.9,t));
+  flecha(c,[-70.6,-31],[-70.3,-22.9],fa,RED,4.4);
+  if(t>E.c_ocupa){const [x,y]=P_(c,LITC);shock(x,y,t,E.c_ocupa,'rgba(77,163,255,.95)',90,5,.9);burst(x,y,t,E.c_ocupa,[CL,'#fff',RED],28,150,.9,3)}
+  const [chx,chy]=P_(c,[-71.2,-34]);if(t>E.c_chile)TG('CHILE',cx_(chx,40,320),Math.min(chy,468),15,CL,'#fff',t,E.c_chile-.05);
+  const [bx,by]=P_(c,[-64.5,-16.5]);if(t>E.c_bol)TG('BOLIVIA',cx_(bx),by,15,BO,INK,t,E.c_bol-.05);
+  const [px,py]=P_(c,[-75,-10]);if(t>E.c_peru)TG('PERÚ',cx_(px,40,320),py,15,PE,INK,t,E.c_peru-.05);
+  TG('1879',180,96,22,GOLD,INK,t,E.c_1879-.05,{out:E.c_guerra+2.8});
+  if(t>E.c_guerra-.1)TX('GUERRA DEL PACÍFICO',180,142,28,'#fff',t,E.c_guerra-.1,{w:340,out:E.c_ocupa-.3});
+  if(t>E.c_ocupa-.1)TX('CHILE OCUPA',180,100,32,CL,t,E.c_ocupa-.1,{w:340});
+  if(t>E.c_ocupa)TX('LA COSTA BOLIVIANA',180,142,26,'#fff',t,E.c_ocupa+.15,{w:340});
+  if(t>E.c_nunca-.1)sl('NUNCA SE VA',180,206,34,RED,t,E.c_nunca,{sh:'rgba(255,77,94,.6)'});
 }
 
-// S4 un barco naufraga, otro da media vuelta
+// S4 1884: tregua
+function bandera(x,y,s,t,a=1){ctx.save();ctx.globalAlpha*=a;ctx.translate(x,y);ctx.scale(s,s);ctx.strokeStyle=INK;ctx.lineWidth=5;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(0,28);ctx.lineTo(0,-30);ctx.stroke();ctx.strokeStyle='#cfd8ea';ctx.lineWidth=2.4;ctx.stroke();
+  ctx.beginPath();ctx.moveTo(2,-30);for(let i=0;i<=12;i++){ctx.lineTo(2+i*4,-30+Math.sin(t*6+i*.7)*3*(i/12)+0)}for(let i=12;i>=0;i--){ctx.lineTo(2+i*4,-6+Math.sin(t*6+i*.7)*3*(i/12))}ctx.closePath();ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle=INK;ctx.lineWidth=2;ctx.stroke();ctx.restore()}
 function s4(t,u){
-  const c=mapaCam(t,[[22.2,-60,-40,5.2],[24.9,-60,-42,5.2],[26.0,-40,-8,2.9,eio],[27.5,-40,-8,2.9]]);
+  const c=mapaCam(t,[[27.3,-68,-20,8.2],[30,-69.2,-21.6,12],[33.7,-69.2,-21.6,12.5]]);
   base(c);
-  const fin=R_ATL[R_ATL.length-1];
-  ruta(c,R_ATL,1,MG,3.2);
-  const [x,y]=P_(c,fin);
-  const nau=eo(nb(E.d_nau-.1,E.d_nau+.9,t)),turn=nb(E.d_media-.1,E.d_media+.4,t);
-  const k=(t>E.d_media+.3)?3:(t>E.d_nau?4:5);
-  if(t<E.d_media+.3)for(let i=0;i<k;i++)nao(x-6+i*6,y-6-(i%2)*5,1.6*Math.max(.3,c.s/5.2*.5+.5),MG,false,t+i);
-  else for(let i=0;i<3;i++)nao(x-6+i*6,y-6-(i%2)*5,1.6*(c.s/5.2*.5+.5)**1,MG,false,t+i);
-  // naufragio
-  if(t>E.d_nau-.1){const sx=x+22,sy=y+nau*24;nao(sx,sy,2.2,'#999',false,t,1-nau*.8);
-    if(nau>.05)for(let i=0;i<6;i++){const q=((t-E.d_nau)*1.4+i*.2)%1;circ(sx-8+i*3.2,sy-q*28,2.2*(1-q),'rgba(200,235,255,'+(.8*(1-q))+')')}
-    if(t>E.d_nau)burst(sx,y,t,E.d_nau,['#9fd3ff','#fff'],18,90,.8,2.6);cruz(sx,y-26,9,RED,eb(nb(E.d_nau+.15,E.d_nau+.5,t)))}
-  // regreso
-  const rp=eio(nb(E.d_media+.3,E.d_regresa+1.0,t));
-  const h=ruta(c,R_VUELTA,rp,RED,3,{dash:[6,5],t});
-  if(h)nao(h[0],h[1]-5,1.7,'#ff9aa5',true,t);
-  const sa=pin(c,SAN[0],SAN[1],MG,t,25.9,4);
-  TX('ALLÍ',180,100,26,'#fff',t,E.d_alli-.1,{w:330,out:E.d_media-.1});
-  TX('UN BARCO NAUFRAGA',180,142,28,RED,t,E.d_nau-.15,{w:340,out:E.d_media-.1});
-  TX('OTRO DA MEDIA',180,100,26,'#fff',t,E.d_media-.1,{w:330});TX('VUELTA',180,142,40,GOLD,t,E.d_media+.05,{w:340});
-  if(t>E.d_regresa-.1)TG('REGRESA A ESPAÑA',cx_(sa[0],90,270),Math.max(sa[1]+34,200),13,RED,'#fff',t,E.d_regresa-.1);
+  paises(c,t,{pe:.6});
+  litoral(c,t,CL,.85,2.2);
+  // soldados/puntos azules marchando sobre el litoral
+  const sg=nb(E.d_sigue-.1,E.d_sigue+.7,t);
+  for(let i=0;i<14;i++){const [x,y]=P_(c,[-70.25+R(i*2)*.5-.1,-22.2-R(i*2+1)*1.6]);const k=eb(nb(E.d_sigue-.1+i*.03,E.d_sigue+.4+i*.03,t));if(k>0)circ(x,y+Math.sin(t*6+i)*1.2,3.2*k,CL,'#fff',1.2)}
+  const [bx,by]=[262,200];const bk=eb(nb(E.d_tregua-.15,E.d_tregua+.45,t));if(bk>0)bandera(bx,by,1.6*bk,t);
+  TG('1884',180,96,22,GOLD,INK,t,E.d_1884-.05,{out:E.d_sigue-.3});
+  TX('FIRMAN UNA',130,142,26,'#fff',t,E.d_tregua-.15,{w:230,out:E.d_sigue-.3});
+  TX('TREGUA',130,186,40,'#fff',t,E.d_tregua,{w:230,out:E.d_sigue-.3});
+  TX('PERO CHILE SIGUE',180,100,28,'#fff',t,E.d_sigue-.1,{w:340});
+  TX('GOBERNANDO',180,142,38,CL,t,E.d_sigue+.25,{w:340});
+  TG('EL LITORAL',180,446,16,CL,'#fff',t,E.d_lit-.05);
 }
 
-// S5 el estrecho de Magallanes y el Pacífico
+// S5 1904: tratado
+function pergamino(t,k){ctx.save();ctx.translate(180,300);ctx.scale(k,k);rr(-118,-150,236,300,10);ctx.fillStyle=CRM;ctx.fill();ctx.strokeStyle='#8a6a3a';ctx.lineWidth=4;ctx.stroke();
+  txt('TRATADO DE PAZ',0,-118,19,'#3a2a14',{wt:'900',f:DISP});txt('Y AMISTAD',0,-94,19,'#3a2a14',{wt:'900',f:DISP});
+  ctx.strokeStyle='rgba(58,42,20,.45)';ctx.lineWidth=2.4;for(let i=0;i<7;i++){ctx.beginPath();ctx.moveTo(-86,-62+i*18);ctx.lineTo(86-(i%3)*18,-62+i*18);ctx.stroke()}
+  ctx.restore()}
+function firma(x,y,p,col){p=cl(p);if(p<=0)return;ctx.save();ctx.strokeStyle=col;ctx.lineWidth=2.4;ctx.lineCap='round';ctx.beginPath();const n=Math.floor(40*p);for(let i=0;i<=n;i++){const q=i/40,px=x+q*60,py=y+Math.sin(q*14)*7*(1-q*.4)-q*6;i?ctx.lineTo(px,py):ctx.moveTo(px,py)}ctx.stroke();ctx.restore()}
 function s5(t,u){
-  const c=mapaCam(t,[[26.8,-68.5,-52.2,16],[30.3,-72.5,-53,16],[31.7,-90,-44,6,eio],[34.0,-118,-33,3.2,eio]]);
-  base(c);
-  const pe=eio(nb(27.4,30.6,t)),pp=eio(nb(E.e_oce+.1,33.75,t));
-  const h1=ruta(c,R_EST,pe,MG,3.4),h2=ruta(c,R_PAC1,pp,MG,3.4,{});
-  const h=pp>0?h2:h1;flota(h,3,c.s>10?1.6:1.4,MG,t);
-  PF(c,['Chile','Argentina'],GOLD,.0,{ba:.5});
-  const s=P_(c,[-71,-54.3]);if(t>E.e_estr)TG('ESTRECHO DE MAGALLANES',cx_(s[0],90,270),Math.min(s[1]+28,440),12,'rgba(6,18,28,.9)','#fff',t,E.e_estr-.05,{out:E.e_oce+.1});
-  const pc=P_(c,[-125,-14]);
-  if(t>E.e_pac){burst(pc[0],pc[1],t,E.e_pac,[EL,'#fff','#9ff5e8'],26,130,.9,3);shock(pc[0],pc[1],t,E.e_pac,'rgba(46,230,201,.9)',80,4,.8)}
-  TX('PASAN POR UN',180,100,24,'#fff',t,E.e_pasan-.1,{w:330,out:E.e_mag-.1});TX('ESTRECHO',180,142,40,MG,t,E.e_estr-.15,{w:340,out:E.e_mag-.1});
-  TX('QUE LLEVA SU',180,100,24,'#fff',t,E.e_mag-.1,{w:330,out:E.e_oce-.1});TX('NOMBRE',180,142,40,GOLD,t,E.e_mag+.1,{w:340,out:E.e_oce-.1});
-  TX('UN OCÉANO NUEVO',180,100,26,'#fff',t,E.e_oce-.1,{w:340,out:E.e_pac-.1});
-  if(t>E.e_pac-.05)sl('PACÍFICO',180,190,46,EL,t,E.e_pac,{sh:'rgba(46,230,201,.6)'});
+  const c=mapaCam(t,[[33.5,-69.2,-21.6,12.5],[41.7,-69.2,-21.6,12.5]]);
+  base(c,{dim:.5});paises(c,t,{pe:.4});litoral(c,t,CL,.7,2);
+  veil(.5);
+  const k=spring(t-E.e_trat+.1,10,6.4);
+  if(t>E.e_trat-.1)pergamino(t,Math.max(.01,k));
+  const sg=nb(E.e_recon,E.e_recon+1.3,t);
+  firma(104,376,sg*2,'#1c2f6b');firma(164,414,cl(sg*2-1),'#7a1f1f');
+  if(t>E.e_chile-.1){const a=eb(nb(E.e_chile-.1,E.e_chile+.35,t));tr(180,236,a,0,()=>{rr(-58,-17,116,34,8);ctx.fillStyle=CL;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.6;ctx.stroke();txt('CHILE',0,1,19,'#fff',{st:INK,sw:4})})}
+  if(t>E.e_siempre-.05){const sh=Math.sin(t*60)*3*Math.exp(-(t-E.e_siempre)*9);ctx.save();ctx.translate(180+sh,330);ctx.rotate(-.18);const a=spring(t-E.e_siempre,11,6);ctx.scale(a*1.1,a*1.1);rr(-104,-26,208,52,6);ctx.fillStyle='rgba(255,77,94,.15)';ctx.fill();ctx.strokeStyle=RED;ctx.lineWidth=5;ctx.stroke();txt('PARA SIEMPRE',0,2,30,RED,{st:INK,sw:3,wt:'900'});ctx.restore();shock(180,330,t,E.e_siempre,'rgba(255,77,94,.9)',100,5,.8)}
+  TG('1904',180,96,22,GOLD,INK,t,E.e_1904-.05,{out:E.e_recon+1.2});
+  if(t>E.e_recon-.1)TX('BOLIVIA RECONOCE',180,100,26,'#fff',t,E.e_recon-.1,{w:340,out:E.e_chile-.3});
+  if(t>E.e_chile-.1)TX('ESE TERRITORIO',180,100,26,'#fff',t,E.e_chile-.5,{w:340});
 }
 
-// S6 27 ABR 1521: Magallanes muere en Mactán (Filipinas)
+// S6 ferrocarril y libre tránsito
 function s6(t,u){
-  const c=mapaCam(t,[[33.6,150,10,3.4],[36.4,126,10.5,9],[37.6,MAC[0],MAC[1],22],[42.6,MAC[0],MAC[1],24]]);
+  const c=mapaCam(t,[[41.6,-68.8,-18.4,20],[44.3,-69,-20.4,14.5,eio],[46.95,-69,-20.4,14.5]]);
   base(c);
-  PF(c,['Philippines'],GOLD,.3*eo(nb(E.f_fil-.1,E.f_fil+.7,t)),{b:'#fff',lw:1.4});
-  const h=ruta(c,R_PAC2,eio(nb(34.2,36.7,t)),MG,3.4);
-  const dead=t>E.f_muere;
-  if(h&&!dead)flota(h,3,c.s>8?2:1.6,MG,t);
-  const [mx,my]=P_(c,MAC);
-  if(t>E.f_fil-.1)pin(c,MAC[0],MAC[1],RED,t,E.f_fil-.1,5);
-  // 50 contra 1000
-  const a50=eo(nb(E.f_50-.05,E.f_50+.5,t)),a1k=eo(nb(E.f_mil-.05,E.f_mil+.8,t));
-  if(a50>0){for(let i=0;i<50;i++){const gx=(i%10)*6.5,gy=Math.floor(i/10)*6.5;circ(60+gx,330+gy*1.0+Math.sin(t*5+i)*.6,2.3*a50,MG,INK,.8)}
-    TG('≈ 50',90,372,15,MG,INK,t,E.f_50-.05)}
-  if(a1k>0){const n=Math.floor(1000*a1k);for(let i=0;i<n;i++){const gx=(i%40)*3.6,gy=Math.floor(i/40)*3.6;circ(195+gx,330+gy,1.4,RED)}
-    TG('≈ 1000',262,438,15,RED,'#fff',t,E.f_mil-.05)}
-  if(dead){const sh=Math.sin(t*60)*3*Math.exp(-(t-E.f_muere)*8);cruz(mx+sh,my-30,16,RED,spring(t-E.f_muere,11,6));shock(mx,my,t,E.f_muere,'rgba(255,77,94,.95)',90,5,.8);burst(mx,my,t,E.f_muere,[RED,'#fff',MG],26,150,.9,3)}
-  TG('27 ABR 1521',180,96,19,GOLD,INK,t,E.f_27-.05,{out:42.0});
-  TX('EN FILIPINAS',180,142,32,'#fff',t,E.f_fil-.1,{w:340,out:E.f_muere-.1});
-  if(dead)sl('MUERE MAGALLANES',180,180,30,RED,t,E.f_muere,{sh:'rgba(255,77,94,.6)'});
-  TG('MACTÁN',cx_(mx,40,320),my+26,12,'rgba(6,18,28,.9)','#fff',t,E.f_fil+.2);
+  PF(c,['Chile'],CL,.28,{b:'#fff',lw:1.2,ba:.7});PF(c,['Bolivia'],BO,.34,{b:'#fff',lw:1.5,ba:.9});litoral(c,t,CL,.55,1.6);
+  const R1=[LAPAZ,[-69.3,-17.3],ARICA],R2=[LAPAZ,[-69.5,-20.5],[-70.0,-22.3],ANTO];
+  const p1=eio(nb(E.f_ferro-.1,E.f_ferro+1.7,t)),p2=eio(nb(E.f_libre-.1,E.f_libre+1.4,t));
+  const h1=ruta(c,R1,p1,'#fff',3.4,{dash:[7,5],t}),h2=ruta(c,R2,p2,GOLD,3.4,{dash:[7,5],t});
+  if(h1)tren(h1[0],h1[1]-8,1.2,true,t);
+  pin(c,LAPAZ[0],LAPAZ[1],BO,t,41.7,5);pin(c,ARICA[0],ARICA[1],CL,t,E.f_arica-.1,5);pin(c,ANTO[0],ANTO[1],CL,t,E.f_puertos-.1,5);
+  const l=P_(c,LAPAZ);TG('LA PAZ',cx_(l[0]+34,40,320),l[1]-14,12,'rgba(6,16,36,.9)',GOLD,t,41.9);
+  const a=P_(c,ARICA);if(t>E.f_arica-.1)TG('ARICA',cx_(a[0]-34,36,320),a[1],12,CL,'#fff',t,E.f_arica-.1);
+  const n=P_(c,ANTO);if(t>E.f_puertos-.1)TG('ANTOFAGASTA',cx_(n[0]-26,52,320),n[1]+4,12,CL,'#fff',t,E.f_puertos-.1);
+  TX('A CAMBIO RECIBE',180,96,24,'#fff',t,E.f_cambio-.1,{w:330,out:E.f_libre-.3});
+  TX('UN FERROCARRIL',180,138,34,'#fff',t,E.f_ferro-.1,{w:340,out:E.f_libre-.3});
+  TX('LIBRE TRÁNSITO',180,100,32,GOLD,t,E.f_libre-.1,{w:340});TX('POR PUERTOS CHILENOS',180,140,22,'#fff',t,E.f_puertos-.1,{w:340});
 }
 
-// S7 Elcano: Índico, África y regreso a Sanlúcar
+// S7 Bolivia reclama y va a La Haya
 function s7(t,u){
-  const c=mapaCam(t,[[42.2,127,6,10],[44.3,110,-6,3.3,eio],[47.2,50,0,2.4,eio],[48.9,-6,24,4.1,eio],[52.5,-6,24,4.1]]);
+  const fly=eio(nb(49.35,51.6,t));
+  const c={lon:lerp(-67,HAYA[0],fly),lat:lerp(-20,HAYA[1],fly),s:Math.exp(lerp(Math.log(8),Math.log(16),fly))};
   base(c);
-  const pr=eio(nb(43.9,48.75,t));
-  ruta(c,R_PAC1,0,EL,0);
-  const h=ruta(c,R_EL,pr,EL,3.6);
-  if(h){nao(h[0],h[1]-6,2.1,GOLD,Math.cos(h[2])<0,t)}else{const q=P_(c,MAC);nao(q[0],q[1]-8,2.3,GOLD,false,t)}
-  pin(c,MAC[0],MAC[1],RED,t,42.0,4);
-  
-  const ind=P_(c,[85,-22]);TG('OCÉANO ÍNDICO',cx_(ind[0],80,280),ind[1],13,'rgba(6,18,28,.88)','#fff',t,E.g_ind-.05,{out:E.g_llega});
-  const af=P_(c,[22,2]);TG('ÁFRICA',cx_(af[0],50,300),af[1],15,GOLD,INK,t,E.g_afr-.05,{out:E.g_llega});
-  const sa=pin(c,SAN[0],SAN[1],MG,t,E.g_llega,5);
-  if(t>E.g_sanl){shock(sa[0],sa[1],t,E.g_sanl,'rgba(255,209,102,.95)',90,5,.9);burst(sa[0],sa[1],t,E.g_sanl,[GOLD,'#fff',EL],34,160,.9,3.2);glow(sa[0],sa[1],60,'rgba(255,209,102,.5)',1)}
-  TX('JUAN SEBASTIÁN',180,96,22,'#fff',t,E.g_juan-.1,{w:340,out:E.g_mando-.4});TX('ELCANO',180,138,42,EL,t,E.g_elcano-.15,{w:340,out:E.g_mando-.4});
-  TX('TOMA EL MANDO',180,100,28,'#fff',t,E.g_mando-.1,{w:340,out:E.g_ind-.1});
-  TG('LA VICTORIA',180,142,20,GOLD,INK,t,E.g_vict-.05,{out:E.g_llega-.2});
-  TX('RODEA ÁFRICA',180,100,32,'#fff',t,E.g_afr-.12,{w:340,out:E.g_llega-.1});
-  TG('6 SEP 1522',180,96,19,GOLD,INK,t,E.g_6-.05,{out:51.7});
-  if(t>E.g_llega-.1)TX('LLEGA A SANLÚCAR',180,142,28,'#fff',t,E.g_llega-.1,{w:340,out:51.7});
+  if(fly<.7){paises(c,t,{pe:.4});litoral(c,t,CL,.6,1.6)}
+  // línea de vuelo
+  if(fly>0&&fly<1){const a=P_(c,[-67,-20]),b=P_(c,HAYA);ctx.save();ctx.setLineDash([6,6]);ctx.lineDashOffset=-t*20;ctx.strokeStyle='rgba(255,255,255,.7)';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(lerp(a[0],b[0],fly),lerp(a[1],b[1],fly));ctx.stroke();ctx.restore()}
+  const [hx,hy]=P_(c,HAYA);
+  if(t>E.g_haya-.2){pin(c,HAYA[0],HAYA[1],GOLD,t,E.g_haya-.1,6);const k=spring(t-E.g_haya,11,6);tribunal(hx,hy-48,1.1*k,'#7f8fb3');shock(hx,hy,t,E.g_haya,'rgba(255,209,102,.95)',70,4,.8);TG('LA HAYA',cx_(hx),hy+24,15,GOLD,INK,t,E.g_haya-.05)}
+  // gritos de reclamo desde Bolivia
+  if(t>E.g_recl-.8&&t<E.g_2013){const [x,y]=P_(c,[-65,-17]);for(let i=0;i<3;i++){const q=((t-E.g_recl+.8)*1.3+i*.33)%1;ctx.save();ctx.globalAlpha=(1-q)*.8;ctx.strokeStyle=GOLD;ctx.lineWidth=3;ctx.beginPath();ctx.arc(x,y,10+q*54,0,7);ctx.stroke();ctx.restore()}}
+  TX('PERO BOLIVIA',180,96,26,'#fff',t,E.g_pero-.1,{w:340,out:E.g_2013-.25});TX('NUNCA DEJÓ DE RECLAMAR',180,138,21,GOLD,t,E.g_pero+.3,{w:340,out:E.g_2013-.25});
+  TG('2013',180,96,24,GOLD,INK,t,E.g_2013-.05);
+  TX('LLEVA EL CASO A',180,142,26,'#fff',t,E.g_2013+.2,{w:340});
 }
 
-// S8 más de doscientos hombres → solo dieciocho
+// S8 2018: la Corte
 function s8(t,u){
-  TM.bg();
-  stars(t,40,11,.35);
-  const cols=14,rows=15;
-  const keep=[];for(let i=0;i<18;i++)keep.push(Math.floor((i*37+11)%(cols*rows)));
-  const kset=new Set(keep);
-  for(let i=0;i<cols*rows;i++){
-    const gx=i%cols,gy=Math.floor(i/cols),x=40+gx*21.5,y=200+gy*14.5;
-    const ap=eb(nb(E.h2_200-.15+(i%29)*.012,E.h2_200+.35+(i%29)*.012,t));
-    const dies=kset.has(i)?0:eo(nb(E.h2_18-.1+R(i)*.7,E.h2_18+.4+R(i)*.7,t));
-    const keepk=kset.has(i)?eb(nb(E.h2_18,E.h2_18+.5,t)):0;
-    const r=3.4*ap*(1-dies)*(1+.7*keepk);
-    if(r>.1)circ(x,y,r,kset.has(i)&&t>E.h2_18?GOLD:mixc('#7fb4d9','#ff8a3d',dies),INK,.9)
-    if(dies>.05&&dies<.9)circ(x,y-dies*18,1.6*(1-dies),'rgba(255,77,94,'+(1-dies)+')');
-  }
-  if(t>E.h2_18){shock(180,310,t,E.h2_18,'rgba(255,209,102,.9)',160,5,.9);glow(180,310,150,'rgba(255,209,102,.25)',1)}
-  TX('MÁS DE 200',180,100,38,'#fff',t,E.h2_200-.15,{w:340,out:E.h2_18-.2});TX('HOMBRES',180,142,30,MG,t,E.h2_200,{w:340,out:E.h2_18-.2});
-  if(t>E.h2_18-.1){sl('SOLO 18',180,110,56,GOLD,t,E.h2_18,{sh:'rgba(255,209,102,.6)'});TX('VUELVEN',180,172,34,'#fff',t,E.h2_vuel-.1,{w:340})}
+  const c={lon:HAYA[0],lat:HAYA[1]-.6,s:16};
+  base(c,{dim:.62});
+  const [hx,hy]=[180,290];
+  const kT=spring(t-E.h_2018+.05,9,6.4);
+  tribunal(hx,hy,2.1*Math.max(.01,kT),'#7f8fb3');
+  // martillo golpea en "no"
+  const mk=nb(E.h_no-.35,E.h_no,t),mr=nb(E.h_no,E.h_no+.3,t);
+  if(t>E.h_corte-.1)martillo(270,330,1.5,mk>=1?1-mr:mk);
+  if(t>E.h_no){shock(270,376,t,E.h_no,'rgba(255,77,94,.9)',70,4,.7);burst(270,376,t,E.h_no,[RED,'#fff'],18,120,.7,2.6)}
+  TG('2018',180,96,24,GOLD,INK,t,E.h_2018-.05,{out:E.h_corte-.3});
+  TX('LA CORTE',180,100,26,'#fff',t,E.h_corte-.1,{w:340,out:E.h_corte+1.3});TX('INTERNACIONAL',180,142,32,GOLD,t,E.h_corte+.1,{w:340,out:E.h_corte+1.3});
+  TX('DECIDE QUE CHILE',180,100,24,'#fff',t,E.h_corte+1.35,{w:340,out:E.h_no-.15});
+  if(t>E.h_no-.05)sl('NO TENÍA LA',180,100,32,RED,t,E.h_no,{sh:'rgba(255,77,94,.6)'});
+  if(t>E.h_oblig-.1)sl('OBLIGACIÓN',180,150,40,RED,t,E.h_oblig,{sh:'rgba(255,77,94,.6)'});
+  if(t>E.h_mar-.1){TX('DE NEGOCIAR UNA SALIDA',180,400,20,'#fff',t,E.h_mar-.55,{w:340});TX('SOBERANA AL MAR',180,436,28,'#9fd3ff',t,E.h_mar-.1,{w:340})}
 }
 
-// S9 cierre: ¿Magallanes o Elcano?
+// S9 las dos posturas
 function s9(t,u){
-  const c=mapaCam(t,[[55.0,-5,5,1.2],[69.8,-5,5,1.2]]);
+  const c=mapaCam(t,[[60,-66,-20,6.4],[66,-66,-20,6.8]]);
   base(c,{dim:.5});
-  const pm1=nb(55.6,56.9,t),pm2=nb(56.8,57.3,t);
-  ruta(c,R_ATL,eio(nb(55.55,56.2,t)),MG,3);
-  ruta(c,R_EST,eio(nb(56.15,56.35,t)),MG,3);
-  ruta(c,R_PAC1,eio(nb(56.3,56.7,t)),MG,3);
-  ruta(c,R_PAC2,eio(nb(56.7,57.25,t)),MG,3);
-  const mac=P_(c,MAC);
-  if(t>E.z_murio){cruz(mac[0]-6,mac[1]-2,6,RED,spring(t-E.z_murio,11,6));shock(mac[0],mac[1],t,E.z_murio,'rgba(255,77,94,.9)',50,3,.7)}
-  const pe=eio(nb(E.z_elc,E.z_termino+.9,t));
-  const h=ruta(c,R_EL,pe,EL,3.6);
-  if(h&&pe<1)nao(h[0],h[1]-6,1.7,GOLD,Math.cos(h[2])<0,t);
-  if(pe>=1){const sa=P_(c,SAN);burst(sa[0],sa[1],t,E.z_elc+.9+(E.z_termino-E.z_elc),[GOLD,EL,'#fff'],18,100,.8,2.6)}
-  pin(c,SAN[0],SAN[1],MG,t,55.5,4);
-  TX('ABRIÓ EL CAMINO',180,100,30,MG,t,E.z_abrio-.1,{w:340,out:E.z_quien-.2});
-  TX('PERO MURIÓ',180,142,26,'#fff',t,E.z_murio-.1,{w:340,out:E.z_quien-.2});TX('SIN TERMINARLO',180,178,26,RED,t,E.z_term-.1,{w:340,out:E.z_quien-.2});
-  TX('ELCANO LO TERMINÓ',180,240,30,EL,t,E.z_elc-.1,{w:340,out:E.z_quien-.2});
-  const q=eo(nb(E.z_quien-.1,E.z_quien+.5,t));
-  if(q>0){ctx.save();ctx.fillStyle='rgba(4,12,20,'+(.7*q)+')';ctx.fillRect(0,0,360,640);ctx.restore()}
-  TX('¿QUIÉN MERECE',180,120,38,'#fff',t,E.z_quien-.1,{w:340});TX('EL TÍTULO?',180,166,40,GOLD,t,E.z_merece-.05,{w:340});
-  TX('DE PRIMERO EN DAR LA VUELTA AL MUNDO',180,222,15,'#cfe6f5',t,E.z_prim-.1,{w:300});
-  if(t>E.z_prim+.4){const a=spring(t-E.z_prim-.4,11,6),b2=spring(t-E.z_prim-.7,11,6);
-    tr(92,340,a,0,()=>{rr(-76,-26,152,52,12);ctx.fillStyle=MG;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.4;ctx.stroke();txt('MAGALLANES',0,1,19,'#fff',{st:INK,sw:4})});
-    tr(268,340,b2,0,()=>{rr(-76,-26,152,52,12);ctx.fillStyle=EL;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.4;ctx.stroke();txt('ELCANO',0,1,22,'#fff',{st:INK,sw:4})});
-    txt('VS',180,340,17,GOLD,{st:INK,sw:4,sc:eb(nb(E.z_prim+1.0,E.z_prim+1.4,t))})}
-  TG('COMENTA TU RESPUESTA',180,440,16,GOLD,INK,t,E.z_com-.05);
+  const ch=nb(E.i_chile-.1,E.i_chile+.35,t),bl=nb(E.i_bol-.1,E.i_bol+.35,t);
+  PF(c,['Chile'],CL,.3+.3*ch*(1-bl*.6),{b:'#fff',lw:1.4,ba:.8});PF(c,['Bolivia'],BO,.3+.35*bl,{b:'#fff',lw:1.6,ba:.9});PF(c,['Peru'],PE,.12,{b:'#fff',lw:1,ba:.5});litoral(c,t,CL,.6,1.6);
+  if(t>E.i_chile-.1){const a=eb(nb(E.i_chile-.1,E.i_chile+.4,t));tr(180,160,a,0,()=>{bocadillo(0,0,290,76,'rgba(24,60,120,.95)',1,-60);txt('CHILE DICE',0,-20,14,'#bcd9ff',{st:INK,sw:3});txt('“EL TRATADO SE RESPETA”',0,10,20,'#fff',{st:INK,sw:4})})}
+  if(t>E.i_bol-.1){const a=eb(nb(E.i_bol-.1,E.i_bol+.4,t));tr(180,290,a,0,()=>{bocadillo(0,0,290,76,'rgba(120,88,12,.95)',1,60);txt('BOLIVIA DICE',0,-20,14,'#ffe6a3',{st:INK,sw:3});txt('“EL MAR ES MI DERECHO”',0,10,20,'#fff',{st:INK,sw:4})})}
+  if(t>E.i_resp)shock(180,160,t,E.i_resp,'rgba(77,163,255,.9)',80,4,.6);
+  if(t>E.i_der)shock(180,290,t,E.i_der,'rgba(255,209,102,.9)',80,4,.6);
 }
 
-boot([s0,s1,s2,s3,s4,s5,s6,s7,s8,s9],TRS,{cap:{acc:'#ffd166'}});
+// S10 cierre: la pregunta
+function s10(t,u){
+  const c=mapaCam(t,[[65.9,-66,-20,6.8],[75.9,-66,-20,7.4]]);
+  base(c,{dim:.62});paises(c,t,{a:.7,pe:0});litoral(c,t,CL,.6,1.5);
+  veil(.45*eo(nb(E.j_ent,E.j_ent+.6,t)));
+  TX('¿UN TRATADO DE',180,96,26,'#fff',t,E.j_ent-.05,{w:340});
+  if(t>E.j_100-.2){const a=spring(t-E.j_100+.1,11,6);txt('+100',180,176,56*a,GOLD,{st:INK,sw:8,wt:'900',f:DISP});TX('AÑOS DEBERÍA',180,220,28,'#fff',t,E.j_100,{w:340})}
+  TX('CERRAR EL TEMA',180,268,30,'#fff',t,E.j_100+.5,{w:340});
+  if(t>E.j_sie-.1)sl('PARA SIEMPRE?',180,320,33,GOLD,t,E.j_sie,{sh:'rgba(255,209,102,.6)'});
+  if(t>E.j_sie+.5){const a=spring(t-E.j_sie-.5,11,6),b2=spring(t-E.j_sie-.8,11,6);
+    tr(100,392,a,0,()=>{rr(-60,-24,120,48,12);ctx.fillStyle=CL;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.4;ctx.stroke();txt('SÍ',0,1,24,'#fff',{st:INK,sw:4})});
+    tr(260,392,b2,0,()=>{rr(-60,-24,120,48,12);ctx.fillStyle=BO;ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2.4;ctx.stroke();txt('NO',0,1,24,INK,{})});
+    txt('VS',180,392,17,'#fff',{st:INK,sw:4,sc:eb(nb(E.j_sie+1.0,E.j_sie+1.4,t))})}
+  TG('COMENTA TU RESPUESTA',180,462,16,GOLD,INK,t,E.j_com-.05);
+}
+
+boot([s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10],TRS,{cap:{acc:'#ffd166'}});
