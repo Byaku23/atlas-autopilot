@@ -176,8 +176,10 @@
    "slug": "2026-11-19_bolivia_mar",
    "titulo": "¿Cómo perdió Bolivia su mar? 🌊",
    "mp4_sha256": "afa9f64051aeef08e7353cb33c8fc663a48129bb5837b2a4d26a17537b872545",
-   "estado": "reservado",
-   "ts": "2026-11-19 18:56:17"
+   "estado": "programado",
+   "ts": "2026-11-19 18:56:17",
+   "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-1737729696661484166",
+   "fecha_programada": "2026-11-19T20:15:00-05:00"
   }
  ]
 }
