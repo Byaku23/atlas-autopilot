@@ -1,0 +1,80 @@
+import sys,json; sys.path.insert(0,'../../eng')
+from sfx import *
+J=json.load(open('ev.json')); E=J['E']; T=J['T']; DUR=J['DUR']; TRS=J['TRS']
+init(DUR,E)
+DM=[('Dm',50,[62,65,69,74]),('Bb',46,[58,62,65,70]),('F',41,[57,60,65,69]),('C',48,[55,60,64,67])]
+AM=[('Am',45,[57,60,64,69]),('F',41,[53,57,60,65]),('C',48,[55,60,64,67]),('G',43,[55,59,62,67])]
+EM=[('Em',40,[52,55,59,64]),('C',48,[55,60,64,67]),('G',43,[55,59,62,67]),('D',50,[57,62,66,69])]
+setMusic(72,AM)
+trSfx(TRS,E)
+# S0 gancho
+P(lambda: waves(6.8),0,.2)
+Pn(lambda: impact(),'h_disp',.5); Pn(lambda: heart(),'h_ojo',.6); Pn(stamp,'h_ojo',.8); Pn(lambda: sub(1.4,45),'h_ojo',.5)
+Pn(lambda: creak(1.6),'h_morir',.3); Pn(lambda: boom(1.2,50,.6),'h_22',.5); counter(E['h_22'],E['h_22']+.8); Pn(stamp,'h_22',.6)
+Pn(lambda: crowd(2.0),'h_pueblo',.18); Pn(lambda: bell(523,2.5),'h_lloro',.35); Pn(pop,'h_pueblo',.4)
+# S1
+P(lambda: waves(12.5),T[1],.2)
+counter(E['s1_89'],E['s1_89']+1.1); Pn(stamp,'s1_89',.6); Pn(lambda: engine(2.4,60,70),'s1_pesc',.18); Pn(pop,'s1_pesc',.4); Pn(pop,'s1_cr',.4)
+Pn(lambda: chime(660,1.6),'s1_croc',.35); Pn(pop,'s1_croc',.4); Pn(lambda: sub(1.6,45),'s1_mor',.45); Pn(lambda: heart(),'s1_mor',.4); Pn(stamp,'s1_mor',.6)
+Pn(pop,'s1_gan',.4); Pn(lambda: impact(),'s1_disp',1.0); Pn(lambda: boom(1.2,50,.6),'s1_disp',.6); Pn(stamp,'s1_disp',.8); Pn(pop,'s1_prob',.4); Pn(pop,'s1_vacas',.4)
+# S2
+P(lambda: waves(10.2),T[2],.18)
+Pn(pop,'s2_casi',.4); Pn(stamp,'s2_nadie',.5); Pn(lambda: sub(1.2,42),'s2_acerc',.35)
+Pn(pop,'s2_gil',.4)
+for k in range(8): P(step,E['s2_gil']+.3+k*.28,.2)
+Pn(stamp,'s2_chito',.9); Pn(lambda: boom(1.2,55,.6),'s2_chito',.5); Pn(lambda: chime(784,1.6),'s2_chito',.4); Pn(stamp,'s2_si',.7); Pn(lambda: sparkle(1.0),'s2_si',.4)
+Pn(pop,'s2_ayuda',.4); Pn(pop,'s2_amigos',.4); Pn(lambda: whoosh(.5),'s2_amigos',.3)
+Pn(lambda: clunk(),'s2_lancha',.5,.6); Pn(pop,'s2_lancha',.4); Pn(lambda: engine(1.8,60,110),'s2_casa',.3); Pn(lambda: whoosh(.6),'s2_casa',.35); Pn(stamp,'s2_casa',.5)
+# S3
+P(lambda: crackle(11.5),T[3],.08)
+Pn(pop,'s3_pes',.4); counter(E['s3_70'],E['s3_70']+.5); Pn(stamp,'s3_70',.7); Pn(pop,'s3_apenas',.4)
+Pn(lambda: boing(160,.6),'s3_comer',.4); Pn(lambda: whoosh(.4),'s3_comer',.3); Pn(pop,'s3_chito',.4)
+Pn(lambda: whoosh(.4),'s3_pesc',.3)
+for k in range(3): P(lambda: bubble(),E['s3_pesc']+.45+k*.12,.35)
+Pn(pop,'s3_pesc',.45); Pn(pop,'s3_pollo',.45); Pn(pop,'s3_sem',.4)
+Pn(lambda: whoosh(.4),'s3_her',.3)
+for k in range(4): P(paper,E['s3_her']+.1+k*.18,.25)
+Pn(lambda: sparkle(1.0),'s3_her',.4); Pn(pop,'s3_her',.4)
+Pn(lambda: sub(1.4,42),'s3_dormia',.35); Pn(pop,'s3_dormia',.4); Pn(pop,'s3_lado',.4)
+Pn(lambda: riser(.6,300,1800,.3),'s3_pocho',.4,-.6); Pn(impact,'s3_pocho',.9); Pn(stamp,'s3_pocho',.8); Pn(lambda: sparkle(1.2),'s3_pocho',.5)
+# S4
+P(lambda: waves(10.3),T[4],.2)
+Pn(pop,'s4_pocho',.4); Pn(lambda: sparkle(1.2),'s4_pocho',.5); Pn(lambda: chime(880,1.6),'s4_curo',.4)
+Pn(pop,'s4_nunca',.4); Pn(stamp,'s4_fue',.7); Pn(lambda: boom(1.2,50,.6),'s4_fue',.4)
+Pn(pop,'s4_anos',.4)
+for k in range(8): P(tick,E['s4_anos']+.1+k*.17,.25)
+Pn(pop,'s4_nadar',.4)
+for k in range(6): P(lambda: bubble(),E['s4_nadar']+.2+k*.25,.3)
+Pn(lambda: riser(.8,200,1600,.3),'s4_imp',.35,-.1); Pn(impact,'s4_imp',.9); Pn(stamp,'s4_imp',.8)
+Pn(pop,'s4_meter',.4); Pn(lambda: growl(1.4),'s4_meter',.3); Pn(lambda: heart(),'s4_boca',.7); Pn(lambda: sub(1.4,40),'s4_boca',.5); Pn(pop,'s4_boca',.4)
+# S5
+P(lambda: waves(14.0),T[5],.15)
+Pn(pop,'s5_ano',.4); counter(E['s5_2000'],E['s5_2000']+.5); Pn(stamp,'s5_2000',.7); Pn(lambda: chime(988,1.6),'s5_2000',.4)
+Pn(lambda: whoosh(.4),'s5_tv',.35); Pn(pop,'s5_tv',.4); Pn(shutter,'s5_grabo',.45); Pn(lambda: ding(1320,1.2),'s5_grabo',.4)
+Pn(stamp,'s5_fam',.8); Pn(lambda: boom(1.2,52,.6),'s5_fam',.5); Pn(lambda: sparkle(1.4),'s5_fam',.5); Pn(lambda: cheer(2.0),'s5_fam',.2)
+Pn(pop,'s5_cada',.4); Pn(stamp,'s5_dom',.5); Pn(pop,'s5_gente',.4); Pn(lambda: crowd(3.0),'s5_gente',.2); Pn(pop,'s5_partes',.4)
+Pn(lambda: whoosh(.5),'s5_pocho',.3); Pn(pop,'s5_media',.4); counter(E['s5_media'],E['s5_media']+1.0); Pn(stamp,'s5_ton',.8); Pn(lambda: boom(1.2,48,.6),'s5_ton',.5)
+Pn(pop,'s5_20',.4); Pn(stamp,'s5_20',.5); Pn(pop,'s5_nunca',.4); Pn(lambda: heart(),'s5_dano',.55); Pn(lambda: chime(784,1.8),'s5_dano',.45); Pn(lambda: sparkle(1.2),'s5_dano',.4)
+# S6
+P(lambda: wind(10.6),T[6],.22)
+Pn(stamp,'s6_12',.6); Pn(pop,'s6_oct',.4); Pn(lambda: ding(1100,1.2),'s6_2011',.5); Pn(stamp,'s6_2011',.5)
+Pn(lambda: sub(2.0,40),'s6_murio',.6); Pn(lambda: bell(392,3.5),'s6_murio',.4); Pn(stamp,'s6_murio',.5); Pn(pop,'s6_nat',.4)
+Pn(lambda: crowd(4.0),'s6_todo',.16); Pn(pop,'s6_todo',.4); Pn(pop,'s6_fun',.4); Pn(lambda: bell(523,3.0),'s6_fun',.3)
+Pn(pop,'s6_dijo',.4); Pn(lambda: riser(.6,300,1500,.3),'s6_unico',.35,-.2); Pn(impact,'s6_unico',.9); Pn(stamp,'s6_unico',.8); Pn(lambda: sparkle(1.4),'s6_unico',.5)
+# S7
+Pn(lambda: whoosh(.4),'c_fue',.3); Pn(pop,'c_fue',.45)
+Pn(stamp,'c_amistad',.55); Pn(lambda: heart(),'c_amistad',.45); Pn(pop,'c_verdad',.4); Pn(pop,'c_solo',.4)
+Pn(stamp,'c_acost',.6); Pn(lambda: boom(1.0,55,.5),'c_acost',.5); Pn(pop,'c_comida',.4)
+Pn(notif,'c_com',.8); Pn(pop,'c_com',.7); Pn(pop,'c_sig',.5)
+# música
+t1,t2,t3,t4,t5,t6,t7=T[1:8]
+setMusic(72,EM); layer_drone(0,t1,.5); layer_pad(0,t1,.3,lpf=1000); layer_drums(E['h_22'],t1,.22,'march')
+setMusic(66,AM); layer_drone(t1,t2,.5); layer_pad(t1,t2,.32,lpf=1200); bells(t1,t2,.18,seed=3)
+setMusic(88,AM); layer_drone(t2,t3,.4); layer_pad(t2,t3,.3,lpf=1500); layer_bass(t2+3,t3,.2); layer_arp(t2+4,t3,.18,step=.5)
+setMusic(70,DM); layer_pad(t3,t4,.36,lpf=1400); layer_ost(t3,t4,.22); bells(t3+4,t4,.16,seed=5)
+setMusic(92,AM); layer_drone(t4,t5,.4); layer_pad(t4,t5,.32,lpf=1600); layer_drums(t4+4,t5,.26,'tribal'); layer_bass(t4+4,t5,.2); swell(E['s4_boca']-1.0,E['s4_boca']+.3,.3,(52,59,64,67))
+setMusic(96,AM); layer_pad(t5,t6,.36,lpf=1800); layer_drums(t5,t6,.28,'pop'); layer_bass(t5,t6,.2); layer_arp(t5,t6,.2,step=.5)
+setMusic(62,DM); layer_drone(t6,t7,.4); layer_pad(t6,t7,.36,lpf=1300); bells(t6,t7,.24,seed=8); swell(E['s6_unico']-1.2,E['s6_unico']+.3,.3,(57,62,65,69))
+setMusic(92,AM); layer_pad(t7,DUR,.4,lpf=1800); layer_arp(t7,DUR,.28,step=.5); layer_drums(t7+.5,DUR,.22,'light'); bells(t7,DUR,.25,seed=12)
+duck(E['s1_disp'],E['s1_disp']+.9,.3,.4); duck(E['s6_murio'],E['s6_murio']+1.0,.35,.5); duck(E['s6_unico'],E['s6_unico']+.8,.35,.4)
+save()
