@@ -180,6 +180,13 @@
    "ts": "2026-11-19 18:56:17",
    "plannerUrl": "https://app.metricool.com/planner/calendar?blogId=7523723&openWithPostUuid=-1737729696661484166",
    "fecha_programada": "2026-11-19T20:15:00-05:00"
+  },
+  {
+   "slug": "2026-11-20_mexico_mitad",
+   "titulo": "México perdió la mitad de su territorio: ¿cómo pasó?",
+   "mp4_sha256": "450f4a060597e2ada43e7cd23fcb4555375e998a8ed3e8936d30adb7455d9bcb",
+   "estado": "reservado",
+   "ts": "2026-11-20 13:55:39"
   }
  ]
 }
