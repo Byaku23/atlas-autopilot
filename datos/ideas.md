@@ -32,6 +32,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-20 (YouTube 18:00 NY vía vidIQ): Laika, la perra callejera que viajó al espacio (Sputnik 2, 1957). ¿Héroe o sacrificio cruel? ANIMALES + HISTORIA con debate.
 
-- [~] reservada 2026-11-20 (tarde, YouTube 2026-11-21 12:00 NY): ¿Cómo perdió México la mitad de su territorio? (Guerra 1846-48, Guadalupe Hidalgo, Gadsden). MAPA + CAUSAS + DEBATE.
+- [x] 2026-11-20 (YouTube 2026-11-21 12:00 NY vía vidIQ): ¿Cómo perdió México la mitad de su territorio? (Guerra 1846-48, Guadalupe Hidalgo, Gadsden). MAPA + CAUSAS + DEBATE.
 
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
