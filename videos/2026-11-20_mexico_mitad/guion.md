@@ -7,3 +7,4 @@ Tarde 2026-11-20; publicación YouTube 2026-11-21 12:00 NY (Laika ocupa 18:00 de
 - Compra de La Mesilla (Gadsden) 1853, $10 millones: Britannica + Office of the Historian + NARA.
 - Quitado: votos del Senado (34-14 vs 38-14 según fuente) y número exacto de tropas.
 - Debate neutral: se presentan las dos posturas sin tomar partido.
+- Mapa: estados cedidos aproximados (CA, NV, UT, AZ, NM completos; la cesión real incluyó también partes de CO y WY); ríos Nueces/Bravo, zona disputada y franja de La Mesilla dibujados de forma esquemática. Textura NASA suave a zoom alto.
