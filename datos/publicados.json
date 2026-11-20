@@ -185,8 +185,10 @@
    "slug": "2026-11-20_mexico_mitad",
    "titulo": "México perdió la mitad de su territorio: ¿cómo pasó?",
    "mp4_sha256": "450f4a060597e2ada43e7cd23fcb4555375e998a8ed3e8936d30adb7455d9bcb",
-   "estado": "reservado",
-   "ts": "2026-11-20 13:55:39"
+   "estado": "programado",
+   "ts": "2026-11-20 13:55:39",
+   "plannerUrl": "https://www.youtube.com/watch?v=5v2v_2yx0Fo",
+   "fecha_programada": "2026-11-21T12:00:00-05:00"
   }
  ]
 }
