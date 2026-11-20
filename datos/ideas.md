@@ -30,4 +30,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-19 (programado 2026-11-20 12:00 NY): ¿Cómo perdió Bolivia su mar? (Guerra del Pacífico 1879, Tratado 1904, La Haya 2018). MAPA + CAUSAS + DEBATE (tendencia vidIQ: mapas 'cómo perdió X').
 
+- [~] reservada 2026-11-20: Laika, la perra callejera que viajó al espacio (Sputnik 2, 1957). ¿Héroe o sacrificio cruel? ANIMALES + HISTORIA con debate.
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
