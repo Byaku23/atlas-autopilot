@@ -12,6 +12,12 @@ voz Hache de ElevenLabs, animación propia en canvas, música y efectos sintetiz
 - Este proyecto es solo de videos para redes; no toques nada de otros proyectos de Johan.
 - Habla con Johan en español, claro y breve.
 
+## ⚠ Publicación hasta el 2026-12-01 (decidido por Johan 2026-11-19; este bloque ANULA el Paso 6 de PIPELINE.md y el paso 3 del prompt de la tarea)
+- **NO uses Metricool** (plan gratis: 20/20 publicaciones del mes; vuelve a haber cupo el 1-dic-2026). No programes ahí.
+- **YouTube:** publica por vidIQ solo en el canal **Atlas del saber** (`platformAccountId` UC_jviohrsCwGW1CXN9a7Q6A, @atlasdelsaber23). Flujo: `vidiq_video_upload` (url del MP4 en la rama media) → `vidiq_social_post_draft_create` (privacyStatus public, publishAt 12:00 o 18:00 NY) → `vidiq_social_post_publish`. NUNCA publiques en cuentas "Byaku" (@byaku23, @byakuplayer, TikTok/Facebook "Byaku"): son su canal de GTA 6.
+- **Instagram, TikTok y Facebook de Atlas del saber:** no están conectadas en vidIQ; Johan las publica a mano. Envíale con SendUserFile el MP4 + texto/título listos para copiar.
+- Horario fijo: 12:00 (mañana) y 18:00 (tarde) NY.
+
 ## Reglas de consumo y modelos (obligatorias, decididas por Johan 2026-11-10)
 - **Sonnet** coordina todo: guion, escenas, animación, integración, errores comunes, supervisión y publicación.
 - **Subagentes: solo si un script directo no basta**, máximo 2 a la vez, y SIEMPRE con `model: "haiku"` escrito explícito
