@@ -1,42 +1,39 @@
 import sys; sys.path.insert(0,'../eng')
 from words import *
-DUR=72.4
-T=[0,4.47,13.19,21.46,28.89,34.32,37.06,47.25,52.6,60.59,66.73,DUR]
+DUR=88.0667
+T=[0,10.88,18.21,28.61,34.76,46.95,52.82,62.72,71.54,79.49,DUR]
 RAW={
 # S0
-'nec':(wt('necesita'),.5),'aun':(wt('aun'),0),'int':(wt('internet'),.3),'pert':(wt('pertenece'),1.0),
+'perra':(wt('perra'),.3),'kilos':(wt('kilos'),.4),'esp':(wt('espacio'),.5),'bill':(wt('billete'),.4),'vuel':(wt('vuelta'),.8),'laika0':(wt('Laika'),1.0),
 # S1
-'diez':(wt('diez'),.5),'agri':(wt('agricultores'),.3),'guar':(wt('guardaron'),0),'grano':(wt('grano'),.4),'rat':(wt('ratones'),.5),'det':(wt('detrás'),0),'gatos':(wt('gatos'),.0),'mont':(wt('monteses'),.6),
+'sem':(wt('semanas'),.4),'sat':(wt('satélite'),.5),'aniv':(wt('aniversario'),.3),'rev':(wt('revolución'),.7),
 # S2
-'nadie':(wt('Nadie'),1.0),'dom':(wt('domesticó'),.4),'solos':(wt('solos'),.5),'acer':(wt('acercaban'),0),'caz':(wt('cazar'),.6),'qued':(wt('quedaban'),0),'com2':(wt('comida',after=18),0),'fac':(wt('fácil'),.3),'nos2':(wt('nosotros'),0),'dej':(wt('dejamos'),.5),
+'hubo':(wt('tiempo',after=18),0),'reg':(wt('regreso'),1.0),'elig':(wt('Eligieron'),.3),'perras':(wt('perras',after=22),.3),'peq':(wt('pequeños'),.4),'resc':(wt('rescataron'),.3),'calle':(wt('calle'),.6),
 # S3
-'chip':(wt('Chipre'),.5),'enc':(wt('encontraron'),0),'tumba':(wt('tumba'),.6),'ent':(wt('enterrados'),0),'quin':(wt('quinientos'),.5),'pers':(wt('persona'),0),'gato3':(wt('gato',after=27),0),'junt':(wt('juntos'),.6),
+'ent':(wt('entrenó'),.3),'cab':(wt('cabinas'),.3),'peq3':(wt('pequeñas'),.5),'gel':(wt('gelatina'),.5),
 # S4
-'egi':(wt('Egipto'),.4),'gatos4':(wt('gatos',after=30),0),'sag':(wt('sagrados'),.5),'dios':(wt('diosa'),.6),'bast':(wt('Bastet'),1.0),
+'tres':(wt('tres',after=34),.4),'nov':(wt('noviembre'),0),'desp':(wt('despegó'),1.0),'sput':(wt('Sputnik'),.6),'prim':(wt('primer',after=40),.4),'orb':(wt('orbitar'),.4),'her':(wt('heroína'),.8),
 # S5
-'pero':(wt('Pero'),0),'truco':(wt('truco'),.3),'cer':(wt('cerebro'),.7),
+'ofi':(wt('oficial'),.3),'sem5':(wt('semana',after=49),.3),'dolor':(wt('dolor'),.3),'ment':(wt('mentira'),1.0),
 # S6
-'red':(wt('redonda'),.3),'gra':(wt('grandes'),.3),'amp':(wt('amplia'),.3),'beb':(wt('bebé',after=41),.5),'lee':(wt('lee'),0),'tern':(wt('ternura'),0),'full':(wt('y',after=45.2),.7),'cui':(wt('cuidarlos'),.3),
+'dos2':(wt('dos',after=53.4),.5),'ver':(wt('verdad'),.4),'sob':(wt('sobrecalentó'),.6),'muri':(wt('murió'),.8),'horas':(wt('horas'),.3),'asus':(wt('asustada'),.7),
 # S7
-'mau':(wt('maullido'),.3),'casi':(wt('casi',after=47),0),'ell':(wt('ellos',after=49),0),'des':(wt('desarrollaron'),.3),'hab':(wt('hablar'),0),'nosot':(wt('nosotros',after=51),.6),
+'cinco':(wt('cinco'),.3),'quem':(wt('quemó'),1.0),'abril':(wt('abril'),.4),'ocho':(wt('ocho',after=70),.4),
 # S8
-'ron':(wt('ronroneo'),0),'truco8':(wt('truco',after=53),.3),'com8':(wt('comida',after=54),0),'mez':(wt('mezclan'),0),'llan':(wt('llanto'),.5),'beb8':(wt('bebé',after=58),0),'puede':(wt('puede'),0),'ign':(wt('ignorarlo'),.6),
+'tres8':(wt('tres',after=72),.5),'anos':(wt('años'),0),'vol':(wt('volvieron'),.3),'dm':(wt('ocho',after=76.5),.5),'mon':(wt('monumento'),.6),
 # S9
-'nodom':(wt('domesticamos'),.5),'nos9':(wt('Nos',after=61),0),'conq':(wt('conquistaron'),1.0),'sab':(wt('sabemos'),0),'quer':(wt('queremos'),.6),
-# S10
-'eres':(wt('Eres'),0),'perros':(wt('perros'),0),'gatos10':(wt('gatos',after=67),0),'coment':(wt('Comenta'),.4),'deb':(wt('debate'),0),
+'ent9':(wt('Entonces'),.3),'her9':(wt('heroína',after=81),.3),'vic':(wt('víctima'),.3),'coment':(wt('Comenta'),.4),'sig':(wt('Sígueme'),0),
 }
 TRS=[None,
- {'type':'morph','a':[65,186,230,268,18],'col':'#3b1456','dur':.55},
+ {'type':'morph','a':[40,262,280,70,18],'col':'#ff3b4a','dur':.55},
  {'type':'push','dir':'left','dur':.45},
- {'type':'dive','x':180,'y':483,'z':9,'dur':.55},
- {'type':'push','dir':'up','dur':.45},
- {'type':'dive','x':168,'y':230,'z':10,'dur':.55},
+ {'type':'dive','x':180,'y':300,'z':9,'dur':.55},
+ {'type':'whip','dur':.4},
+ {'type':'ink','x':180,'y':300,'col':'#ff3b4a','dur':.45},
+ {'type':'morph','a':[85,306,190,68,12],'col':'#ff3b4a','dur':.5},
  {'type':'zoom','dur':.4},
- {'type':'morph','a':[50,456,260,30,15],'col':'#ff4fa3','dur':.5},
- {'type':'push','dir':'left','dur':.3},
- {'type':'ink','x':180,'y':380,'col':'#ff4fa3','dur':.45},
- {'type':'morph','a':[70,208,220,179,60],'col':'#ff4fa3','dur':.5}]
+ {'type':'push','dir':'up','dur':.45},
+ {'type':'iris','x':180,'y':300,'col':'#ffb84a','dur':.5}]
 if __name__=='__main__':
     E,T2=build(T,RAW,TRS,DUR)
     for k in sorted(E,key=lambda k:E[k]): print('%-8s %.3f'%(k,E[k]),end=' | ')
