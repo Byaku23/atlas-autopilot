@@ -138,3 +138,10 @@
 3. Regeneraciones innecesarias: ninguna (1 voz, 1 transcripción, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: ElevenLabs ~1168 créditos voz + ~443 transcripción; vidIQ 0
 5. Publicaciones: YouTube Atlas del saber 2026-11-22 12:00 NY (SMswYREmvMg); IG/TikTok/FB manual
+
+## 2026-11-21_napoleon_bajito — 2026-11-21 13:55
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (1 voz, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: ElevenLabs ~1037 créditos voz; transcripción 0
+5. Publicaciones: YouTube Atlas del saber: borrador vidIQ listo para 2026-11-22 18:00 NY (cupo diario vidIQ agotado; se publica tras 00:00 PT)
