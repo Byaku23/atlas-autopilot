@@ -189,6 +189,13 @@
    "ts": "2026-11-20 13:55:39",
    "plannerUrl": "https://www.youtube.com/watch?v=5v2v_2yx0Fo",
    "fecha_programada": "2026-11-21T12:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-21_bucefalo",
+   "titulo": "El caballo que nadie podía montar: Bucéfalo",
+   "mp4_sha256": "7bd291b002b303adb1452f742da903a741fc8d4b13a268d21be9635318c82ba1",
+   "estado": "reservado",
+   "ts": "2026-11-21 08:55:07"
   }
  ]
 }
