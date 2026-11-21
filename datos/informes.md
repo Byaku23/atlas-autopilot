@@ -131,3 +131,10 @@
 3. Regeneraciones innecesarias: ninguna (voz 1 vez, render 1 vez) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: 1 voz ElevenLabs + 1 transcripción
 5. Publicaciones: YouTube Atlas del saber 2026-11-21 12:00 NY (5v2v_2yx0Fo); IG/TikTok/FB manual
+
+## 2026-11-21_bucefalo — 2026-11-21 08:55
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (1 voz, 1 transcripción, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: ElevenLabs ~1168 créditos voz + ~443 transcripción; vidIQ 0
+5. Publicaciones: YouTube Atlas del saber 2026-11-22 12:00 NY (SMswYREmvMg); IG/TikTok/FB manual
