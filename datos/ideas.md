@@ -36,4 +36,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-21 (YouTube 2026-11-22 12:00 NY vía vidIQ): Bucéfalo, el caballo de Alejandro Magno (domado a los 12 años, Hidaspes 326 a.C., ciudad Bucéfala). ANIMALES + HISTORIA con debate.
 
+- [~] reservada 2026-11-21 (tarde, YouTube 18:00 NY): Napoleón NO era bajito (mito, 1,69 m, pulgadas francesas vs inglesas, Gillray) + debate ¿genio o tirano? DEBATE + MITO.
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
