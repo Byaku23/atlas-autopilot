@@ -34,4 +34,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-20 (YouTube 2026-11-21 12:00 NY vía vidIQ): ¿Cómo perdió México la mitad de su territorio? (Guerra 1846-48, Guadalupe Hidalgo, Gadsden). MAPA + CAUSAS + DEBATE.
 
+- [~] reservada 2026-11-21 (YouTube 2026-11-22 12:00 NY): Bucéfalo, el caballo de Alejandro Magno (domado a los 12 años, Hidaspes 326 a.C., ciudad Bucéfala). ANIMALES + HISTORIA con debate.
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
