@@ -38,4 +38,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [~] reservada 2026-11-21 (tarde, YouTube 18:00 NY): Napoleón NO era bajito (mito, 1,69 m, pulgadas francesas vs inglesas, Gillray) + debate ¿genio o tirano? DEBATE + MITO.
 
+- [~] reservada 2026-11-22 (mañana, YouTube 2026-11-23 12:00 NY): Jumbo, el elefante que dio nombre a todo lo gigante (Londres 1865, Barnum 1882, tren 1885). ANIMALES + HISTORIA con debate (circo ¿maravilla o explotación?). Elegida por el éxito de Pocho y Chito (173k vistas).
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
