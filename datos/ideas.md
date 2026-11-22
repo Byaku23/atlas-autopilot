@@ -40,4 +40,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-22 (YouTube 2026-11-23 12:00 NY vía vidIQ): Jumbo, el elefante que dio nombre a todo lo gigante (Londres 1865, Barnum 1882, tren 1885). ANIMALES + HISTORIA con debate (circo ¿maravilla o explotación?). Elegida por el éxito de Pocho y Chito (173k vistas).
 
+- [~] reservada 2026-11-22 (tarde): ¿Por qué Rusia vendió Alaska? (1867, 7,2 millones de dólares, Seward, Guerra de Crimea, deuda). MAPA + CAUSAS + DEBATE (¿ganga o error?).
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
