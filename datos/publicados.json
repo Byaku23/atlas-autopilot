@@ -205,6 +205,13 @@
    "mp4_sha256": "b170a036eb01d6cdb587b0f5322d983f6704fdea6197933d3986a52a6eef488b",
    "estado": "reservado",
    "ts": "2026-11-21 13:54:53"
+  },
+  {
+   "slug": "2026-11-22_jumbo",
+   "titulo": "Jumbo: el elefante que dio nombre a todo lo gigante",
+   "mp4_sha256": "dc476f71051929a50a6be048f9196483a14d12fa9cb48c1721a23acbfe7ce416",
+   "estado": "reservado",
+   "ts": "2026-11-22 08:59:13"
   }
  ]
 }
