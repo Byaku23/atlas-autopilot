@@ -145,3 +145,10 @@
 3. Regeneraciones innecesarias: ninguna (1 voz, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: ElevenLabs ~1037 créditos voz; transcripción 0
 5. Publicaciones: YouTube Atlas del saber: borrador vidIQ listo para 2026-11-22 18:00 NY (cupo diario vidIQ agotado; se publica tras 00:00 PT)
+
+## 2026-11-22_jumbo — 2026-11-22 09:00
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: 1 toma de voz de más (ElevenLabs creó 2 por omitir generations_count=1, ~1337 créditos); 2 renders (1 por corregir un título) (etapas ejecutadas: render; reutilizadas por caché: audio, mezcla)
+4. Consumo de tokens/créditos: ElevenLabs 2 tomas de voz (~2674 créditos) + transcripción 0; vidIQ 0 (outliers sin saldo)
+5. Publicaciones: YouTube Atlas del saber 2026-11-23 12:00 NY (MkVUMNno93U); IG/TikTok/FB manual
