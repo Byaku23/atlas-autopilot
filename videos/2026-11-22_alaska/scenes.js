@@ -41,8 +41,8 @@ function s1(t,u){
   const dk=nb(E.a_400-.2,E.a_400+.9,t);
   for(let i=0;i<24;i++){const k=eo(cl(dk*1.4-i*.02));if(k<=0)continue;const [x,y]=P_(c,[-135.6+(R(i)-.5)*3.2,57.4+(R(i+9)-.5)*1.5]);circ(x,y-(1-k)*18,3.4*k,RU,'#fff',1.1)}
   if(t>E.a_dificil)pin(c,-135.6,57.4,GOLD,t,E.a_dificil-.2,5);
-  TG('ALASKA, DIFÍCIL',180,96,17,RU,'#fff',t,E.a_prim-.05,{out:E.a_400-.3});
-  TX('DE MANTENER',180,140,34,'#fff',t,E.a_dificil-.2,{w:340,out:E.a_400-.3});
+  TG('ALASKA, DIFÍCIL',180,96,17,RU,'#fff',t,E.a_prim-.05,{out:E.a_400-.65});
+  TX('DE MANTENER',180,140,34,'#fff',t,E.a_dificil-.2,{w:340,out:E.a_400-.65});
   if(t>E.a_400-.3)TX('COLONOS RUSOS',180,100,26,'#fff',t,E.a_400-.3,{w:340});
   if(t>E.a_400-.15){const v=countV(0,400,t,E.a_400-.15,1.1);txt('MÁX. '+Math.round(v),180,160,40,GOLD,{st:INK,sw:6,sc:eb(nb(E.a_400-.2,E.a_400+.2,t))})}
   if(t>E.a_400)shock(180,320,t,E.a_400,'rgba(255,77,94,.9)',90,4,.8);

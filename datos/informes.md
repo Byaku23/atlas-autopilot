@@ -152,3 +152,10 @@
 3. Regeneraciones innecesarias: 1 toma de voz de más (ElevenLabs creó 2 por omitir generations_count=1, ~1337 créditos); 2 renders (1 por corregir un título) (etapas ejecutadas: render; reutilizadas por caché: audio, mezcla)
 4. Consumo de tokens/créditos: ElevenLabs 2 tomas de voz (~2674 créditos) + transcripción 0; vidIQ 0 (outliers sin saldo)
 5. Publicaciones: YouTube Atlas del saber 2026-11-23 12:00 NY (MkVUMNno93U); IG/TikTok/FB manual
+
+## 2026-11-22_alaska — 2026-11-22 13:56
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: voz: 2 tomas generadas por defecto (generations_count no fijado), se usó 1; mapa: Rusia añadida de Natural Earth (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: n/d
+5. Publicaciones: YouTube Atlas del saber 22-nov 18:00 NY

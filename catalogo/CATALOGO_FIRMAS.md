@@ -98,6 +98,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `pin(c,lon,lat,col,t,t0,r=5)` · 2026-11-18_vuelta_mundo:38 · usos 11
 - `pin(c,lon,lat,col,t,t0,r=5)` · 2026-11-19_bolivia_mar:29 · usos 5
 - `pin(c,lon,lat,col,t,t0,r=5)` · 2026-11-20_mexico_mitad:30 · usos 2
+- `pin(c,lon,lat,col,t,t0,r=5)` · 2026-11-22_alaska:29 · usos 4
 - `pinDrop(x,y,t,ts,col,lbl,tg)` · v02_gatos:145 · usos 1
 - `pinDrop(x,y,t,ts,col,lbl,tg)` · 2026-11-14_gatos_ronroneo:145 · usos 0
 
@@ -105,6 +106,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `_cum(G)` · 2026-11-18_vuelta_mundo:18 · usos 1
 - `_cum(G)` · 2026-11-19_bolivia_mar:18 · usos 1
 - `_cum(G)` · 2026-11-20_mexico_mitad:19 · usos 1
+- `_cum(G)` · 2026-11-22_alaska:18 · usos 1
 - `akita(x,y,s,o={}) {al,col,eye,flip,head,rim,shade,tail}` · 2026-11-11_hachiko:7 · usos 11 — akita sentado mirando a la derecha. (0,0)=suelo. o: col, rim, tail(ángulo cola), head(inclinación), flip, al, eye
 - `akitaLie(x,y,s,o={}) {col}` · 2026-11-11_hachiko:25 · usos 1 — akita echado (cabeza sobre las patas)
 - `anillos(x,y,t,t0,col,n=3,r0=10,r1=120,per=1.6)` · 2026-11-17_guerra_fria:49 · usos 1 — zona de peligro con anillos
@@ -119,6 +121,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `base(c,o={}) {bb,dim}` · 2026-11-18_vuelta_mundo:12 · usos 9
 - `base(c,o={}) {bb,dim}` · 2026-11-19_bolivia_mar:12 · usos 11
 - `base(c,o={}) {bb,dim}` · 2026-11-20_mexico_mitad:13 · usos 8
+- `base(c,o={}) {bb,dim}` · 2026-11-22_alaska:12 · usos 9
 - `beastPts(m,ph=0,wag=0,t=0)` · v01_perros:7 · usos 1
 - `beastPts(m,ph=0,wag=0,t=0)` · 2026-11-12_perros_cola:6 · usos 1
 - `bez(p0,p1,p2,p3,n=10)` · 2026-11-10_animales_guerra:17 · usos 1
@@ -131,6 +134,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `boat(x,y,s,t,o={}) {flip,tilt}` · 2026-11-19_pocho_chito:43 · usos 2
 - `bocadillo(x,y,w,h,col,a=1,tail=0)` · 2026-11-19_bolivia_mar:51 · usos 2 — bocadillo con cola hacia abajo
 - `bocadillo(x,y,w,h,col,a=1,tail=0)` · 2026-11-20_mexico_mitad:63 · usos 2 — bocadillo con cola hacia abajo
+- `bocadillo(x,y,w,h,col,a=1,tail=0)` · 2026-11-22_alaska:49 · usos 2 — bocadillo con cola hacia abajo
 - `bokeh(t,n,col,seed=1,a=.35)` · 2026-11-15_mundo_hombres:67 · usos 2 — estrellas/lucecitas del fondo
 - `bokeh(t,n,col,seed=1,a=.35)` · 2026-11-15_mundo_mujeres:67 · usos 2 — estrellas/lucecitas del fondo
 - `bolt1(x,y,s,col)` · 2026-11-14_imperio_poderoso:35 · usos 1
@@ -189,9 +193,11 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `cruz(x,y,s,col,k=1)` · 2026-11-18_vuelta_mundo:42 · usos 4 — cruz roja de muerte / error
 - `cruz(x,y,s,col,k=1)` · 2026-11-19_bolivia_mar:33 · usos 0 — cruz roja de muerte / error
 - `cruz(x,y,s,col,k=1)` · 2026-11-20_mexico_mitad:34 · usos 0 — cruz roja de muerte / error
+- `cruz(x,y,s,col,k=1)` · 2026-11-22_alaska:33 · usos 2 — cruz roja de muerte / error
 - `cx_(x,a=14,b=346)` · 2026-11-18_vuelta_mundo:40 · usos 10
 - `cx_(x,a=14,b=346)` · 2026-11-19_bolivia_mar:31 · usos 9
 - `cx_(x,a=14,b=346)` · 2026-11-20_mexico_mitad:32 · usos 6
+- `cx_(x,a=14,b=346)` · 2026-11-22_alaska:31 · usos 8
 - `doc(x,y,s,col)` · 2026-11-16_inicio_segunda_guerra:37 · usos 1
 - `dogBack(x,y,s,o={}) {al,bias,flip,gauge,gcol,look}` · 2026-11-12_perros_cola:27 · usos 8
 - `dogSide(x,y,s,o={}) {col,flip,head,ph,rim,run,t,tail}` · 2026-11-20_laika:10 · usos 5 — o: ph (fase patas), head (giro cabeza, negativo = mira arriba), tail, col, rim, flip, run (0..1 amplitud)
@@ -218,6 +224,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `flecha(pts,p,col,lw=4)` · 2026-11-17_guerra_fria:28 · usos 2 — flecha en pantalla por puntos [x,y], progreso p
 - `flecha(c,A,B,p,col,lw=4)` · 2026-11-19_bolivia_mar:38 · usos 2 — flecha geográfica con progreso p
 - `flecha(c,A,B,p,col,lw=4)` · 2026-11-20_mexico_mitad:50 · usos 0 — flecha geográfica con progreso p
+- `flecha(c,A,B,p,col,lw=4)` · 2026-11-22_alaska:45 · usos 5 — flecha geográfica con progreso p
 - `floor3d(hy,col0,col1,gcol,t,sp=30,vx=180)` · 2026-11-15_mundo_hombres:8 · usos 1 — suelo en perspectiva con rejilla de neón que avanza
 - `floor3d(hy,col0,col1,gcol,t,sp=30,vx=180)` · 2026-11-15_mundo_mujeres:8 · usos 1 — suelo en perspectiva con rejilla de neón que avanza
 - `flota(h,n,sz,col,t,a=1)` · 2026-11-18_vuelta_mundo:37 · usos 4 — flota de n naos en cola detrás de la punta
@@ -300,6 +307,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `nb(a,b,t)` · 2026-11-18_vuelta_mundo:6 · usos 34
 - `nb(a,b,t)` · 2026-11-19_bolivia_mar:6 · usos 32
 - `nb(a,b,t)` · 2026-11-20_mexico_mitad:7 · usos 20
+- `nb(a,b,t)` · 2026-11-22_alaska:6 · usos 26
 - `news(x,y,s,r,t,o={})` · 2026-11-11_hachiko:68 · usos 1
 - `night(t)` · 2026-11-16_caballo_caligula:62 · usos 5
 - `nightHill(t)` · 2026-11-15_gansos_roma:99 · usos 3
@@ -330,6 +338,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `PF(c,names,col,a,o={}) {b,ba,lw}` · 2026-11-19_bolivia_mar:7 · usos 15
 - `pf(pts)` · 2026-11-19_pocho_chito:11 · usos 9
 - `PF(c,names,col,a,o={}) {b,ba,lw}` · 2026-11-20_mexico_mitad:8 · usos 3
+- `PF(c,names,col,a,o={}) {b,ba,lw}` · 2026-11-22_alaska:7 · usos 6
 - `picto(x,y,n,k,col,off,t,ts,gap=26,s=1.1)` · 2026-11-15_mundo_hombres:58 · usos 0 — pictograma: n monigotes pequeños en fila, k primeros iluminados
 - `picto(x,y,n,k,col,off,t,ts,gap=26,s=1.1)` · 2026-11-15_mundo_mujeres:58 · usos 0 — pictograma: n monigotes pequeños en fila, k primeros iluminados
 - `pill(x,y,w,h,col,s,fg,sz,q=1)` · 2026-11-12_perros_cola:52 · usos 4
@@ -340,6 +349,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `PL(a)` · 2026-11-16_inicio_segunda_guerra:7 · usos 10
 - `polar(t,k=1)` · 2026-11-17_togo_balto:45 · usos 6 — piezas nuevas
 - `poly(c,P,col,a,o={}) {b,ba,dash,lw}` · 2026-11-20_mexico_mitad:47 · usos 2
+- `poly(c,P,col,a,o={}) {b,ba,dash,lw}` · 2026-11-22_alaska:42 · usos 0
 - `posterCard(kind,cx,cy,w,h,lit,t,o={}) {door,rot,sc}` · 2026-11-10_animales_guerra:139 · usos 2 — carta/tarjeta-cartel: (cx,cy) centro en el mundo, w x h. kind: elefante|paloma|perro|oso. lit 0..1
 - `pp(t,ts,d=.35)` · 2026-11-15_mundo_hombres:5 · usos 17
 - `pp(t,ts,d=.35)` · 2026-11-15_mundo_mujeres:5 · usos 19
@@ -359,6 +369,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `ruta(c,G,p,col,lw=3.2,o={}) {a,dash,t}` · 2026-11-18_vuelta_mundo:20 · usos 17 — ruta con progreso p (0..1): devuelve [x,y,ang] de la punta
 - `ruta(c,G,p,col,lw=3.2,o={}) {a,dash,t}` · 2026-11-19_bolivia_mar:20 · usos 2 — ruta con progreso p (0..1): devuelve [x,y,ang] de la punta
 - `ruta(c,G,p,col,lw=3.2,o={}) {a,dash,t}` · 2026-11-20_mexico_mitad:21 · usos 6 — ruta con progreso p (0..1): devuelve [x,y,ang] de la punta
+- `ruta(c,G,p,col,lw=3.2,o={}) {a,dash,t}` · 2026-11-22_alaska:20 · usos 1 — ruta con progreso p (0..1): devuelve [x,y,ang] de la punta
 - `sack(x,y,s,rot,fill=1)` · v02_gatos:151 · usos 2
 - `sack(x,y,s,rot,fill=1)` · 2026-11-14_gatos_ronroneo:151 · usos 1
 - `sandFloor(gy,col=SAND)` · 2026-11-21_bucefalo:46 · usos 3 — suelo de arena + muros lejanos
@@ -371,6 +382,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `servant(x,y,s,t,i)` · 2026-11-16_caballo_caligula:46 · usos 1
 - `sextant(x,y,s,rot)` · 2026-11-13_paralelo42:37 · usos 1
 - `SF(c,names,col,a,o={}) {b,ba,lw}` · 2026-11-20_mexico_mitad:42 · usos 7
+- `SF(c,names,col,a,o={}) {b,ba,lw}` · 2026-11-22_alaska:37 · usos 3
 - `shade(c,k)` · 2026-11-15_mundo_hombres:6 · usos 8
 - `shade(c,k)` · 2026-11-15_mundo_mujeres:6 · usos 8
 - `shatter(x,y,w,h,col,p,seed=1)` · 2026-11-12_zama:34 · usos 4 — fragmentos de un bloque que se rompe (p 0..1)
@@ -392,6 +404,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `sm(P,n=8) {push}` · 2026-11-18_vuelta_mundo:14 · usos 8 — spline Catmull-Rom en coordenadas geográficas
 - `sm(P,n=8) {push}` · 2026-11-19_bolivia_mar:14 · usos 0 — spline Catmull-Rom en coordenadas geográficas
 - `sm(P,n=8) {push}` · 2026-11-20_mexico_mitad:15 · usos 6 — spline Catmull-Rom en coordenadas geográficas
+- `sm(P,n=8) {push}` · 2026-11-22_alaska:14 · usos 0 — spline Catmull-Rom en coordenadas geográficas
 - `snowf(t,n=80,seed=2,a=.85,spd=26)` · 2026-11-11_hachiko:60 · usos 2
 - `snowGround(y,t,sp=0)` · 2026-11-17_togo_balto:46 · usos 8
 - `spiral(x,y,r,t,col,w=2.4)` · 2026-11-16_caballo_caligula:55 · usos 2
