@@ -36,8 +36,8 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-21 (YouTube 2026-11-22 12:00 NY vía vidIQ): Bucéfalo, el caballo de Alejandro Magno (domado a los 12 años, Hidaspes 326 a.C., ciudad Bucéfala). ANIMALES + HISTORIA con debate.
 
-- [~] reservada 2026-11-21 (tarde, YouTube 18:00 NY): Napoleón NO era bajito (mito, 1,69 m, pulgadas francesas vs inglesas, Gillray) + debate ¿genio o tirano? DEBATE + MITO.
+- [x] 2026-11-21 (Johan lo programa a mano): Napoleón NO era bajito (mito, 1,69 m, pulgadas francesas vs inglesas, Gillray) + debate ¿genio o tirano? DEBATE + MITO.
 
-- [~] reservada 2026-11-22 (mañana, YouTube 2026-11-23 12:00 NY): Jumbo, el elefante que dio nombre a todo lo gigante (Londres 1865, Barnum 1882, tren 1885). ANIMALES + HISTORIA con debate (circo ¿maravilla o explotación?). Elegida por el éxito de Pocho y Chito (173k vistas).
+- [x] 2026-11-22 (YouTube 2026-11-23 12:00 NY vía vidIQ): Jumbo, el elefante que dio nombre a todo lo gigante (Londres 1865, Barnum 1882, tren 1885). ANIMALES + HISTORIA con debate (circo ¿maravilla o explotación?). Elegida por el éxito de Pocho y Chito (173k vistas).
 
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
