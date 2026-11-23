@@ -1,0 +1,26 @@
+# Copia este archivo como config.toml y rellénalo. config.toml NO se sube a GitHub (está en .gitignore).
+# Borra las secciones de cuentas que no tengas.
+
+[[youtube]]
+nombre = "Atlas del saber"
+tipo = "Creator"
+channel_id = "UC_jviohrsCwGW1CXN9a7Q6A"
+api_key = "PEGA_AQUI_TU_API_KEY"
+
+[[instagram]]
+nombre = "@atlasdelsaber"
+tipo = "Creator"            # Creator o Business (tiene que ser una de las dos)
+ig_user_id = "PEGA_AQUI"
+token = "PEGA_AQUI_TOKEN_LARGA_DURACION"
+
+[[facebook]]
+nombre = "Atlas del saber (página)"
+tipo = "Page"
+page_id = "901061146421888"
+token = "PEGA_AQUI_TOKEN_DE_PAGINA"
+
+[[tiktok]]
+nombre = "Atlas del saber"
+tipo = "Creator"
+csv = "tiktok/atlas.csv"    # ruta al CSV exportado de TikTok Studio (relativa a esta carpeta)
+seguidores = 0              # TikTok no los incluye en el CSV: escríbelos a mano al importar
