@@ -159,3 +159,10 @@
 3. Regeneraciones innecesarias: voz: 2 tomas generadas por defecto (generations_count no fijado), se usó 1; mapa: Rusia añadida de Natural Earth (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: n/d
 5. Publicaciones: YouTube Atlas del saber 22-nov 18:00 NY
+
+## 2026-11-23_winnie — 2026-11-23 08:53
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (voz 1 vez, render 1 vez) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: voz ElevenLabs ~1208 créditos; vidIQ sin créditos (no hubo búsqueda de tendencias)
+5. Publicaciones: YouTube Atlas del saber 2026-11-23 18:00 NY (vidIQ)
