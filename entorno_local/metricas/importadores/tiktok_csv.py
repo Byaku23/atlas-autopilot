@@ -1,8 +1,20 @@
 """TikTok: sin API. Se importan los CSV exportados de TikTok Studio (Analytics > Contenido > Descargar).
 Los nombres de columna varían por idioma, por eso se aceptan varias variantes."""
-import csv
+import csv, re
 from datetime import date
 import db
+
+MESES = {m: i + 1 for i, m in enumerate("enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split())}
+
+def _fecha(txt):
+    """'20 de noviembre' -> '2026-11-20' (sin año en el CSV: se toma el más reciente que no sea futuro). Si ya es ISO, se deja."""
+    txt = (txt or "").strip()
+    if re.match(r"\d{4}-\d{2}-\d{2}", txt): return txt[:10]
+    m = re.match(r"(\d{1,2}) de (\w+)", txt.lower())
+    if not m or m.group(2) not in MESES: return None
+    hoy = date.today()
+    d = date(hoy.year, MESES[m.group(2)], int(m.group(1)))
+    return (d if d <= hoy else d.replace(year=hoy.year - 1)).isoformat()
 
 COL = {
     "titulo": ["video title", "título del video", "titulo del video", "title", "video"],
@@ -28,7 +40,7 @@ def importar(con, cfg, ruta_csv, seguidores=None):
             f_ = {k.strip().lower(): v for k, v in fila.items()}
             g = lambda campo: next((f_[c] for c in COL[campo] if c in f_), None)
             titulo = g("titulo") or "(sin título)"
-            vid = db.video(con, cid, g("url") or titulo, titulo[:80], (g("fecha") or "")[:10] or None, g("url"))
+            vid = db.video(con, cid, g("url") or titulo, titulo[:80], _fecha(g("fecha")), g("url"))
             db.metricas(con, vid, vistas=_num(g("vistas") or 0), likes=_num(g("likes") or 0), comentarios=_num(g("comentarios") or 0),
                         compartidos=_num(g("compartidos") or 0), guardados=_num(g("guardados") or 0))
             n += 1
