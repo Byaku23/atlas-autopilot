@@ -5,3 +5,6 @@ metricas_demo.db
 tiktok/
 actualizar.log
 tiktok/*.csv
+cola.log
+cola/
+videos/
