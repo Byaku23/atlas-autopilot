@@ -42,4 +42,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-22 (YouTube 18:00 NY vía vidIQ): ¿Por qué Rusia vendió Alaska? (1867, 7,2 millones de dólares, Seward, Guerra de Crimea, deuda). MAPA + CAUSAS + DEBATE (¿ganga o error?).
 
+- [~] reservada 2026-11-23 (mañana; YouTube 18:00 NY por vidIQ, 12:00 ya lo ocupa Jumbo): Winnie, la osa real que inspiró a Winnie the Pooh (Winnipeg 1914, Harry Colebourn, zoo de Londres). ANIMALES + HISTORIA con debate (¿zoo o libertad?). vidIQ sin créditos hoy: no se hizo búsqueda de tendencias.
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
