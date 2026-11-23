@@ -17,9 +17,14 @@ def main():
                      "client_secret": secreto, "fb_exchange_token": corto}, timeout=30)
     if not r.ok: sys.exit(f"Meta rechazó el token: {r.json().get('error', {}).get('message')}")
     largo = r.json()["access_token"]
-    r = requests.get(f"{G}/{PAGE_ID}", params={"fields": "name,access_token,instagram_business_account", "access_token": largo}, timeout=30)
+    r = requests.get(f"{G}/me/accounts", params={"fields": "id,name,access_token", "limit": 100, "access_token": largo}, timeout=30)
+    if not r.ok: sys.exit(f"No pude listar las páginas: {r.json().get('error', {}).get('message')}")
+    # nos quedamos SOLO con la página de Atlas; las demás se descartan sin mirarlas
+    mia = next((x for x in r.json().get("data", []) if x["id"] == PAGE_ID), None)
+    if not mia: sys.exit("La página de Atlas (Zoe Lara) no aparece: en el Explorer hay que marcarla al generar el token.")
+    r = requests.get(f"{G}/{PAGE_ID}", params={"fields": "name,instagram_business_account", "access_token": mia["access_token"]}, timeout=30)
     if not r.ok: sys.exit(f"No pude leer la página de Atlas: {r.json().get('error', {}).get('message')}")
-    p = r.json()
+    p = {**r.json(), "access_token": mia["access_token"]}
     ig = (p.get("instagram_business_account") or {}).get("id")
     print("Página:", p["name"], "| Instagram vinculado:", bool(ig))
     txt = CFG.read_text(encoding="utf-8") if CFG.exists() else ""
