@@ -47,3 +47,5 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [x] 2026-11-23 (YouTube 2026-11-24 18:00 NY vía vidIQ): ¿Por qué Panamá se separó de Colombia? (1903, Tratado Hay-Herrán, canal). MAPA + CAUSAS + DEBATE (¿independencia o jugada de EE. UU.?).
 
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
+
+- [~] 2026-11-24 PRODUCIDO, SIN PUBLICAR (espera "publica" de Johan; MP4 en /mnt/project-files/videos/hipopotamos_escobar.mp4): Los hipopótamos de Escobar (Colombia sacrificará a los primeros 10, 18-nov-2026). ANIMALES + HISTORIA + MAPA + DEBATE.

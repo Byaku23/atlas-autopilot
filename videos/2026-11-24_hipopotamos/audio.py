@@ -1,0 +1,80 @@
+import sys,json; sys.path.insert(0,'../../eng')
+from sfx import *
+J=json.load(open('ev.json')); E=J['E']; T=J['T']; DUR=J['DUR']; TRS=J['TRS']
+init(DUR,E)
+MA=[('Am',45,[57,60,64,69]),('F',41,[53,57,60,65]),('G',43,[55,59,62,67]),('Em',40,[52,55,59,64])]
+setMusic(88,MA)
+trSfx(TRS,E)
+# S0
+P(lambda: waves(5.0),0.05,.25)
+Pn(lambda: whoosh(.4,False),'h_col',.3,-.3); Pn(lambda: stamp(),'h_col',.4)
+Pn(lambda: stamp(),'h_sac',.5); Pn(lambda: boom(1.0,50,.6),'h_sac',.5); Pn(lambda: riser(.5,200,1400,.3),'h_sac',.4,-.5)
+Pn(lambda: stinger(45),'h_hip',.4); Pn(lambda: bubble(),'h_hip',.4)
+Pn(impact,'h_cuatro',.8); Pn(lambda: stamp(),'h_cuatro',.7); Pn(lambda: sparkle(1.2),'h_cuatro',.4)
+for k in range(4): P(lambda: pop(500+k*90),E['h_cuatro']+.1*k,.3)
+# S1
+Pn(lambda: stamp(),'a_1981',.6); Pn(lambda: whoosh(.4),'a_1981',.3,-.2)
+Pn(lambda: stamp(),'a_esc',.4); Pn(lambda: paper(),'a_macho',.35)
+for k in range(4): P(lambda: bubble(),E['a_macho']+.05+k*.18,.3)
+Pn(lambda: whoosh(.3),'a_zoo',.25,-.1)
+Pn(lambda: ping(900,.5),'a_nap',.4); Pn(lambda: stamp(),'a_nap',.45)
+# S2
+Pn(lambda: stamp(),'b_1993',.6); Pn(lambda: bell(330,3.0),'b_murio',.35); Pn(lambda: boom(1.0,50,.5),'b_murio',.4)
+Pn(lambda: whoosh(.4),'b_quedaron',.25,-.1)
+P(lambda: engine(1.8),E['b_dificil']-1.6,.25); Pn(lambda: clunk(),'b_dificil',.5); Pn(lambda: buzz(),'b_dificil',.3)
+# S3
+P(lambda: waves(5.4),T[3]+.1,.25)
+Pn(lambda: whoosh(.4),'c_sin',.25,-.1); Pn(lambda: whoosh(.4),'c_seca',.25,-.1)
+Pn(lambda: splash() if 'splash' in globals() else bubble(),'c_escap',.4)
+Pn(lambda: riser(.9,200,1800,.3),'c_mult',.4,-.8); Pn(lambda: stamp(),'c_mult',.6); Pn(impact,'c_mult',.6)
+for k in range(8): P(lambda: pop(450+k*60),E['c_escap']+.4+k*.28,.18)
+# S4
+Pn(lambda: stamp(),'d_2009',.6)
+for k in range(10): P(lambda: tick(),E['d_28']-.5+k*.09,.25)
+Pn(lambda: ding(),'d_28',.5)
+Pn(lambda: stinger(40),'d_pepe',.5); Pn(lambda: heart(),'d_pepe',.4); Pn(impact,'d_pepe',.7)
+Pn(lambda: crowd(2.0),'d_prot',.2) if 'crowd' in globals() else None
+Pn(lambda: whoosh(.3),'d_prot',.3)
+Pn(lambda: knock(),'d_juez',.5); Pn(lambda: knock(),'d_prohi',.7); Pn(lambda: stamp(),'d_prohi',.7); Pn(lambda: boom(.9,60,.5),'d_prohi',.5)
+# S5
+Pn(lambda: stamp(),'e_hoy',.45)
+for k in range(12): P(lambda: tick(),E['e_250']-.5+k*.08,.22)
+Pn(lambda: stamp(),'e_250',.6); Pn(lambda: boom(1.0,55,.5),'e_250',.5)
+Pn(lambda: ping(1100,.5),'e_km',.4)
+Pn(lambda: riser(.9,200,1600,.3),'e_mil',.4,-.9); Pn(impact,'e_mil',.9); Pn(lambda: stamp(),'e_mil',.7); Pn(lambda: boom(1.2,45,.7),'e_mil',.6)
+# S6
+Pn(lambda: stamp(),'f_2022',.4)
+Pn(impact,'f_inv',.8); Pn(lambda: stamp(),'f_inv',.8); Pn(lambda: stinger(42),'f_inv',.5)
+Pn(lambda: drip(),'f_agua',.4); Pn(lambda: hiss(.6),'f_agua',.2)
+Pn(lambda: whoosh(.5,False),'f_mana',.3,-.2); Pn(lambda: bubble(),'f_mana',.4)
+Pn(lambda: stamp(),'f_her',.5); Pn(lambda: buzz(),'f_her',.3)
+Pn(lambda: stamp(),'f_23',.5)
+for k in range(10): P(lambda: tick(),E['f_23']-.1+k*.1,.22)
+Pn(lambda: heart(),'f_esc',.5); Pn(lambda: boom(.9,48,.5),'f_esc',.4)
+# S7
+Pn(lambda: stamp(),'g_siete',.6)
+for k in range(7): P(lambda: pop(400+k*70),E['g_siete']+k*.1,.22)
+for k in range(7): P(lambda: clunk(),E['g_nin']+k*.1,.3)
+Pn(lambda: stamp(),'g_nin',.6); Pn(lambda: boom(1.0,50,.6),'g_nin',.5)
+Pn(lambda: stamp(),'g_nov',.5); Pn(lambda: bell(262,3.0),'g_nov',.35)
+Pn(lambda: whoosh(.4),'g_sac',.3,-.1)
+for k in range(10): P(lambda: pop(500+k*40),E['g_sac']+k*.06,.16)
+P(lambda: impact(),E['g_sac']+.8,.8); P(lambda: stamp(),E['g_sac']+.8,.8); P(lambda: boom(1.2,45,.7),E['g_sac']+.8,.6)
+# S8
+Pn(lambda: whoosh(.4),'i_hay',.25,-.1)
+Pn(lambda: stamp(),'i_sac',.4); Pn(lambda: stamp(),'i_salv',.4)
+Pn(lambda: chime(784,1.6),'i_salv',.4)
+Pn(lambda: sparkle(1.0),'i_com',.4)
+# música
+t1,t2,t3,t4,t5,t6,t7,t8=T[1:9]
+layer_pad(0,t1,.3,lpf=1500); layer_drone(0,t1,.3); layer_bass(0,t1,.24); layer_drums(1.0,t1,.3,'march')
+layer_pad(t1,t2,.3,lpf=1400); layer_arp(t1,t2,.2,step=1); bells(t1,t2,.12,seed=3)
+layer_drone(t2,t3,.32); layer_pad(t2,t3,.26,lpf=1000); bells(t2,t3,.14,seed=5)
+layer_pad(t3,t4,.3,lpf=1700); layer_arp(t3,t4,.24,step=.5); layer_drums(t3,t4,.28,'light'); layer_bass(t3,t4,.24)
+layer_pad(t4,t5,.32,lpf=1500); layer_drums(t4,t5,.34,'march'); layer_bass(t4,t5,.3)
+layer_pad(t5,t6,.34,lpf=1900); layer_arp(t5,t6,.3,step=.5); layer_drums(t5,t6,.3,'light'); bells(t5,t6,.2,seed=9)
+layer_drone(t6,t7,.34); layer_pad(t6,t7,.28,lpf=900); layer_bass(t6,t7,.26); bells(t6,t7,.14,seed=11)
+layer_pad(t7,t8,.34,lpf=1500); layer_drums(t7,t8,.34,'march'); layer_bass(t7,t8,.3); layer_arp(t7,t8,.22,step=1)
+layer_drums(t8,DUR,.36,'pop'); layer_pad(t8,DUR,.34,lpf=2000); layer_arp(t8,DUR,.3,step=.5); bells(t8,DUR,.2,seed=15); layer_bass(t8,DUR,.3)
+duck(E['d_pepe']-.05,E['d_pepe']+.5,.4,.4); duck(E['g_nin']-.05,E['g_nin']+.6,.4,.4); duck(E['e_mil']-.05,E['e_mil']+.6,.4,.4)
+save()
