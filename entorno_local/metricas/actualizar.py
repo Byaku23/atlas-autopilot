@@ -27,15 +27,16 @@ def main():
     for c in cfg.get("tiktok", []):
         try: print(f"tiktok {c['nombre']}: {tiktok_csv.importar(con, c, AQUI / c['csv'], c.get('seguidores'))} videos")
         except Exception as e: print(f"tiktok {c['nombre']}: ERROR -> {_motivo(e)}")
-    # TikTok sin config: cualquier CSV en tiktok/ (el más reciente) + tiktok/seguidores.txt opcional
+    # TikTok sin config: todos los CSV de tiktok/ + tiktok/seguidores.txt opcional
     if not cfg.get("tiktok"):
         csvs = sorted((AQUI / "tiktok").glob("*.csv"), key=lambda p: p.stat().st_mtime)
         if csvs:
             seg = AQUI / "tiktok" / "seguidores.txt"
-            try:
-                print("tiktok Atlas del saber:", tiktok_csv.importar(con, {"nombre": "Atlas del saber (TikTok)", "tipo": "Creator"}, csvs[-1],
-                      seg.read_text().strip() if seg.exists() else None), "videos")
-            except Exception as e: print("tiktok: ERROR ->", _motivo(e))
+            for c in csvs:  # del más viejo al más nuevo: el último gana si un video se repite
+                try:
+                    print("tiktok", c.name, ":", tiktok_csv.importar(con, {"nombre": "Atlas del saber (TikTok)", "tipo": "Creator"}, c,
+                          seg.read_text().strip() if seg.exists() else None), "videos")
+                except Exception as e: print("tiktok", c.name, ": ERROR ->", _motivo(e))
     con.commit()
 
 if __name__ == "__main__":
