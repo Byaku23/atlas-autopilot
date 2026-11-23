@@ -27,16 +27,38 @@ def importar_instagram(con, cfg):
         n += 1
     return n
 
+def _msg(e):
+    try: return e.response.json()["error"]["message"]
+    except Exception: return str(e.response.status_code)
+
 def importar_facebook(con, cfg):
     tok, pg = cfg["token"], cfg["page_id"]
     cid = db.cuenta(con, "facebook", cfg["nombre"], cfg.get("tipo"), pg)
-    db.seguidores(con, cid, _get(pg, tok, fields="followers_count")["followers_count"])
-    n = 0
-    for v in _get(f"{pg}/videos", tok, fields="id,title,description,created_time,permalink_url,likes.summary(true).limit(0),comments.summary(true).limit(0),video_insights.metric(total_video_views)", limit=50)["data"]:
-        vistas = 0
-        for x in v.get("video_insights", {}).get("data", []):
-            vistas = x["values"][0]["value"]
-        vid = db.video(con, cid, v["id"], (v.get("title") or v.get("description") or "")[:80], v["created_time"][:10], "https://facebook.com" + v.get("permalink_url", ""))
-        db.metricas(con, vid, vistas=vistas, likes=v["likes"]["summary"]["total_count"], comentarios=v["comments"]["summary"]["total_count"])
-        n += 1
+    try:
+        db.seguidores(con, cid, _get(pg, tok, fields="followers_count")["followers_count"])
+    except requests.HTTPError as e:
+        print("  facebook seguidores:", _msg(e))
+    n, vistos = 0, set()
+    for edge in ("videos", "video_reels"):  # los reels salen en video_reels
+        try:
+            lista = _get(f"{pg}/{edge}", tok, fields="id,title,description,created_time,permalink_url", limit=50)["data"]
+        except requests.HTTPError as e:
+            print(f"  facebook {edge}:", _msg(e)); continue
+        for v in lista:
+            if v["id"] in vistos: continue
+            vistos.add(v["id"])
+            likes = coms = vistas = 0
+            try:
+                x = _get(v["id"], tok, fields="likes.summary(true).limit(0),comments.summary(true).limit(0)")
+                likes, coms = x["likes"]["summary"]["total_count"], x["comments"]["summary"]["total_count"]
+            except requests.HTTPError: pass
+            try:
+                for m in _get(f"{v['id']}/video_insights", tok, metric="total_video_views")["data"]:
+                    vistas = m["values"][0]["value"]
+            except requests.HTTPError: pass
+            url = v.get("permalink_url") or ""
+            db.metricas(con, db.video(con, cid, v["id"], (v.get("title") or v.get("description") or "")[:80],
+                                      v["created_time"][:10], "https://facebook.com" + url if url.startswith("/") else url),
+                        vistas=vistas, likes=likes, comentarios=coms)
+            n += 1
     return n
