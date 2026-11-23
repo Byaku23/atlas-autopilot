@@ -214,6 +214,13 @@
    "ts": "2026-11-22 08:59:13",
    "plannerUrl": "https://www.youtube.com/watch?v=MkVUMNno93U",
    "fecha_programada": "2026-11-23T12:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-23_panama",
+   "titulo": "¿Por qué Panamá se separó de Colombia?",
+   "mp4_sha256": "aa12591d724f322c67425307aec03fcc4efdc787552a5861e073bbbad24ec24a",
+   "estado": "reservado",
+   "ts": "2026-11-23 13:54:56"
   }
  ]
 }
