@@ -3,3 +3,5 @@ config.toml
 metricas.db
 metricas_demo.db
 tiktok/
+actualizar.log
+tiktok/*.csv
