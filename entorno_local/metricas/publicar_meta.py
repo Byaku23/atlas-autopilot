@@ -1,5 +1,5 @@
 """Publica UN video (Reel) en Instagram y/o Facebook de Atlas del saber.
-Uso:  python publicar_meta.py video.mp4 "Texto del post #historia" [--ig] [--fb] [--publicar]
+Uso:  python publicar_meta.py video.mp4 "Texto del post #historia"   (o @archivo.txt para leer el texto de un archivo) [--ig] [--fb] [--publicar]
 Sin --publicar solo valida (dry-run). Usa SOLO las cuentas de config.toml (Atlas del saber).
 SIN PROBAR con cuentas reales todavía: la primera prueba la hace Johan con un video suyo."""
 import argparse, sys, time, tomllib
@@ -45,6 +45,7 @@ def main():
     p.add_argument("--ig", action="store_true"); p.add_argument("--fb", action="store_true"); p.add_argument("--publicar", action="store_true")
     a = p.parse_args()
     v = Path(a.video)
+    if a.texto.startswith("@"): a.texto = Path(a.texto[1:]).read_text(encoding="utf-8").strip()
     if not v.exists() or v.suffix.lower() != ".mp4": sys.exit("El video debe existir y ser .mp4")
     cfg = tomllib.loads((AQUI / "config.toml").read_text(encoding="utf-8"))
     ig, fb = (cfg.get("instagram") or [None])[0], (cfg.get("facebook") or [None])[0]
