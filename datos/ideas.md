@@ -44,4 +44,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-23 (YouTube 18:00 NY vía vidIQ): Winnie, la osa real que inspiró a Winnie the Pooh (Winnipeg 1914, Harry Colebourn, zoo de Londres). ANIMALES + HISTORIA con debate (¿zoo o libertad?). vidIQ sin créditos hoy: no se hizo búsqueda de tendencias.
 
+- [~] reservada 2026-11-23 (YouTube 2026-11-24 18:00 NY vía vidIQ): ¿Por qué Panamá se separó de Colombia? (1903, Tratado Hay-Herrán, canal). MAPA + CAUSAS + DEBATE (¿independencia o jugada de EE. UU.?).
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
