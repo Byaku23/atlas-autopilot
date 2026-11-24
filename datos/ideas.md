@@ -48,6 +48,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [~] reservada 2026-11-24 (mañana, YouTube/IG/TikTok/FB vía vidIQ): Wojtek, el oso soldado del ejército polaco (Irán 1942, Montecasino 1944, zoo de Edimburgo 1947-1963). ANIMALES + HISTORIA con debate (¿soldado o mascota?).
 
-- [~] reservada 2026-11-24 (tarde, YouTube/IG/FB vía vidIQ, 2026-11-25 18:00 NY): ¿Nerón tocaba la lira mientras Roma ardía? (incendio 64 d.C., Antium, Tácito, cristianos, Domus Aurea). DEBATE + MITO (¿culpable o chivo expiatorio?).
+- [x] 2026-11-24 (tarde, YouTube/IG/FB vía vidIQ, 2026-11-25 18:00 NY): ¿Nerón tocaba la lira mientras Roma ardía? (incendio 64 d.C., Antium, Tácito, cristianos, Domus Aurea). DEBATE + MITO (¿culpable o chivo expiatorio?).
 
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
