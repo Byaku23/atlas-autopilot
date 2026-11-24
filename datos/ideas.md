@@ -46,4 +46,6 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-23 (YouTube 2026-11-24 18:00 NY vía vidIQ): ¿Por qué Panamá se separó de Colombia? (1903, Tratado Hay-Herrán, canal). MAPA + CAUSAS + DEBATE (¿independencia o jugada de EE. UU.?).
 
+- [~] reservada 2026-11-24 (mañana, YouTube/IG/TikTok/FB vía vidIQ): Wojtek, el oso soldado del ejército polaco (Irán 1942, Montecasino 1944, zoo de Edimburgo 1947-1963). ANIMALES + HISTORIA con debate (¿soldado o mascota?).
+
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
