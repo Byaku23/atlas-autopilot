@@ -1,0 +1,4 @@
+titulo = "Casa moments"
+page_id = ""                       # se rellena al conectar (conectar_meta.bat casa_moments)
+instagram = ""
+publicar_sin_pedir = false         # esta página pide la orden de Johan cada vez
