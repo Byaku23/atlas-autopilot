@@ -232,6 +232,13 @@
    "ts": "2026-11-24 08:52:16",
    "plannerUrl": "https://www.youtube.com/watch?v=KMA74hUmdPI",
    "fecha_programada": "2026-11-24T12:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-24_neron",
+   "titulo": "¿Nerón tocó el violín mientras Roma ardía?",
+   "mp4_sha256": "fe86d257f859f43ac7807d1980a495ba6650c6adc077f612176c49f25d5d7097",
+   "estado": "reservado",
+   "ts": "2026-11-24 13:55:14"
   }
  ]
 }
