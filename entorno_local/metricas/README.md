@@ -25,6 +25,6 @@ Importadores de YouTube, Instagram y Facebook escritos pero **sin probar con cre
 
 ## Varias páginas (perfiles) — nunca se mezclan
 Cada página/marca tiene su carpeta `perfiles/<nombre>/` con su propio `config.toml` (acceso), `perfil.toml`, `metricas.db`, `cola/`, `tiktok/` y `videos/`.
-No hay perfil por defecto: todos los `.bat` piden el nombre (`panel.bat atlas`, `conectar_meta.bat casa_moments`, `programar_cola.bat casa_moments`...).
+No hay perfil por defecto: todos los `.bat` piden el nombre (`panel.bat atlas`, o doble clic a `panel_atlas.bat`, `conectar_casa_moments.bat`…; , `conectar_meta.bat casa_moments`, `programar_cola.bat casa_moments`...).
 Cada pendiente de la cola lleva `"perfil"` obligatorio; si no coincide con la carpeta, no se publica. Los perfiles con `publicar_sin_pedir = false` (Casa moments) solo publican pendientes con `"autorizado": true` (la orden de Johan).
 Si ya usabas la app antes: ejecuta una vez `migrar_a_perfiles.bat` (mueve lo de Atlas a `perfiles\atlas`).
