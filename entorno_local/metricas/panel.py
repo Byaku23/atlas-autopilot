@@ -2,11 +2,12 @@
 import sqlite3
 import pandas as pd
 import streamlit as st
-import db
+import db, perfil
 
-st.set_page_config(page_title="Atlas del saber · Métricas", layout="wide")
-real = db.RUTA.exists()
-ruta = db.RUTA if real else db.RUTA.with_name("metricas_demo.db")
+TITULO = perfil.datos()["titulo"]
+st.set_page_config(page_title=f"{TITULO} · Métricas", layout="wide")
+real = db.ruta().exists()
+ruta = db.ruta() if real else db.ruta().with_name("metricas_demo.db")
 if not ruta.exists():
     st.error("No hay datos. Ejecuta `python actualizar.py` (con config.toml) o `python demo.py` para ver ejemplos.")
     st.stop()
@@ -23,7 +24,7 @@ seg = pd.read_sql("SELECT c.plataforma, c.nombre cuenta, s.fecha, s.seguidores F
 hist = pd.read_sql("""SELECT c.plataforma, v.titulo, m.fecha, m.vistas FROM metricas_video m
     JOIN videos v ON v.id=m.video_id JOIN cuentas c ON c.id=v.cuenta_id""", con)
 
-st.title("Atlas del saber · Métricas")
+st.title(f"{TITULO} · Métricas")
 plats = sorted(videos.plataforma.unique())
 sel = st.sidebar.multiselect("Plataformas", plats, default=plats)
 videos, seg, hist = (d[d.plataforma.isin(sel)] for d in (videos, seg, hist))

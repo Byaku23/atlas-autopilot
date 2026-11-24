@@ -1,10 +1,10 @@
 """Actualiza la base con todas las cuentas de config.toml:  python actualizar.py"""
 import tomllib, requests
 from pathlib import Path
-import db
+import db, perfil
 from importadores import youtube, meta, tiktok_csv
 
-AQUI = Path(__file__).parent
+AQUI = perfil.carpeta()  # carpeta del perfil activo: nada se mezcla con otras páginas
 
 def _motivo(e):
     """Mensaje corto SIN la URL (que lleva el token)."""

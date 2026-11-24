@@ -1,10 +1,10 @@
 """Datos de ejemplo (INVENTADOS) para ver el panel sin credenciales:  python demo.py
 Crea metricas_demo.db; el panel la usa si no existe metricas.db real."""
-import random, db
+import random, db, perfil
 from datetime import date, timedelta
 from pathlib import Path
 
-db.RUTA = Path(__file__).with_name("metricas_demo.db")
+db.RUTA = perfil.carpeta() / "metricas_demo.db"
 db.RUTA.unlink(missing_ok=True)
 random.seed(7)
 con = db.conectar()
@@ -13,7 +13,7 @@ temas = ["Perros: por qué mueven la cola", "Gatos y su ronroneo", "Segunda Guer
          "Los romanos y el concreto", "El Titanic", "Cleopatra", "La Gran Muralla", "Los vikingos"]
 escala = {"youtube": 1.0, "instagram": 2.5, "tiktok": 1.8, "facebook": 0.4}
 for plat, esc in escala.items():
-    cid = db.cuenta(con, plat, f"Atlas del saber ({plat})", "Creator")
+    cid = db.cuenta(con, plat, f"{perfil.datos()['titulo']} ({plat})", "Creator")
     base = {"youtube": 800, "instagram": 1500, "tiktok": 600, "facebook": 200}[plat]
     for d in range(30, -1, -1):
         base += random.randint(0, 25)

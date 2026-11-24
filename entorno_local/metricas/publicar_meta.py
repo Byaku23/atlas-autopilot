@@ -1,10 +1,11 @@
-"""Publica UN video (Reel) en Instagram y/o Facebook de Atlas del saber.
+"""Publica UN video (Reel) en Instagram y/o Facebook del perfil activo (ATLAS_PERFIL).
 Uso:  python publicar_meta.py video.mp4 "Texto del post #historia"   (o @archivo.txt para leer el texto de un archivo) [--ig] [--fb] [--publicar]
-Sin --publicar solo valida (dry-run). Usa SOLO las cuentas de config.toml (Atlas del saber).
+Sin --publicar solo valida (dry-run). Usa SOLO las cuentas del config.toml de ese perfil (nunca mezcla páginas).
 SIN PROBAR con cuentas reales todavía: la primera prueba la hace Johan con un video suyo."""
 import argparse, sys, time, tomllib
 from pathlib import Path
 import requests
+import perfil
 
 G = "https://graph.facebook.com/v21.0"
 AQUI = Path(__file__).parent
@@ -47,10 +48,14 @@ def main():
     v = Path(a.video)
     if a.texto.startswith("@"): a.texto = Path(a.texto[1:]).read_text(encoding="utf-8").strip()
     if not v.exists() or v.suffix.lower() != ".mp4": sys.exit("El video debe existir y ser .mp4")
-    cfg = tomllib.loads((AQUI / "config.toml").read_text(encoding="utf-8"))
+    cfg = tomllib.loads((perfil.carpeta() / "config.toml").read_text(encoding="utf-8"))
+    pf = perfil.datos()
     ig, fb = (cfg.get("instagram") or [None])[0], (cfg.get("facebook") or [None])[0]
     if not (a.ig or a.fb): a.ig, a.fb = bool(ig), bool(fb)
-    print(f"Video {v.name} ({v.stat().st_size/1e6:.1f} MB) -> " + ", ".join(x for x, on in (("Instagram @atlasdelsaber", a.ig), ("Facebook Zoe Lara", a.fb)) if on))
+    print(f"Video {v.name} ({v.stat().st_size/1e6:.1f} MB) -> " + ", ".join(x for x, on in ((f"Instagram {ig['nombre'] if ig else ''}", a.ig), (f"Facebook {fb['nombre'] if fb else ''}", a.fb)) if on))
+    if a.fb and fb and pf.get("page_id") and fb["page_id"] != pf["page_id"]:
+        sys.exit("La página del config.toml no coincide con la del perfil: no publico (evita mezclar páginas).")
+    print("Perfil:", pf["titulo"])
     if not a.publicar: print("DRY-RUN: no se publicó nada. Añade --publicar para publicar de verdad."); return
     if a.ig: instagram(ig, v, a.texto)
     if a.fb: facebook(fb, v, a.texto)

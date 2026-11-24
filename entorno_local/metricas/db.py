@@ -2,8 +2,12 @@
 import sqlite3
 from datetime import date
 from pathlib import Path
+import perfil
 
-RUTA = Path(__file__).with_name("metricas.db")
+RUTA = None  # se fija al conectar, según el perfil activo (demo.py y panel.py lo usan)
+
+def ruta():
+    return perfil.carpeta() / "metricas.db"
 
 ESQUEMA = """
 CREATE TABLE IF NOT EXISTS cuentas(
@@ -25,6 +29,9 @@ CREATE TABLE IF NOT EXISTS seguidores(
 """
 
 def conectar():
+    global RUTA
+    RUTA = RUTA or ruta()
+    RUTA.parent.mkdir(parents=True, exist_ok=True)
     con = sqlite3.connect(RUTA)
     con.executescript(ESQUEMA)
     return con
