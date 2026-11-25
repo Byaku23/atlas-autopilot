@@ -51,3 +51,5 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 - [x] 2026-11-24 (tarde, YouTube/IG/FB vía vidIQ, 2026-11-25 18:00 NY): ¿Nerón tocaba la lira mientras Roma ardía? (incendio 64 d.C., Antium, Tácito, cristianos, Domus Aurea). DEBATE + MITO (¿culpable o chivo expiatorio?).
 
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
+
+- [~] reservada 2026-11-25 (mañana, 12:00 NY, YouTube/IG/TikTok/FB vía vidIQ): Greyfriars Bobby, el perro de Edimburgo que guardó una tumba 14 años (Gray 1858, licencia 1867, estatua 1873; teoría de Bondeson: dos perros). ANIMALES + HISTORIA con debate (¿lealtad real o truco publicitario?).
