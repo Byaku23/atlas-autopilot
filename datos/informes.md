@@ -187,3 +187,10 @@
 3. Regeneraciones innecesarias: voz generó 2 variaciones (ElevenLabs por defecto); se usó 1 (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: vidIQ 0 créditos
 5. Publicaciones: YouTube (privado hasta 25-nov 18:00 NY), IG y FB programados 25-nov 18:00 NY; TikTok pendiente de confirmación de música
+
+## 2026-11-25_bobby — 2026-11-25 08:53
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (1 voz, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: 1 generación de voz ElevenLabs (~1052 créditos)
+5. Publicaciones: YouTube (z65Qfc6x0gw), IG y FB programados 12:00 NY; TikTok pendiente de Johan

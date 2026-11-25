@@ -6,7 +6,7 @@
 - `PL`: 2026-11-13_paralelo42:7 (a); 2026-11-16_inicio_segunda_guerra:7 (a) — misma firma
 - `SF`: 2026-11-20_mexico_mitad:42 (c,names,col,a,o={}); 2026-11-22_alaska:37 (c,names,col,a,o={}); 2026-11-23_panama:35 (c,names,col,a,o={}) — misma firma
 - `TG`: 2026-11-11_hachiko:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_emu:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-12_zama:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-13_paralelo42:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-14_imperio_poderoso:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-15_gansos_roma:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-16_caballo_caligula:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-16_inicio_segunda_guerra:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-17_togo_balto:5 (s,x,y,sz,b,f,t,t0,o={}); 2026-11-19_pocho_chito:5 (s,x,y,sz,b,f,t,t0,o={}) — misma firma
-- `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_emu:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-13_paralelo42:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_gatos_ronroneo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_imperio_poderoso:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_gansos_roma:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_mundo_hombres:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_mundo_mujeres:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-16_caballo_caligula:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-16_inicio_segunda_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-17_togo_balto:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-19_pocho_chito:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-20_laika:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-21_bucefalo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-21_napoleon_bajito:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-22_jumbo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-23_winnie:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-24_neron:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-24_wojtek:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
+- `TX`: v02_gatos:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-10_animales_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-11_hachiko:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_emu:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-12_zama:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-13_paralelo42:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_gatos_ronroneo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-14_imperio_poderoso:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_gansos_roma:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_mundo_hombres:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-15_mundo_mujeres:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-16_caballo_caligula:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-16_inicio_segunda_guerra:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-17_togo_balto:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-19_pocho_chito:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-20_laika:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-21_bucefalo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-21_napoleon_bajito:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-22_jumbo:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-23_winnie:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-24_neron:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-24_wojtek:4 (s,x,y,sz,col,t,t0,o={}); 2026-11-25_bobby:4 (s,x,y,sz,col,t,t0,o={}) — misma firma
 - `_cum`: 2026-11-18_vuelta_mundo:18 (G); 2026-11-19_bolivia_mar:18 (G); 2026-11-20_mexico_mitad:19 (G); 2026-11-22_alaska:18 (G); 2026-11-23_panama:18 (G) — misma firma
 - `babyFace`: v02_gatos:65 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:65 (x,y,s,o={}) — misma firma
 - `badge`: 2026-11-16_inicio_segunda_guerra:36 (x,y,s,n,col,t,ts); 2026-11-24_wojtek:88 (x,y,s,t=0) — FIRMAS DISTINTAS
@@ -22,20 +22,21 @@
 - `bigNum`: 2026-11-15_mundo_hombres:61 (s,x,y,sz,col,o={}); 2026-11-15_mundo_mujeres:61 (s,x,y,sz,col,o={}) — misma firma
 - `bocadillo`: 2026-11-19_bolivia_mar:51 (x,y,w,h,col,a=1,tail=0); 2026-11-20_mexico_mitad:63 (x,y,w,h,col,a=1,tail=0); 2026-11-22_alaska:49 (x,y,w,h,col,a=1,tail=0); 2026-11-23_panama:47 (x,y,w,h,col,a=1,tail=0) — misma firma
 - `bokeh`: 2026-11-15_mundo_hombres:67 (t,n,col,seed=1,a=.35); 2026-11-15_mundo_mujeres:67 (t,n,col,seed=1,a=.35) — misma firma
-- `bowl`: v02_gatos:85 (x,y,s,fill,t=0); 2026-11-12_perros_cola:48 (x,y,s); 2026-11-14_gatos_ronroneo:85 (x,y,s,fill,t=0); 2026-11-15_gansos_roma:56 (x,y,s,t) — FIRMAS DISTINTAS
+- `bowl`: v02_gatos:85 (x,y,s,fill,t=0); 2026-11-12_perros_cola:48 (x,y,s); 2026-11-14_gatos_ronroneo:85 (x,y,s,fill,t=0); 2026-11-15_gansos_roma:56 (x,y,s,t); 2026-11-25_bobby:66 (x,y,s) — FIRMAS DISTINTAS
 - `box3d`: 2026-11-15_mundo_hombres:14 (x,y,w,h,d,col,o={}); 2026-11-15_mundo_mujeres:14 (x,y,w,h,d,col,o={}) — misma firma
 - `brain`: v02_gatos:94 (x,y,s,t,lit,o={}); 2026-11-14_gatos_ronroneo:94 (x,y,s,t,lit,o={}) — misma firma
 - `brainPath`: v02_gatos:93 (); 2026-11-14_gatos_ronroneo:93 () — misma firma
 - `bulbs`: 2026-11-22_jumbo:51 (y,t,n=14,amp=6); 2026-11-23_winnie:38 (y,t,n=14,amp=6); 2026-11-24_wojtek:38 (y,t,n=14,amp=6) — misma firma
-- `castle`: 2026-11-21_napoleon_bajito:29 (x,y,s,k,t); 2026-11-24_wojtek:90 (x,y,s,c='#1a1a22') — FIRMAS DISTINTAS
+- `cannon`: 2026-11-10_animales_guerra:125 (x,y,s,o={}); 2026-11-25_bobby:64 (x,y,s,o={}) — misma firma
+- `castle`: 2026-11-21_napoleon_bajito:29 (x,y,s,k,t); 2026-11-24_wojtek:90 (x,y,s,c='#1a1a22'); 2026-11-25_bobby:79 (x,y,s,c='#1a1a22') — FIRMAS DISTINTAS
 - `catHead`: v02_gatos:11 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:11 (x,y,s,o={}) — misma firma
 - `catSide`: v02_gatos:27 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:27 (x,y,s,o={}) — misma firma
 - `catSkel`: v02_gatos:108 (x,y,s,rv,t=0); 2026-11-14_gatos_ronroneo:108 (x,y,s,rv,t=0) — misma firma
 - `city`: v01_perros:50 (x,y,s,c); 2026-11-15_gansos_roma:58 (t,o={}); 2026-11-21_bucefalo:57 (x,y,s,k,t) — FIRMAS DISTINTAS
-- `coin`: 2026-11-12_emu:58 (x,y,r,rot=0); 2026-11-12_zama:66 (x,y,r,rot=0); 2026-11-21_bucefalo:38 (x,y,r,rot=0); 2026-11-22_jumbo:63 (x,y,r,rot=0); 2026-11-23_winnie:50 (x,y,r,rot=0); 2026-11-24_wojtek:50 (x,y,r,rot=0) — misma firma
+- `coin`: 2026-11-12_emu:58 (x,y,r,rot=0); 2026-11-12_zama:66 (x,y,r,rot=0); 2026-11-21_bucefalo:38 (x,y,r,rot=0); 2026-11-22_jumbo:63 (x,y,r,rot=0); 2026-11-23_winnie:50 (x,y,r,rot=0); 2026-11-24_wojtek:50 (x,y,r,rot=0); 2026-11-25_bobby:73 (x,y,r,rot=0) — misma firma
 - `crate`: 2026-11-10_animales_guerra:122 (x,y,s,rot=0); 2026-11-24_wojtek:82 (x,y,s,rot=0) — misma firma
 - `cristal`: 2026-11-19_bolivia_mar:42 (x,y,s,col,t,ph=0); 2026-11-20_mexico_mitad:54 (x,y,s,col,t,ph=0) — misma firma
-- `crowd`: 2026-11-11_hachiko:39 (x,y,s,col,ph); 2026-11-15_mundo_hombres:56 (x0,y0,n,gap,s,sex,t,o={}); 2026-11-15_mundo_mujeres:56 (x0,y0,n,gap,s,sex,t,o={}); 2026-11-19_pocho_chito:51 (x0,x1,y,n,t,q,seed=1,col='#0a1a12',rim=AMB) — FIRMAS DISTINTAS
+- `crowd`: 2026-11-11_hachiko:39 (x,y,s,col,ph); 2026-11-15_mundo_hombres:56 (x0,y0,n,gap,s,sex,t,o={}); 2026-11-15_mundo_mujeres:56 (x0,y0,n,gap,s,sex,t,o={}); 2026-11-19_pocho_chito:51 (x0,x1,y,n,t,q,seed=1,col='#0a1a12',rim=AMB); 2026-11-25_bobby:78 (x0,x1,y,n,t,seed=3,col='#0c1018',k=1) — FIRMAS DISTINTAS
 - `crown`: v02_gatos:9 (x,y,s,rot=0); 2026-11-14_gatos_ronroneo:9 (x,y,s,rot=0); 2026-11-14_imperio_poderoso:34 (x,y,s,col,a); 2026-11-18_termopilas:33 (x,y,s,col) — FIRMAS DISTINTAS
 - `cruz`: 2026-11-18_vuelta_mundo:42 (x,y,s,col,k=1); 2026-11-19_bolivia_mar:33 (x,y,s,col,k=1); 2026-11-20_mexico_mitad:34 (x,y,s,col,k=1); 2026-11-22_alaska:33 (x,y,s,col,k=1); 2026-11-23_panama:33 (x,y,s,col,k=1) — misma firma
 - `cx_`: 2026-11-18_vuelta_mundo:40 (x,a=14,b=346); 2026-11-19_bolivia_mar:31 (x,a=14,b=346); 2026-11-20_mexico_mitad:32 (x,a=14,b=346); 2026-11-22_alaska:31 (x,a=14,b=346); 2026-11-23_panama:31 (x,a=14,b=346) — misma firma
@@ -50,14 +51,15 @@
 - `floatHearts`: v02_gatos:90 (x,y,t,ts,n=10,spd=90,life=1.2,col=PINK,sz=9,spread=1); 2026-11-14_gatos_ronroneo:90 (x,y,t,ts,n=10,spd=90,life=1.2,col=PINK,sz=9,spread=1) — misma firma
 - `floor3d`: 2026-11-15_mundo_hombres:8 (hy,col0,col1,gcol,t,sp=30,vx=180); 2026-11-15_mundo_mujeres:8 (hy,col0,col1,gcol,t,sp=30,vx=180) — misma firma
 - `frost`: v01_perros:63 (t,p); 2026-11-17_togo_balto:78 (t,p) — misma firma
-- `glowStroke`: 2026-11-20_laika:5 (col,lw,blur=10); 2026-11-21_bucefalo:5 (col,lw,blur=10); 2026-11-21_napoleon_bajito:5 (col,lw,blur=10); 2026-11-22_jumbo:5 (col,lw,blur=10); 2026-11-23_winnie:5 (col,lw,blur=10); 2026-11-24_neron:5 (col,lw,blur=10); 2026-11-24_wojtek:5 (col,lw,blur=10) — misma firma
+- `glowStroke`: 2026-11-20_laika:5 (col,lw,blur=10); 2026-11-21_bucefalo:5 (col,lw,blur=10); 2026-11-21_napoleon_bajito:5 (col,lw,blur=10); 2026-11-22_jumbo:5 (col,lw,blur=10); 2026-11-23_winnie:5 (col,lw,blur=10); 2026-11-24_neron:5 (col,lw,blur=10); 2026-11-24_wojtek:5 (col,lw,blur=10); 2026-11-25_bobby:5 (col,lw,blur=10) — misma firma
 - `glyph`: v02_gatos:130 (k,x,y,s,col); 2026-11-14_gatos_ronroneo:130 (k,x,y,s,col) — misma firma
 - `hbar`: 2026-11-15_mundo_hombres:63 (x,y,w,h,v,col,lbl,t,ts,sz=11); 2026-11-15_mundo_mujeres:63 (x,y,w,h,v,col,lbl,t,ts,sz=11) — misma firma
-- `heart`: v02_gatos:8 (x,y,s,col,o={}); 2026-11-11_hachiko:61 (x,y,s,col,a=1); 2026-11-12_perros_cola:47 (x,y,s,col=CORAL,al=1); 2026-11-14_gatos_ronroneo:8 (x,y,s,col,o={}); 2026-11-19_pocho_chito:57 (x,y,s,col=PINK,ph=0); 2026-11-24_neron:73 (x,y,s,col='#e0484e',a=1); 2026-11-24_wojtek:93 (x,y,s,col='#e0484e',a=1) — FIRMAS DISTINTAS
+- `heart`: v02_gatos:8 (x,y,s,col,o={}); 2026-11-11_hachiko:61 (x,y,s,col,a=1); 2026-11-12_perros_cola:47 (x,y,s,col=CORAL,al=1); 2026-11-14_gatos_ronroneo:8 (x,y,s,col,o={}); 2026-11-19_pocho_chito:57 (x,y,s,col=PINK,ph=0); 2026-11-24_neron:73 (x,y,s,col='#e0484e',a=1); 2026-11-24_wojtek:93 (x,y,s,col='#e0484e',a=1); 2026-11-25_bobby:7 (x,y,s,col='#e0484e',a=1) — FIRMAS DISTINTAS
 - `hills`: v01_perros:38 (y,col,amp=18,f=.012,ph=0,x0=-400,x1=1500); 2026-11-17_togo_balto:42 (y,col,amp=18,f=.012,ph=0,x0=-400,x1=1500); 2026-11-19_pocho_chito:17 (y,col,amp=18,f=.012,ph=0,x0=-400,x1=1500) — misma firma
 - `horse`: 2026-11-10_generales_olvidados:31 (x,y,s,o={}); 2026-11-16_caballo_caligula:8 (x,y,s,o={}); 2026-11-21_bucefalo:7 (x,y,s,o={}) — misma firma
 - `humSkel`: v01_perros:75 (x,y,s,rv,c='#efe6cf'); v02_gatos:101 (x,y,s,rv,t=0); 2026-11-14_gatos_ronroneo:101 (x,y,s,rv,t=0) — FIRMAS DISTINTAS
 - `inkParts`: 2026-11-10_animales_guerra:8 (paths,fill,rim,lw=2.4); 2026-11-12_zama:7 (paths,fill,rim,lw=2.4); 2026-11-17_togo_balto:7 (paths,fill,rim,lw=2.4); 2026-11-19_pocho_chito:7 (paths,fill,rim,lw=2.4) — misma firma
+- `lamp`: 2026-11-11_hachiko:53 (x,y,s,t,col='#ffcf7a',a=1); 2026-11-25_bobby:35 (x,y,s,t=0,a=1) — FIRMAS DISTINTAS
 - `land`: 2026-11-13_paralelo42:19 (pts,fill,edge,lw=1.8); 2026-11-14_imperio_poderoso:27 (pts,fill,edge,lw=1.5); 2026-11-16_inicio_segunda_guerra:20 (pts,fill,edge,lw=1.4) — FIRMAS DISTINTAS
 - `limb`: 2026-11-10_animales_guerra:13 (x0,y0,x1,y1,w0,w1); 2026-11-12_zama:12 (x0,y0,x1,y1,w0,w1); 2026-11-17_togo_balto:12 (x0,y0,x1,y1,w0,w1); 2026-11-19_pocho_chito:12 (x0,y0,x1,y1,w0,w1) — misma firma
 - `loco`: 2026-11-22_jumbo:39 (x,y,s,o={}); 2026-11-23_winnie:26 (x,y,s,o={}); 2026-11-24_wojtek:26 (x,y,s,o={}) — misma firma
@@ -66,6 +68,7 @@
 - `mars`: 2026-11-15_mundo_hombres:24 (x,y,s,col,lw=3); 2026-11-15_mundo_mujeres:24 (x,y,s,col,lw=3) — misma firma
 - `martillo`: 2026-11-19_bolivia_mar:49 (x,y,s,k); 2026-11-20_mexico_mitad:61 (x,y,s,k) — misma firma
 - `medal`: 2026-11-10_animales_guerra:180 (x,y,s,rot=0); 2026-11-10_generales_olvidados:54 (x,y,r,n,t0,t,o={}); 2026-11-17_togo_balto:34 (x,y,s,rot=0) — FIRMAS DISTINTAS
+- `moon`: 2026-11-15_gansos_roma:12 (x,y,r,t); 2026-11-25_bobby:33 (x,y,r,t=0) — FIRMAS DISTINTAS
 - `mount`: 2026-11-10_generales_olvidados:53 (x,y,w,h,col,snow,t=0); 2026-11-13_paralelo42:32 (y0,amp,seed,col,dx,w=520); 2026-11-18_termopilas:21 (pts,col,rim) — FIRMAS DISTINTAS
 - `mouse`: v02_gatos:58 (x,y,s,o={}); 2026-11-14_gatos_ronroneo:58 (x,y,s,o={}) — misma firma
 - `nb`: 2026-11-17_guerra_fria:6 (a,b,t); 2026-11-18_vuelta_mundo:6 (a,b,t); 2026-11-19_bolivia_mar:6 (a,b,t); 2026-11-20_mexico_mitad:7 (a,b,t); 2026-11-22_alaska:6 (a,b,t); 2026-11-23_panama:6 (a,b,t) — misma firma
@@ -74,7 +77,7 @@
 - `parch`: 2026-11-21_bucefalo:51 (x,y,w,h,a=1); 2026-11-21_napoleon_bajito:36 (x,y,w,h,a=1); 2026-11-22_jumbo:70 (x,y,w,h,a=1); 2026-11-23_winnie:57 (x,y,w,h,a=1); 2026-11-24_neron:71 (x,y,w,h,a=1); 2026-11-24_wojtek:57 (x,y,w,h,a=1) — misma firma
 - `pathArrow`: 2026-11-12_zama:48 (pts,p,col,lw=3.5,dash); 2026-11-13_paralelo42:43 (pts,p,col,lw=3.5,dash); 2026-11-16_inicio_segunda_guerra:30 (pts,p,col,lw=3.5,dash) — misma firma
 - `pawPrint`: v02_gatos:84 (x,y,s,col,rot=0); 2026-11-14_gatos_ronroneo:84 (x,y,s,col,rot=0) — misma firma
-- `person`: v02_gatos:73 (x,y,s,o={}); 2026-11-12_perros_cola:45 (x,y,s,col='#cfe9f2'); 2026-11-13_paralelo42:24 (x,y,s,col,o={}); 2026-11-14_gatos_ronroneo:73 (x,y,s,o={}); 2026-11-21_bucefalo:26 (x,y,s,o={}); 2026-11-22_jumbo:53 (x,y,s,o={}); 2026-11-23_winnie:40 (x,y,s,o={}); 2026-11-24_neron:9 (x,y,s,o={}); 2026-11-24_wojtek:40 (x,y,s,o={}) — FIRMAS DISTINTAS
+- `person`: v02_gatos:73 (x,y,s,o={}); 2026-11-12_perros_cola:45 (x,y,s,col='#cfe9f2'); 2026-11-13_paralelo42:24 (x,y,s,col,o={}); 2026-11-14_gatos_ronroneo:73 (x,y,s,o={}); 2026-11-21_bucefalo:26 (x,y,s,o={}); 2026-11-22_jumbo:53 (x,y,s,o={}); 2026-11-23_winnie:40 (x,y,s,o={}); 2026-11-24_neron:9 (x,y,s,o={}); 2026-11-24_wojtek:40 (x,y,s,o={}); 2026-11-25_bobby:39 (x,y,s,o={}) — FIRMAS DISTINTAS
 - `pf`: 2026-11-10_animales_guerra:12 (pts); 2026-11-12_zama:11 (pts); 2026-11-17_togo_balto:11 (pts); 2026-11-19_pocho_chito:11 (pts) — misma firma
 - `picto`: 2026-11-15_mundo_hombres:58 (x,y,n,k,col,off,t,ts,gap=26,s=1.1); 2026-11-15_mundo_mujeres:58 (x,y,n,k,col,off,t,ts,gap=26,s=1.1) — misma firma
 - `pin`: v01_perros:61 (x,y,t,ts,col,lbl); 2026-11-10_animales_guerra:179 (x,y,t,ts,col,sz=1); 2026-11-18_vuelta_mundo:38 (c,lon,lat,col,t,t0,r=5); 2026-11-19_bolivia_mar:29 (c,lon,lat,col,t,t0,r=5); 2026-11-20_mexico_mitad:30 (c,lon,lat,col,t,t0,r=5); 2026-11-22_alaska:29 (c,lon,lat,col,t,t0,r=5); 2026-11-23_panama:29 (c,lon,lat,col,t,t0,r=5) — FIRMAS DISTINTAS
@@ -82,7 +85,7 @@
 - `poly`: 2026-11-20_mexico_mitad:47 (c,P,col,a,o={}); 2026-11-22_alaska:42 (c,P,col,a,o={}); 2026-11-23_panama:40 (c,P,col,a,o={}) — misma firma
 - `pp`: 2026-11-15_mundo_hombres:5 (t,ts,d=.35); 2026-11-15_mundo_mujeres:5 (t,ts,d=.35) — misma firma
 - `railBed`: 2026-11-22_jumbo:49 (y,w=1000); 2026-11-23_winnie:36 (y,w=1000); 2026-11-24_wojtek:36 (y,w=1000) — misma firma
-- `rect0`: 2026-11-24_neron:6 (x,y,w,h,c); 2026-11-24_wojtek:92 (x,y,w,h,c) — misma firma
+- `rect0`: 2026-11-24_neron:6 (x,y,w,h,c); 2026-11-24_wojtek:92 (x,y,w,h,c); 2026-11-25_bobby:6 (x,y,w,h,c) — misma firma
 - `rib`: 2026-11-10_animales_guerra:16 (pts,w0,w1); 2026-11-12_zama:15 (pts,w0,w1); 2026-11-17_togo_balto:15 (pts,w0,w1); 2026-11-19_pocho_chito:15 (pts,w0,w1) — misma firma
 - `ring`: 2026-11-15_mundo_hombres:60 (x,y,r,v,col,lw=9); 2026-11-15_mundo_mujeres:60 (x,y,r,v,col,lw=9) — misma firma
 - `ruta`: 2026-11-18_vuelta_mundo:20 (c,G,p,col,lw=3.2,o={}); 2026-11-19_bolivia_mar:20 (c,G,p,col,lw=3.2,o={}); 2026-11-20_mexico_mitad:21 (c,G,p,col,lw=3.2,o={}); 2026-11-22_alaska:20 (c,G,p,col,lw=3.2,o={}); 2026-11-23_panama:20 (c,G,p,col,lw=3.2,o={}) — misma firma
@@ -96,9 +99,9 @@
 - `sm`: 2026-11-18_vuelta_mundo:14 (P,n=8); 2026-11-19_bolivia_mar:14 (P,n=8); 2026-11-20_mexico_mitad:15 (P,n=8); 2026-11-22_alaska:14 (P,n=8); 2026-11-23_panama:14 (P,n=8) — misma firma
 - `snowfall`: v01_perros:39 (t,n=70,seed=2,a=.8,spd=24); 2026-11-17_togo_balto:43 (t,n=70,seed=2,a=.8,spd=24) — misma firma
 - `soldier`: 2026-11-10_animales_guerra:98 (x,y,s,o={}); 2026-11-12_emu:25 (x,y,s,o={}); 2026-11-13_paralelo42:29 (x,y,s,col,al); 2026-11-24_wojtek:69 (x,y,s,o={}) — FIRMAS DISTINTAS
-- `stampBox`: 2026-11-20_laika:79 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-21_bucefalo:54 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-21_napoleon_bajito:38 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-22_jumbo:68 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-23_winnie:55 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-24_neron:69 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-24_wojtek:55 (s,x,y,sz,col,t,ts,rot=-.14) — misma firma
-- `starfield`: 2026-11-20_laika:97 (t,n,seed,a=1); 2026-11-21_bucefalo:61 (t,n,seed,a=1); 2026-11-22_jumbo:75 (t,n,seed,a=1); 2026-11-23_winnie:62 (t,n,seed,a=1); 2026-11-24_neron:7 (t,n,seed,a=1); 2026-11-24_wojtek:62 (t,n,seed,a=1) — misma firma
-- `sunO`: 2026-11-21_bucefalo:43 (x,y,r,t,a=1); 2026-11-22_jumbo:76 (x,y,r,t,a=1); 2026-11-23_winnie:63 (x,y,r,t,a=1); 2026-11-24_neron:74 (x,y,r,t,a=1); 2026-11-24_wojtek:63 (x,y,r,t,a=1) — misma firma
+- `stampBox`: 2026-11-20_laika:79 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-21_bucefalo:54 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-21_napoleon_bajito:38 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-22_jumbo:68 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-23_winnie:55 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-24_neron:69 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-24_wojtek:55 (s,x,y,sz,col,t,ts,rot=-.14); 2026-11-25_bobby:75 (s,x,y,sz,col,t,ts,rot=-.14) — misma firma
+- `starfield`: 2026-11-20_laika:97 (t,n,seed,a=1); 2026-11-21_bucefalo:61 (t,n,seed,a=1); 2026-11-22_jumbo:75 (t,n,seed,a=1); 2026-11-23_winnie:62 (t,n,seed,a=1); 2026-11-24_neron:7 (t,n,seed,a=1); 2026-11-24_wojtek:62 (t,n,seed,a=1); 2026-11-25_bobby:8 (t,n,seed,a=1) — misma firma
+- `sunO`: 2026-11-21_bucefalo:43 (x,y,r,t,a=1); 2026-11-22_jumbo:76 (x,y,r,t,a=1); 2026-11-23_winnie:63 (x,y,r,t,a=1); 2026-11-24_neron:74 (x,y,r,t,a=1); 2026-11-24_wojtek:63 (x,y,r,t,a=1); 2026-11-25_bobby:82 (x,y,r,t,a=1) — misma firma
 - `sword`: 2026-11-15_gansos_roma:93 (x,y,s,rot); 2026-11-16_caballo_caligula:63 (x,y,s,rot) — misma firma
 - `teddy`: 2026-11-23_winnie:21 (x,y,s,o={}); 2026-11-24_wojtek:21 (x,y,s,o={}) — misma firma
 - `temple`: 2026-11-15_gansos_roma:63 (x,y,s,t,o={}); 2026-11-24_neron:51 (x,y,s,c=MARB) — FIRMAS DISTINTAS
