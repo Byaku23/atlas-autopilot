@@ -241,6 +241,13 @@
    "ts": "2026-11-24 13:55:14",
    "plannerUrl": "vidiq:3d53ee20-aae6-48cc-97de-c5a86bc6273b",
    "fecha_programada": "2026-11-25T18:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-25_bobby",
+   "titulo": "Greyfriars Bobby: ¿lealtad real o el mejor truco de Edimburgo?",
+   "mp4_sha256": "da861ee0bf36d1fa5b83558625306069b7cd888677f461617ffef2791ef38bb7",
+   "estado": "reservado",
+   "ts": "2026-11-25 08:53:10"
   }
  ]
 }
