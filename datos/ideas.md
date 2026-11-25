@@ -54,4 +54,4 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-25 (12:00 NY, YouTube/IG/FB vía vidIQ): Greyfriars Bobby, el perro de Edimburgo que guardó una tumba 14 años (Gray 1858, licencia 1867, estatua 1873; teoría de Bondeson: dos perros). ANIMALES + HISTORIA con debate (¿lealtad real o truco publicitario?).
 
-- [~] reservada 2026-11-25 (tarde, YouTube/IG/FB/TikTok vía vidIQ, 2026-11-26 12:00 NY): El Tratado de Tordesillas: la raya que repartió el mundo entre España y Portugal (1494, 370 leguas, Brasil, Zaragoza 1529). MAPA + CAUSAS + DEBATE (¿reparto justo o absurdo?).
+- [x] 2026-11-25 (tarde, YouTube/IG/FB vía vidIQ, 2026-11-26 12:00 NY): El Tratado de Tordesillas: la raya que repartió el mundo entre España y Portugal (1494, 370 leguas, Brasil, Zaragoza 1529). MAPA + CAUSAS + DEBATE (¿reparto justo o absurdo?).
