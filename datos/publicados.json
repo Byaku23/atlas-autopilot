@@ -246,8 +246,10 @@
    "slug": "2026-11-25_bobby",
    "titulo": "Greyfriars Bobby: ¿lealtad real o el mejor truco de Edimburgo?",
    "mp4_sha256": "da861ee0bf36d1fa5b83558625306069b7cd888677f461617ffef2791ef38bb7",
-   "estado": "reservado",
-   "ts": "2026-11-25 08:53:10"
+   "estado": "programado",
+   "ts": "2026-11-25 08:53:10",
+   "plannerUrl": "vidIQ post ee93ef18-8a06-4335-ade8-01bb011981e3",
+   "fecha_programada": "2026-11-25T12:00:00-05:00"
   }
  ]
 }
