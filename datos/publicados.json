@@ -255,8 +255,10 @@
    "slug": "2026-11-25_tordesillas",
    "titulo": "Tordesillas: la raya que repartió el mundo",
    "mp4_sha256": "804f07f43d380151c870508fc4beb9d9130a3bd8b9145613f07508006a1f6414",
-   "estado": "reservado",
-   "ts": "2026-11-25 14:00:29"
+   "estado": "programado",
+   "ts": "2026-11-25 14:00:29",
+   "plannerUrl": "vidiq:36736901-8d0d-448b-9208-692f7019ce1f",
+   "fecha_programada": "2026-11-26T12:00:00-05:00"
   }
  ]
 }
