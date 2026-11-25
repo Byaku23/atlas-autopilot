@@ -250,6 +250,13 @@
    "ts": "2026-11-25 08:53:10",
    "plannerUrl": "vidIQ post ee93ef18-8a06-4335-ade8-01bb011981e3",
    "fecha_programada": "2026-11-25T12:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-25_tordesillas",
+   "titulo": "Tordesillas: la raya que repartió el mundo",
+   "mp4_sha256": "804f07f43d380151c870508fc4beb9d9130a3bd8b9145613f07508006a1f6414",
+   "estado": "reservado",
+   "ts": "2026-11-25 14:00:29"
   }
  ]
 }
