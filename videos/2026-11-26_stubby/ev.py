@@ -1,33 +1,37 @@
 import sys; sys.path.insert(0,'../eng')
 from words import *
-DUR=70.5667
-T=[0,6.1,18.3,30.5,40.15,47.1,57.9,62.18,DUR]
+DUR=90.0667
+T=[0,6.0,24.75,34.89,47.11,54.23,61.61,70.05,76.79,DUR]
 RAW={
-# S0
-'catorce':(wt('catorce'),.9),'tumba0':(wt('tumba'),.5),'solo':(wt('solo'),.4),'perro5':(wt('perro',after=5),.5),
-# S1
-'edimburgo':(wt('Edimburgo'),.3),'n1858':(wt('mil',after=6),.7),'muere':(wt('Muere'),.5),'entierran':(wt('entierran'),.4),'greyfriars':(wt('Greyfriars'),.4),'bobby1':(wt('Bobby',after=15),.3),'nosevaa':(wt('va',after=17),.8),
-# S2
-'guarda':(wt('guarda'),.2),'veces':(wt('veces'),.5),'refugio':(wt('refugio'),.4),'leyenda2':(wt('leyenda',after=20),.3),'canon':(wt('cañón'),.9),'comer':(wt('comer'),.2),'volvia':(wt('volvía'),.3),
-# S3
-'n1867':(wt('siete',after=30),.7),'ley':(wt('ley'),.3),'licencia':(wt('licencia'),.4),'alcalde':(wt('alcalde'),.3),'pago':(wt('pagó'),.3),'collar':(wt('collar'),.7),
-# S4
-'murio':(wt('murió',after=40),.6),'n1872':(wt('dos',after=42),.7),'baronesa':(wt('baronesa'),.3),'fuente':(wt('fuente'),.3),'estatua':(wt('estatua'),.5),'calle':(wt('calle'),.5),
-# S5
-'giro':(wt('giro'),.8),'bondeson':(wt('Bondeson'),.4),'dos2':(wt('dos',after=50),.5),'bobbys':(wt('Bobbys'),.6),'murio5':(wt('murió',after=52),.5),'n1867b':(wt('siete',after=54),.5),'otro':(wt('otro'),.3),'lugar':(wt('lugar'),.4),
-# S6
-'historia':(wt('historia'),.2),'visitantes':(wt('visitantes'),.4),'alguien':(wt('alguien'),.3),'ganando':(wt('ganando'),.8),
-# S7
-'lealtad':(wt('lealtad'),.4),'truco':(wt('truco'),.6),'coment':(wt('Cuéntamelo'),.3),'sig':(wt('Sígueme'),0),
+# S0 gancho
+'sarg':(wt('sargento'),.9),'eeuu':(wt('Unidos'),.4),'heroe':(wt('Héroe'),.6),'leyenda':(wt('leyenda',after=4),.7),
+# S1 Yale
+'n1917':(wt('1917'),.7),'campo':(wt('campo'),.3),'yale':(wt('Yale'),.5),'cachorro':(wt('cachorro'),.4),'corta':(wt('corta'),.6),'soldados':(wt('soldados'),.2),'conroy':(wt('Conroy'),.3),'stubby1':(wt('Stubby'),.8),
+'prohib':(wt('prohibidos'),.6),'corneta':(wt('corneta'),.5),'pata':(wt('pata'),.5),
+# S2 barco
+'zarpo':(wt('zarpó'),.4),'escondio':(wt('escondió'),.3),'carbon':(wt('carbón'),.4),'tierra':(wt('tierra'),.3),'oficial':(wt('oficial'),.3),'stubby2':(wt('Stubby',after=30),.5),'saludo':(wt('saludo'),.5),'quedarse':(wt('quedarse'),.5),
+# S3 gas
+'trincheras':(wt('trincheras'),.4),'gas':(wt('gas'),.7),'intox':(wt('intoxicó'),.5),'olia':(wt('olía'),.3),'rastro':(wt('rastro'),.4),'madrugada':(wt('madrugada'),.3),'dormidos':(wt('dormidos'),.3),'corrio':(wt('corrió'),.3),'ladrando':(wt('ladrando'),.5),'alarma':(wt('alarma'),.9),
+# S4 heridos y metralla
+'heridos':(wt('heridos'),.4),'nadie':(wt('nadie'),.5),'n1918':(wt('1918'),.7),'metralla':(wt('metralla'),.9),'hirio':(wt('hirió'),.5),'pecho':(wt('pecho'),.4),'pata2':(wt('pata',after=53),.6),
+# S5 espía
+'cuenta':(wt('cuenta'),.2),'mordio':(wt('mordió'),.8),'espia':(wt('espía'),.5),'aleman':(wt('alemán'),.3),'dibujaba':(wt('dibujaba'),.2),'poreso':(wt('eso'),.3),'ascend':(wt('ascendieron'),.4),'sargento2':(wt('sargento',after=60),.9),
+# S6 batallas, manta, Pershing
+'diecisiete':(wt('diecisiete'),.7),'mujeres':(wt('mujeres'),.3),'chateau':(wt('Château-Thierry'),.4),'manta':(wt('manta'),.5),'medallas':(wt('medallas'),.5),'pershing':(wt('Pershing'),.4),'otra':(wt('otra'),.5),
+# S7 presidentes, muerte, museo
+'tres':(wt('tres'),.3),'presid':(wt('presidentes'),.4),'murio':(wt('Murió'),.6),'n1926':(wt('1926'),.8),'smith':(wt('Smithsonian'),.7),
+# S8 duda y debate
+'ojo':(wt('ojo'),.6),'detalles':(wt('detalles'),.3),'companeros':(wt('compañeros'),.3),'obit':(wt('obituario'),.5),'heroe2':(wt('héroe',after=80),.5),'leyenda2':(wt('leyenda',after=80),.6),'coment':(wt('Comenta'),.3),'sig':(wt('Sígueme'),0),
 }
 TRS=[None,
- {'type':'ink','x':180,'y':330,'col':'#0f1724','dur':.45},
- {'type':'morph','a':[70,452,220,36,12],'col':'#e63946','dur':.55},
+ {'type':'ink','x':180,'y':330,'col':'#2b2a1c','dur':.45},
+ {'type':'morph','a':[70,452,220,36,12],'col':'#d1322e','dur':.55},
+ {'type':'dive','x':185,'y':385,'z':9,'dur':.55},
  {'type':'push','dir':'left','dur':.45},
- {'type':'dive','x':180,'y':330,'z':9,'dur':.55},
  {'type':'glitch','dur':.4},
- {'type':'morph','a':[70,452,220,36,12],'col':'#ffc857','dur':.5},
- {'type':'iris','x':180,'y':300,'col':'#0f1724','dur':.5}]
+ {'type':'morph','a':[70,452,220,36,12],'col':'#f0c040','dur':.5},
+ {'type':'iris','x':180,'y':300,'col':'#14100a','dur':.5},
+ {'type':'whip','dur':.34}]
 if __name__=='__main__':
     E,T2=build(T,RAW,TRS,DUR)
-    for k in sorted(E,key=lambda k:E[k]): print('%-8s %.3f'%(k,E[k]),end=' | ')
+    for k in sorted(E,key=lambda k:E[k]): print('%-10s %.3f'%(k,E[k]),end=' | ')
