@@ -259,6 +259,13 @@
    "ts": "2026-11-25 14:00:29",
    "plannerUrl": "vidiq:36736901-8d0d-448b-9208-692f7019ce1f",
    "fecha_programada": "2026-11-26T12:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-26_stubby",
+   "titulo": "Stubby: el perro callejero que llegó a sargento",
+   "mp4_sha256": "d04ba002d2b097bc212feb5e41c79cbf6d1be3979ae7a3bd8be944996096bdbc",
+   "estado": "reservado",
+   "ts": "2026-11-26 08:56:22"
   }
  ]
 }
