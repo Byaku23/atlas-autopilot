@@ -493,11 +493,13 @@
    "redes": [
     "youtube",
     "instagram",
-    "facebook"
+    "facebook",
+    "tiktok"
    ],
    "vidiqPostId": "36736901-8d0d-448b-9208-692f7019ce1f",
-   "nota": "TikTok NO programado: vidIQ exige que Johan elija privacidad y acepte la Music Usage Confirmation de TikTok.",
-   "youtubeUrl": "https://www.youtube.com/watch?v=irxboZz0Lnk"
+   "nota": "TikTok programado también (público, comentarios permitidos) tras aceptar Johan la Music Usage Confirmation (2026-11-25).",
+   "youtubeUrl": "https://www.youtube.com/watch?v=irxboZz0Lnk",
+   "tiktokPostId": "84cb213e-173b-4e84-9f1f-13e74b18eb8b"
   }
  ]
 }
