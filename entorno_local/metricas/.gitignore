@@ -1,0 +1,10 @@
+__pycache__/
+config.toml
+metricas.db
+metricas_demo.db
+tiktok/
+actualizar.log
+tiktok/*.csv
+cola.log
+cola/
+videos/
