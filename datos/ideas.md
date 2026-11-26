@@ -58,4 +58,4 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-26 (12:00 NY; mañana, YouTube/IG/TikTok/FB vía vidIQ): Sargento Stubby, el perro más condecorado de la Primera Guerra Mundial (26.ª División, Francia 1918, espía alemán, Smithsonian). ANIMALES + HISTORIA con debate (¿héroe o leyenda inflada?). Banco agotado: idea nueva.
 
-- [~] reservada 2026-11-26 (tarde, 18:00 NY, YouTube/IG/TikTok/FB vía vidIQ): ¿Construyeron esclavos las pirámides? Mito de Heródoto vs aldea de obreros de Guiza (Lehner/Hawass), diario de Merer; debate ¿pagados, reclutados o esclavos? DEBATE + MITO.
+- [x] 2026-11-26 (tarde, 18:00 NY vía vidIQ): ¿Construyeron esclavos las pirámides? Mito de Heródoto vs aldea de obreros de Guiza (Lehner/Hawass), diario de Merer; debate ¿pagados, reclutados o esclavos? DEBATE + MITO.

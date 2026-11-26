@@ -208,3 +208,10 @@
 3. Regeneraciones innecesarias: ninguna (voz 1 toma, render 1 vez) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: voz ~1379 créditos + transcripción ~489
 5. Publicaciones: vidIQ 12:00 NY: YouTube, Instagram, Facebook, TikTok
+
+## 2026-11-26_piramides — 2026-11-26 13:54
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (1 voz, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: no medido
+5. Publicaciones: vidIQ 18:00 NY: YouTube, Instagram, TikTok, Facebook
