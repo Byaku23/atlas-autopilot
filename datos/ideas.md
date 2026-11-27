@@ -60,4 +60,4 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-26 (tarde, 18:00 NY vía vidIQ): ¿Construyeron esclavos las pirámides? Mito de Heródoto vs aldea de obreros de Guiza (Lehner/Hawass), diario de Merer; debate ¿pagados, reclutados o esclavos? DEBATE + MITO.
 
-- [~] reservada 2026-11-27 (mañana, 12:00 NY vía vidIQ): ¿Por qué Napoleón vendió Luisiana a EE. UU.? (1803, Haití, guerra con Inglaterra, 15 millones de dólares, duplicó el país). MAPA + CAUSAS + DEBATE (¿ganga o error de Napoleón?). vidIQ sin créditos: sin búsqueda de tendencias.
+- [x] 2026-11-27 (mañana, 12:00 NY vía vidIQ): ¿Por qué Napoleón vendió Luisiana a EE. UU.? (1803, Haití, guerra con Inglaterra, 15 millones de dólares, duplicó el país). MAPA + CAUSAS + DEBATE (¿ganga o error de Napoleón?). vidIQ sin créditos: sin búsqueda de tendencias.

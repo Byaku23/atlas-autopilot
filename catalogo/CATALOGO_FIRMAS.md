@@ -117,6 +117,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `pin(c,lon,lat,col,t,t0,r=5)` · 2026-11-22_alaska:29 · usos 4
 - `pin(c,lon,lat,col,t,t0,r=5)` · 2026-11-23_panama:29 · usos 4
 - `pin(c,lon,lat,col,t,t0,r=5)` · 2026-11-25_tordesillas:34 · usos 5
+- `pin(c,lon,lat,col,t,t0,r=5)` · 2026-11-27_luisiana:26 · usos 8
 - `pinDrop(x,y,t,ts,col,lbl,tg)` · v02_gatos:145 · usos 1
 - `pinDrop(x,y,t,ts,col,lbl,tg)` · 2026-11-14_gatos_ronroneo:145 · usos 0
 
@@ -127,6 +128,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `_cum(G)` · 2026-11-22_alaska:18 · usos 1
 - `_cum(G)` · 2026-11-23_panama:18 · usos 1
 - `_cum(G)` · 2026-11-25_tordesillas:25 · usos 1
+- `_cum(G)` · 2026-11-27_luisiana:17 · usos 1
 - `abbey(x,y,s,c='#2a2a30')` · 2026-11-24_wojtek:91 · usos 2
 - `akita(x,y,s,o={}) {al,col,eye,flip,head,rim,shade,tail}` · 2026-11-11_hachiko:7 · usos 11 — akita sentado mirando a la derecha. (0,0)=suelo. o: col, rim, tail(ángulo cola), head(inclinación), flip, al, eye
 - `akitaLie(x,y,s,o={}) {col}` · 2026-11-11_hachiko:25 · usos 1 — akita echado (cabeza sobre las patas)
@@ -139,6 +141,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `bar(x,y,w,h,col,r=6)` · 2026-11-10_generales_olvidados:55 · usos 1
 - `barco(x,y,s,col,t,dir=1)` · 2026-11-23_panama:52 · usos 5
 - `barco(x,y,s,col,t,dir=1)` · 2026-11-25_tordesillas:38 · usos 3
+- `barco(x,y,s,col,t,dir=1)` · 2026-11-27_luisiana:28 · usos 4
 - `barge(x,y,s,t=0,blocks=3)` · 2026-11-26_piramides:54 · usos 1 — barco de papiro con bloques
 - `barH(x,y,w,h,col,q,label,val,vc)` · 2026-11-17_togo_balto:76 · usos 3
 - `barH(x,y,w,h,col,q,label,val,vc)` · 2026-11-19_pocho_chito:58 · usos 0
@@ -149,6 +152,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `base(c,o={}) {bb,dim}` · 2026-11-22_alaska:12 · usos 9
 - `base(c,o={}) {bb,dim}` · 2026-11-23_panama:12 · usos 8
 - `base(c,o={}) {dim}` · 2026-11-25_tordesillas:11 · usos 8
+- `base(c,o={}) {dim}` · 2026-11-27_luisiana:11 · usos 8
 - `bearUp(x,y,s,o={}) {al,crate,flip,ph,rim,shell}` · 2026-11-24_wojtek:71 · usos 5 — oso de pie cargando (pies en (x,y)); o: ph (paso), crate (0/1), shell (0/1), al, flip
 - `beastPts(m,ph=0,wag=0,t=0)` · v01_perros:7 · usos 1
 - `beastPts(m,ph=0,wag=0,t=0)` · 2026-11-12_perros_cola:6 · usos 1
@@ -194,7 +198,9 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `cabin(x,y,w,h,o={}) {heat}` · 2026-11-20_laika:67 · usos 3 — cabina metálica
 - `cage(x,y,door)` · 2026-11-10_animales_guerra:158 · usos 1 — jaula: o.door ángulo de la puerta (0 cerrada)
 - `calCard(x,y,w,h,top,big,sub,t,col=VERM)` · 2026-11-11_hachiko:62 · usos 3
+- `calendario(x,y,s,k,dia,mes,anio)` · 2026-11-27_luisiana:46 · usos 1
 - `calPage(x,y,w,h,lbl,sub,rot=0,a=1)` · 2026-11-20_laika:86 · usos 1 — calendario
+- `candado(x,y,s,k)` · 2026-11-27_luisiana:48 · usos 1
 - `candle(x,y,s,t)` · 2026-11-19_pocho_chito:55 · usos 3
 - `cannon(x,y,s,o={}) {rec,rot}` · 2026-11-10_animales_guerra:125 · usos 1 — cañón. o: rec (retroceso 0..1)
 - `cannon(x,y,s,o={})` · 2026-11-25_bobby:64 · usos 1 — cañón de la una
@@ -261,6 +267,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `cx_(x,a=14,b=346)` · 2026-11-22_alaska:31 · usos 8
 - `cx_(x,a=14,b=346)` · 2026-11-23_panama:31 · usos 13
 - `cx_(x,a=14,b=346)` · 2026-11-25_tordesillas:7 · usos 19
+- `cx_(x,a=14,b=346)` · 2026-11-27_luisiana:7 · usos 12
 - `doc(x,y,s,col)` · 2026-11-16_inicio_segunda_guerra:37 · usos 1
 - `dogBack(x,y,s,o={}) {al,bias,flip,gauge,gcol,look}` · 2026-11-12_perros_cola:27 · usos 8
 - `dogSide(x,y,s,o={}) {col,flip,head,ph,rim,run,t,tail}` · 2026-11-20_laika:10 · usos 5 — o: ph (fase patas), head (giro cabeza, negativo = mira arriba), tail, col, rim, flip, run (0..1 amplitud)
@@ -317,6 +324,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `goldBar(x,y,s)` · 2026-11-15_gansos_roma:91 · usos 1
 - `goose(x,y,s,o={}) {al,beak,fl,flip,neck,ph,rim,sleep}` · 2026-11-15_gansos_roma:14 · usos 7 — ganso de perfil mirando a la derecha. (0,0)=pies. o: flip, ph, neck(0..1), beak(0..1), fl(0..1), rim, sleep, al
 - `gpoly(c,P,col,a,o={}) {b,ba,dash,lw}` · 2026-11-25_tordesillas:14 · usos 2 — polígono geográfico relleno/borde
+- `gpoly(c,P,col,a,o={}) {b,ba,dash,lw}` · 2026-11-27_luisiana:14 · usos 1
 - `gridPos(i,cols,sp,cx,cy,n)` · 2026-11-18_termopilas:23 · usos 3 — cuadrícula de puntos (soldados): índice i -> posición
 - `ground(gy,c0='#1b1030',c1='#0d0820')` · 2026-11-11_hachiko:54 · usos 7
 - `grupo(c,lon,lat,n,col,t,ph=0,sp=1.6)` · 2026-11-23_panama:59 · usos 2
@@ -356,6 +364,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `inkParts(paths,fill,rim,lw=2.4)` · 2026-11-19_pocho_chito:7 · usos 10
 - `insula(x,y,w,h,t,burn=0,col='#2e2236')` · 2026-11-24_neron:45 · usos 1 — edificios romanos
 - `jar(x,y,s,rot=0,col='#b5683a')` · 2026-11-26_piramides:43 · usos 1
+- `jeff(x,y,s,t,ph=0)` · 2026-11-27_luisiana:39 · usos 2
 - `jester(x,y,s,t)` · 2026-11-16_caballo_caligula:56 · usos 1
 - `jnight(t)` · 2026-11-19_pocho_chito:21 · usos 3
 - `lab(t,k=1)` · 2026-11-12_perros_cola:20 · usos 9 — fondo de laboratorio: degradado + cuadrícula tenue + polvo
@@ -367,6 +376,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `land(pts,fill,edge,lw=1.5)` · 2026-11-14_imperio_poderoso:27 · usos 3
 - `land(pts,fill,edge,lw=1.4)` · 2026-11-16_inicio_segunda_guerra:20 · usos 14
 - `landPoly(pts,fill,edge)` · 2026-11-12_zama:71 · usos 3
+- `lapida(x,y,s)` · 2026-11-27_luisiana:44 · usos 1
 - `legion(x,y,s,o={}) {al,arm,col,flip,hero,ph,rim,shield,sleep,spear}` · 2026-11-15_gansos_roma:28 · usos 9 — soldado romano de perfil mirando a la derecha. o: flip, ph, arm(ángulo lanza), shield, spear, sleep(0..1 se desploma), hero(capa+cresta), col, rim, al
 - `lewis(x,y,s,o={}) {col,flip}` · 2026-11-12_emu:32 · usos 6 — ametralladora Lewis sobre trípode (apunta a la derecha)
 - `licence(x,y,s,t=0)` · 2026-11-25_bobby:71 · usos 1 — licencia / collar
@@ -396,11 +406,13 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `mitad(c,l0,l1,col,a,o) {dash,wob}` · 2026-11-25_tordesillas:17 · usos 10 — mitad del mundo a la izquierda/derecha de un meridiano (lon0) hasta lon1
 - `mitades(c,a,b=1)` · 2026-11-25_tordesillas:60 · usos 4
 - `moneda(x,y,s,t,ph=0)` · 2026-11-25_tordesillas:53 · usos 1
+- `moneda(x,y,s,t,ph=0)` · 2026-11-27_luisiana:40 · usos 2
 - `monument(x,y,s,t,lit)` · 2026-11-20_laika:89 · usos 1 — estatua / monumento
 - `moon(x,y,r,t)` · 2026-11-15_gansos_roma:12 · usos 5
 - `moon(x,y,r,t=0)` · 2026-11-25_bobby:33 · usos 1
 - `moon(x,y,r,t=0)` · 2026-11-26_piramides:64 · usos 1
 - `moon(x,y,r,t=0)` · 2026-11-26_stubby:42 · usos 1
+- `mosq(x,y,s,t,ph=0)` · 2026-11-27_luisiana:41 · usos 1
 - `mound(x,y,w,h,col='#1c2a22')` · 2026-11-25_bobby:30 · usos 3
 - `mount(x,y,w,h,col,snow,t=0)` · 2026-11-10_generales_olvidados:53 · usos 3
 - `mount(y0,amp,seed,col,dx,w=520)` · 2026-11-13_paralelo42:32 · usos 2
@@ -409,6 +421,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `museum(x,y,s,col='#cfc7ae')` · 2026-11-26_stubby:72 · usos 1 — museo (fachada con columnas) y vitrina
 - `musher(x,y,s,o={}) {fill,flip,lean,rim}` · 2026-11-17_togo_balto:48 · usos 2
 - `nao(x,y,sz,col,flip,t,a=1)` · 2026-11-18_vuelta_mundo:30 · usos 10 — nao (barco) esquemático; flip = mira a la izquierda
+- `napo(x,y,s,t,ph=0)` · 2026-11-27_luisiana:37 · usos 3 — Napoleón (silueta genérica con bicornio) y Jefferson (silueta con pelo blanco)
 - `nb(a,b,t)` · 2026-11-17_guerra_fria:6 · usos 25
 - `nb(a,b,t)` · 2026-11-18_vuelta_mundo:6 · usos 34
 - `nb(a,b,t)` · 2026-11-19_bolivia_mar:6 · usos 32
@@ -416,6 +429,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `nb(a,b,t)` · 2026-11-22_alaska:6 · usos 26
 - `nb(a,b,t)` · 2026-11-23_panama:6 · usos 30
 - `nb(a,b,t)` · 2026-11-25_tordesillas:6 · usos 40
+- `nb(a,b,t)` · 2026-11-27_luisiana:6 · usos 50
 - `nero(x,y,s,o={}) {al,flip}` · 2026-11-24_neron:17 · usos 6 — emperador: toga morada, corona de laurel y franja dorada
 - `news(x,y,s,r,t,o={})` · 2026-11-11_hachiko:68 · usos 1
 - `newspaper(x,y,s,t=0,rot=-.05)` · 2026-11-26_stubby:75 · usos 1 — periódico (obituario)
@@ -426,6 +440,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `oatBowl(x,y,s,t,o={}) {gold}` · 2026-11-16_caballo_caligula:53 · usos 1
 - `oven(x,y,s,t=0)` · 2026-11-26_piramides:38 · usos 1 — horno de pan
 - `P_(c,p)` · 2026-11-25_tordesillas:8 · usos 19
+- `P_(c,p)` · 2026-11-27_luisiana:8 · usos 14
 - `paisaje(c,t,p=.7,o={}) {cerca,cut}` · 2026-11-12_emu:47 · usos 7 — paisaje: cielo, sol, colinas lejanas, mesetas, campos de trigo. c=cámara, p=0..1 (0 mediodía/1 atardecer).
 - `palm(x,y,s,t,col='#0a2a1c')` · 2026-11-19_pocho_chito:18 · usos 8
 - `panel(x,y,w,h,col,fn,t,ts)` · 2026-11-15_mundo_hombres:65 · usos 1 — monitor/pantalla flotante en 2.5D
@@ -448,6 +463,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `pergamino()` · 2026-11-12_zama:72 · usos 0
 - `pers(x,y,s,col,st=0)` · 2026-11-18_termopilas:17 · usos 5 — guerrero persa diminuto (mira a la derecha)
 - `persona(x,y,s,col,t,ph=0)` · 2026-11-25_tordesillas:43 · usos 3
+- `persona(x,y,s,col,t,ph=0)` · 2026-11-27_luisiana:33 · usos 4
 - `petals(t,n,col,seed=1,spd=26,a=.9)` · 2026-11-11_hachiko:59 · usos 3
 - `pf(pts)` · 2026-11-10_animales_guerra:12 · usos 12
 - `pf(pts)` · 2026-11-12_zama:11 · usos 2
@@ -506,6 +522,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `ruta(c,G,p,col,lw=3.2,o={}) {a,dash,t}` · 2026-11-22_alaska:20 · usos 1 — ruta con progreso p (0..1): devuelve [x,y,ang] de la punta
 - `ruta(c,G,p,col,lw=3.2,o={}) {a,dash,t}` · 2026-11-23_panama:20 · usos 5 — ruta con progreso p (0..1): devuelve [x,y,ang] de la punta
 - `ruta(c,G,p,col,lw=3.2,o={}) {dash,t}` · 2026-11-25_tordesillas:26 · usos 3
+- `ruta(c,G,p,col,lw=3.2,o={}) {dash,t}` · 2026-11-27_luisiana:18 · usos 4
 - `sack(x,y,s,rot,fill=1)` · v02_gatos:151 · usos 2
 - `sack(x,y,s,rot,fill=1)` · 2026-11-14_gatos_ronroneo:151 · usos 1
 - `sack(x,y,s,rot=0)` · 2026-11-24_neron:59 · usos 1
@@ -517,6 +534,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `sea()` · 2026-11-14_imperio_poderoso:26 · usos 8
 - `sea(t)` · 2026-11-16_inicio_segunda_guerra:21 · usos 2
 - `seal(x,y,r,col,txtS,t,ts)` · 2026-11-13_paralelo42:41 · usos 1
+- `sello(s,x,y,sz,col,t,t0,rot=-.15)` · 2026-11-27_luisiana:49 · usos 1
 - `senator(x,y,s,o={}) {col,q,sink}` · 2026-11-16_caballo_caligula:29 · usos 2
 - `servant(x,y,s,t,i)` · 2026-11-16_caballo_caligula:46 · usos 1
 - `sextant(x,y,s,rot)` · 2026-11-13_paralelo42:37 · usos 1
@@ -547,6 +565,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `skyline(y,col,lit,t)` · 2026-11-20_laika:82 · usos 3 — skyline de Moscú (genérico, siluetas)
 - `skyline(t,y,burn=1,seed=0)` · 2026-11-24_neron:49 · usos 1
 - `sl(s,x,y,sz,col,t,ts,o={})` · 2026-11-25_tordesillas:10 · usos 2
+- `sl(s,x,y,sz,col,t,ts,o={})` · 2026-11-27_luisiana:10 · usos 1
 - `sled(x,y,s,o={}) {flip,lean}` · 2026-11-17_togo_balto:52 · usos 2 — trineo con musher; (x,y)=suelo bajo el trineo. o: lean
 - `sm(P,n=8) {push}` · 2026-11-18_vuelta_mundo:14 · usos 8 — spline Catmull-Rom en coordenadas geográficas
 - `sm(P,n=8) {push}` · 2026-11-19_bolivia_mar:14 · usos 0 — spline Catmull-Rom en coordenadas geográficas
@@ -662,9 +681,11 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `TX(s,x,y,sz,col,t,t0,oo={})` · 2026-11-25_tordesillas:3 · usos 51
 - `TX(s,x,y,sz,col,t,t0,o={})` · 2026-11-26_piramides:4 · usos 21
 - `TX(s,x,y,sz,col,t,t0,o={})` · 2026-11-26_stubby:4 · usos 38
+- `TX(s,x,y,sz,col,t,t0,oo={})` · 2026-11-27_luisiana:3 · usos 60
 - `unit(x,y,w,h,col,o={}) {al,dx,dy,edge,rot}` · 2026-11-12_zama:29 · usos 12 — bloque de infantería: rectángulo con borde y filas de escudos. o: al, shake
 - `usMap(fill,edge)` · 2026-11-13_paralelo42:20 · usos 5
 - `veil(a,col='4,10,28')` · 2026-11-25_tordesillas:9 · usos 1
+- `veil(a,col='4,10,28')` · 2026-11-27_luisiana:9 · usos 1
 - `venus(x,y,s,col,lw=3)` · 2026-11-15_mundo_hombres:23 · usos 4 — símbolos ♀ ♂
 - `venus(x,y,s,col,lw=3)` · 2026-11-15_mundo_mujeres:23 · usos 4 — símbolos ♀ ♂
 - `vial(x,y,s,t,col=AUR) {col,glow,plate}` · 2026-11-17_togo_balto:64 · usos 2
