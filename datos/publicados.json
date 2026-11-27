@@ -291,8 +291,10 @@
    "slug": "2026-11-27_hans",
    "titulo": "¿Un caballo que sabía matemáticas? Hans el Listo, 1904",
    "mp4_sha256": "3ffb8947f7dec4d81543d063fb33d043850a205edccef69e41843c7960bbbd99",
-   "estado": "reservado",
-   "ts": "2026-11-27 13:54:11"
+   "estado": "programado",
+   "ts": "2026-11-27 13:54:11",
+   "plannerUrl": "https://www.youtube.com/watch?v=xvVx17cs_80",
+   "fecha_programada": "2026-11-27T18:00:00-05:00"
   }
  ]
 }
