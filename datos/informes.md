@@ -222,3 +222,10 @@
 3. Regeneraciones innecesarias: ninguna (voz 1 vez, render 1 vez) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
 4. Consumo de tokens/créditos: vidIQ sin créditos: sin investigación de tendencias; ElevenLabs ~1376 créditos de voz
 5. Publicaciones: YouTube/IG/FB/TikTok 2026-11-27 12:00 NY vía vidIQ
+
+## 2026-11-27_hans — 2026-11-27 13:55
+1. Modelo principal: Sonnet 5.5
+2. Subagentes y modelos: ninguno
+3. Regeneraciones innecesarias: ninguna (1 voz, 1 render) (etapas ejecutadas: mezcla, render; reutilizadas por caché: audio)
+4. Consumo de tokens/créditos: ElevenLabs 1 generación (1245 créditos); vidIQ 0 créditos
+5. Publicaciones: YouTube/IG/FB/TikTok 18:00 NY vía vidIQ
