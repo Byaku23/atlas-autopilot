@@ -1,249 +1,149 @@
-// ===== 26 · Sargento Stubby — escenas =====
+// ===== 27 · Hans el Listo — escenas =====
 const T0=T;
-const PA=(t,a,b)=>win(t,a,b); // alias corto
-// ---------- S0 · gancho: el perro salta a sargento ----------
+const PA=(t,a,b)=>win(t,a,b);
+const TAPS=Array.from({length:11},(_,i)=>0); // se calculan con E en tap()
+const tapT=i=>E.golpeaba+i*.27;                 // 11 golpes de la pezuña (escena 1)
+// pulso 0..1 de un golpe de cabeza en el instante ts
+const pulse=(t,ts)=>{const u=t-ts;return u<0||u>.22?0:Math.sin(u/.22*Math.PI)};
+// ---------- fondos ----------
+function berlin(t,warm){bg('#1b2a3a',mixc('#b9803f','#d8964a',warm||0));stars(t,26,5,.55);
+  ridge(300,'#14202e',3,50);ridge(350,'#101a26',8,34);
+  for(let i=0;i<16;i++){const wx=14+i*22+R(i)*6,wy=250+R(i+9)*80;if(R(i+3)>.35)rect0(wx,wy,5,7,'rgba(255,210,120,'+(.55+.3*Math.sin(t*2+i))+')')}
+  for(let i=0;i<3;i++){const lx=40+i*140;line(lx,330,lx,420,'#0a1018',3);glow(lx,326,38,'rgba(255,200,110,.55)',1)}
+  rect0(0,480,360,200,COB);rect0(0,480,360,2,'rgba(255,220,160,.35)');
+  for(let r=0;r<4;r++)for(let c=0;c<12;c++)rect0(c*32+(r%2)*16-8,490+r*14,26,9,'rgba(0,0,0,'+(.18+.08*((r+c)%2))+')')}
+function board(x,y,s,txtA,q){tr(x,y,s*q,0,()=>{rr(-62,-48,124,96,6);ctx.fillStyle='#1d3a30';ctx.fill();ctx.strokeStyle='#8a6a3a';ctx.lineWidth=5;ctx.stroke();txt(txtA,0,2,34,'#f4ecd8',{wt:'900'})})}
+// ---------- S0 · gancho: Berlín 1904, el caballo que suma ----------
 function s0(t,u){
-  const gy=520;
-  bg('#3d4328','#e0b878');sunO(262,235,26,t,.55);
-  ridge(400,'#4a4a30',3,40);ridge(440,'#3a3a24',9,26);
-  sandbags(-10,370,gy-6,2);rect0(0,gy,360,200,MUD);rect0(0,gy,360,2,'rgba(255,230,170,.4)');
-  dust(t,26,'rgba(255,230,170,',4,12,2,.3);
-  const sq=1+.04*Math.sin(t*2.4);
-  terrier(180,gy+6,2.3,{sit:1,rim:'#ffe6b0',t,wag:.5,salute:t>E.sarg-.2?1:0,vest:t>E.sarg+.6?1:0});
-  TX('UN PERRO CALLEJERO',180,66,25,'#fff',t,-.6,{out:E.sarg-.1,w:340,hl:[2],hc:BRASS});
-  if(t>E.sarg-.05&&t<E.heroe-.1){slam('SARGENTO',180,100,52,BRASS,t,E.sarg,{st:INK,sw:10});shock(180,100,t,E.sarg,BRASS,150,5,.6)}
-  const cq=eb(PA(t,E.sarg+.15,E.sarg+.65));if(cq>0&&t<E.heroe-.1)chevrons(180,175,1.2*cq,BRASS);
-  if(t>E.eeuu-.05&&t<E.heroe-.1)tag('DEL EJÉRCITO DE EE. UU.',180,300,18,RED,'#fff',t,E.eeuu-.05);
-  if(t>E.heroe-.05){TX('¿HÉROE DE GUERRA',180,80,26,'#fff',t,E.heroe-.05,{hl:[1,2],hc:BRASS,w:340})}
-  if(t>E.leyenda-.05){slam('¿LEYENDA?',180,150,54,RED,t,E.leyenda,{st:INK,sw:10});shock(180,150,t,E.leyenda,RED,160,5,.6)}
+  berlin(t,0);dust(t,22,'rgba(255,220,150,',4,10,1.6,.3);
+  const tp=pulse(t,E.sumar+.25)+pulse(t,E.sumar+.55)+pulse(t,E.sumar+.85)+pulse(t,E.restar+.3)+pulse(t,E.restar+.6);
+  hans(135,500,2.0,{head:.35*tp+.04*Math.sin(t*2),t,rim:'#ffd9a0',ph:0});
+  if(t>E.caballo-.2){const q=eb(PA(t,E.caballo-.2,E.caballo+.35));board(268,330,1,t<E.sumar?'?':(t<E.restar?'3+4':(t<E.fecha?'9−4':'')),q);
+    if(t>E.sumar&&t<E.restar)txt('= 7',268,395,26,GOLD,{wt:'900',st:INK,sw:5,a:cl((t-E.sumar-.9)*3)});if(t>E.restar&&t<E.fecha)txt('= 5',268,395,26,GOLD,{wt:'900',st:INK,sw:5,a:cl((t-E.restar-.9)*3)})}
+  if(t>E.fecha-.1){const q=eb(PA(t,E.fecha-.1,E.fecha+.35));calCard(268,300,'NOVIEMBRE','27',RED,q)}
+  TX('BERLÍN',180,66,30,'#fff',t,-.6,{out:E.n1904-.1,hl:[0],hc:GOLD});
+  if(t>E.n1904-.05&&t<E.caballo-.1){slam('1904',180,70,60,GOLD,t,E.n1904,{st:INK,sw:10});shock(180,70,t,E.n1904,GOLD,150,5,.6)}
+  if(t>E.caballo-.05&&t<E.listo-.2)TX('UN CABALLO QUE CALCULA',180,66,22,'#fff',t,E.caballo-.05,{w:344,hl:[2],hc:GOLD});
+  if(t>E.listo-.05){slam('HANS EL LISTO',180,86,40,GOLD,t,E.listo,{st:INK,sw:9});shock(180,86,t,E.listo,GOLD,160,5,.6);rays(180,86,t,14,230,'rgba(255,207,90,',.12,.2)}
 }
-// ---------- S1 · Yale 1917: el cachorro, Conroy y el saludo ----------
+// ---------- S1 · von Osten pregunta la fecha y Hans golpea 11 veces ----------
 function s1(t,u){
-  const gy=480;
-  bg('#8ea0a8','#eadcae');
-  // estadio al fondo y tiendas
-  ctx.fillStyle='#9a9a86';ctx.beginPath();ctx.moveTo(-20,gy-20);ctx.quadraticCurveTo(180,gy-170,380,gy-20);ctx.lineTo(380,gy);ctx.lineTo(-20,gy);ctx.fill();
-  for(let i=0;i<6;i++)line(10+i*58,gy-30-Math.sin(i*.52)*40,10+i*58,gy,'rgba(60,60,50,.3)',2);
-  rect0(0,gy,360,200,'#667a3e');rect0(0,gy,360,3,'rgba(255,255,255,.3)');
-  tent(46,gy+4,1.2);tent(316,gy+4,1.1,'#7e7e50');tent(110,gy-6,.7,'#8a8a5a');
-  // Conroy
-  const sa=t>E.pata-.1?-2.4:(t>E.conroy-.1&&t<E.stubby1?-.9:0);
-  person(250,gy+10,1.8,{flip:true,arm:sa,hat:'helm'});
-  // cachorro
-  const run=PA(t,E.cachorro-.35,E.conroy-.6),dx=lerp(-60,160,eo(run)),moving=run>0&&run<1;
-  if(t>E.cachorro-.4)terrier(dx,gy+8,1.5,{ph:moving?t*12:0,sit:moving?0:1,rim:'#fff7d8',t,wag:1,salute:t>E.pata-.1?1:0});
-  if(t>E.stubby1)for(let i=0;i<4;i++){const w=((t-E.stubby1)*1.1+i*.22)%1;heart(130+i*16,330-w*60,1.3,'#e0484e',1-w)}
-  // cola corta (resaltar)
-  if(t>E.corta-.1&&t<E.soldados+1.0){const q=eb(PA(t,E.corta-.1,E.corta+.3));ctx.save();glowStroke(BRASS,3,10);ctx.beginPath();ctx.arc(dx-44,gy-54,18*q,0,TAU);ctx.stroke();ctx.restore();tag('COLA CORTA',74,gy-120,17,RED,'#fff',t,E.corta-.05)}
-  // cartel prohibido y corneta
-  if(t>E.prohib-.1&&t<E.pata-.3){const q=eb(PA(t,E.prohib-.1,E.prohib+.35));noDog(70,280,1.1*q,t);shock(70,280,t,E.prohib,RED,70,4,.5)}
-  if(t>E.corneta-.1&&t<E.pata-.1){const q=eb(PA(t,E.corneta-.1,E.corneta+.3));bugle(290,310,1.3*q,-.3+Math.sin(t*14)*.05);for(let i=0;i<3;i++){const w=((t-E.corneta)*1.4+i*.33)%1;txt('♪',250-w*60,300-w*70+i*8,18,BRASS,{wt:'900',st:INK,sw:4,a:1-w})}}
-  if(t>E.pata-.1)burst(200,gy-140,t,E.pata,[BRASS,'#fff'],12,100,.7,3);
-  // textos
-  TX('TODO EMPEZÓ EN',180,66,25,'#fff',t,T0[1]+.0,{out:E.n1917-.1,hl:[2],hc:BRASS});
-  if(t>E.n1917-.05&&t<E.campo-.1){slam('1917',180,66,56,BRASS,t,E.n1917,{st:INK,sw:10});shock(180,66,t,E.n1917,BRASS,150,5,.6)}
-  if(t>E.campo-.05&&t<E.yale-.1)TX('UN CAMPO DE ENTRENAMIENTO',180,66,20,'#fff',t,E.campo-.05,{w:344,hl:[2],hc:BRASS});
-  if(t>E.yale-.05&&t<E.cachorro-.1)tag('UNIVERSIDAD DE YALE',180,66,22,RED,'#fff',t,E.yale-.05);
-  if(t>E.cachorro-.05&&t<E.conroy-.1)TX('UN CACHORRO',180,66,26,'#fff',t,E.cachorro-.05,{hl:[1],hc:BRASS});
-  if(t>E.conroy-.1&&t<E.stubby1-.1)TX('EL SOLDADO CONROY',180,66,24,'#fff',t,E.conroy-.1,{w:344,hl:[2],hc:BRASS});
-  if(t>E.stubby1-.05&&t<E.prohib-.3){slam('STUBBY',180,66,58,BRASS,t,E.stubby1,{st:INK,sw:10});shock(180,66,t,E.stubby1,BRASS,150,5,.6)}
-  if(t>E.prohib-.3&&t<E.corneta-.1)TX('PERROS PROHIBIDOS',180,66,24,'#fff',t,E.prohib-.3,{w:344,hl:[1],hc:RED});
-  if(t>E.corneta-.1&&t<E.pata-.1)TX('APRENDIÓ LOS TOQUES DE CORNETA',180,66,19,'#fff',t,E.corneta-.1,{w:344,hl:[3,4],hc:BRASS});
-  if(t>E.pata-.05)tag('SALUDÓ CON LA PATA',180,470,22,RED,'#fff',t,E.pata-.05);
+  berlin(t,.15);
+  const n=t<E.golpeaba?0:Math.min(11,Math.floor((t-E.golpeaba)/.27)+1);
+  let tp=0;for(let i=0;i<11;i++)tp+=pulse(t,tapT(i));
+  const sh=hit=>0;
+  person(255,505,2.0,{flip:true,robe:'#5a4a3a',beard:1,hair:'#bbb',arm:t>E.golpeaba-.5&&t<E.once+1?-1.2:0});
+  hans(105,505,1.9,{head:.35*tp,t,rim:'#ffd9a0'});
+  if(t>E.ocho-.1){const q=eb(PA(t,E.ocho-.1,E.ocho+.35));calCard(95,190,'MARTES','8',TEAL,q)}
+  if(t>E.viernes-.1){const q=eb(PA(t,E.viernes-.1,E.viernes+.35));calCard(265,190,'VIERNES',t<E.once?'?':'11',RED,q);
+    if(t>E.martes&&t<E.viernes+.4)for(let i=0;i<5;i++){const w=PA(t,E.martes+i*.1,E.viernes+.2);txt('›',lerp(140,222,w),190,22,GOLD,{wt:'900',a:Math.sin(w*Math.PI)})}}
+  if(t>E.golpeaba-.05){const ph=1;tr(180,272,1+.12*wob(t-(E.golpeaba+(n-1)*.27),14,5),0,()=>{txt(String(n),0,0,n>=10?80:84,GOLD,{wt:'900',st:INK,sw:11})});
+    for(let i=0;i<11;i++)if(t>tapT(i)&&t<tapT(i)+.4)shock(105+70,505-4,t,tapT(i),'rgba(255,230,180,.8)',34,2.4,.4)}
+  TX('SU DUEÑO',180,66,26,'#fff',t,T0[1]-.05,{out:E.wilhelm-.1,hl:[1],hc:GOLD});
+  if(t>E.wilhelm-.05&&t<E.profesor-.1)tag('WILHELM VON OSTEN',180,66,21,RED,'#fff',t,E.wilhelm-.05);
+  if(t>E.profesor-.05&&t<E.ocho-.4)TX('PROFESOR DE MATEMÁTICAS',180,66,20,'#fff',t,E.profesor-.05,{w:344,hl:[1],hc:GOLD});
+  if(t>E.ocho-.35&&t<E.golpeaba-.1)TX('"¿QUÉ FECHA ES EL VIERNES?"',180,66,19,'#fff',t,E.ocho-.35,{w:344,hl:[2,3],hc:GOLD});
+  if(t>E.golpeaba-.05&&t<E.correcto-.1)TX('GOLPEA CON LA PEZUÑA',180,66,22,'#fff',t,E.golpeaba-.05,{w:344,hl:[2],hc:GOLD});
+  if(t>E.correcto-.05){tag('¡CORRECTO!',180,470,22,RED,'#fff',t,E.correcto-.05);burst(180,330,t,E.correcto,[GOLD,'#fff',GRN],18,130,.8,3)}
 }
-// ---------- S2 · el barco, el carbón y el saludo al oficial ----------
+// ---------- S2 · el periódico y la comisión de trece expertos ----------
 function s2(t,u){
-  const at=t<E.tierra;
-  if(at){
-    bg('#1e2f44','#8aa2b2');
-    const sx=lerp(-150,180,eo(PA(t,T0[2],E.zarpo+.8)))+(t>E.zarpo+.8?(t-E.zarpo-.8)*5:0);
-    ship(sx,430,1.05,t);waves(t,432,'#1a2a38',3);
-    if(t>E.escondio-.1){const q=eb(PA(t,E.escondio-.1,E.escondio+.35));tr(180,300,q,0,()=>{rr(-150,-110,300,220,14);ctx.fillStyle='#1a1410';ctx.fill();ctx.strokeStyle=BRASS;ctx.lineWidth=3;ctx.stroke();
-      for(let i=0;i<22;i++)circ(-130+R(i)*260,50+R(i+30)*52-Math.abs(((i%7)-3))*4,9+R(i+5)*7,'#0c0a08');
-      const pk=PA(t,E.escondio+.3,E.carbon);terrier(-20,52,1.2,{sit:1,col:'#b5834f',rim:'#ffe6b0',t,wag:.4});
-            person(86,66,1.1,{flip:true,hat:'helm',arm:-.6});txt('shh',70,-30,18,'#fff',{wt:'900',st:INK,sw:4,a:.8+.2*Math.sin(t*6)})})}
-    TX('LA DIVISIÓN ZARPÓ',180,66,23,'#fff',t,T0[2]+.0,{out:E.escondio-.1,w:344,hl:[2],hc:BRASS});
-    if(t>E.escondio-.05&&t<E.carbon-.1)TX('CONROY LO ESCONDIÓ',180,66,22,'#fff',t,E.escondio-.05,{w:344,hl:[0],hc:BRASS});
-    if(t>E.carbon-.05)tag('EN EL CARBÓN',180,470,24,RED,'#fff',t,E.carbon-.05);
-  }else{
-    const gy=490;
-    bg('#7e8a72','#e0d4a8');ridge(430,'#5a6a48',5,30);
-    rect0(0,gy,360,200,'#6a6446');rect0(0,gy,360,3,'rgba(255,255,255,.3)');
-    ship(60,gy-8,.5,t);
-    const fl=Math.exp(-(t-E.tierra)*5);if(fl>.02)withA(fl,()=>rect0(0,0,360,640,'#fff'));
-    const ox=lerp(430,270,eo(PA(t,E.oficial-.5,E.oficial+.3)));
-    person(ox,gy+10,1.9,{flip:true,hat:'peak',robe:'#5a6a38',arm:t>E.saludo-.1?-2.4:0,ph:t<E.oficial+.3?t*8:0});
-    person(40,gy+10,1.7,{hat:'helm'});
-    const sal=t>E.stubby2?1:0;
-    terrier(150,gy+8,2.0,{sit:1,rim:'#fff7d8',t,wag:.5,salute:sal});
-    if(t>E.oficial+.4&&t<E.stubby2)txt('!',ox-34,gy-170,50,RED,{wt:'900',st:INK,sw:8,sc:1+.12*wob(t-E.oficial-.4,10,4)});
-    if(t>E.oficial-.05&&t<E.stubby2-.1)TX('UN OFICIAL LO DESCUBRIÓ',180,66,20,'#fff',t,E.oficial-.05,{w:344,hl:[1],hc:RED});
-    if(t>E.stubby2-.05&&t<E.quedarse-.1)TX('STUBBY LE HIZO EL SALUDO',180,66,20,'#fff',t,E.stubby2-.05,{w:344,hl:[0],hc:BRASS});
-    if(t>E.saludo)stampBox('¡SALUDO!',180,250,32,BRASS,t,E.saludo,-.08);
-    if(t>E.quedarse){stampBox('SE QUEDA',180,320,30,'#8bd04a',t,E.quedarse,.06);burst(170,gy-160,t,E.quedarse,[BRASS,'#fff','#8bd04a'],18,120,.8,3)}
+  berlin(t,.1);
+  const pq=PA(t,E.nyt-.5,E.nyt+.3),out=PA(t,E.comision-.35,E.comision+.25);
+  if(out<1)paper(lerp(180,180,0)+out*-340,300,1.5*eb(pq),t,-.05+.1*out);
+  if(t>E.nyt-.1&&out<.5)TX('THE NEW YORK TIMES · 1904',180,66,18,'#fff',t,E.nyt-.1,{w:344,hl:[1,2],hc:GOLD});
+  if(t>E.entonces-.1&&out<.5)TX('LA NOTICIA DA LA VUELTA AL MUNDO',180,100,16,'#fff',t,E.entonces-.1,{w:344,hl:[3],hc:GOLD});
+  // comisión: 13 figuras en dos filas
+  const cols=['#6a4a3a','#3a4a5a','#5a3a4a','#4a5a3a','#6a5a3a','#3a3a5a','#5a4a2a'];
+  for(let i=0;i<13;i++){const row=i<7?0:1,k=row?i-7:i,px=row?60+k*40:30+k*50,py=row?500:440;
+    const q=eb(PA(t,E.comision+.1+i*.05,E.comision+.5+i*.05));if(q>0){const hi=(t>E.vet-.1&&t<E.circo-.2&&i==2)||(t>E.circo-.1&&t<E.caballeria-.2&&i==5)||(t>E.caballeria-.1&&t<E.zoo-.2&&i==9)||(t>E.zoo-.1&&i==12);
+      person(px,py,1.25*q,{robe:cols[i%7],hair:i%3?'#3a2418':'#bbb',beard:i%4==0});if(hi){glow(px,py-50,34,'rgba(255,207,90,.7)',1)}}}
+  if(t>E.comision+.1){TX('COMISIÓN',180,66,26,'#fff',t,E.comision-.05,{out:E.trece-.1,hl:[0],hc:GOLD})}
+  if(t>E.trece-.05){slam('13 EXPERTOS',180,76,44,GOLD,t,E.trece,{st:INK,sw:9});shock(180,76,t,E.trece,GOLD,150,5,.6)}
+  const lab=(s,a,b)=>{if(t>a-.05&&t<b)tag(s,180,340,19,RED,'#fff',t,a-.05)};
+  lab('VETERINARIO',E.vet,E.circo-.1);lab('DIRECTOR DE CIRCO',E.circo,E.caballeria-.1);lab('OFICIAL DE CABALLERÍA',E.caballeria,E.zoo-.1);lab('DIRECTOR DEL ZOO DE BERLÍN',E.zoo,T0[3]);
+}
+// ---------- S3 · veredicto: sin trucos ----------
+function s3(t,u){
+  berlin(t,.3);rays(180,300,t,16,360,'rgba(255,207,90,',.1,.15);
+  hans(180,500,2.2,{head:.04*Math.sin(t*2),t,rim:'#ffd9a0'});
+  TX('CONCLUSIÓN',180,66,28,'#fff',t,T0[3]-.05,{out:E.sept-.1,hl:[0],hc:GOLD});
+  if(t>E.sept-.05&&t<E.no-.1)TX('SEPTIEMBRE DE 1904',180,66,24,'#fff',t,E.sept-.05,{w:344,hl:[1,2],hc:GOLD});
+  if(t>E.no-.05)TX('NO HABÍA',180,66,34,'#fff',t,E.no-.05,{hl:[1],hc:RED});
+  if(t>E.trucos){stampBox('¡SIN TRUCOS!',180,185,44,GRN,t,E.trucos,-.08);burst(180,185,t,E.trucos,[GRN,'#fff',GOLD],20,150,.8,3);shock(180,185,t,E.trucos,GRN,170,5,.6)}
+}
+// ---------- S4 · Pfungst, anteojeras y porcentajes ----------
+function s4(t,u){
+  berlin(t,0);
+  const bl=PA(t,E.anteo,E.anteo+.5);
+  hans(110,505,1.55,{head:.03*Math.sin(t*2),t,bl,rim:'#ffd9a0'});
+  person(250,505,1.9,{flip:true,robe:'#2f3f5a',hair:'#3a2418',arm:t>E.anteo?-.6:0});
+  TX('UN JOVEN PSICÓLOGO',180,66,23,'#fff',t,T0[4]-.05,{out:E.oskar-.1,w:344,hl:[2],hc:GOLD});
+  if(t>E.oskar-.05&&t<E.prueba-.1)tag('OSKAR PFUNGST',180,66,24,RED,'#fff',t,E.oskar-.05);
+  if(t>E.prueba-.05&&t<E.anteo-.1)TX('UNA PRUEBA SENCILLA',180,66,24,'#fff',t,E.prueba-.05,{w:344,hl:[2],hc:GOLD});
+  if(t>E.anteo-.05&&t<E.siveia-.2)tag('ANTEOJERAS',180,66,26,RED,'#fff',t,E.anteo-.05);
+  if(t>E.anteo+.4&&t<E.siveia-.1){const q=eb(PA(t,E.anteo+.4,E.anteo+.9));tr(180,250,q,0,()=>{eyes(0,0,.9,0,0);line(-44,-30,44,30,RED,6)})}
+  // barras
+  if(t>E.siveia-.1){
+    const b1=PA(t,E.ochenta-.1,E.ochenta+.9),b2=PA(t,E.seis-.1,E.seis+.5);
+    if(t<E.sino-.1)TX('SI LO VEÍA',180,66,26,'#fff',t,E.siveia-.1,{hl:[2],hc:GRN});
+    if(t>=E.sino-.1)TX('SI NO LO VEÍA',180,66,26,'#fff',t,E.sino-.1,{hl:[3],hc:RED});
+    const base=318;rect0(40,base,280,3,'rgba(255,255,255,.5)');
+    const h1=130*eo(b1);rect0(70,base-h1,70,h1,GRN);rect0(70,base-h1,70,4,'#fff');
+    if(t>E.ochenta-.1)txt(Math.round(89*eo(b1))+'%',105,base-h1-24,34,GRN,{wt:'900',st:INK,sw:7});
+    txt('LO VE',105,base+22,17,'#fff',{wt:'900',st:INK,sw:4});
+    if(t>E.sino-.1){const h2=Math.max(3,9*eo(b2));rect0(220,base-h2,70,h2,RED);if(t>E.seis-.1)txt(Math.round(6*eo(b2))+'%',255,base-h2-24,34,RED,{wt:'900',st:INK,sw:7});txt('NO LO VE',255,base+22,17,'#fff',{wt:'900',st:INK,sw:4});if(t>E.seis)shock(255,base-10,t,E.seis,RED,70,4,.5)}
+    if(t>E.ochenta)shock(105,base-130,t,E.ochenta+.8,GRN,90,4,.5);
   }
 }
-// ---------- S3 · el gas: olfato y alarma en la trinchera ----------
-function s3(t,u){
-  const ty=420;
-  const dawn=PA(t,E.madrugada,E.madrugada+1.4);
-  bg(mixc('#10140c','#3a2a30',dawn),mixc('#3a3a22','#b87a58',dawn));
-  starfield(t,22,6,.5*(1-dawn));moon(70,150,22,t);glow(250,120,100,'rgba(255,230,160,'+(.12+.08*Math.sin(t*3))+')');
-  ridge(300,'#1e2216',6,34);
-  // alambre de espino y parapeto
-  for(let i=0;i<9;i++){line(20+i*40,300,20+i*40,330,'#0a0a08',2);ctx.strokeStyle='#0a0a08';ctx.lineWidth=1;ctx.beginPath();for(let k=0;k<12;k++)ctx.lineTo(20+i*40+k*3.4,318+(k%2)*5);ctx.stroke()}
-  sandbags(-10,370,345,2,'#8a7a50');
-  rect0(0,345,360,300,'#2a2014');rect0(0,ty+64,360,200,'#1c1610');
-  for(let i=0;i<9;i++)rect0(i*42-6,ty+62,34,5,'#6a4a28');
-  rect0(0,345,360,3,'rgba(0,0,0,.4)');
-  // soldados dormidos / despertando
-  for(let i=0;i<4;i++){const sx=36+i*86,wk=PA(t,E.ladrando+.25+i*.28,E.ladrando+.8+i*.28),rot=lerp(-1.5,0,eo(wk));
-    tr(sx+(rot<-.05?40:0),ty+60,1.25,rot,()=>person(0,0,1,{hat:'helm',robe:'#6a6a40'}));
-    if(t>E.dormidos&&t<E.ladrando+.3)txt('z',sx+18,ty-8-((t*20+i*7)%14),16,'#cfe0ff',{wt:'900',st:INK,sw:3,a:.8})}
-  // nube de gas
-  const gk=PA(t,E.gas-.1,E.gas+1.1),gs=t>E.madrugada?1:0;
-  if(gk>0)gasCloud(t,t<E.madrugada?ty-30:ty-10,1,.4*gk*(t>E.madrugada?1.5:1),lerp(420,150,eo(gk)*(t>E.madrugada?.4:1)),460);
-  // Stubby
-  const run=PA(t,E.corrio-.1,E.alarma-.3);
-  let dx=150,ph=0,sit=1,fl=false;
-  if(t>=E.corrio-.1){dx=lerp(90,290,eio(run));sit=run<1?0:1;ph=run<1?t*14:0;fl=false}
-  terrier(dx,ty+68,1.45,{sit,ph,rim:'#ffe6b0',t,wag:.4,al:t>E.intox&&t<E.olia?(.7+.3*Math.sin(t*20)):1,col:(t>E.intox&&t<E.olia-.3)?'#9aa860':undefined});
-  // olfato
-  if(t>E.olia&&t<E.madrugada)for(let i=0;i<4;i++){const w=((t-E.olia)*1.2+i*.25)%1;txt('~',dx+58+w*34,ty+8-w*8,22,'#e8f0a0',{wt:'900',a:1-w})}
-  if(t>E.rastro-.1&&t<E.madrugada-.2){const q=PA(t,E.rastro-.1,E.rastro+.3);ctx.save();ctx.globalAlpha=q;gasCloud(t,ty-6,.18,.9,250,330);ctx.restore();glowStroke(BRASS,2.4,8);ctx.beginPath();ctx.arc(290,ty-8,26*eb(q),0,TAU);ctx.stroke()}
-  // sonidos
-  if(t>E.ladrando&&t<E.alarma){for(let i=0;i<3;i++){const w=((t-E.ladrando)*2+i*.33)%1;shock(dx+50,ty+22,t,t-w,'rgba(255,255,255,.8)',28,2.4,.5)}txt('¡GUAU!',dx+10,ty-30,20,'#fff',{wt:'900',st:INK,sw:5,sc:1+.1*wob(t*2,6,2)})}
-  if(t>E.alarma){const q=Math.exp(-(t-E.alarma)*3);withA(.35*q,()=>rect0(0,0,360,640,RED));shock(180,300,t,E.alarma,RED,200,6,.7);stampBox('¡GAS!',180,230,52,RED,t,E.alarma,-.08)}
-  TX('EN LAS TRINCHERAS',180,66,24,'#fff',t,T0[3]+.0,{out:E.gas-.1,w:344,hl:[1],hc:BRASS});
-  if(t>E.gas-.05&&t<E.intox-.1){slam('GAS',180,90,60,GAS,t,E.gas,{st:INK,sw:10});shock(180,90,t,E.gas,GAS,150,5,.6)}
-  if(t>E.intox-.05&&t<E.olia-.1)TX('LO INTOXICÓ',180,66,26,'#fff',t,E.intox-.05,{hl:[1],hc:GAS});
-  if(t>E.olia-.05&&t<E.madrugada-.2)TX('OLÍA EL MÁS MÍNIMO RASTRO',180,66,19,'#fff',t,E.olia-.05,{w:344,hl:[3,4],hc:GAS});
-  if(t>E.madrugada-.05&&t<E.corrio-.2)TX('UNA MADRUGADA...',180,66,24,'#fff',t,E.madrugada-.05,{hl:[1],hc:BRASS,out:E.corrio-.3});
-  if(t>E.corrio-.1&&t<E.alarma-.1)TX('CORRIÓ LADRANDO',180,66,26,'#fff',t,E.corrio-.1,{hl:[1],hc:BRASS});
-  if(t>E.alarma+.3)tag('DIO LA ALARMA',180,470,24,RED,'#fff',t,E.alarma+.3);
-}
-// ---------- S4 · heridos en tierra de nadie y la metralla ----------
-function s4(t,u){
-  const gy=470;
-  bg('#1c1a26','#6a4a40');
-  const fl=.5+.5*Math.sin(t*3);glow(260,120,120,'rgba(255,230,160,'+(.25+.15*fl)+')');
-  ridge(330,'#14121a',8,40);
-  rect0(0,gy,360,200,'#2a2018');rect0(0,gy,360,2,'rgba(255,200,150,.3)');
-  for(let i=0;i<7;i++){line(30+i*50,gy-4,30+i*50,gy-30,'#0a0808',2);line(30+i*50-16,gy-24,30+i*50+16,gy-20,'#0a0808',1.2)}
-  // herido y Stubby
-  tr(200,gy+8,1.35,1.5,()=>person(0,0,1,{hat:'helm',robe:'#8a8a52'}));
-  const arr=eo(PA(t,E.heridos-.7,E.heridos+.3)),dx=lerp(-60,110,arr);
-  const hit=t>E.metralla;
-  const shake=hit?wob(t-E.metralla,14,4)*5:0;
-  terrier(dx+shake,gy+8,1.65,{ph:arr<1?t*12:0,sit:arr<1?0:1,flip:false,rim:'#ffd9a0',t,wag:.4,wound:t>E.pecho?1:0});
-  if(t>E.heridos+.3&&t<E.metralla){for(let i=0;i<3;i++){const w=((t-E.heridos)*1.8+i*.33)%1;txt('¡GUAU!',dx+10,gy-130-w*20,16,'#fff',{wt:'900',st:INK,sw:4,a:1-w})}}
-  if(t>E.metralla){burst(150,gy-20,t,E.metralla,['#ffd166','#ff8a3a','#fff'],26,190,.8,3);shock(150,gy-20,t,E.metralla,'#fff',150,5,.5);smoke(150,gy-20,t,E.metralla,28,'200,190,170',1.8);const q=Math.exp(-(t-E.metralla)*4);withA(.3*q,()=>rect0(0,0,360,640,'#fff'))}
-  TX('TAMBIÉN BUSCABA HERIDOS',180,66,20,'#fff',t,T0[4]+.0,{out:E.nadie-.35,w:344,hl:[2],hc:BRASS});
-  if(t>E.nadie-.05&&t<E.n1918-.1)tag('TIERRA DE NADIE',180,66,24,RED,'#fff',t,E.nadie-.05);
-  if(t>E.n1918-.05&&t<E.metralla-.1){slam('1918',180,66,56,BRASS,t,E.n1918,{st:INK,sw:10});shock(180,66,t,E.n1918,BRASS,150,5,.6)}
-  if(t>E.metralla-.05&&t<E.pecho-.1)TX('LA METRALLA LE HIRIÓ',180,66,22,'#fff',t,E.metralla-.05,{w:344,hl:[1],hc:RED});
-  if(t>E.pecho-.05)TX('EL PECHO Y UNA PATA',180,66,24,'#fff',t,E.pecho-.05,{w:344,hl:[1,4],hc:RED});
-  if(t>E.pecho+.1)tag('HERIDO EN COMBATE',180,470,22,RED,'#fff',t,E.pecho+.1);
-}
-// ---------- S5 · la leyenda del espía alemán ----------
+// ---------- S5 · Hans lee a las personas: el gesto mínimo ----------
 function s5(t,u){
-  const gy=480;
-  bg('#22241a','#7a6a44');
-  ridge(380,'#1a1c12',4,30);sandbags(-10,370,gy-4,2,'#8a7a50');
-  rect0(0,gy,360,200,'#2a2418');rect0(0,gy,360,2,'rgba(255,220,160,.3)');
-  // el espía: silueta con sombrero, camina y cae
-  const wx=lerp(420,215,eo(PA(t,E.cuenta+.2,E.mordio-.15)));
-  const fall=eb(PA(t,E.mordio+.1,E.mordio+.55)),fa=1;
-  const sx=wx+fall*40;
-  tr(sx,gy+8,1.9,fall*1.4,()=>person(0,0,1,{flip:true,hat:'fed',robe:'#55555e',hair:'#14120e',skin:'#b09880',hold:'map',arm:.4,ph:t<E.mordio-.15?t*8:0}));
-  // Stubby salta y muerde
-  const jp=eo(PA(t,E.mordio-.35,E.mordio+.1)),dx=lerp(60,sx-62,jp)+Math.min(0,(t-E.mordio-.1))*0;
-  terrier(t<E.mordio-.35?60:dx,gy+8-(Math.sin(jp*Math.PI)*34)*(jp<1?1:0),1.55,{ph:jp<1&&t>E.mordio-.35?t*14:0,sit:t<E.mordio-.35?1:0,rim:'#ffd9a0',t,wag:.5});
-  if(t>E.mordio){shock(sx-30,gy-20,t,E.mordio,'#fff',90,4,.5);burst(sx-30,gy-20,t,E.mordio,['#fff',BRASS],12,110,.6,2.5);txt('¡GRRR!',sx-70,gy-90,22,'#fff',{wt:'900',st:INK,sw:5,sc:1+.1*wob(t-E.mordio,10,4)})}
-  // mapa que vuela y se agranda cuando "dibujaba"
-  if(t>E.mordio&&t<E.dibujaba-.1){const q=PA(t,E.mordio,E.mordio+.8);mapPaper(lerp(sx,300,eo(q)),lerp(gy-120,210,eo(q))-Math.sin(q*Math.PI)*60,1.0,t,t*2)}
-  if(t>E.dibujaba-.1){const q=eb(PA(t,E.dibujaba-.1,E.dibujaba+.45));mapPaper(250,230,1.9*q,t)}
-  TX('«CUENTA LA HISTORIA»',180,66,23,'#fff',t,T0[5]+.0,{out:E.mordio-.1,w:344,hl:[1,2],hc:BRASS});
-  if(t>E.mordio-.05&&t<E.espia-.1)TX('MORDIÓ AL ESPÍA',180,66,26,'#fff',t,E.mordio-.05,{w:344,hl:[2],hc:RED});
-  if(t>E.espia-.05&&t<E.dibujaba-.1)tag('ESPÍA ALEMÁN',180,66,26,RED,'#fff',t,E.espia-.05);
-  if(t>E.dibujaba-.05&&t<E.poreso-.2)TX('DIBUJABA LAS TRINCHERAS',180,66,20,'#fff',t,E.dibujaba-.05,{w:344,hl:[1,2],hc:BRASS});
-  if(t>E.poreso-.1&&t<E.ascend-.1)TX('POR ESO...',180,66,28,'#fff',t,E.poreso-.1,{hl:[1],hc:BRASS});
-  if(t>E.ascend-.05){const q=eb(PA(t,E.ascend-.05,E.ascend+.45));chevrons(110,330,1.5*q,BRASS);shock(110,340,t,E.ascend,BRASS,140,5,.6)}
-  if(t>E.sargento2-.05&&t<E.sargento2+1.2){stampBox('SARGENTO',180,170,44,BRASS,t,E.sargento2,-.08)}
-  if(t>E.sargento2-.05)tag('ASCENDIDO A SARGENTO',180,470,22,RED,'#fff',t,E.sargento2-.05);
+  berlin(t,.2);
+  const nod=t>E.gesto?Math.sin(PA(t,E.gesto,E.gesto+.45)*Math.PI):0;
+  let tp=0;const taps=[];for(let i=0;i<9;i++){const ts=E.llegar+.9+i*.42;taps.push(ts);tp+=pulse(t,ts)}
+  const stopped=t>E.detenia-.3;
+  hans(100,505,1.75,{head:.35*tp,t,rim:'#ffd9a0'});
+  // cara de quien pregunta
+  face(262,300,1.8,nod,true);
+  if(t>E.gesto-.05&&t<E.detenia-.4){for(let i=0;i<3;i++){const w=((t-E.gesto)*2+i*.3)%1;ctx.save();ctx.globalAlpha=1-w;glowStroke(GOLD,3,8);ctx.beginPath();ctx.arc(262,300,60+w*34,.2,1.2);ctx.stroke();ctx.restore()}}
+  // ojos de Hans siguiendo
+  if(t>E.leia-.1){const q=eb(PA(t,E.leia-.1,E.leia+.4));eyes(100,260,.8*q,150,20)}
+  if(t>E.nosabia-.1&&t<E.leia-.2){const q=eb(PA(t,E.nosabia-.1,E.nosabia+.35));board(180,300,1.3,'2+2',q);if(t>E.nosabia+.2){line(110,250,250,350,RED,8);line(250,250,110,350,RED,8)}}
+  TX('HANS NO SABÍA MATEMÁTICAS',180,66,19,'#fff',t,T0[5]-.05,{out:E.leia-.1,w:344,hl:[3],hc:RED});
+  if(t>E.leia-.05&&t<E.llegar-.1)TX('LEÍA A LAS PERSONAS',180,66,24,'#fff',t,E.leia-.05,{w:344,hl:[1,2,3],hc:GOLD});
+  if(t>E.llegar-.05&&t<E.gesto-.1)TX('AL LLEGAR AL NÚMERO CORRECTO',180,66,19,'#fff',t,E.llegar-.05,{w:344,hl:[3,4],hc:GOLD});
+  if(t>E.gesto-.05&&t<E.detenia-.1)TX('UN GESTO MÍNIMO',180,66,26,'#fff',t,E.gesto-.05,{w:344,hl:[1,2],hc:RED});
+  if(t>E.detenia-.05){tag('HANS SE DETIENE',180,470,22,GOLD,'#1a1a22',t,E.detenia-.05)}
+  taps.forEach((ts,i)=>{if(t>ts&&t<ts+.4)shock(100+66,500,t,ts,'rgba(255,230,180,.8)',30,2.4,.4)});
 }
-// ---------- S6 · 17 batallas, la manta y la medalla de Pershing ----------
+// ---------- S6 · nadie engañó; Von Osten no aceptó; efecto Clever Hans ----------
 function s6(t,u){
-  const gy=500;
-  bg('#4a5a38','#f0d890');rays(180,300,t,16,520,'rgba(255,240,180,.16)',1,.1,3);
-  rect0(0,gy,360,200,'#3a3a24');rect0(0,gy,360,3,'rgba(255,240,180,.4)');
-  const cnt=Math.round(17*eo(PA(t,E.diecisiete,E.diecisiete+1.0)));
-  // 17 estrellas de batalla
-  for(let i=0;i<17;i++){const q=eb(PA(t,E.diecisiete+i*.055,E.diecisiete+i*.055+.3));if(q>0&&t<E.manta-.2)tr(30+(i%9)*37,190+((i/9)|0)*40,q,0,()=>{circ(0,0,13,'#5a2a22',BRASS,2);txt('✹',0,1,14,BRASS,{wt:'900'})})}
-  if(t>E.diecisiete-.05&&t<E.mujeres-.1){txt(String(cnt),180,130,72,BRASS,{wt:'900',st:INK,sw:10,sc:1+.08*wob(t-E.diecisiete,10,4)})}
-  // mujeres de Château-Thierry
-  const wq=eo(PA(t,E.mujeres-.4,E.mujeres+.4));
-  if(t>E.mujeres-.4){[[40,'#7a3b6a'],[92,'#3a5a7a']].forEach(([wx,c],i)=>{person(lerp(-60,wx,wq),gy+10,1.7,{hat:'none',robe:c,hair:'#4a2a1a'})})}
-  // manta grande
-  if(t>E.manta-.1){const q=eb(PA(t,E.manta-.1,E.manta+.4));blanketBig(180,260,1.6*q,t);if(t>E.manta&&t<E.manta+.7)shock(180,260,t,E.manta,BRASS,150,5,.6)}
-  terrier(220,gy+8,1.8,{sit:1,rim:'#fff7d8',t,wag:.5,vest:t>E.medallas?1:0});
-  if(t>E.medallas){burst(180,230,t,E.medallas,[BRASS,'#fff','#d1322e'],26,160,.9,3);for(let i=0;i<5;i++){const w=((t-E.medallas)*1.2+i*.2)%1;txt('✦',90+i*46,320-w*50,16,'#fff',{a:1-w})}}
-  // Pershing y la otra medalla
-  const px=lerp(420,310,eo(PA(t,E.pershing-.5,E.pershing+.3)));
-  if(t>E.pershing-.5)person(px,gy+10,1.9,{flip:true,hat:'peak',robe:'#5a6a38',arm:t>E.otra-.5?-1.3:0,ph:t<E.pershing+.3?t*8:0});
-  if(t>E.otra-.5){const q=PA(t,E.otra-.5,E.otra+.5);medal(lerp(300,220,eo(q)),lerp(380,330,eo(q))-Math.sin(q*Math.PI)*40,1.3,t*3)}
-  if(t>E.otra)shock(220,340,t,E.otra,BRASS,110,5,.5);
-  TX('PASÓ POR',180,66,24,'#fff',t,T0[6]+.0,{out:E.diecisiete+.2});
-  if(t>E.diecisiete+.4&&t<E.mujeres-.1)TX('BATALLAS',180,66,28,'#fff',t,E.diecisiete+.4,{hl:[0],hc:BRASS});
-  if(t>E.mujeres-.05&&t<E.chateau-.1)TX('LAS MUJERES DE',180,66,22,'#fff',t,E.mujeres-.05,{hl:[2],hc:BRASS});
-  if(t>E.chateau-.05&&t<E.manta-.1)tag('CHÂTEAU-THIERRY',180,66,24,RED,'#fff',t,E.chateau-.05);
-  if(t>E.manta-.1&&t<E.pershing-.2)TX('UNA MANTA PARA SUS MEDALLAS',180,66,19,'#fff',t,E.manta-.1,{w:344,hl:[2,5],hc:BRASS});
-  if(t>E.pershing-.2&&t<E.otra-.2)TX('EL GENERAL PERSHING',180,66,22,'#fff',t,E.pershing-.2,{w:344,hl:[2],hc:BRASS});
-  if(t>E.otra-.2)tag('LE DIO OTRA MEDALLA',180,470,22,BRASS,'#14100a',t,E.otra-.2);
+  berlin(t,.1);
+  hans(105,505,1.7,{head:.03*Math.sin(t*2),t,rim:'#ffd9a0'});
+  person(255,505,1.9,{flip:true,robe:'#5a4a3a',beard:1,hair:'#bbb',arm:t>E.nunca?-.9+.3*Math.sin(t*10):0});
+  TX('NADIE LO ENGAÑÓ',180,66,26,'#fff',t,T0[6]-.05,{out:E.nunca-.1,w:344,hl:[2],hc:GOLD});
+  if(t>E.nadie+1.0&&t<E.nunca-.1)TX('A PROPÓSITO',180,100,22,'#fff',t,E.nadie+1.0,{hl:[0],hc:GOLD});
+  if(t>E.nunca-.05&&t<E.efecto-.3){TX('VON OSTEN NUNCA ACEPTÓ',180,66,20,'#fff',t,E.nunca-.05,{w:344,hl:[3],hc:RED});
+    const q=eb(PA(t,E.nunca+.1,E.nunca+.5));tr(262,330,q,0,()=>{rr(-44,-26,88,52,14);ctx.fillStyle='#fff';ctx.fill();ctx.beginPath();ctx.moveTo(-4,26);ctx.lineTo(-16,42);ctx.lineTo(10,26);ctx.fill();txt('NO',0,0,34,RED,{wt:'900'})})}
+  if(t>E.efecto-.1){rays(180,200,t,14,300,'rgba(255,207,90,',.12,.2);
+    slam('EL EFECTO',180,150,34,'#fff',t,E.efecto,{st:INK,sw:9});
+    if(t>E.clever-.1){slam('CLEVER HANS',180,205,38,GOLD,t,E.clever,{st:INK,sw:10});shock(180,205,t,E.clever,GOLD,170,5,.6);burst(180,205,t,E.clever,[GOLD,'#fff',TEAL],20,140,.8,3)}}
 }
-// ---------- S7 · tres presidentes, 1926 y el Smithsonian ----------
+// ---------- S7 · debate ----------
 function s7(t,u){
-  const gy=490;
-  const dusk=PA(t,E.murio-.2,E.murio+1.0),mus=PA(t,E.smith-.3,E.smith+.4);
-  bg(mixc('#7a8a9a','#2a2234',dusk),mixc('#d8d0b0','#c87a50',dusk));
-  if(dusk>0)sunO(110,340,28,t,.45*dusk);
-  rect0(0,gy,360,200,mixc('#6a7a50','#1e1a2a',dusk));rect0(0,gy,360,3,'rgba(255,255,255,.3)');
-  // presidentes
-  const names=['WILSON','HARDING','COOLIDGE'],ts=[E.tres,E.tres+.25,E.tres+.5];
-  if(t<E.murio+.2)names.forEach((nm,i)=>{const q=eb(PA(t,ts[i],ts[i]+.35)),fa=1-PA(t,E.murio-.1,E.murio+.4);if(q>0&&fa>0)withA(fa,()=>{person(36+i*58,gy+10,1.7*q,{hat:'top',robe:'#2a2a3a',arm:i==1?-.5:0});tag(nm,36+i*58,gy+34+(i%2)*16,11,'#3a3a4a','#fff',t,ts[i]+.15,{r:6})})});
-  // Stubby viejo, sentado, con manta
-  const sa=1-mus;
-  if(sa>0)withA(sa,()=>terrier(lerp(240,180,dusk),gy+8,1.8,{sit:1,vest:1,rim:'#ffe6b0',t,wag:t<E.murio?.5:0}));
-  if(t>E.murio&&t<E.smith-.3){for(let i=0;i<8;i++){const w=((t-E.murio)*.5+i*.12)%1;glow(180+Math.sin(i*2+t)*40,gy-90-w*180,10,'rgba(255,230,170,'+(.5*(1-w))+')')}}
-  // museo
-  if(mus>0){withA(mus,()=>{museum(180,gy,1.4);vitrine(180,300,1.1*eb(mus),t)})}
-  TX('CONOCIÓ A',180,66,24,'#fff',t,T0[7]+.0,{out:E.presid+.9,hl:[1],hc:BRASS});
-  if(t>E.tres-.1&&t<E.murio-.1)TX('TRES PRESIDENTES',180,100,26,'#fff',t,E.tres-.1,{w:344,hl:[0],hc:BRASS});
-  if(t>E.murio-.05&&t<E.n1926-.1)TX('MURIÓ EN',180,66,26,'#fff',t,E.murio-.05,{hl:[1],hc:BRASS});
-  if(t>E.n1926-.05&&t<E.smith-.2){slam('1926',180,66,60,BRASS,t,E.n1926,{st:INK,sw:10});shock(180,66,t,E.n1926,BRASS,150,5,.6);TX('16 DE MARZO',180,130,18,'#fff',t,E.n1926+.4)}
-  if(t>E.smith-.1){tag('MUSEO SMITHSONIAN',180,66,22,RED,'#fff',t,E.smith-.05);if(t<E.smith+.6)shock(180,300,t,E.smith,BRASS,170,5,.6)}
-}
-// ---------- S8 · la duda y el debate ----------
-function s8(t,u){
-  const dd=PA(t,E.heroe2-.6,E.heroe2-.2);
-  bg('#14100a','#3a3020');rays(180,320,t,14,520,'rgba(240,192,64,.035)',1,.1,3);starfield(t,20,2,.4);
-  // bloque de duda
-  if(t<E.heroe2-.3){
-    if(t>E.ojo-.05){const sc=1+.1*wob(t-E.ojo,10,4);txt('PERO OJO',180,130,48,BRASS,{wt:'900',st:INK,sw:9,sc});if(t<E.ojo+.6)shock(180,130,t,E.ojo,BRASS,150,5,.6)}
-    if(t>E.detalles-.05&&t<E.companeros-.1)TX('MUCHOS DETALLES',180,210,26,'#fff',t,E.detalles-.05,{w:344,hl:[1],hc:RED});
-    if(t>E.companeros-.05){TX('SALEN SOLO DE SUS COMPAÑEROS',180,210,17,'#fff',t,E.companeros-.05,{w:344,hl:[2,5],hc:RED});
-      [[60,.9],[300,-.9]].forEach(([px,fl],i)=>{const q=eb(PA(t,E.companeros,E.companeros+.4));person(px,470,1.7*q,{flip:i==1,hat:'helm'});tr(px+(i?-40:40),330,q,0,()=>{rr(-28,-18,56,32,10);ctx.fillStyle='#fff';ctx.fill();txt('…',0,-2,24,'#14100a',{wt:'900'})})})}
-    if(t>E.obit-.1){const q=eb(PA(t,E.obit-.1,E.obit+.4));newspaper(180,350,1.2*q,t);if(t<E.obit+.7)shock(180,350,t,E.obit,BRASS,130,5,.6)}
-    if(t>E.obit-.05)TX('Y DE UN OBITUARIO',180,66,22,'#fff',t,E.obit-.05,{w:344,hl:[3],hc:BRASS});
+  berlin(t,.2);
+  if(t<E.coment-.2){
+    TX('¿HANS FUE LISTO DE VERDAD,',180,66,22,'#fff',t,E.entonces-.1,{w:344,hl:[3,4],hc:GOLD});
+    TX('O SOLO UN LECTOR DE PERSONAS?',180,98,21,'#fff',t,E.lector-1.0,{w:344,hl:[3,4],hc:TEAL});
+    const lw=eb(PA(t,E.listo2-.3,E.listo2+.3)),rw=eb(PA(t,E.lector-.3,E.lector+.3));
+    tr(95,320,lw,0,()=>{rr(-70,-90,140,180,12);ctx.fillStyle='rgba(8,14,22,.82)';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();hans(-5,50,1.0,{t,rim:'#ffd9a0'});txt('LISTO',0,-68,24,GOLD,{wt:'900',st:INK,sw:6});txt('💡',0,-30,26,GOLD,{wt:'900'})});
+    tr(265,320,rw,0,()=>{rr(-70,-90,140,180,12);ctx.fillStyle='rgba(8,14,22,.82)';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();eyes(0,0,.75,0,0);txt('LECTOR',0,-68,22,TEAL,{wt:'900',st:INK,sw:6});txt('DE PERSONAS',0,58,14,TEAL,{wt:'900',st:INK,sw:4})});
+    if(t>E.lector)txt('VS',180,320,30,'#fff',{wt:'900',st:INK,sw:7,sc:1+.1*wob(t-E.lector,12,4)});
   }else{
-    TX('¿HÉROE DE GUERRA,',180,66,25,'#fff',t,E.heroe2-.4,{w:344,hl:[1,2],hc:BRASS});
-    TX('O LEYENDA?',180,98,25,'#fff',t,E.leyenda2-.5,{w:344,hl:[1],hc:RED});
-    const lw=eb(PA(t,E.heroe2,E.heroe2+.5)),rw=eb(PA(t,E.leyenda2-.3,E.leyenda2+.3));
-    tr(95,330,lw,0,()=>{rr(-70,-80,140,160,12);ctx.fillStyle='rgba(8,8,4,.82)';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();terrier(-10,60,1.1,{sit:1,vest:1,rim:'#fff7d8',t,wag:.6});txt('HÉROE',0,-100,22,BRASS,{wt:'900',st:INK,sw:6})});
-    tr(265,330,rw,0,()=>{rr(-70,-80,140,160,12);ctx.fillStyle='rgba(8,8,4,.82)';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();terrier(-10,60,1.1,{sit:1,col:'#9aa0b0',dark:'#6a7080',rim:'#c8d6f0',t,al:.65});txt('?',20,-24,54,RED,{wt:'900',st:INK,sw:7,sc:1+.1*wob(t,6,2)});txt('LEYENDA',0,-100,22,RED,{wt:'900',st:INK,sw:6})});
-    if(t>E.leyenda2)txt('VS',180,330,30,'#fff',{wt:'900',st:INK,sw:7,sc:1+.1*wob(t-E.leyenda2,12,4)});
-    if(t>E.coment-.1){const k=eb(PA(t,E.coment-.1,E.coment+.35));tr(180,455,k,0,()=>{rr(-130,-22,260,44,22);ctx.fillStyle='#fff';ctx.fill();txt('COMENTA TU RESPUESTA',0,0,18,'#a0281e',{wt:'900'})})}
+    TX('¿LISTO DE VERDAD,',180,66,25,'#fff',t,E.coment-.5,{w:344,hl:[1,2],hc:GOLD});TX('O LECTOR DE PERSONAS?',180,98,22,'#fff',t,E.coment-.4,{w:344,hl:[1,2],hc:TEAL});
+    hans(180,525,1.25,{t,rim:'#ffd9a0',head:.03*Math.sin(t*2)});
+    if(t>E.coment-.1){const k=eb(PA(t,E.coment-.1,E.coment+.35));tr(180,300,k,0,()=>{rr(-130,-22,260,44,22);ctx.fillStyle='#fff';ctx.fill();txt('COMENTA TU RESPUESTA',0,0,18,'#a0281e',{wt:'900'})})}
     if(t>E.sig-.1)tag('SÍGUEME PARA MÁS',180,502,18,RED,'#fff',t,E.sig-.05);
   }
 }
-boot([s0,s1,s2,s3,s4,s5,s6,s7,s8],TRS,{cap:{acc:'#f0c040'}});
+boot([s0,s1,s2,s3,s4,s5,s6,s7],TRS,{cap:{acc:'#ffcf5a'}});
