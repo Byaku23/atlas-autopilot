@@ -62,4 +62,4 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-27 (mañana, 12:00 NY vía vidIQ): ¿Por qué Napoleón vendió Luisiana a EE. UU.? (1803, Haití, guerra con Inglaterra, 15 millones de dólares, duplicó el país). MAPA + CAUSAS + DEBATE (¿ganga o error de Napoleón?). vidIQ sin créditos: sin búsqueda de tendencias.
 
-- [~] reservada 2026-11-27 (tarde, 18:00 NY vía vidIQ): Hans el Listo (Clever Hans), el caballo que "sabía matemáticas" (Berlín 1904, Von Osten, comisión Stumpf, Pfungst 1907, efecto Clever Hans). ANIMALES + HISTORIA con debate (¿listo o engañado?).
+- [x] 2026-11-27 (tarde, 18:00 NY vía vidIQ): Hans el Listo (Clever Hans), el caballo que "sabía matemáticas" (Berlín 1904, Von Osten, comisión Stumpf, Pfungst 1907, efecto Clever Hans). ANIMALES + HISTORIA con debate (¿listo o engañado?).
