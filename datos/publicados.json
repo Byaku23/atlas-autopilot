@@ -277,6 +277,13 @@
    "ts": "2026-11-26 13:53:50",
    "plannerUrl": "vidiq:d8bc0d6a-b75f-48da-bcaf-efa92077e4dc",
    "fecha_programada": "2026-11-26T18:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-27_luisiana",
+   "titulo": "¿Por qué Napoleón vendió Luisiana?",
+   "mp4_sha256": "ba0a7cd3b13c5c179f7c662b728cad2f171583628a7b780ffc70d3b7e0092b93",
+   "estado": "reservado",
+   "ts": "2026-11-27 08:57:30"
   }
  ]
 }
