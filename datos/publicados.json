@@ -309,8 +309,10 @@
    "slug": "2026-11-28_reckless",
    "titulo": "Reckless: la yegua que llegó a sargento de los Marines",
    "mp4_sha256": "2e1ad23726649889f0b5bca281e006fd533e32ff559fdcbabb67c04187e21d94",
-   "estado": "reservado",
-   "ts": "2026-11-28 13:56:11"
+   "estado": "programado",
+   "ts": "2026-11-28 13:56:11",
+   "plannerUrl": "vidiq:9d217144-12dc-47b6-84a1-372ed6af166a",
+   "fecha_programada": "2026-11-28T18:00:00-05:00"
   }
  ]
 }
