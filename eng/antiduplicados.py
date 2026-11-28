@@ -4,7 +4,10 @@
   python3 eng/antiduplicados.py revisar  CARPETA --titulo "..."   -> LIBRE (0) / DUPLICADO (11)
   python3 eng/antiduplicados.py reservar CARPETA --titulo "..."   -> revisa + escribe la reserva en datos/publicados.json
                                                                     y la sube a git (la otra sesión la verá). Hacerlo ANTES de createScheduledPost.
-  python3 eng/antiduplicados.py confirmar CARPETA --planner URL --fecha ISO   -> estado "programado"
+  python3 eng/antiduplicados.py confirmar CARPETA --planner URL --fecha ISO [--mp4-url URL]   -> estado "programado"
+  python3 eng/antiduplicados.py verificar CARPETA --url URL_MP4  -> descarga el MP4 de la URL y comprueba que su huella es la del video
+                                                                    aprobado (reserva/MP4 local). Hacerlo ANTES de programar en CUALQUIER red.
+                                                                    Si dice DISTINTO (código 13) NO publiques.
   python3 eng/antiduplicados.py liberar  CARPETA                  -> borra la reserva si createScheduledPost falló
 Añade --sin-git para no tocar git (pruebas). Compara: carpeta/slug, título parecido (>=80%), huella del MP4 y tema de datos/temas.json.
 """
@@ -67,10 +70,23 @@ def main():
                 _, _, mot = revisar(carpeta, titulo)
                 print('DUPLICADO (reserva ocupada por otra sesión): ' + ' | '.join(mot) if mot else 'ERROR_PUSH: reintenta'); sys.exit(11 if mot else 12)
         print('RESERVADO ' + slug); return
+    if cmd == 'verificar':
+        import urllib.request
+        url = arg('--url'); slug = os.path.basename(os.path.abspath(carpeta))
+        if not url: print('falta --url'); sys.exit(2)
+        mp4 = glob.glob(os.path.join(carpeta, '*.mp4'))
+        esperada = sha(mp4[0]) if mp4 else next((e.get('mp4_sha256') for e in reversed(cargar()['entradas']) if e['slug'] == slug), None)
+        if not esperada: print('no hay huella de referencia (ni MP4 local ni reserva)'); sys.exit(2)
+        m = hashlib.sha256()
+        with urllib.request.urlopen(url, timeout=120) as r:
+            for b in iter(lambda: r.read(1 << 20), b''): m.update(b)
+        if m.hexdigest() != esperada: print(f'DISTINTO: la URL no es el video aprobado ({slug}). NO publiques.'); sys.exit(13)
+        print('IGUAL: la URL es el video aprobado'); return
     d = cargar(); slug = os.path.basename(os.path.abspath(carpeta)); es = [e for e in d['entradas'] if e['slug'] == slug]
     if cmd == 'confirmar':
         if not es: print('no hay reserva'); sys.exit(2)
         es[-1].update({'estado': 'programado', 'plannerUrl': arg('--planner'), 'fecha_programada': arg('--fecha')})
+        if arg('--mp4-url'): es[-1]['mp4_url'] = arg('--mp4-url')
     elif cmd == 'liberar':
         d['entradas'] = [e for e in d['entradas'] if not (e['slug'] == slug and e['estado'] == 'reservado')]
     else: print(__doc__); sys.exit(2)
