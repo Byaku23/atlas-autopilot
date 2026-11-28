@@ -64,4 +64,4 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-27 (tarde, 18:00 NY vía vidIQ): Hans el Listo (Clever Hans), el caballo que "sabía matemáticas" (Berlín 1904, Von Osten, comisión Stumpf, Pfungst 1907, efecto Clever Hans). ANIMALES + HISTORIA con debate (¿listo o engañado?).
 
-- [~] reservada 2026-11-28 (mañana, 12:00 NY vía vidIQ): La deuda de Haití: la indemnización a Francia de 1825 (150 millones de francos, ordenanza de Carlos X, flota en Puerto Príncipe, pagada hasta 1947). MAPA + CAUSAS + DEBATE (¿justicia o extorsión?).
+- [x] 2026-11-28 (12:00 NY vía vidIQ): La deuda de Haití: la indemnización a Francia de 1825 (150 millones de francos, ordenanza de Carlos X, flota en Puerto Príncipe, pagada hasta 1947). MAPA + CAUSAS + DEBATE (¿justicia o extorsión?).
