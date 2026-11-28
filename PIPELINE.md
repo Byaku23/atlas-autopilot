@@ -29,6 +29,12 @@ bash eng/check_env.sh          # debe decir ENTORNO_OK
 Lee `datos/temas.json`, `datos/ideas.md`, `datos/pendientes.json` (si existe) y `eng/GUIDE.md` completo.
 Si en `pendientes.json` hay un video esperando aprobación de una ejecución anterior, menciónalo en tu propuesta final.
 
+## Regla del banco (decidida por Johan 2026-11-16)
+Un video terminado que se desplaza (otro video ocupó su hora, cambió el plan del día, falló una red) **no se borra ni se descarta**.
+Se registra en `datos/banco.md` (fecha, tema, ruta) y se programa en el siguiente hueco libre. Antes de producir un video nuevo,
+lee `datos/banco.md`: si hay uno en "Reserva" y toca publicar, úsalo en vez de gastar voz/render otra vez.
+Los videos atascados por una imagen (ver CLAUDE.md) también van aquí.
+
 ## Paso 1 — Investigar (máx. ~10 min)
 - Metricool `getAnalyticsDataByMetrics` (reels de Instagram, últimos 14 días; campos IGRE02 fecha, IGRE03 texto,
   IGRE23 vistas, IGRE11 alcance, IGRE10 likes, IGRE07 comentarios, IGRE12 guardados, IGRE21 compartidos,
