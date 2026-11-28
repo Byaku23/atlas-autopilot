@@ -304,6 +304,13 @@
    "ts": "2026-11-28 08:54:55",
    "plannerUrl": "https://www.youtube.com/watch?v=KFiXNPMpnZE",
    "fecha_programada": "2026-11-28T12:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-28_reckless",
+   "titulo": "Reckless: la yegua que llegó a sargento de los Marines",
+   "mp4_sha256": "2e1ad23726649889f0b5bca281e006fd533e32ff559fdcbabb67c04187e21d94",
+   "estado": "reservado",
+   "ts": "2026-11-28 13:56:11"
   }
  ]
 }
