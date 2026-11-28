@@ -1,33 +1,36 @@
 import sys; sys.path.insert(0,'../eng')
 from words import *
-DUR=86.5333
-T=[0,9.25,23.09,35.93,41.49,57.44,69.08,77.82,DUR]
+DUR=89.4
+T=[0,4.93,20.23,28.68,35.95,53.71,60.73,70.10,77.50,DUR]
 RAW={
 # S0 gancho
-'berlin':(wt('Berlín'),.5),'n1904':(wt('cuatro'),.8),'caballo':(wt('caballo'),.3),'sumar':(wt('sumar'),.3),'restar':(wt('restar'),.3),'fecha':(wt('fecha'),.3),'listo':(wt('Listo'),.9),
-# S1 von Osten
-'wilhelm':(wt('Wilhelm'),.3),'profesor':(wt('profesor'),.3),'ocho':(wt('ocho'),.3),'martes':(wt('martes'),.4),'viernes':(wt('viernes'),.4),'golpeaba':(wt('golpeaba'),.2),'once':(wt('once'),.8),'correcto':(wt('Correcto'),.9),
-# S2 comision
-'nyt':(wt('New'),.3),'comision':(wt('comisión'),.3),'trece':(wt('trece'),.8),'vet':(wt('veterinario'),.3),'circo':(wt('circo'),.3),'caballeria':(wt('caballería'),.3),'zoo':(wt('zoológico'),.3),
-# S3 sin trucos
-'concl':(wt('conclusión'),.3),'sept':(wt('septiembre'),.3),'no':(wt('no',after=39.9),.4),'trucos':(wt('trucos'),.9),
-# S4 Pfungst
-'joven':(wt('joven'),.3),'oskar':(wt('Oskar'),.4),'creyo':(wt('creyó'),.3),'prueba':(wt('prueba'),.3),'anteo':(wt('anteojeras'),.6),'siveia':(wt('veía'),.2),'ochenta':(wt('ochenta'),.5),'sino':(wt('Si',after=54.7),.2),'seis':(wt('seis'),.8),
-# S5 lee
-'nosabia':(wt('matemáticas',after=58),.5),'leia':(wt('Leía'),.4),'llegar':(wt('llegar'),.2),'gesto':(wt('gesto'),.6),'detenia':(wt('detenía'),.9),
-# S6 efecto
-'nadie':(wt('Nadie'),.2),'nunca':(wt('nunca'),.5),'efecto':(wt('efecto'),.6),'clever':(wt('Clever'),.9),
-# S7 debate
-'entonces':(wt('Entonces'),.2),'listo2':(wt('listo',after=79),.4),'lector':(wt('lector'),.4),'coment':(wt('Comenta'),.3),'sig':(wt('Sígueme'),0),
+'yegua':(wt('yegua'),.3),'sargento0':(wt('sargento'),.9),'marines0':(wt('Marines',after=2),.4),'chiste':(wt('chiste'),.6),
+# S1 Corea 1952
+'corea':(wt('Corea'),.4),'n1952':(wt('dos',after=7),.3),'joven':(wt('joven'),.3),'pierna':(wt('pierna'),.3),'hermana':(wt('hermana'),.3),'mina':(wt('mina'),.9),'vendio':(wt('Vendió'),.3),'doscientos':(wt('doscientos'),.8),'teniente':(wt('teniente'),.3),
+# S2 nombre
+'reck':(wt('Reckless',after=20),.5),'temeraria':(wt('temeraria',after=21),.4),'fusiles':(wt('fusiles'),.3),'retroceso':(wt('retroceso'),.8),'temerarios':(wt('temerarios',after=27),.5),
+# S3 campamento
+'cascos':(wt('cascos'),.5),'asustarse':(wt('asustarse'),.2),'explosiones':(wt('explosiones'),.8),'colinas':(wt('colinas'),.3),'municion':(wt('munición',after=34),.5),
+# S4 Outpost Vegas
+'marzo':(wt('Marzo'),.3),'outpost':(wt('Outpost'),.5),'chinos':(wt('chinos'),.3),'atacan':(wt('atacan'),.6),'sube':(wt('sube'),.2),'cincuenta':(wt('Cincuenta',after=44),.5),'dia':(wt('día',after=45),.3),'arrozales':(wt('arrozales'),.3),'ladera':(wt('ladera'),.3),'fuego':(wt('fuego',after=48),.8),'kilos':(wt('kilos'),.8),'bajar':(wt('bajar'),.3),'heridos':(wt('heridos',after=52),.5),
+# S5 heridas y chalecos
+'heridas':(wt('heridas',after=54),.7),'metralla':(wt('metralla'),.3),'siguio':(wt('Siguió'),.9),'chalecos':(wt('chalecos'),.4),'protegerla':(wt('protegerla'),.3),
+# S6 ascensos y muerte
+'asc':(wt('ascendieron'),.3),'sarg1':(wt('sargento',after=61.4),.8),'primero':(wt('primero'),.8),'ocho':(wt('ocho',after=66),.4),'murio':(wt('murió'),.3),'honores':(wt('honores'),.3),
+# S7 Dickin
+'dieciseis':(wt('dieciséis'),.8),'medalla':(wt('Medalla'),.4),'dickin':(wt('Dickin'),.9),'premio':(wt('premio'),.3),
+# S8 debate
+'incomoda':(wt('incómoda'),.3),'heroina':(wt('heroína'),.4),'animal':(wt('animal',after=81),.4),'nadie':(wt('nadie'),.3),'coment':(wt('Cuéntame'),.3),'sig':(wt('Sígueme'),0),
 }
 TRS=[None,
- {'type':'ink','x':180,'y':330,'col':'#17283a','dur':.45},
+ {'type':'ink','x':180,'y':330,'col':'#2a1a10','dur':.45},
  {'type':'morph','a':[70,452,220,36,12],'col':'#e0524a','dur':.55},
- {'type':'dive','x':185,'y':385,'z':9,'dur':.55},
  {'type':'push','dir':'left','dur':.45},
+ {'type':'dive','x':185,'y':385,'z':9,'dur':.55},
  {'type':'glitch','dur':.4},
  {'type':'morph','a':[70,452,220,36,12],'col':'#ffcf5a','dur':.5},
- {'type':'iris','x':180,'y':300,'col':'#0e1824','dur':.5}]
+ {'type':'whip','dur':.34},
+ {'type':'iris','x':180,'y':300,'col':'#14100a','dur':.5}]
 if __name__=='__main__':
     E,T2=build(T,RAW,TRS,DUR)
     for k in sorted(E,key=lambda k:E[k]): print('%-10s %.3f'%(k,E[k]),end=' | ')

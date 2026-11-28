@@ -41,6 +41,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `person(x,y,s,o={}) {al,arm,flip,hair,hat,hold,ph,robe,skin}` · 2026-11-26_piramides:7 · usos 1
 - `person(x,y,s,o={}) {al,arm,flip,hair,hat,hold,ph,robe,skin}` · 2026-11-26_stubby:31 · usos 11 — soldado sin cara (pies en y=0). o: robe, hair, hat ('helm'|'cap'|'peak'|'top'|'fed'), arm, ph, flip, al, hold
 - `person(x,y,s,o={}) {al,arm,beard,cape,crown,flip,hair,ph,q,robe,t}` · 2026-11-27_hans:24 · usos 4
+- `person(x,y,s,o={}) {al,arm,beard,cape,crown,flip,hair,ph,q,robe,t}` · 2026-11-28_reckless:24 · usos 6
 - `pigeon(x,y,s,o={}) {cap,chest,fill,fl,flap,flip,hurt,legA,noLegs,rim,stand,t,tilt}` · 2026-11-10_animales_guerra:60 · usos 2 — paloma. o: fl (fase de aleteo), flap (amplitud), tilt, flip, fill, rim, stand
 - `soldier(x,y,s,o={}) {arms,crate,fill,flip,lieY,mask,ph,rifle,rim,rot}` · 2026-11-10_animales_guerra:98 · usos 8 — soldado genérico (sin cara, casco redondo). o: ph, rot (tumbado), lieY, mask, arms ('down'|'up'|'carry'), crate, flip, fill, rim, rifle
 - `soldier(x,y,s,o={}) {aim,col,flip,ph,rim}` · 2026-11-12_emu:25 · usos 6 — soldado de perfil (silueta con sombrero de ala ancha levantada). o: flip, aim (0..1 apuntando), ph, col
@@ -224,6 +225,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `cav(x,y,s,ang,col,o={}) {al}` · 2026-11-12_zama:45 · usos 3 — jinete/caballería: pequeña flecha-bloque. ang=0 mira hacia arriba
 - `chain(x,y,w,k,t,col='#9aa4b8')` · 2026-11-21_napoleon_bajito:33 · usos 2 — cadena de eslabones (k 0..1 cuánto se dibuja)
 - `chev(x,y,s,col='#f1ead6')` · 2026-11-24_wojtek:89 · usos 1
+- `chev(x,y,s,n,col=GOLD,rocker=0)` · 2026-11-28_reckless:38 · usos 2
 - `chevrons(x,y,s,rot=0)` · 2026-11-10_animales_guerra:187 · usos 1
 - `chevrons(x,y,s,col=BRASS,a=1)` · 2026-11-26_stubby:66 · usos 2 — galones de sargento
 - `chute(x,y,s,t)` · 2026-11-20_laika:95 · usos 1 — paracaídas con cápsula
@@ -252,6 +254,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `cow(x,y,s,t)` · 2026-11-19_pocho_chito:49 · usos 2
 - `crate(x,y,s,rot=0)` · 2026-11-10_animales_guerra:122 · usos 10
 - `crate(x,y,s,rot=0)` · 2026-11-24_wojtek:82 · usos 4
+- `crate(x,y,s,q=1)` · 2026-11-28_reckless:43 · usos 1
 - `cristal(x,y,s,col,t,ph=0)` · 2026-11-19_bolivia_mar:42 · usos 1 — cristal de salitre (rombo brillante)
 - `cristal(x,y,s,col,t,ph=0)` · 2026-11-20_mexico_mitad:54 · usos 0 — cristal de salitre (rombo brillante)
 - `croc(x,y,s,o={}) {band,belly,fill,flip,hurt,mouth,rim,sway,t}` · 2026-11-19_pocho_chito:25 · usos 8
@@ -335,6 +338,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `glowStroke(col,lw,blur=10)` · 2026-11-26_piramides:5 · usos 1
 - `glowStroke(col,lw,blur=10)` · 2026-11-26_stubby:5 · usos 3
 - `glowStroke(col,lw,blur=10)` · 2026-11-27_hans:5 · usos 2
+- `glowStroke(col,lw,blur=10)` · 2026-11-28_reckless:5 · usos 1
 - `glyph(k,x,y,s,col)` · v02_gatos:130 · usos 1 — glifos
 - `glyph(k,x,y,s,col)` · 2026-11-14_gatos_ronroneo:130 · usos 0 — glifos
 - `goat(x,y,s,flip=false)` · 2026-11-24_neron:62 · usos 1
@@ -371,6 +375,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `horse(x,y,s,o={}) {al,cloak,col,collar,dark,flip,head,mane,ph,rim,t,wreath}` · 2026-11-16_caballo_caligula:8 · usos 6 — caballo de perfil mirando a la derecha. (0,0)=pezuñas. o: flip, ph (patas), head(0..1 baja la cabeza), t, col, mane, rim, wreath, collar, cloak, al
 - `horse(x,y,s,o={}) {al,col,dark,flip,head,mane,ph,rim,t}` · 2026-11-21_bucefalo:7 · usos 12 — caballo de perfil mirando a la derecha. (0,0)=pezuñas. o: flip, ph, head(0..1 baja), t, col, dark, mane, rim, al
 - `horse(x,y,s,o={}) {al,col,dark,flip,head,mane,ph,rim,t}` · 2026-11-27_hans:10 · usos 1
+- `horse(x,y,s,o={}) {al,col,dark,flip,head,mane,ph,rim,t}` · 2026-11-28_reckless:10 · usos 1
 - `horseShadow(x,y,s,len,al,o={}) {flip}` · 2026-11-21_bucefalo:22 · usos 2 — sombra plana del caballo (sol a la izquierda: cae hacia la derecha). al=opacidad, len=largo
 - `hourglass(x,y,s,p,col=SAND)` · 2026-11-18_termopilas:26 · usos 1
 - `house(x,y,s,lit=1,t=0)` · 2026-11-17_togo_balto:62 · usos 2
@@ -399,6 +404,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `landPoly(pts,fill,edge)` · 2026-11-12_zama:71 · usos 3
 - `lapida(x,y,s)` · 2026-11-27_luisiana:44 · usos 1
 - `lapida(x,y,s)` · 2026-11-28_haiti:44 · usos 0
+- `leg(x,y,s,q=1)` · 2026-11-28_reckless:40 · usos 1
 - `legion(x,y,s,o={}) {al,arm,col,flip,hero,ph,rim,shield,sleep,spear}` · 2026-11-15_gansos_roma:28 · usos 9 — soldado romano de perfil mirando a la derecha. o: flip, ph, arm(ángulo lanza), shield, spear, sleep(0..1 se desploma), hero(capa+cresta), col, rim, al
 - `lewis(x,y,s,o={}) {col,flip}` · 2026-11-12_emu:32 · usos 6 — ametralladora Lewis sobre trípode (apunta a la derecha)
 - `licence(x,y,s,t=0)` · 2026-11-25_bobby:71 · usos 1 — licencia / collar
@@ -424,6 +430,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `medal(x,y,r,n,t0,t,o={}) {fill}` · 2026-11-10_generales_olvidados:54 · usos 1
 - `medal(x,y,s,rot=0)` · 2026-11-17_togo_balto:34 · usos 1
 - `medal(x,y,s,rot=0,col='#f0c040')` · 2026-11-26_stubby:64 · usos 1 — medalla
+- `medal(x,y,s,q=1)` · 2026-11-28_reckless:44 · usos 1
 - `meridiano(c,lon,p,col,lw=3,o={}) {dash,glow,t,wob}` · 2026-11-25_tordesillas:19 · usos 11 — meridiano: p = progreso de arriba a abajo; o.wob = ondulación; o.dash
 - `mitad(c,l0,l1,col,a,o) {dash,wob}` · 2026-11-25_tordesillas:17 · usos 10 — mitad del mundo a la izquierda/derecha de un meridiano (lon0) hasta lon1
 - `mitades(c,a,b=1)` · 2026-11-25_tordesillas:60 · usos 4
@@ -529,12 +536,14 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `railBed(y,w=1000)` · 2026-11-23_winnie:36 · usos 1
 - `railBed(y,w=1000)` · 2026-11-24_wojtek:36 · usos 0
 - `railing(y,col='#0c1018',x0=0,x1=360)` · 2026-11-25_bobby:81 · usos 1 — verja del cementerio
+- `reck(x,y,s,o={}) {flip,pack,vest}` · 2026-11-28_reckless:35 · usos 11
 - `rect0(x,y,w,h,c)` · 2026-11-24_neron:6 · usos 28
 - `rect0(x,y,w,h,c)` · 2026-11-24_wojtek:92 · usos 34
 - `rect0(x,y,w,h,c)` · 2026-11-25_bobby:6 · usos 35
 - `rect0(x,y,w,h,c)` · 2026-11-26_piramides:6 · usos 37
 - `rect0(x,y,w,h,c)` · 2026-11-26_stubby:6 · usos 44
 - `rect0(x,y,w,h,c)` · 2026-11-27_hans:6 · usos 11
+- `rect0(x,y,w,h,c)` · 2026-11-28_reckless:6 · usos 4
 - `rey(x,y,s,col,cc,t,ph=0)` · 2026-11-25_tordesillas:49 · usos 7 — rey: persona + corona
 - `rey(x,y,s,t,ph=0)` · 2026-11-28_haiti:61 · usos 1
 - `rib(pts,w0,w1)` · 2026-11-10_animales_guerra:16 · usos 1 — cinta con grosor variable a lo largo de una polilínea (trompa, cola...)
@@ -545,6 +554,8 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `ridge(y,col,seed=1,amp=24)` · 2026-11-26_piramides:23 · usos 0
 - `ridge(y,col,seed=1,amp=24)` · 2026-11-26_stubby:82 · usos 6 — colinas lejanas / cielo de guerra
 - `ridge(y,col,seed=1,amp=24)` · 2026-11-27_hans:7 · usos 2
+- `ridge(y,col,seed=1,amp=24)` · 2026-11-28_reckless:7 · usos 2
+- `rifle(x,y,s,fire=0)` · 2026-11-28_reckless:41 · usos 1
 - `ring(x,y,r,v,col,lw=9)` · 2026-11-15_mundo_hombres:60 · usos 1 — anillo de porcentaje
 - `ring(x,y,r,v,col,lw=9)` · 2026-11-15_mundo_mujeres:60 · usos 2 — anillo de porcentaje
 - `rocket(x,y,s,t,fl=1)` · 2026-11-20_laika:54 · usos 1 — cohete R-7
@@ -626,6 +637,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `stampBox(s,x,y,sz,col,t,ts,rot=-.14)` · 2026-11-26_piramides:21 · usos 1
 - `stampBox(s,x,y,sz,col,t,ts,rot=-.14)` · 2026-11-26_stubby:77 · usos 4 — bandera (genérica en el fondo no se dibuja: sin marcas)
 - `stampBox(s,x,y,sz,col,t,ts,rot=-.14)` · 2026-11-27_hans:8 · usos 1
+- `stampBox(s,x,y,sz,col,t,ts,rot=-.14)` · 2026-11-28_reckless:8 · usos 2
 - `starfield(t,n,seed,a=1)` · 2026-11-20_laika:97 · usos 0
 - `starfield(t,n,seed,a=1)` · 2026-11-21_bucefalo:61 · usos 0
 - `starfield(t,n,seed,a=1)` · 2026-11-22_jumbo:75 · usos 4
@@ -721,6 +733,7 @@ Para usar una pieza: copia SOLO esa función del `assets.js` indicado (lee desde
 - `TX(s,x,y,sz,col,t,t0,o={})` · 2026-11-27_hans:4 · usos 27
 - `TX(s,x,y,sz,col,t,t0,oo={})` · 2026-11-27_luisiana:3 · usos 60
 - `TX(s,x,y,sz,col,t,t0,oo={})` · 2026-11-28_haiti:3 · usos 47
+- `TX(s,x,y,sz,col,t,t0,o={})` · 2026-11-28_reckless:4 · usos 31
 - `unit(x,y,w,h,col,o={}) {al,dx,dy,edge,rot}` · 2026-11-12_zama:29 · usos 12 — bloque de infantería: rectángulo con borde y filas de escudos. o: al, shake
 - `usMap(fill,edge)` · 2026-11-13_paralelo42:20 · usos 5
 - `veil(a,col='4,10,28')` · 2026-11-25_tordesillas:9 · usos 1

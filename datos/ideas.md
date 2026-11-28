@@ -50,7 +50,7 @@ Fórmulas ganadoras según los datos (IG, oct–nov 2026):
 
 - [x] 2026-11-24 (tarde, YouTube/IG/FB vía vidIQ, 2026-11-25 18:00 NY): ¿Nerón tocaba la lira mientras Roma ardía? (incendio 64 d.C., Antium, Tácito, cristianos, Domus Aurea). DEBATE + MITO (¿culpable o chivo expiatorio?).
 
-- [~] reservada 2026-11-28 (tarde, 18:00 NY vía vidIQ): Sargento Reckless, la yegua que llevó munición bajo fuego en la Guerra de Corea (Nevada Vega 1953, Marines, ascendida a sargento, desfile en Camp Pendleton). ANIMALES + HISTORIA con debate (¿heroína o animal usado?).
+- [x] 2026-11-28 (tarde, 18:00 NY vía vidIQ): Sargento Reckless, la yegua que llevó munición bajo fuego en la Guerra de Corea (Nevada Vega 1953, Marines, ascendida a sargento, desfile en Camp Pendleton). ANIMALES + HISTORIA con debate (¿heroína o animal usado?).
 
 - BANCO AGOTADO: añadir ideas nuevas (fórmulas ganadoras: ANIMALES+HISTORIA, DEBATE, MAPA+CAUSAS).
 
