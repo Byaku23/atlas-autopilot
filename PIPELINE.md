@@ -90,6 +90,7 @@ Saca una hoja de fotogramas del MP4 final y revísala. Portada: un JPG 1080×192
 ## Paso 6 — Alojar y programar
 1. `bash eng/publicar_media.sh videos/<carpeta>/NOMBRE.mp4 videos/<carpeta>/portada.jpg` → URLs públicas.
    Comprueba con `curl -r 0-1000 -o /dev/null -w "%{http_code}"` que la URL del MP4 responde 200/206.
+   **Huella (obligatorio, para TODAS las redes):** `python3 eng/antiduplicados.py verificar videos/<carpeta> --url <URL del MP4>` debe decir IGUAL; si dice DISTINTO, no publiques en ninguna red (así IG/TikTok/FB/YouTube reciben exactamente el mismo archivo aprobado). Si subes a una red por otra vía (a mano o recuperación), usa siempre ese mismo archivo y esa URL. Al confirmar añade `--mp4-url <URL>` para dejar constancia.
 2. Hora (decidido por Johan 2026-11-19): **publica a diario a las 12:00 y 18:00 NY** (mañana → 12:00, tarde → 18:00; si esa franja ya pasó o está ocupada, usa la misma franja del día siguiente; no inventes otras horas ni las de `getBestTimeToPost`). Además: nunca en el pasado; ≥2 h desde ahora; ≥5 h de otro video
    ya programado (míralo con `getScheduledPosts`).
 3. Texto: 1–2 frases con gancho + pregunta + 3–5 hashtags; título de YouTube y Facebook ≤ 70 caracteres.
