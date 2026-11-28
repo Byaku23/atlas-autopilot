@@ -295,6 +295,13 @@
    "ts": "2026-11-27 13:54:11",
    "plannerUrl": "https://www.youtube.com/watch?v=xvVx17cs_80",
    "fecha_programada": "2026-11-27T18:00:00-05:00"
+  },
+  {
+   "slug": "2026-11-28_haiti",
+   "titulo": "La deuda de Haití: la factura que Francia cobró por su libertad",
+   "mp4_sha256": "cde09c4f51c3b981dd2c963c040459488d69a1cbe39a7e1eec4766bb36a6039c",
+   "estado": "reservado",
+   "ts": "2026-11-28 08:54:55"
   }
  ]
 }
