@@ -300,8 +300,10 @@
    "slug": "2026-11-28_haiti",
    "titulo": "La deuda de Haití: la factura que Francia cobró por su libertad",
    "mp4_sha256": "cde09c4f51c3b981dd2c963c040459488d69a1cbe39a7e1eec4766bb36a6039c",
-   "estado": "reservado",
-   "ts": "2026-11-28 08:54:55"
+   "estado": "programado",
+   "ts": "2026-11-28 08:54:55",
+   "plannerUrl": "https://www.youtube.com/watch?v=KFiXNPMpnZE",
+   "fecha_programada": "2026-11-28T12:00:00-05:00"
   }
  ]
 }
